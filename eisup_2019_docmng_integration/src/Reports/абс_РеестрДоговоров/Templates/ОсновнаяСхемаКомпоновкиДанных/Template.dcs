@@ -1,0 +1,1136 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<DataCompositionSchema xmlns="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcscom="http://v8.1c.ru/8.1/data-composition-system/common" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<dataSource>
+		<name>ИсточникДанных1</name>
+		<dataSourceType>Local</dataSourceType>
+	</dataSource>
+	<dataSet xsi:type="DataSetQuery">
+		<name>КоличествоДоговоровПоДням</name>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ГруппаКоличествоПоСтатусам.ДатаСреза</dataPath>
+			<field>ДатаСреза</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Дата среза</v8:content>
+				</v8:item>
+			</title>
+			<useRestriction>
+				<field>true</field>
+				<group>true</group>
+				<order>true</order>
+			</useRestriction>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ГруппаКоличествоПоСтатусам.Договор</dataPath>
+			<field>Договор</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Договор</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ГруппаКоличествоПоСтатусам.КоличествоПоСтатусам</dataPath>
+			<field>КоличествоПоСтатусам</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Количество по статусам</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ГруппаКоличествоПоСтатусам.Статус</dataPath>
+			<field>Статус</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Статус за период</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ГруппаКоличествоПоСтатусам.Проект</dataPath>
+			<field>Проект</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Проект</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldFolder">
+			<dataPath>ГруппаКоличествоПоСтатусам</dataPath>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Количество по статусам</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<dataSource>ИсточникДанных1</dataSource>
+		<query>ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	МАКСИМУМ(ДоговораНаДату.Период) КАК Период,
+	ДоговораНаДату.Договор КАК Договор,
+	&amp;ДатаСреза,
+	ДоговораПоПроектам.Проект
+ПОМЕСТИТЬ ДоговораНаДату
+ИЗ
+	РегистрСведений.абс_ИзменениеСтатусовДоговоров КАК ДоговораНаДату
+		ВНУТРЕННЕЕ СОЕДИНЕНИЕ Справочник.ДоговорыКонтрагентов.абс_Проекты КАК ДоговораПоПроектам
+		ПО ДоговораНаДату.Договор = ДоговораПоПроектам.Ссылка
+ГДЕ
+	ДоговораНаДату.Период &lt;= &amp;ДатаСреза
+
+СГРУППИРОВАТЬ ПО
+	ДоговораНаДату.Договор,
+	ДоговораПоПроектам.Проект
+
+ИНДЕКСИРОВАТЬ ПО
+	Договор,
+	Период
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	ДоговораНаДату.Договор КАК Договор,
+	СтатусыДоговоров.СтатусДоговора КАК Статус,
+	ДоговораНаДату.ДатаСреза КАК ДатаСреза,
+	1 КАК КоличествоПоСтатусам,
+	ДоговораНаДату.Проект КАК Проект
+{ВЫБРАТЬ
+	Договор.*,
+	Статус,
+	ДатаСреза,
+	КоличествоПоСтатусам,
+	Проект.*}
+ИЗ
+	ДоговораНаДату КАК ДоговораНаДату
+		ВНУТРЕННЕЕ СОЕДИНЕНИЕ РегистрСведений.абс_ИзменениеСтатусовДоговоров КАК СтатусыДоговоров
+		ПО ДоговораНаДату.Договор = СтатусыДоговоров.Договор
+			И ДоговораНаДату.Период = СтатусыДоговоров.Период
+{ГДЕ
+	СтатусыДоговоров.СтатусДоговора КАК Статус,
+	ДоговораНаДату.Договор.*,
+	ДоговораНаДату.Проект.*}</query>
+		<autoFillFields>false</autoFillFields>
+	</dataSet>
+	<dataSet xsi:type="DataSetQuery">
+		<name>ТаблицаДней</name>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ГруппаКоличествоПоСтатусам.ДеньПериода</dataPath>
+			<field>ДеньПериода</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>День периода</v8:content>
+				</v8:item>
+			</title>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="xs:string">ДЛФ=D</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldFolder">
+			<dataPath>ГруппаКоличествоПоСтатусам</dataPath>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Количество по статусам</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<dataSource>ИсточникДанных1</dataSource>
+		<query>ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	0 КАК Цифра
+ПОМЕСТИТЬ ТабЦифр
+
+ОБЪЕДИНИТЬ
+
+ВЫБРАТЬ
+	1
+
+ОБЪЕДИНИТЬ
+
+ВЫБРАТЬ
+	2
+
+ОБЪЕДИНИТЬ
+
+ВЫБРАТЬ
+	3
+
+ОБЪЕДИНИТЬ
+
+ВЫБРАТЬ
+	4
+
+ОБЪЕДИНИТЬ
+
+ВЫБРАТЬ
+	5
+
+ОБЪЕДИНИТЬ
+
+ВЫБРАТЬ
+	6
+
+ОБЪЕДИНИТЬ
+
+ВЫБРАТЬ
+	7
+
+ОБЪЕДИНИТЬ
+
+ВЫБРАТЬ
+	8
+
+ОБЪЕДИНИТЬ
+
+ВЫБРАТЬ
+	9
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	ДОБАВИТЬКДАТЕ(&amp;НачалоПериода, ДЕНЬ, ТабЦифр1.Цифра + 10 * ТабЦифр2.Цифра + 100 * ТабЦифр3.Цифра + 1000 * ТабЦифр4.Цифра) КАК День
+ПОМЕСТИТЬ ТабДней
+ИЗ
+	ТабЦифр КАК ТабЦифр1,
+	ТабЦифр КАК ТабЦифр2,
+	ТабЦифр КАК ТабЦифр3,
+	ТабЦифр КАК ТабЦифр4
+ГДЕ
+	ДОБАВИТЬКДАТЕ(&amp;НачалоПериода, ДЕНЬ, ТабЦифр1.Цифра + 10 * ТабЦифр2.Цифра + 100 * ТабЦифр3.Цифра + 1000 * ТабЦифр4.Цифра) &lt;= &amp;КонецПериода
+
+ИНДЕКСИРОВАТЬ ПО
+	День
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	КОНЕЦПЕРИОДА(ТабДней.День, ДЕНЬ) КАК ДеньПериода
+{ВЫБРАТЬ
+	ДеньПериода}
+ИЗ
+	ТабДней КАК ТабДней</query>
+		<autoFillFields>false</autoFillFields>
+	</dataSet>
+	<dataSet xsi:type="DataSetQuery">
+		<name>РасшифровкаПоПроектам</name>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ГруппаРасшифровкаПоПроектам.ДатаОтправки</dataPath>
+			<field>ДатаОтправки</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Дата отправки</v8:content>
+				</v8:item>
+			</title>
+			<useRestriction>
+				<group>true</group>
+			</useRestriction>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ГруппаРасшифровкаПоПроектам.ДатаПодготовка</dataPath>
+			<field>ДатаПодготовка</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Дата подготовка</v8:content>
+				</v8:item>
+			</title>
+			<useRestriction>
+				<group>true</group>
+			</useRestriction>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ГруппаРасшифровкаПоПроектам.ДатаПоступения</dataPath>
+			<field>ДатаПоступения</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Дата поступения</v8:content>
+				</v8:item>
+			</title>
+			<useRestriction>
+				<group>true</group>
+			</useRestriction>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ГруппаРасшифровкаПоПроектам.ДатаСогласование</dataPath>
+			<field>ДатаСогласование</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Дата согласование</v8:content>
+				</v8:item>
+			</title>
+			<useRestriction>
+				<group>true</group>
+			</useRestriction>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ГруппаРасшифровкаПоПроектам.Код1С</dataPath>
+			<field>Код1С</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Код 1С</v8:content>
+				</v8:item>
+			</title>
+			<useRestriction>
+				<group>true</group>
+			</useRestriction>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ГруппаРасшифровкаПоПроектам.НомерДоговора</dataPath>
+			<field>НомерДоговора</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Номер договора</v8:content>
+				</v8:item>
+			</title>
+			<useRestriction>
+				<group>true</group>
+			</useRestriction>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ГруппаРасшифровкаПоПроектам.Ответственный</dataPath>
+			<field>Ответственный</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Ответственный</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ГруппаРасшифровкаПоПроектам.Подрядчик</dataPath>
+			<field>Подрядчик</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Подрядчик</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ГруппаРасшифровкаПоПроектам.РуководительПроекта</dataPath>
+			<field>РуководительПроекта</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Руководитель проекта</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ГруппаРасшифровкаПоПроектам.СрокДействия</dataPath>
+			<field>СрокДействия</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Срок действия</v8:content>
+				</v8:item>
+			</title>
+			<useRestriction>
+				<group>true</group>
+			</useRestriction>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ГруппаРасшифровкаПоПроектам.Сумма</dataPath>
+			<field>Сумма</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сумма</v8:content>
+				</v8:item>
+			</title>
+			<useRestriction>
+				<group>true</group>
+			</useRestriction>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ГруппаРасшифровкаПоПроектам.ТекущийСтатусДоговора</dataPath>
+			<field>ТекущийСтатусДоговора</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Текущий статус договора</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ГруппаРасшифровкаПоПроектам.ТЭО</dataPath>
+			<field>ТЭО</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>ТЭО</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ГруппаРасшифровкаПоПроектам.ДоговорРасшифровка</dataPath>
+			<field>ДоговорРасшифровка</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Договор</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ГруппаРасшифровкаПоПроектам.ПроектРасшифровка</dataPath>
+			<field>ПроектРасшифровка</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Проект</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ГруппаРасшифровкаПоПроектам.ДирекцияИнициатора</dataPath>
+			<field>ДирекцияИнициатора</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Дирекция инициатора</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ГруппаРасшифровкаПоПроектам.ДирекцияРП</dataPath>
+			<field>ДирекцияРП</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Дирекция РП</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ГруппаРасшифровкаПоПроектам.СтатусДоговора</dataPath>
+			<field>СтатусДоговора</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа расшифровка по проектам.Статус договора</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldFolder">
+			<dataPath>ГруппаРасшифровкаПоПроектам</dataPath>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Расшифровка по проектам / Время согласования</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<dataSource>ИсточникДанных1</dataSource>
+		<query>ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	ДоговорыКонтрагентовабс_Проекты.Ссылка КАК Договор,
+	ДоговорыКонтрагентовабс_Проекты.Проект,
+	СУММА(ДоговорыКонтрагентовабс_Проекты.Сумма) КАК Сумма
+ПОМЕСТИТЬ ДоговораПоПроектам
+ИЗ
+	Справочник.ДоговорыКонтрагентов.абс_Проекты КАК ДоговорыКонтрагентовабс_Проекты
+
+СГРУППИРОВАТЬ ПО
+	ДоговорыКонтрагентовабс_Проекты.Ссылка,
+	ДоговорыКонтрагентовабс_Проекты.Проект
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	МАКСИМУМ(абс_ЗакупочныйЗаказДоговоры.Ссылка.ТЭО) КАК ТЭО,
+	ДоговораПоПроектам.Договор
+ПОМЕСТИТЬ ВТ_ТЭО
+ИЗ
+	ДоговораПоПроектам КАК ДоговораПоПроектам
+		ВНУТРЕННЕЕ СОЕДИНЕНИЕ Документ.абс_ЗакупочныйЗаказ.Договоры КАК абс_ЗакупочныйЗаказДоговоры
+		ПО ДоговораПоПроектам.Договор = абс_ЗакупочныйЗаказДоговоры.ДоговорКонтрагента
+ГДЕ
+	НЕ абс_ЗакупочныйЗаказДоговоры.Ссылка.ПометкаУдаления
+	И абс_ЗакупочныйЗаказДоговоры.Ссылка.ТЭО &lt;&gt; ЗНАЧЕНИЕ(Справочник.абс_ТЭО.ПустаяСсылка)
+
+СГРУППИРОВАТЬ ПО
+	ДоговораПоПроектам.Договор
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	СтатусыПодготовка.Договор КАК Договор,
+	МИНИМУМ(СтатусыПодготовка.Период) КАК Период,
+	СтатусыПодготовка.СтатусДоговора КАК СтатусДоговора
+ПОМЕСТИТЬ ВТ_СтатусыПодготовка
+ИЗ
+	РегистрСведений.абс_ИзменениеСтатусовДоговоров КАК СтатусыПодготовка
+ГДЕ
+	СтатусыПодготовка.СтатусДоговора = ЗНАЧЕНИЕ(Перечисление.абсСтатусыДоговоров.Подготовка)
+
+СГРУППИРОВАТЬ ПО
+	СтатусыПодготовка.Договор,
+	СтатусыПодготовка.СтатусДоговора
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	СтатусыСогласован.Договор КАК Договор,
+	МИНИМУМ(СтатусыСогласован.Период) КАК Период,
+	СтатусыСогласован.СтатусДоговора КАК СтатусДоговора
+ПОМЕСТИТЬ ВТ_СтатусыСогласован
+ИЗ
+	РегистрСведений.абс_ИзменениеСтатусовДоговоров КАК СтатусыСогласован
+ГДЕ
+	СтатусыСогласован.СтатусДоговора = ЗНАЧЕНИЕ(Перечисление.абсСтатусыДоговоров.Исполнение)
+
+СГРУППИРОВАТЬ ПО
+	СтатусыСогласован.Договор,
+	СтатусыСогласован.СтатусДоговора
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	ДоговораПоПроектам.Договор КАК ДоговорРасшифровка,
+	ДоговораПоПроектам.Проект КАК ПроектРасшифровка,
+	ДоговораПоПроектам.Договор.Владелец КАК Подрядчик,
+	ДоговораПоПроектам.Договор.Номер КАК НомерДоговора,
+	ДоговораПоПроектам.Договор.Код КАК Код1С,
+	СтатусыПодготовка.Период КАК ДатаПоступения,
+	СтатусыСогласован.Период КАК ДатаОтправки,
+	СтатусыПодготовка.Период КАК ДатаПодготовка,
+	СтатусыСогласован.Период КАК ДатаСогласование,
+	ДоговораПоПроектам.Договор.абс_СтатусДоговора КАК ТекущийСтатусДоговора,
+	ДоговораПоПроектам.Сумма КАК Сумма,
+	ДоговораПоПроектам.Проект.абс_РуководительПроекта КАК РуководительПроекта,
+	ДоговораПоПроектам.Договор.абс_Ответственный КАК Ответственный,
+	ДоговораПоПроектам.Договор.СрокДействия КАК СрокДействия,
+	ВТ_ТЭО.ТЭО КАК ТЭО,
+	ДоговораПоПроектам.Проект.абс_РуководительПроекта.ПодразделениеОрганизации КАК ДирекцияРП,
+	ДоговораПоПроектам.Проект.Ответственный.абс_Сотрудник.ПодразделениеОрганизации КАК ДирекцияИнициатора
+{ВЫБРАТЬ
+	ДоговорРасшифровка.* КАК ДоговорРасшифровка,
+	ПроектРасшифровка.* КАК ПроектРасшифровка,
+	Подрядчик.*,
+	НомерДоговора,
+	Код1С,
+	ДатаПоступения,
+	ДатаОтправки,
+	ДатаПодготовка,
+	ДатаСогласование,
+	ТекущийСтатусДоговора,
+	Сумма,
+	РуководительПроекта.*,
+	Ответственный.*,
+	СрокДействия,
+	ТЭО.*,
+	ДирекцияРП.*,
+	ДирекцияИнициатора.*}
+ИЗ
+	ДоговораПоПроектам КАК ДоговораПоПроектам
+		ЛЕВОЕ СОЕДИНЕНИЕ ВТ_СтатусыСогласован КАК СтатусыСогласован
+		ПО ДоговораПоПроектам.Договор = СтатусыСогласован.Договор
+			И (СтатусыСогласован.СтатусДоговора = ЗНАЧЕНИЕ(Перечисление.абсСтатусыДоговоров.Исполнение))
+		ЛЕВОЕ СОЕДИНЕНИЕ ВТ_СтатусыПодготовка КАК СтатусыПодготовка
+		ПО ДоговораПоПроектам.Договор = СтатусыПодготовка.Договор
+			И (СтатусыПодготовка.СтатусДоговора = ЗНАЧЕНИЕ(Перечисление.абсСтатусыДоговоров.Подготовка))
+		ЛЕВОЕ СОЕДИНЕНИЕ ВТ_ТЭО КАК ВТ_ТЭО
+		ПО ДоговораПоПроектам.Договор = ВТ_ТЭО.Договор
+{ГДЕ
+	ДоговораПоПроектам.Договор.* КАК ДоговорРасшифровка,
+	ДоговораПоПроектам.Проект.* КАК ПроектРасшифровка,
+	ДоговораПоПроектам.Сумма,
+	ДоговораПоПроектам.Договор.абс_СтатусДоговора КАК СтатусДоговора,
+	ВТ_ТЭО.ТЭО.*,
+	СтатусыПодготовка.Период КАК ДатаПодготовка,
+	СтатусыСогласован.Период КАК ДатаСогласование,
+	ДоговораПоПроектам.Проект.абс_РуководительПроекта.ПодразделениеОрганизации.* КАК ДирекцияРП,
+	ДоговораПоПроектам.Проект.Ответственный.абс_Сотрудник.ПодразделениеОрганизации.* КАК ДирекцияИнициатора}</query>
+		<autoFillFields>false</autoFillFields>
+	</dataSet>
+	<dataSet xsi:type="DataSetQuery">
+		<name>ТаблицаМесяцев</name>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ГруппаКоличествоПоСостоянию.МесяцПериода</dataPath>
+			<field>МесяцПериода</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Месяц периода</v8:content>
+				</v8:item>
+			</title>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="xs:string">ДФ='MMMM yyyy'</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldFolder">
+			<dataPath>ГруппаКоличествоПоСостоянию</dataPath>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Количество по состоянию</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<dataSource>ИсточникДанных1</dataSource>
+		<query>ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	0 КАК Цифра
+ПОМЕСТИТЬ ТабЦифр
+
+ОБЪЕДИНИТЬ
+
+ВЫБРАТЬ
+	1
+
+ОБЪЕДИНИТЬ
+
+ВЫБРАТЬ
+	2
+
+ОБЪЕДИНИТЬ
+
+ВЫБРАТЬ
+	3
+
+ОБЪЕДИНИТЬ
+
+ВЫБРАТЬ
+	4
+
+ОБЪЕДИНИТЬ
+
+ВЫБРАТЬ
+	5
+
+ОБЪЕДИНИТЬ
+
+ВЫБРАТЬ
+	6
+
+ОБЪЕДИНИТЬ
+
+ВЫБРАТЬ
+	7
+
+ОБЪЕДИНИТЬ
+
+ВЫБРАТЬ
+	8
+
+ОБЪЕДИНИТЬ
+
+ВЫБРАТЬ
+	9
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	ДОБАВИТЬКДАТЕ(&amp;НачалоПериода, ДЕНЬ, ТабЦифр1.Цифра + 10 * ТабЦифр2.Цифра + 100 * ТабЦифр3.Цифра + 1000 * ТабЦифр4.Цифра) КАК День
+ПОМЕСТИТЬ ТабДней
+ИЗ
+	ТабЦифр КАК ТабЦифр1,
+	ТабЦифр КАК ТабЦифр2,
+	ТабЦифр КАК ТабЦифр3,
+	ТабЦифр КАК ТабЦифр4
+ГДЕ
+	ДОБАВИТЬКДАТЕ(&amp;НачалоПериода, ДЕНЬ, ТабЦифр1.Цифра + 10 * ТабЦифр2.Цифра + 100 * ТабЦифр3.Цифра + 1000 * ТабЦифр4.Цифра) &lt;= &amp;КонецПериода
+
+ИНДЕКСИРОВАТЬ ПО
+	День
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	КОНЕЦПЕРИОДА(ТабДней.День, МЕСЯЦ) КАК МесяцПериода
+{ВЫБРАТЬ
+	МесяцПериода}
+ИЗ
+	ТабДней КАК ТабДней
+
+СГРУППИРОВАТЬ ПО
+	КОНЕЦПЕРИОДА(ТабДней.День, МЕСЯЦ)</query>
+		<autoFillFields>false</autoFillFields>
+	</dataSet>
+	<dataSet xsi:type="DataSetQuery">
+		<name>КоличествоДоговоровПоМесяцам</name>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ГруппаКоличествоПоСостоянию.ДатаСреза</dataPath>
+			<field>ДатаСреза</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Дата среза</v8:content>
+				</v8:item>
+			</title>
+			<useRestriction>
+				<group>true</group>
+			</useRestriction>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ГруппаКоличествоПоСостоянию.КоличествоПоСостоянию</dataPath>
+			<field>КоличествоПоСостоянию</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Количество по состоянию</v8:content>
+				</v8:item>
+			</title>
+			<useRestriction>
+				<group>true</group>
+			</useRestriction>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ГруппаКоличествоПоСостоянию.СостояниеДоговораЗаПериод</dataPath>
+			<field>СостояниеДоговораЗаПериод</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Состояние договора за период</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ГруппаКоличествоПоСостоянию.ПолеСортировки</dataPath>
+			<field>ПолеСортировки</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Поле сортировки</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ГруппаКоличествоПоСостоянию.КоличествоПоСостояниюНарастающийИтог</dataPath>
+			<field>КоличествоПоСостояниюНарастающийИтог</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Количество по состоянию (нарастующим итогом)</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ГруппаКоличествоПоСостоянию.ДоговорПоСостоянию</dataPath>
+			<field>ДоговорПоСостоянию</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Договор</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldFolder">
+			<dataPath>ГруппаКоличествоПоСостоянию</dataPath>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Количество по состоянию</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<dataSource>ИсточникДанных1</dataSource>
+		<query>ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	ДоговорыКонтрагентовабс_Проекты.Ссылка КАК Договор
+ПОМЕСТИТЬ ДоговораПоПроектам
+ИЗ
+	Справочник.ДоговорыКонтрагентов.абс_Проекты КАК ДоговорыКонтрагентовабс_Проекты
+
+СГРУППИРОВАТЬ ПО
+	ДоговорыКонтрагентовабс_Проекты.Ссылка
+
+ИНДЕКСИРОВАТЬ ПО
+	Договор
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	МИНИМУМ(ДоговораНаДату.Период) КАК Период,
+	ДоговораНаДату.Договор КАК Договор,
+	&amp;ДатаСреза
+ПОМЕСТИТЬ Минимум_Подготовка
+ИЗ
+	РегистрСведений.абс_ИзменениеСтатусовДоговоров КАК ДоговораНаДату
+		ВНУТРЕННЕЕ СОЕДИНЕНИЕ ДоговораПоПроектам КАК ДоговораПоПроектам
+		ПО ДоговораНаДату.Договор = ДоговораПоПроектам.Договор
+ГДЕ
+	ДоговораНаДату.СтатусДоговора В (ЗНАЧЕНИЕ(Перечисление.абсСтатусыДоговоров.Подготовка))
+	И ДоговораНаДату.Период &lt;= КОНЕЦПЕРИОДА(&amp;ДатаСреза, МЕСЯЦ)
+
+СГРУППИРОВАТЬ ПО
+	ДоговораНаДату.Договор
+
+ИНДЕКСИРОВАТЬ ПО
+	Договор
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	МИНИМУМ(ДоговораНаДату_Исполнение.Период) КАК Период,
+	ДоговораНаДату_Исполнение.Договор КАК Договор,
+	&amp;ДатаСреза
+ПОМЕСТИТЬ Минимум_Исполнение
+ИЗ
+	РегистрСведений.абс_ИзменениеСтатусовДоговоров КАК ДоговораНаДату_Исполнение
+		ВНУТРЕННЕЕ СОЕДИНЕНИЕ ДоговораПоПроектам КАК ДоговораПоПроектам
+		ПО ДоговораНаДату_Исполнение.Договор = ДоговораПоПроектам.Договор
+ГДЕ
+	ДоговораНаДату_Исполнение.СтатусДоговора = ЗНАЧЕНИЕ(Перечисление.абсСтатусыДоговоров.Исполнение)
+	И ДоговораНаДату_Исполнение.Период &lt;= КОНЕЦПЕРИОДА(&amp;ДатаСреза, МЕСЯЦ)
+
+СГРУППИРОВАТЬ ПО
+	ДоговораНаДату_Исполнение.Договор
+
+ИНДЕКСИРОВАТЬ ПО
+	Договор
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	Минимум_Подготовка.Период,
+	Минимум_Подготовка.Договор КАК Договор,
+	&amp;ДатаСреза,
+	1 КАК Новые,
+	0 КАК Подписанные,
+	0 КАК ПереходящиеСПредыдущегоПериода
+ПОМЕСТИТЬ ВТ
+ИЗ
+	Минимум_Подготовка КАК Минимум_Подготовка
+ГДЕ
+	Минимум_Подготовка.Период &lt;= КОНЕЦПЕРИОДА(&amp;ДатаСреза, МЕСЯЦ)
+	И Минимум_Подготовка.Период &gt;= НАЧАЛОПЕРИОДА(&amp;ДатаСреза, МЕСЯЦ)
+
+ОБЪЕДИНИТЬ ВСЕ
+
+ВЫБРАТЬ
+	Минимум_Исполнение.Период,
+	Минимум_Исполнение.Договор,
+	&amp;ДатаСреза,
+	0,
+	1,
+	0
+ИЗ
+	Минимум_Исполнение КАК Минимум_Исполнение
+ГДЕ
+	Минимум_Исполнение.Период &lt;= КОНЕЦПЕРИОДА(&amp;ДатаСреза, МЕСЯЦ)
+	И Минимум_Исполнение.Период &gt;= НАЧАЛОПЕРИОДА(&amp;ДатаСреза, МЕСЯЦ)
+
+ОБЪЕДИНИТЬ ВСЕ
+
+ВЫБРАТЬ
+	Минимум_Подготовка.Период,
+	Минимум_Подготовка.Договор,
+	&amp;ДатаСреза,
+	0,
+	0,
+	ВЫБОР
+		КОГДА НАЧАЛОПЕРИОДА(Минимум_Подготовка.Период, МЕСЯЦ) &lt; НАЧАЛОПЕРИОДА(&amp;ДатаСреза, МЕСЯЦ)
+				И НАЧАЛОПЕРИОДА(ЕСТЬNULL(Минимум_Исполнение.Период, КОНЕЦПЕРИОДА(&amp;ДатаСреза, МЕСЯЦ)), МЕСЯЦ) &gt;= НАЧАЛОПЕРИОДА(&amp;ДатаСреза, МЕСЯЦ)
+			ТОГДА 1
+		ИНАЧЕ 0
+	КОНЕЦ
+ИЗ
+	Минимум_Подготовка КАК Минимум_Подготовка
+		ЛЕВОЕ СОЕДИНЕНИЕ Минимум_Исполнение КАК Минимум_Исполнение
+		ПО Минимум_Подготовка.Договор = Минимум_Исполнение.Договор
+
+ОБЪЕДИНИТЬ ВСЕ
+
+ВЫБРАТЬ
+	Минимум_Исполнение.Период,
+	Минимум_Исполнение.Договор,
+	&amp;ДатаСреза,
+	1,
+	0,
+	0
+ИЗ
+	Минимум_Исполнение КАК Минимум_Исполнение
+		ЛЕВОЕ СОЕДИНЕНИЕ Минимум_Подготовка КАК Минимум_Подготовка
+		ПО (Минимум_Подготовка.Договор = Минимум_Исполнение.Договор)
+ГДЕ
+	Минимум_Исполнение.Период &lt;= КОНЕЦПЕРИОДА(&amp;ДатаСреза, МЕСЯЦ)
+	И Минимум_Исполнение.Период &gt;= НАЧАЛОПЕРИОДА(&amp;ДатаСреза, МЕСЯЦ)
+	И Минимум_Подготовка.Договор ЕСТЬ NULL 
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	&amp;ДатаСреза КАК ДатаСреза,
+	ВТ.Договор КАК Договор,
+	СУММА(ВТ.Новые) КАК Новые,
+	СУММА(ВТ.Подписанные) КАК Подписанные,
+	СУММА(ВТ.ПереходящиеСПредыдущегоПериода) КАК ПереходящиеСПредыдущегоПериода
+ПОМЕСТИТЬ ВТ2
+ИЗ
+	ВТ КАК ВТ
+
+СГРУППИРОВАТЬ ПО
+	ВТ.Договор
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	&amp;ДатаСреза КАК ДатаСреза,
+	ВТ2.Договор КАК Договор,
+	ВТ2.Новые КАК Новые,
+	ВТ2.Подписанные КАК Подписанные,
+	ВТ2.ПереходящиеСПредыдущегоПериода + ВТ2.Новые - ВТ2.Подписанные КАК Переходящие,
+	ВТ2.ПереходящиеСПредыдущегоПериода + ВТ2.Новые КАК ОбщееКоличество,
+	ВТ2.ПереходящиеСПредыдущегоПериода КАК ПереходящиеСПредыдущегоПериода
+ПОМЕСТИТЬ ВТ_Группировка
+ИЗ
+	ВТ2 КАК ВТ2
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	ВТ_Группировка.Договор КАК Договор,
+	ВТ_Группировка.Новые КАК КоличествоПоСостоянию,
+	"Новые" КАК СостояниеДоговораЗаПериод,
+	&amp;ДатаСреза КАК ДатаСреза,
+	2 КАК ПолеСортировки,
+	ВТ_Группировка.Новые КАК КоличествоПоСостояниюНарастающийИтог
+ПОМЕСТИТЬ ВТ_За_Месяц
+ИЗ
+	ВТ_Группировка КАК ВТ_Группировка
+ГДЕ
+	ВТ_Группировка.Новые &lt;&gt; 0
+
+ОБЪЕДИНИТЬ ВСЕ
+
+ВЫБРАТЬ
+	ВТ_Группировка.Договор,
+	ВТ_Группировка.Подписанные,
+	"Подписанные",
+	&amp;ДатаСреза,
+	3,
+	ВТ_Группировка.Подписанные
+ИЗ
+	ВТ_Группировка КАК ВТ_Группировка
+ГДЕ
+	ВТ_Группировка.Подписанные &lt;&gt; 0
+
+ОБЪЕДИНИТЬ ВСЕ
+
+ВЫБРАТЬ
+	ВТ_Группировка.Договор,
+	ВТ_Группировка.Переходящие,
+	"Переходящие",
+	&amp;ДатаСреза,
+	4,
+	ВТ_Группировка.Переходящие
+ИЗ
+	ВТ_Группировка КАК ВТ_Группировка
+ГДЕ
+	ВТ_Группировка.Переходящие &lt;&gt; 0
+
+ОБЪЕДИНИТЬ ВСЕ
+
+ВЫБРАТЬ
+	ВТ_Группировка.Договор,
+	ВТ_Группировка.ОбщееКоличество,
+	"Общее количество",
+	&amp;ДатаСреза,
+	1,
+	ВТ_Группировка.ОбщееКоличество
+ИЗ
+	ВТ_Группировка КАК ВТ_Группировка
+ГДЕ
+	ВТ_Группировка.ОбщееКоличество &lt;&gt; 0
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	ВТ_За_Месяц.Договор КАК ДоговорПоСостоянию,
+	ВТ_За_Месяц.КоличествоПоСостоянию КАК КоличествоПоСостоянию,
+	ВТ_За_Месяц.СостояниеДоговораЗаПериод КАК СостояниеДоговораЗаПериод,
+	ВТ_За_Месяц.ДатаСреза КАК ДатаСреза,
+	ВТ_За_Месяц.ПолеСортировки КАК ПолеСортировки,
+	ВТ_За_Месяц.КоличествоПоСостояниюНарастающийИтог КАК КоличествоПоСостояниюНарастающийИтог
+{ВЫБРАТЬ
+	КоличествоПоСостоянию,
+	КоличествоПоСостояниюНарастающийИтог,
+	СостояниеДоговораЗаПериод,
+	ДатаСреза,
+	ПолеСортировки,
+	ДоговорПоСостоянию}
+ИЗ
+	ВТ_За_Месяц КАК ВТ_За_Месяц
+{ГДЕ
+	ВТ_За_Месяц.СостояниеДоговораЗаПериод,
+	ВТ_За_Месяц.КоличествоПоСостоянию,
+	ВТ_За_Месяц.Договор КАК ДоговорПоСостоянию}</query>
+		<autoFillFields>false</autoFillFields>
+	</dataSet>
+	<dataSetLink>
+		<sourceDataSet>ТаблицаДней</sourceDataSet>
+		<destinationDataSet>КоличествоДоговоровПоДням</destinationDataSet>
+		<sourceExpression>ГруппаКоличествоПоСтатусам.ДеньПериода</sourceExpression>
+		<destinationExpression>ГруппаКоличествоПоСтатусам.ДатаСреза</destinationExpression>
+		<parameter>ДатаСреза</parameter>
+		<parameterListAllowed>false</parameterListAllowed>
+		<required>false</required>
+	</dataSetLink>
+	<dataSetLink>
+		<sourceDataSet>ТаблицаМесяцев</sourceDataSet>
+		<destinationDataSet>КоличествоДоговоровПоМесяцам</destinationDataSet>
+		<sourceExpression>ГруппаКоличествоПоСостоянию.МесяцПериода</sourceExpression>
+		<destinationExpression>ГруппаКоличествоПоСостоянию.ДатаСреза</destinationExpression>
+		<parameter>ДатаСреза</parameter>
+		<parameterListAllowed>false</parameterListAllowed>
+		<required>false</required>
+	</dataSetLink>
+	<calculatedField>
+		<dataPath>ГруппаРасшифровкаПоПроектам.ВремяСогласования</dataPath>
+		<expression>РазностьДат(ГруппаРасшифровкаПоПроектам.ДатаПодготовка, ГруппаРасшифровкаПоПроектам.ДатаСогласование, "день")</expression>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Время согласования (в днях)</v8:content>
+			</v8:item>
+		</title>
+		<appearance>
+			<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+				<dcscor:parameter>Формат</dcscor:parameter>
+				<dcscor:value xsi:type="xs:string">ЧДЦ=2</dcscor:value>
+			</dcscor:item>
+		</appearance>
+	</calculatedField>
+	<totalField>
+		<dataPath>ГруппаКоличествоПоСтатусам.КоличествоПоСтатусам</dataPath>
+		<expression>Сумма(ВычислитьВыражениеСГруппировкойМассив("Максимум(ГруппаКоличествоПоСтатусам.КоличествоПоСтатусам)", "ГруппаКоличествоПоСтатусам.Договор"))</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ГруппаКоличествоПоСостоянию.КоличествоПоСостоянию</dataPath>
+		<expression>Сумма(ГруппаКоличествоПоСостоянию.КоличествоПоСостоянию) </expression>
+	</totalField>
+	<totalField>
+		<dataPath>ГруппаКоличествоПоСостоянию.КоличествоПоСостояниюНарастающийИтог</dataPath>
+		<expression>выбор когда ГруппаКоличествоПоСостоянию.полесортировки &lt;&gt; 4 тогда ВычислитьВыражение("Сумма(ГруппаКоличествоПоСостоянию.КоличествоПоСостоянию))", "ГруппаКоличествоПоСостоянию.МесяцПериода", "Группировка", "Первая", "Текущая")  иначе Сумма(ВычислитьВыражениеСГруппировкойМассив("Максимум(ГруппаКоличествоПоСостоянию.КоличествоПоСостоянию)", "ГруппаКоличествоПоСостоянию.ДоговорПоСостоянию")) конец</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ГруппаРасшифровкаПоПроектам.ВремяСогласования</dataPath>
+		<expression>Среднее(ГруппаРасшифровкаПоПроектам.ВремяСогласования)</expression>
+	</totalField>
+	<parameter>
+		<name>КонецПериода</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Конец периода</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>false</useRestriction>
+	</parameter>
+	<parameter>
+		<name>НачалоПериода</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Начало периода</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>false</useRestriction>
+	</parameter>
+	<parameter>
+		<name>ДатаСреза</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Дата среза</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>true</useRestriction>
+	</parameter>
+	<settingsVariant>
+		<dcsset:name>Основной</dcsset:name>
+		<dcsset:presentation xsi:type="xs:string">Основной</dcsset:presentation>
+		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
+			<dcsset:dataParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>КонецПериода</dcscor:parameter>
+					<dcscor:value xsi:type="v8:StandardBeginningDate">
+						<v8:variant xsi:type="v8:StandardBeginningDateVariant">Custom</v8:variant>
+						<v8:date>2013-10-18T00:00:00</v8:date>
+					</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>НачалоПериода</dcscor:parameter>
+					<dcscor:value xsi:type="v8:StandardBeginningDate">
+						<v8:variant xsi:type="v8:StandardBeginningDateVariant">Custom</v8:variant>
+						<v8:date>2013-09-29T00:00:00</v8:date>
+					</dcscor:value>
+				</dcscor:item>
+			</dcsset:dataParameters>
+			<dcsset:outputParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>РасположениеИтогов</dcscor:parameter>
+					<dcscor:value xsi:type="dcscor:DataCompositionTotalPlacement">None</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ГоризонтальноеРасположениеОбщихИтогов</dcscor:parameter>
+					<dcscor:value xsi:type="dcscor:DataCompositionTotalPlacement">None</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ВертикальноеРасположениеОбщихИтогов</dcscor:parameter>
+					<dcscor:value xsi:type="dcscor:DataCompositionTotalPlacement">End</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>ВыводитьЗаголовок</dcscor:parameter>
+					<dcscor:value xsi:type="dcsset:DataCompositionTextOutputType">Output</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>Заголовок</dcscor:parameter>
+					<dcscor:value xsi:type="v8:LocalStringType"/>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>ВыводитьПараметрыДанных</dcscor:parameter>
+					<dcscor:value xsi:type="dcsset:DataCompositionTextOutputType">DontOutput</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>ВыводитьОтбор</dcscor:parameter>
+					<dcscor:value xsi:type="dcsset:DataCompositionTextOutputType">DontOutput</dcscor:value>
+				</dcscor:item>
+			</dcsset:outputParameters>
+		</dcsset:settings>
+	</settingsVariant>
+</DataCompositionSchema>

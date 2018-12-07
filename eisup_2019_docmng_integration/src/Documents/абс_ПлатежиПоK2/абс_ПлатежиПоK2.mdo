@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Document xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="2e7680c1-6c0c-409d-aa12-592cc46ab457">
+  <producedTypes>
+    <objectType typeId="ef898aad-2c2b-4011-96b6-35eea0f61785" valueTypeId="61b934e6-6c80-4e76-8c9e-5d324a63582b"/>
+    <refType typeId="05e7164a-28ab-4c67-9915-82c350688c51" valueTypeId="fa439448-09bd-4abb-9e15-018b46b97674"/>
+    <selectionType typeId="14960c77-c117-4847-aab1-ff8f31ab4944" valueTypeId="f2a31671-e029-44df-a854-0e61a8a47f18"/>
+    <listType typeId="3416aa10-9af4-4953-9688-40018b756561" valueTypeId="8b41d862-ff3c-4479-b47a-79c19e2f045a"/>
+    <managerType typeId="a1eda75b-0fd8-4419-af54-75f4b3ed9aa8" valueTypeId="697db562-5d89-45d7-9d0c-5c07111541f5"/>
+  </producedTypes>
+  <name>абс_ПлатежиПоK2</name>
+  <synonym>
+    <key>ru</key>
+    <value>Платежи по k2</value>
+  </synonym>
+  <comment></comment>
+  <inputByString>Document.абс_ПлатежиПоK2.StandardAttribute.Number</inputByString>
+  <fullTextSearchOnInputByString>DontUse</fullTextSearchOnInputByString>
+  <createOnInput>Use</createOnInput>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <fullTextSearch>Use</fullTextSearch>
+  <numberType>String</numberType>
+  <numberLength>9</numberLength>
+  <numberAllowedLength>Variable</numberAllowedLength>
+  <checkUnique>true</checkUnique>
+  <autonumbering>true</autonumbering>
+  <defaultObjectForm>Document.абс_ПлатежиПоK2.Form.ФормаДокумента</defaultObjectForm>
+  <attributes uuid="34461e64-dd02-43bd-828d-f5eebf244537">
+    <name>Организация</name>
+    <synonym>
+      <key>ru</key>
+      <value>Организация</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.Организации</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <forms uuid="3b365c21-55a4-4eca-85d2-69270354951b">
+    <name>ФормаДокумента</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма документа</value>
+    </synonym>
+    <comment></comment>
+    <formType>Ordinary</formType>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <tabularSections uuid="e9c0489c-f202-49bf-bf5e-dc70a83d6491">
+    <producedTypes>
+      <objectType typeId="2e81b54e-5dff-4bb6-abba-b09dc66f9fac" valueTypeId="8a296776-f96c-4e58-8dc5-96e5fb704309"/>
+      <rowType typeId="246e554d-6aeb-4f3d-b95e-e0e124cb7fc9" valueTypeId="84fd9cb9-6281-489b-a396-349e70dbadf8"/>
+    </producedTypes>
+    <name>Оплаты</name>
+    <synonym>
+      <key>ru</key>
+      <value>Оплаты</value>
+    </synonym>
+    <comment></comment>
+    <attributes uuid="daaaabae-03f1-49e5-a2a5-af4954728e28">
+      <name>НомерНакладной</name>
+      <synonym>
+        <key>ru</key>
+        <value>Номер накладной</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>30</length>
+        </stringQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="b7da7df4-47ff-4c68-9766-309c68146e04">
+      <name>Накладная</name>
+      <synonym>
+        <key>ru</key>
+        <value>Накладная</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>DocumentRef.ДокументРасчетовСКонтрагентом</types>
+        <types>DocumentRef.РеализацияТоваровУслуг</types>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="3bf97ffa-3395-4116-a2f5-b57ca18f5ff6">
+      <name>СуммаНакладной</name>
+      <synonym>
+        <key>ru</key>
+        <value>Сумма накладной</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>15</precision>
+          <scale>2</scale>
+        </numberQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="fa359302-717f-4f19-a92c-42433de1a8bb">
+      <name>СуммаДолга</name>
+      <synonym>
+        <key>ru</key>
+        <value>Сумма долга</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>15</precision>
+          <scale>2</scale>
+        </numberQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="c6417b1d-af77-491e-a2db-b4eda9e4edda">
+      <name>СуммаОплаты</name>
+      <synonym>
+        <key>ru</key>
+        <value>Сумма оплаты</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>15</precision>
+          <scale>2</scale>
+        </numberQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+  </tabularSections>
+</mdclass:Document>

@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="7bcb4b62-0e51-49a7-858c-c425e2ea3384">
+  <producedTypes>
+    <selectionType typeId="baa9b99b-5854-4c6b-9018-5b7070727b4d" valueTypeId="f2b56563-6927-48ba-9df4-24981c571a29"/>
+    <listType typeId="9554aed7-c630-4253-9ddc-02341a8e2133" valueTypeId="4323a501-b9f5-4ca0-aa33-ca6aa43d99a3"/>
+    <managerType typeId="bf156de9-3d19-410c-8e79-e824d44b0e48" valueTypeId="f348fbae-ad30-4a8b-b6b8-fe89a192704d"/>
+    <recordSetType typeId="d6e904fe-057a-4464-a765-f7fe37da3ac4" valueTypeId="7c73fb0f-84a6-43d7-ac73-e8b0ac01ebaa"/>
+    <recordKeyType typeId="e4559544-ea04-4cf7-876f-2b7c7774258b" valueTypeId="1d49518b-14c6-4ec1-a79a-8cfee56a8122"/>
+    <recordType typeId="8b356f5f-2504-49b8-840d-4691d6ce0483" valueTypeId="5cb0eb14-d847-4109-a5fe-e2bc6f5a6943"/>
+    <recordManagerType typeId="dc471bab-9710-4cf6-83ec-784c7866d1bb" valueTypeId="3c343fbc-c8e7-466a-a2c3-38454a051142"/>
+  </producedTypes>
+  <name>абс_ТаблицаСтатусовБПТТК</name>
+  <synonym>
+    <key>ru</key>
+    <value>Таблица статусов бизнес-процессов ТТК</value>
+  </synonym>
+  <comment></comment>
+  <editType>InDialog</editType>
+  <defaultRecordForm>InformationRegister.абс_ТаблицаСтатусовБПТТК.Form.ФормаЗаписи</defaultRecordForm>
+  <defaultListForm>InformationRegister.абс_ТаблицаСтатусовБПТТК.Form.ФормаСписка</defaultListForm>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <resources uuid="d7cb7d2f-ef00-48d7-a871-e35f2182d8b1">
+    <name>РедактированиеДокумента</name>
+    <synonym>
+      <key>ru</key>
+      <value>Редактирование документа</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="a3683041-5d02-4a51-9973-ba1e75b24b3f">
+    <name>УсловиеПерехода</name>
+    <synonym>
+      <key>ru</key>
+      <value>Условие перехода</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>String</types>
+      <stringQualifiers/>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:StringValue">
+      <value></value>
+    </fillValue>
+  </resources>
+  <resources uuid="c5e8886f-4f90-4b57-92e6-41fda73a0fe6">
+    <name>ОтветственныйЗаИзменениеСтатуса</name>
+    <synonym>
+      <key>ru</key>
+      <value>Ответственный за изменение статуса</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.РолиИсполнителей</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="da690d25-a10d-4004-b435-56acf63db2f4">
+    <name>ОтветственныйЗаНовыйСтатус</name>
+    <synonym>
+      <key>ru</key>
+      <value>Ответственный за новый статус</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.РолиИсполнителей</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <dimensions uuid="b9a73a5f-f570-4a1c-9441-b847e87047ec">
+    <name>ВидБизнесПроцесса</name>
+    <synonym>
+      <key>ru</key>
+      <value>Вид бизнес-процесса</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>EnumRef.абсВидыБизнесПроцессовТТК</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="c1f1ea98-93ed-4a6f-8ccb-446176632eb9">
+    <name>Статус</name>
+    <synonym>
+      <key>ru</key>
+      <value>Статус</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>EnumRef.абсСтатусыДоговоров</types>
+      <types>EnumRef.абс_СтатусыПервичныхДокументов</types>
+      <types>EnumRef.абсСтатусыСчетов</types>
+      <types>EnumRef.абсСтатусыДоговоровПодряда</types>
+      <types>EnumRef.абс_СтатусыЗаявокВПоддержку</types>
+      <types>EnumRef.абс_СтатусыНоменклатуры</types>
+      <types>EnumRef.абсСтатусЗакупочногоЗаказа</types>
+      <types>EnumRef.абсСтатусыАктовПриёмки</types>
+      <types>EnumRef.абсСтатусыКонтрагентов</types>
+      <types>EnumRef.абс_СтатусыРекласификацииБюджета</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="cf3744c8-3575-4f19-91b5-738b97b6db74">
+    <name>СтатусНовый</name>
+    <synonym>
+      <key>ru</key>
+      <value>Статус новый</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>EnumRef.абсСтатусыДоговоров</types>
+      <types>EnumRef.абс_СтатусыПервичныхДокументов</types>
+      <types>EnumRef.абсСтатусыСчетов</types>
+      <types>EnumRef.абсСтатусыДоговоровПодряда</types>
+      <types>EnumRef.абс_СтатусыЗаявокВПоддержку</types>
+      <types>EnumRef.абс_СтатусыНоменклатуры</types>
+      <types>EnumRef.абсСтатусЗакупочногоЗаказа</types>
+      <types>EnumRef.абсСтатусыАктовПриёмки</types>
+      <types>EnumRef.абсСтатусыКонтрагентов</types>
+      <types>EnumRef.абс_СтатусыРекласификацииБюджета</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <forms uuid="ec7a01eb-78ed-4c36-8d83-8d0524c97711">
+    <name>ФормаСписка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма списка</value>
+    </synonym>
+    <comment></comment>
+    <formType>Ordinary</formType>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="2e277579-e569-4384-b5b5-4a9b8a833be7">
+    <name>ФормаЗаписи</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма записи</value>
+    </synonym>
+    <comment></comment>
+    <formType>Ordinary</formType>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <templates uuid="8071772e-45fd-4432-bd9f-680274fdf56b">
+    <name>МакетТаблицаСтатусовБПТТКПоУмолчаниюЗЗ</name>
+    <synonym>
+      <key>ru</key>
+      <value>Макет таблица статусов БПТТКПо умолчанию ЗЗ</value>
+    </synonym>
+    <comment></comment>
+  </templates>
+  <templates uuid="82d5429a-b5ef-46d6-a892-ce1802e1a75c">
+    <name>МакетТаблицаСтатусовБПТТКПоУмолчаниюXML</name>
+    <synonym>
+      <key>ru</key>
+      <value>Макет таблица статусов БПТТКПо умолчанию XML</value>
+    </synonym>
+    <comment></comment>
+    <templateType>TextDocument</templateType>
+  </templates>
+  <templates uuid="545bef85-0351-4e62-96f8-638f5d74ed77">
+    <name>МакетТаблицаСтатусовБПТТКПоУмолчаниюСчетНаОплату</name>
+    <synonym>
+      <key>ru</key>
+      <value>Макет таблица статусов БПТТКПо умолчанию счет на оплату</value>
+    </synonym>
+    <comment></comment>
+  </templates>
+</mdclass:InformationRegister>

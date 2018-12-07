@@ -1,0 +1,509 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:DataProcessor xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="d28c6b5f-df05-4343-8d82-9a09e203a704">
+  <producedTypes>
+    <objectType typeId="d1520f97-507c-439b-b08d-0a247db453e0" valueTypeId="4d8a5a7f-1e9a-4683-8399-13ea7a3c6864"/>
+    <managerType typeId="71cb9623-2613-4dc1-8b61-5ba1676acb3d" valueTypeId="486999df-0a81-4772-a41a-107f78154a28"/>
+  </producedTypes>
+  <name>абс_ЗагрузкаЗаказовПокупателейОМ</name>
+  <synonym>
+    <key>ru</key>
+    <value>Загрузка заказов покупателей ОМ</value>
+  </synonym>
+  <comment></comment>
+  <defaultForm>DataProcessor.абс_ЗагрузкаЗаказовПокупателейОМ.Form.Форма</defaultForm>
+  <attributes uuid="c3f6f4bc-80e7-40ad-8aa8-e59890248c97">
+    <name>ПутьКФайлу</name>
+    <synonym>
+      <key>ru</key>
+      <value>Путь к файлу</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>String</types>
+      <stringQualifiers/>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <tabularSections uuid="971d4b43-d7b0-47d3-92d9-e139d629b120">
+    <producedTypes>
+      <objectType typeId="baee5f9e-ddfd-4ee7-929b-05c1a74b20a6" valueTypeId="8b05422f-b3ed-401c-bb7a-31dfea04482c"/>
+      <rowType typeId="c823df25-6ac2-4193-b39b-af7d1603f961" valueTypeId="5519b71a-4588-477d-a532-0ba212a004eb"/>
+    </producedTypes>
+    <name>ТаблицаЗагрузки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Таблица загрузки</value>
+    </synonym>
+    <comment></comment>
+    <standardAttributes>
+      <dataHistory>Use</dataHistory>
+      <name>LineNumber</name>
+      <comment></comment>
+      <fillValue xsi:type="core:UndefinedValue"/>
+      <fullTextSearch>Use</fullTextSearch>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+    </standardAttributes>
+    <attributes uuid="72b618e6-f38e-4593-bf32-14f18fac40a8">
+      <name>ЗаказПокупателяСсылка</name>
+      <synonym>
+        <key>ru</key>
+        <value>Заказ покупателя ссылка</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>DocumentRef.ЗаказПокупателя</types>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="4e1d3639-fd20-47c2-b459-8307ebecdd43">
+      <name>Организация</name>
+      <synonym>
+        <key>ru</key>
+        <value>Организация</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>CatalogRef.Организации</types>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="f2684cd3-503b-4355-affa-b7582bb22427">
+      <name>абс_НомерЗаказаОМ</name>
+      <synonym>
+        <key>ru</key>
+        <value>Номер заказа ОМ</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>50</length>
+        </stringQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:StringValue">
+        <value></value>
+      </fillValue>
+    </attributes>
+    <attributes uuid="6e882cb2-d8a9-4632-ae7c-5bd1a29b19d0">
+      <name>абс_СтатусЗаказаОМСтрока</name>
+      <synonym>
+        <key>ru</key>
+        <value>Статус</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>75</length>
+        </stringQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="a17f4331-b6f1-4381-83d6-cfb15b6c14a5">
+      <name>абс_СтатусЗаказаОМ</name>
+      <synonym>
+        <key>ru</key>
+        <value>Статус заказа OM</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>EnumRef.абс_СтатусыЗаказовOM</types>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="ad546dac-214b-4b77-b707-9d18a5715908">
+      <name>абс_ОписаниеЗаказа</name>
+      <synonym>
+        <key>ru</key>
+        <value>Описание заказа</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>String</types>
+        <stringQualifiers/>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:StringValue">
+        <value></value>
+      </fillValue>
+    </attributes>
+    <attributes uuid="9d3c7992-0c18-4df5-b5ea-0c9f75d0c8ff">
+      <name>абс_ИнициаторСтрока</name>
+      <synonym>
+        <key>ru</key>
+        <value>Инициатор</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>CatalogRef.Пользователи</types>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="dca6792a-b4c6-416a-8df5-8c3b712b1d03">
+      <name>абс_Инициатор</name>
+      <synonym>
+        <key>ru</key>
+        <value>Инициатор</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>CatalogRef.Пользователи</types>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="909b68f9-6f5e-48f7-949c-619eb54956a8">
+      <name>абс_КодПроекта</name>
+      <synonym>
+        <key>ru</key>
+        <value>Код проекта</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>50</length>
+        </stringQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:StringValue">
+        <value></value>
+      </fillValue>
+    </attributes>
+    <attributes uuid="6cf8298e-8ae5-4906-87fa-be8f0dd6e57d">
+      <name>абс_НаименованиеПроекта</name>
+      <synonym>
+        <key>ru</key>
+        <value>Наименование проекта</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>500</length>
+        </stringQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:StringValue">
+        <value></value>
+      </fillValue>
+    </attributes>
+    <attributes uuid="b54c59cb-3bea-4e2b-8b6f-c1daf8ce58c2">
+      <name>абс_ВидПроектаСтрока</name>
+      <synonym>
+        <key>ru</key>
+        <value>Вид проекта</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>75</length>
+        </stringQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="22d91669-7b95-4cd7-b630-0aec4babe32a">
+      <name>абс_ВидПроекта</name>
+      <synonym>
+        <key>ru</key>
+        <value>Вид проекта</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>CatalogRef.абс_ВидыПроектов</types>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="7d5d3893-2625-4964-bb9e-872bbb6e5c64">
+      <name>абс_СуммаДоходаСтрока</name>
+      <synonym>
+        <key>ru</key>
+        <value>Сумма дохода</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>25</length>
+        </stringQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="7473a8c4-0e9b-40e8-bceb-edc1cdb5b945">
+      <name>абс_СуммаДохода</name>
+      <synonym>
+        <key>ru</key>
+        <value>Сумма дохода</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>15</precision>
+          <scale>2</scale>
+        </numberQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="ba1f1198-0f5e-4f1f-baba-9966c84240af">
+      <name>абс_СуммаРасходаСтрока</name>
+      <synonym>
+        <key>ru</key>
+        <value>Сумма расхода</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>25</length>
+        </stringQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="a18ead5a-5113-44e5-9dd3-ca2fc0fa895a">
+      <name>абс_СуммаРасхода</name>
+      <synonym>
+        <key>ru</key>
+        <value>Сумма расхода</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>15</precision>
+          <scale>2</scale>
+        </numberQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="b9046198-3b42-494b-8b2d-6a79a746419e">
+      <name>абс_СтоимостьИнсталляцииСтрока</name>
+      <synonym>
+        <key>ru</key>
+        <value>Стоимость инсталляции</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>25</length>
+        </stringQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="b175965a-52ad-4717-8740-5c8ef2b49ec2">
+      <name>абс_СтоимостьИнсталляции</name>
+      <synonym>
+        <key>ru</key>
+        <value>Стоимость инсталляции</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>15</precision>
+          <scale>2</scale>
+        </numberQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="f36ce4ee-13b4-463a-aa9f-4dc765b0ebc7">
+      <name>абс_ДатаПодключенияСтрока</name>
+      <synonym>
+        <key>ru</key>
+        <value>Дата подключения</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>25</length>
+        </stringQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="13360b30-30f8-47bc-853e-b11d1db4cc3e">
+      <name>абс_ДатаПодключения</name>
+      <synonym>
+        <key>ru</key>
+        <value>Дата подключения</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Date</types>
+        <dateQualifiers>
+          <dateFractions>Date</dateFractions>
+        </dateQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="ef6d722c-fd29-4801-9e4c-6c84bac31fcb">
+      <name>абс_ДатаВыключенияСтрока</name>
+      <synonym>
+        <key>ru</key>
+        <value>Дата выключения</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>25</length>
+        </stringQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="472cbb67-c959-4ba5-8902-28b569c2798b">
+      <name>абс_ДатаВыключения</name>
+      <synonym>
+        <key>ru</key>
+        <value>Дата выключения</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Date</types>
+        <dateQualifiers>
+          <dateFractions>Date</dateFractions>
+        </dateQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="dfb546ad-2db6-4b43-85b5-29587ad074ff">
+      <name>абс_ВидУслуги</name>
+      <synonym>
+        <key>ru</key>
+        <value>Вид услуги</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>50</length>
+        </stringQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:StringValue">
+        <value></value>
+      </fillValue>
+    </attributes>
+    <attributes uuid="46a67419-aec3-4110-9de2-c75667f32157">
+      <name>абс_КодМП</name>
+      <synonym>
+        <key>ru</key>
+        <value>Код МП</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>50</length>
+        </stringQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:StringValue">
+        <value></value>
+      </fillValue>
+    </attributes>
+    <attributes uuid="209c98fa-8c8d-412d-be8b-19ccb4300425">
+      <name>абс_НаименованиеМП</name>
+      <synonym>
+        <key>ru</key>
+        <value>Наименование МП</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>500</length>
+        </stringQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:StringValue">
+        <value></value>
+      </fillValue>
+    </attributes>
+  </tabularSections>
+  <forms uuid="651e65e8-805d-400c-909d-a385d776238d">
+    <name>Форма</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма</value>
+    </synonym>
+    <comment></comment>
+    <formType>Ordinary</formType>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+</mdclass:DataProcessor>

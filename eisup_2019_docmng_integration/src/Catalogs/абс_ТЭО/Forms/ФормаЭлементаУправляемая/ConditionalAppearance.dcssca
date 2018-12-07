@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ConditionalAppearance xmlns="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:chm="http://v8.1c.ru/8.2/data/chart">
+	<item>
+		<selection>
+			<item>
+				<field>ЗадачиЭлектронноеПисьмо</field>
+			</item>
+			<item>
+				<field>ЗадачиДата</field>
+			</item>
+			<item>
+				<field>ЗадачиОтправитель</field>
+			</item>
+			<item>
+				<field>ЗадачиПолучатель</field>
+			</item>
+			<item>
+				<field>ЗадачиСтатус</field>
+			</item>
+			<item>
+				<field>ЗадачиТема</field>
+			</item>
+			<item>
+				<field>ЗадачиОтправлено</field>
+			</item>
+			<item>
+				<field>ЗадачиДатаОтправки</field>
+			</item>
+		</selection>
+		<filter>
+			<item xsi:type="FilterItemComparison">
+				<left xsi:type="dcscor:Field">ДеревоЗадач.НеРассмотрено</left>
+				<comparisonType>Equal</comparisonType>
+				<right xsi:type="xs:boolean">true</right>
+			</item>
+			<item xsi:type="FilterItemComparison">
+				<left xsi:type="dcscor:Field">ДеревоЗадач.ПользовательПолучательПисьма</left>
+				<comparisonType>Equal</comparisonType>
+				<right xsi:type="xs:boolean">true</right>
+			</item>
+		</filter>
+		<appearance>
+			<dcscor:item xsi:type="SettingsParameterValue">
+				<dcscor:parameter>Шрифт</dcscor:parameter>
+				<dcscor:value bold="true" italic="false" kind="WindowsFont" ref="sys:DefaultGUIFont" strikeout="false" underline="false" xsi:type="v8ui:Font"/>
+			</dcscor:item>
+		</appearance>
+	</item>
+	<item>
+		<selection>
+			<item>
+				<field>ЗадачиЭлектронноеПисьмо</field>
+			</item>
+			<item>
+				<field>ЗадачиДата</field>
+			</item>
+			<item>
+				<field>ЗадачиОтправитель</field>
+			</item>
+			<item>
+				<field>ЗадачиПолучатель</field>
+			</item>
+			<item>
+				<field>ЗадачиСтатус</field>
+			</item>
+			<item>
+				<field>ЗадачиТема</field>
+			</item>
+			<item>
+				<field>ДеревоЗадачОтветить</field>
+			</item>
+			<item>
+				<field>ЗадачиДатаОтправки</field>
+			</item>
+			<item>
+				<field>ЗадачиОтправлено</field>
+			</item>
+		</selection>
+		<filter>
+			<item xsi:type="FilterItemComparison">
+				<left xsi:type="dcscor:Field">ДеревоЗадач.ПользовательВладелецПисьма</left>
+				<comparisonType>NotEqual</comparisonType>
+				<right xsi:type="xs:boolean">true</right>
+			</item>
+		</filter>
+		<appearance>
+			<dcscor:item xsi:type="SettingsParameterValue">
+				<dcscor:parameter>ЦветТекста</dcscor:parameter>
+				<dcscor:value xsi:type="v8ui:Color">#999999</dcscor:value>
+			</dcscor:item>
+		</appearance>
+	</item>
+	<item>
+		<selection>
+			<item>
+				<field>ИТРИТР</field>
+			</item>
+			<item>
+				<field>ИТРНомерИТР</field>
+			</item>
+			<item>
+				<field>ИТРПланируемаяДатаОкончания</field>
+			</item>
+			<item>
+				<field>ИТРФактическаяДатаВыдачи</field>
+			</item>
+			<item>
+				<field>ИТРЗаказчик</field>
+			</item>
+			<item>
+				<field>ИТРСтатус</field>
+			</item>
+		</selection>
+		<filter>
+			<item xsi:type="FilterItemComparison">
+				<left xsi:type="dcscor:Field">Объект.ИТР.ИТР</left>
+				<comparisonType>Equal</comparisonType>
+				<right xsi:type="dcscor:Field">Объект.ОсновнойИТР</right>
+			</item>
+		</filter>
+		<appearance>
+			<dcscor:item xsi:type="SettingsParameterValue">
+				<dcscor:parameter>Шрифт</dcscor:parameter>
+				<dcscor:value bold="true" italic="false" kind="WindowsFont" ref="sys:DefaultGUIFont" strikeout="false" underline="false" xsi:type="v8ui:Font"/>
+			</dcscor:item>
+		</appearance>
+	</item>
+</ConditionalAppearance>

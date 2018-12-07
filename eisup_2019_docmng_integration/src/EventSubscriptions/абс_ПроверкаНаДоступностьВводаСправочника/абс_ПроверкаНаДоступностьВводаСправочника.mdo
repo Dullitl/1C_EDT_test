@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:EventSubscription xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="648c43dd-dd67-4448-a0d2-ddcb06a0ed74">
+  <name>абс_ПроверкаНаДоступностьВводаСправочника</name>
+  <synonym>
+    <key>ru</key>
+    <value>Абс проверка на доступность ввода справочника</value>
+  </synonym>
+  <comment></comment>
+  <source>
+    <types>CatalogObject.СотрудникиОрганизаций</types>
+    <types>CatalogObject.ФизическиеЛица</types>
+    <types>CatalogObject.ДолжностиОрганизаций</types>
+  </source>
+  <event>BeforeWrite</event>
+  <handler>CommonModule.абс_СлужебныеФункции.абс_ПроверкаНаДоступностьВводаСправочникаПередЗаписью</handler>
+</mdclass:EventSubscription>

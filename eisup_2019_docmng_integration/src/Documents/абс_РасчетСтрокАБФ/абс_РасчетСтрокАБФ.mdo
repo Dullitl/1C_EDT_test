@@ -1,0 +1,389 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Document xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="c0ff88d3-1fc3-4822-9da1-73c4a7aff66e">
+  <producedTypes>
+    <objectType typeId="063acc85-9e8e-45a6-aa21-915ca088e9d7" valueTypeId="52344332-c93c-46ec-ab20-58442406fde6"/>
+    <refType typeId="83bf4eb9-6923-4a63-8b26-71dc91ba82bd" valueTypeId="c15fc0ce-77bc-45bb-b78e-c4a947a2f90c"/>
+    <selectionType typeId="3f1364c5-e338-456d-a49c-471557d7e327" valueTypeId="e3a3879c-2eb1-46f1-ba6c-dbcef9b23a2a"/>
+    <listType typeId="2508409e-abc1-4345-9cd7-6c94255cc9ff" valueTypeId="418eec35-5175-42e9-b5dd-5854f512199d"/>
+    <managerType typeId="2bafa6f0-a431-4fe9-825e-18bc2d11f260" valueTypeId="4c5e5f25-4446-4b76-9c2b-725637a1ab39"/>
+  </producedTypes>
+  <name>абс_РасчетСтрокАБФ</name>
+  <synonym>
+    <key>ru</key>
+    <value>Расчет строк АБФ</value>
+  </synonym>
+  <comment></comment>
+  <inputByString>Document.абс_РасчетСтрокАБФ.StandardAttribute.Number</inputByString>
+  <fullTextSearchOnInputByString>DontUse</fullTextSearchOnInputByString>
+  <createOnInput>Use</createOnInput>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <fullTextSearch>Use</fullTextSearch>
+  <numberType>String</numberType>
+  <numberLength>9</numberLength>
+  <numberAllowedLength>Variable</numberAllowedLength>
+  <checkUnique>true</checkUnique>
+  <autonumbering>true</autonumbering>
+  <defaultObjectForm>Document.абс_РасчетСтрокАБФ.Form.ФормаДокумента</defaultObjectForm>
+  <realTimePosting>Deny</realTimePosting>
+  <registerRecords>AccumulationRegister.абс_ЗначенияПоказателейСтрокАБФ</registerRecords>
+  <attributes uuid="9f921c07-0406-4819-a874-e728f5789571">
+    <name>ПериодНач</name>
+    <synonym>
+      <key>ru</key>
+      <value>Период нач</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Date</types>
+      <dateQualifiers>
+        <dateFractions>Date</dateFractions>
+      </dateQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="85cc61b7-2a81-4dee-8490-5e1349953028">
+    <name>ПериодКон</name>
+    <synonym>
+      <key>ru</key>
+      <value>Период кон</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Date</types>
+      <dateQualifiers>
+        <dateFractions>Date</dateFractions>
+      </dateQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="8453c031-4685-40e2-8415-c1b63249bb6c">
+    <name>Форма</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.абс_ФормыАБФ</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <forms uuid="53050ebf-61b4-4978-a292-d44df74ad6b0">
+    <name>ФормаДокумента</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма документа</value>
+    </synonym>
+    <comment></comment>
+    <formType>Ordinary</formType>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <tabularSections uuid="26abbc98-00f7-4e71-b5f6-9495cb633f56">
+    <producedTypes>
+      <objectType typeId="700c7f03-ce01-4317-b6d1-b7a5616d4e3d" valueTypeId="a5f07d9f-d3d7-4a1d-a3fd-b935074a704d"/>
+      <rowType typeId="49bdc3e0-8ca7-4f2c-9c71-afda775043e4" valueTypeId="5c60b03a-9f0e-402a-a134-e5c22825c060"/>
+    </producedTypes>
+    <name>СтрокиАБФ</name>
+    <synonym>
+      <key>ru</key>
+      <value>Строки АБФ</value>
+    </synonym>
+    <comment></comment>
+    <attributes uuid="c842f175-2023-4f5b-b6eb-b6d3e4091e32">
+      <name>СтрокаФормы</name>
+      <synonym>
+        <key>ru</key>
+        <value>Строка формы</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>CatalogRef.абс_СтрокиАБФРЖД</types>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="102b4140-3710-4934-b1a9-23e8a8aa0fab">
+      <name>Форма</name>
+      <synonym>
+        <key>ru</key>
+        <value>Форма</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>CatalogRef.абс_ФормыАБФ</types>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="50828fe3-3134-4fed-88bd-a99556ef417c">
+      <name>Бюджет</name>
+      <synonym>
+        <key>ru</key>
+        <value>Бюджет</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>CatalogRef.абс_БюджетыРЖД</types>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="9560ce13-0f69-41f6-a45a-60a9df10566f">
+      <name>ПоказательБюджета</name>
+      <synonym>
+        <key>ru</key>
+        <value>Показатель бюджета</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>CatalogRef.абс_ПоказателиБюджетаРЖД</types>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="c04ac14c-7de7-4152-9214-eba61562b08c">
+      <name>КлассификаторЕБК</name>
+      <synonym>
+        <key>ru</key>
+        <value>Классификатор ЕБК</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>CatalogRef.абс_ЕБК</types>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="5b436dda-bf2d-4852-a02d-bf2fecfd4ca7">
+      <name>ЭлементКлассификатораЕБК</name>
+      <synonym>
+        <key>ru</key>
+        <value>Элемент классификатора ЕБК</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>CatalogRef.абс_ЗначенияКлассификатораЕБК</types>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="7ddbdc51-7ebc-419f-a30c-e0d210221555">
+      <name>ТипКлассификатораЕБК</name>
+      <synonym>
+        <key>ru</key>
+        <value>Тип классификатора ЕБК</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>ChartOfCharacteristicTypesRef.ВидыСубконтоХозрасчетные</types>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="0983a080-21dc-46d3-8e2d-a3ef2437a06e">
+      <name>СчетДт</name>
+      <synonym>
+        <key>ru</key>
+        <value>Счет Дт</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>ChartOfAccountsRef.Хозрасчетный</types>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="ac631ed2-5c72-4ccd-adeb-a93a0763b3ee">
+      <name>СчетКт</name>
+      <synonym>
+        <key>ru</key>
+        <value>Счет Кт</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>ChartOfAccountsRef.Хозрасчетный</types>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="736834bd-f502-4774-b13f-cf4d25e5a10d">
+      <name>Сумма</name>
+      <synonym>
+        <key>ru</key>
+        <value>Сумма</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>18</precision>
+          <scale>2</scale>
+        </numberQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="0610e98d-dc7d-4ca1-bef2-74f9270345be">
+      <name>РасчетПроизведен</name>
+      <synonym>
+        <key>ru</key>
+        <value>Расчет произведен</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Boolean</types>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="7a3bcca0-f57e-441c-9844-010991c59891">
+      <name>КлассификаторЕБК2</name>
+      <synonym>
+        <key>ru</key>
+        <value>Классификатор ЕБК - 2</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>CatalogRef.абс_ЕБК</types>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="f9ec9bda-e305-4463-99f5-4632934b5c8d">
+      <name>ЭлементКлассификатораЕБК2</name>
+      <synonym>
+        <key>ru</key>
+        <value>Элемент классификатора ЕБК - 2</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>CatalogRef.абс_ЗначенияКлассификатораЕБК</types>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="7d352214-56ae-4b64-b565-57182f4a00e3">
+      <name>ТипКлассификатораЕБК2</name>
+      <synonym>
+        <key>ru</key>
+        <value>Тип классификатора ЕБК - 2</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>ChartOfCharacteristicTypesRef.ВидыСубконтоХозрасчетные</types>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="bd38c23f-fafd-4ed2-9efa-2837b9f321ed">
+      <name>ЗнакПлюс</name>
+      <synonym>
+        <key>ru</key>
+        <value>Знак плюс</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Boolean</types>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="e08276d3-ab9e-427b-a760-c2a1f493d9a1">
+      <name>Коэффициент</name>
+      <synonym>
+        <key>ru</key>
+        <value>Коэффициент</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>10</precision>
+          <scale>2</scale>
+        </numberQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="d6debaa7-4b16-44b0-9c41-308b9dddd15e">
+      <name>ОстаткиНаНачалоПериода</name>
+      <synonym>
+        <key>ru</key>
+        <value>Остатки на начало периода</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Boolean</types>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+  </tabularSections>
+</mdclass:Document>

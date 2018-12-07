@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="d2fb9698-7ebd-4366-b69a-b804e539bb8c">
+  <producedTypes>
+    <selectionType typeId="3f2195a4-b0e3-47f4-9fbd-4a76c1589e1f" valueTypeId="5a6bb22e-c6f2-49e5-8e47-20e404645d2b"/>
+    <listType typeId="22fd1420-00b3-4cb1-88bd-7a65563a4e4b" valueTypeId="baf83afe-ab81-453f-810a-8919401f592f"/>
+    <managerType typeId="ef307c4d-88e3-4153-96cc-b966f55e0f13" valueTypeId="ac717d36-5e13-47f2-ab35-2afe038f2612"/>
+    <recordSetType typeId="01ea4c06-13f2-4081-b17b-e3c72c3bbaec" valueTypeId="f66b659a-374c-48cd-abc4-2d0c0acc5e91"/>
+    <recordKeyType typeId="3c191acf-f1a6-4dc1-83ff-7a432099260c" valueTypeId="84c95886-43a6-435a-b096-6465ce8ad622"/>
+    <recordType typeId="a5041f56-9dcb-4a11-88cb-eee2910089c8" valueTypeId="cf04f9e4-ea4d-442d-a700-7dc3884dc27e"/>
+    <recordManagerType typeId="69c642fb-8055-4881-8bc1-069fe8cecdf6" valueTypeId="8877fad8-e903-4e77-aa76-76fff0a271f5"/>
+  </producedTypes>
+  <name>ttk_ПроверкаКонтрагентовНаСервисеИФНС</name>
+  <synonym>
+    <key>ru</key>
+    <value>Ttk проверка контрагентов на сервисе ИФНС</value>
+  </synonym>
+  <comment></comment>
+  <editType>InDialog</editType>
+  <defaultListForm>InformationRegister.ttk_ПроверкаКонтрагентовНаСервисеИФНС.Form.ФормаСписка</defaultListForm>
+  <informationRegisterPeriodicity>Second</informationRegisterPeriodicity>
+  <mainFilterOnPeriod>true</mainFilterOnPeriod>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <attributes uuid="34f8b1bc-bf79-44fb-b70b-4eb6495da953">
+    <name>СтатусКонтрагентаВИФНС</name>
+    <synonym>
+      <key>ru</key>
+      <value>Статус контрагента в ИФНС</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>EnumRef.ttk_СостоянияСуществованияКонтрагента</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="38616c82-dd12-420e-acbf-0b16339bcd60">
+    <name>ФИОКтоОбновил</name>
+    <synonym>
+      <key>ru</key>
+      <value>ФИО кто обновил</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>100</length>
+      </stringQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:StringValue">
+      <value></value>
+    </fillValue>
+  </attributes>
+  <attributes uuid="8ac8bdb1-700a-4b2e-a131-370dbf902472">
+    <name>ИНН</name>
+    <synonym>
+      <key>ru</key>
+      <value>ИНН</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>20</length>
+      </stringQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:StringValue">
+      <value></value>
+    </fillValue>
+  </attributes>
+  <attributes uuid="d6da68a0-375a-421e-a31c-7fe8ae0de66e">
+    <name>КПП</name>
+    <synonym>
+      <key>ru</key>
+      <value>КПП</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>20</length>
+      </stringQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:StringValue">
+      <value></value>
+    </fillValue>
+  </attributes>
+  <dimensions uuid="70e8412b-a4af-41a7-850a-ebda06b3a688">
+    <name>Контрагент</name>
+    <synonym>
+      <key>ru</key>
+      <value>Контрагент</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.абс_Продавец</types>
+      <types>CatalogRef.Контрагенты</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <forms uuid="eb40939f-649a-45d8-ace8-374cb2110f90">
+    <name>ФормаСписка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма списка</value>
+    </synonym>
+    <comment></comment>
+    <formType>Ordinary</formType>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+</mdclass:InformationRegister>

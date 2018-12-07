@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:AccumulationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="c29f90a9-93a0-466c-aa16-244038a5ab3c">
+  <producedTypes>
+    <selectionType typeId="00dbb166-3d12-4a60-9bce-9c8988914565" valueTypeId="5b9c05fe-8edd-4bb5-865a-59563122b4bc"/>
+    <listType typeId="3120ca5f-d2a9-40da-b0d2-26d6ee0c4c3c" valueTypeId="22901c7d-47de-411e-aeb4-d81c38689a20"/>
+    <managerType typeId="dd756401-bb57-4ec5-b70a-0ce628f872d3" valueTypeId="3606f726-e878-449e-8f74-d038f3895c89"/>
+    <recordSetType typeId="f9b4bfb2-ae62-4828-90c4-e65d76901347" valueTypeId="5027f096-14d8-4ba2-8934-cd26620dfa68"/>
+    <recordKeyType typeId="f2c2daed-011d-4bb4-8dbb-415d99299426" valueTypeId="eaace7f1-34dd-4cea-a9e6-fd5b04683156"/>
+    <recordType typeId="6de8880e-3f6d-406b-8ee7-1a2ae1b64827" valueTypeId="f8fcc13c-39c5-4399-9d12-ef9e07263cf1"/>
+  </producedTypes>
+  <name>ПотребностиВОбучении</name>
+  <synonym>
+    <key>ru</key>
+    <value>Потребности в обучении</value>
+  </synonym>
+  <comment></comment>
+  <enableTotalsSplitting>true</enableTotalsSplitting>
+  <resources uuid="f8563980-f4a0-4b3a-a9fb-f3fb41eabb82">
+    <name>КоличествоРаботников</name>
+    <synonym>
+      <key>ru</key>
+      <value>Количество сотрудников</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>10</precision>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </resources>
+  <dimensions uuid="fbbb96cf-ac55-4297-b58e-c83862137bac">
+    <name>КурсОбучения</name>
+    <synonym>
+      <key>ru</key>
+      <value>Курс обучения</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.КурсыОбучения</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="b2c48b9c-077b-44d0-9ec7-7a1e484ade72">
+    <name>ДокументПланирования</name>
+    <synonym>
+      <key>ru</key>
+      <value>Документ планирования</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>DocumentRef.ЗаявкаНаОбучение</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+</mdclass:AccumulationRegister>

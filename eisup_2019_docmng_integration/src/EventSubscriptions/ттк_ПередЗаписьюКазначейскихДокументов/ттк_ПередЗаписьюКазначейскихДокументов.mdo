@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:EventSubscription xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="449c5337-7f65-4f16-b18b-4bb5c1ed1dd4">
+  <name>ттк_ПередЗаписьюКазначейскихДокументов</name>
+  <synonym>
+    <key>ru</key>
+    <value>Перед записью казначейских документов</value>
+  </synonym>
+  <comment></comment>
+  <source>
+    <types>DocumentObject.абс_Платеж</types>
+    <types>DocumentObject.абс_Оплата</types>
+    <types>DocumentObject.ПлатежноеПоручениеИсходящее</types>
+    <types>DocumentObject.ЗаявкаНаРасходованиеСредств</types>
+    <types>DocumentObject.абс_СчетНаОплату</types>
+  </source>
+  <event>BeforeWrite</event>
+  <handler>CommonModule.абс_СлужебныеФункции.ПередЗаписьюКазначейскихДокументов</handler>
+</mdclass:EventSubscription>

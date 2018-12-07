@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:EventSubscription xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="2052bd6d-d74d-497a-b56c-a6be4c9e05fe">
+  <name>абс_ПроверкаЗаполненияСерииПоСчетамСерийногоУчета</name>
+  <synonym>
+    <key>ru</key>
+    <value>Проверка заполнения серии по счетам серийного учета</value>
+  </synonym>
+  <comment>34669</comment>
+  <source>
+    <types>DocumentObject.ОтчетПроизводстваЗаСмену</types>
+    <types>DocumentObject.ПоступлениеТоваровУслугВНТТ</types>
+    <types>DocumentObject.ОприходованиеТоваров</types>
+    <types>DocumentObject.ПриходныйОрдерНаТовары</types>
+    <types>DocumentObject.ПоступлениеТоваровУслуг</types>
+    <types>DocumentObject.ПоступлениеТоваровИзПереработки</types>
+    <types>DocumentObject.ПеремещениеТоваров</types>
+  </source>
+  <event>Posting</event>
+  <handler>CommonModule.абс_СлужебныеФункции.ПроверкаСерииНоменклатурыПосчетамСерийногоУчета</handler>
+</mdclass:EventSubscription>

@@ -1,0 +1,1202 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:ChartOfCalculationTypes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="7ac23f8e-e72b-46f5-9fd0-7aeefb3251cf">
+  <producedTypes>
+    <objectType typeId="aac969dc-dc5f-4cbe-9b5d-07e8c0d37c25" valueTypeId="bf2d5b1a-6e44-4fe5-9420-7c2a893a2078"/>
+    <refType typeId="bdb527bd-dc20-4ad7-91b2-7b0d01b20efc" valueTypeId="d5ad2e2d-cd97-447a-bf8f-8ecd23a6458c"/>
+    <selectionType typeId="820a487d-885a-437d-b052-edf00ad8ded1" valueTypeId="d9da624c-f7f5-47a0-90f1-7e70f54673e9"/>
+    <listType typeId="6e72d9d2-8a44-44c6-ba12-4924c71de4f0" valueTypeId="83a67c9e-ada6-4304-8378-3d8236e5944c"/>
+    <managerType typeId="91bb65f9-3f92-41c1-acb3-12d8c987579c" valueTypeId="04468bb4-2afa-4709-a77c-925e620a22fb"/>
+    <displacingCalculationTypesType typeId="a50760de-146b-45d7-b630-15b9510dbc21" valueTypeId="96bbb0f8-d39e-448c-8d4d-31fbb630489d"/>
+    <displacingCalculationTypesRowType typeId="e0fa49b8-8580-425a-b797-fbd67f740c41" valueTypeId="971f706e-a272-4476-8d52-01ebc84889cc"/>
+    <baseCalculationTypesType typeId="ef555842-7b2c-4276-a499-e146e97baf9e" valueTypeId="fdecfbc1-9c7c-4407-90a7-ce68d3699e21"/>
+    <baseCalculationTypesRowType typeId="dc690ac7-dc80-48ae-a208-ccb7c4e59f55" valueTypeId="7e0bb24a-c2c7-47a1-8adc-d994da426dd7"/>
+    <leadingCalculationTypesType typeId="ab8f5ce6-d954-4de2-9754-1d6afdcd88fa" valueTypeId="88544e39-a23c-4ea7-bac8-3fa8829b77c2"/>
+    <leadingCalculationTypesRowType typeId="96165889-fcef-4a3f-b8c0-20de0c66f9a1" valueTypeId="c33850c7-87a9-4e53-b03d-c7e29a3bc4b6"/>
+  </producedTypes>
+  <name>ОсновныеНачисленияОрганизаций</name>
+  <synonym>
+    <key>ru</key>
+    <value>Основные начисления организаций</value>
+  </synonym>
+  <comment>(Регл)</comment>
+  <inputByString>ChartOfCalculationTypes.ОсновныеНачисленияОрганизаций.StandardAttribute.Description</inputByString>
+  <inputByString>ChartOfCalculationTypes.ОсновныеНачисленияОрганизаций.StandardAttribute.Code</inputByString>
+  <fullTextSearchOnInputByString>DontUse</fullTextSearchOnInputByString>
+  <createOnInput>DontUse</createOnInput>
+  <includeHelpInContents>true</includeHelpInContents>
+  <help>
+    <pages>
+      <lang>ru</lang>
+    </pages>
+  </help>
+  <fullTextSearch>Use</fullTextSearch>
+  <codeLength>5</codeLength>
+  <descriptionLength>100</descriptionLength>
+  <codeType>String</codeType>
+  <defaultPresentation>AsDescription</defaultPresentation>
+  <editType>InDialog</editType>
+  <choiceMode>BothWays</choiceMode>
+  <defaultObjectForm>ChartOfCalculationTypes.ОсновныеНачисленияОрганизаций.Form.ФормаВидаРасчета</defaultObjectForm>
+  <defaultListForm>ChartOfCalculationTypes.ОсновныеНачисленияОрганизаций.Form.ФормаСписка</defaultListForm>
+  <defaultChoiceForm>ChartOfCalculationTypes.ОсновныеНачисленияОрганизаций.Form.ФормаВыбора</defaultChoiceForm>
+  <dependenceOnCalculationTypes>OnActionPeriod</dependenceOnCalculationTypes>
+  <baseCalculationTypes>ChartOfCalculationTypes.ОсновныеНачисленияОрганизаций</baseCalculationTypes>
+  <baseCalculationTypes>ChartOfCalculationTypes.ДополнительныеНачисленияОрганизаций</baseCalculationTypes>
+  <actionPeriodUse>true</actionPeriodUse>
+  <predefined>
+    <items id="8ebc72e5-b668-4617-a2b0-9a22ac09c20e">
+      <name>ОплатаБЛПоТравмеВБыту</name>
+      <description>БЛ по травме в быту (не оплачивается)</description>
+      <code xsi:type="core:StringValue">
+        <value>00025</value>
+      </code>
+    </items>
+    <items id="a4a4c1ac-9923-4deb-9d42-2a9bece70626">
+      <name>ДниНеоплачиваемыеСогласноТабелю</name>
+      <description>Дни неоплачиваемые согласно табелю</description>
+      <code xsi:type="core:StringValue">
+        <value>00081</value>
+      </code>
+      <actionPeriodIsBase>true</actionPeriodIsBase>
+    </items>
+    <items id="21b63251-0600-43ab-afb5-b190081c392a">
+      <name>ДоплатаЗаВечерниеЧасы</name>
+      <description>Доплата за вечерние часы</description>
+      <code xsi:type="core:StringValue">
+        <value>00014</value>
+      </code>
+      <actionPeriodIsBase>true</actionPeriodIsBase>
+      <displaced>ChartOfCalculationTypes.ОсновныеНачисленияОрганизаций.ОплатаБЛПоТравмеВБыту</displaced>
+      <displaced>ChartOfCalculationTypes.ОсновныеНачисленияОрганизаций.ОтпускБезОплатыУчебный</displaced>
+      <displaced>ChartOfCalculationTypes.ОсновныеНачисленияОрганизаций.ОплатаБЛПоТравмеНаПроизводстве</displaced>
+      <displaced>ChartOfCalculationTypes.ОсновныеНачисленияОрганизаций.ОплатаПоСреднемуБЛ</displaced>
+      <displaced>ChartOfCalculationTypes.ОсновныеНачисленияОрганизаций.ОплатаВыходныхДнейПоУходуЗаДетьмиИнвалидами</displaced>
+      <displaced>ChartOfCalculationTypes.ОсновныеНачисленияОрганизаций.ОплатаПоСреднемуОтпКалендарныеДни</displaced>
+      <displaced>ChartOfCalculationTypes.ОсновныеНачисленияОрганизаций.ОплатаПоСреднемуОтпШестидневка</displaced>
+      <displaced>ChartOfCalculationTypes.ОсновныеНачисленияОрганизаций.ОплатаПоСреднему</displaced>
+      <displaced>ChartOfCalculationTypes.ОсновныеНачисленияОрганизаций.ПростойОкладПоДням</displaced>
+      <displaced>ChartOfCalculationTypes.ОсновныеНачисленияОрганизаций.ПростойОкладПоЧасам</displaced>
+      <displaced>ChartOfCalculationTypes.ОсновныеНачисленияОрганизаций.ПростойТарифДневной</displaced>
+      <displaced>ChartOfCalculationTypes.ОсновныеНачисленияОрганизаций.ПростойТарифЧасовой</displaced>
+      <displaced>ChartOfCalculationTypes.ОсновныеНачисленияОрганизаций.ОтпускБезОплатыПоТКРФ</displaced>
+      <displaced>ChartOfCalculationTypes.ОсновныеНачисленияОрганизаций.ОтпускЗаСвойСчет</displaced>
+      <displaced>ChartOfCalculationTypes.ОсновныеНачисленияОрганизаций.ОтпускПоБеременностиИРодам</displaced>
+      <displaced>ChartOfCalculationTypes.ОсновныеНачисленияОрганизаций.ОтсутствиеПоБолезни</displaced>
+      <displaced>ChartOfCalculationTypes.ОсновныеНачисленияОрганизаций.ОтсутствиеПоБолезниПоБеременности</displaced>
+      <displaced>ChartOfCalculationTypes.ОсновныеНачисленияОрганизаций.Невыход</displaced>
+      <displaced>ChartOfCalculationTypes.ОсновныеНачисленияОрганизаций.Прогул</displaced>
+      <displaced>ChartOfCalculationTypes.ОсновныеНачисленияОрганизаций.ПростойПоВинеРаботодателя</displaced>
+    </items>
+    <items id="a280992b-2653-4dca-964e-f4b9e066c72a">
+      <name>ДоплатаЗаНочныеЧасы</name>
+      <description>Доплата за ночные часы</description>
+      <code xsi:type="core:StringValue">
+        <value>00015</value>
+      </code>
+      <actionPeriodIsBase>true</actionPeriodIsBase>
+      <displaced>ChartOfCalculationTypes.ОсновныеНачисленияОрганизаций.ОплатаБЛПоТравмеВБыту</displaced>
+      <displaced>ChartOfCalculationTypes.ОсновныеНачисленияОрганизаций.ОтпускБезОплатыУчебный</displaced>
+      <displaced>ChartOfCalculationTypes.ОсновныеНачисленияОрганизаций.ОплатаБЛПоТравмеНаПроизводстве</displaced>
+      <displaced>ChartOfCalculationTypes.ОсновныеНачисленияОрганизаций.ОплатаПоСреднемуБЛ</displaced>
+      <displaced>ChartOfCalculationTypes.ОсновныеНачисленияОрганизаций.ОплатаВыходныхДнейПоУходуЗаДетьмиИнвалидами</displaced>
+      <displaced>ChartOfCalculationTypes.ОсновныеНачисленияОрганизаций.ОплатаПоСреднемуОтпКалендарныеДни</displaced>
+      <displaced>ChartOfCalculationTypes.ОсновныеНачисленияОрганизаций.ОплатаПоСреднемуОтпШестидневка</displaced>
+      <displaced>ChartOfCalculationTypes.ОсновныеНачисленияОрганизаций.ОплатаПоСреднему</displaced>
+      <displaced>ChartOfCalculationTypes.ОсновныеНачисленияОрганизаций.ПростойОкладПоДням</displaced>
+      <displaced>ChartOfCalculationTypes.ОсновныеНачисленияОрганизаций.ПростойОкладПоЧасам</displaced>
+      <displaced>ChartOfCalculationTypes.ОсновныеНачисленияОрганизаций.ПростойТарифДневной</displaced>
+      <displaced>ChartOfCalculationTypes.ОсновныеНачисленияОрганизаций.ПростойТарифЧасовой</displaced>
+      <displaced>ChartOfCalculationTypes.ОсновныеНачисленияОрганизаций.ОтпускБезОплатыПоТКРФ</displaced>
+      <displaced>ChartOfCalculationTypes.ОсновныеНачисленияОрганизаций.ОтпускЗаСвойСчет</displaced>
+      <displaced>ChartOfCalculationTypes.ОсновныеНачисленияОрганизаций.ОтпускПоБеременностиИРодам</displaced>
+      <displaced>ChartOfCalculationTypes.ОсновныеНачисленияОрганизаций.ОтсутствиеПоБолезни</displaced>
+      <displaced>ChartOfCalculationTypes.ОсновныеНачисленияОрганизаций.ОтсутствиеПоБолезниПоБеременности</displaced>
+      <displaced>ChartOfCalculationTypes.ОсновныеНачисленияОрганизаций.Невыход</displaced>
+      <displaced>ChartOfCalculationTypes.ОсновныеНачисленияОрганизаций.Прогул</displaced>
+      <displaced>ChartOfCalculationTypes.ОсновныеНачисленияОрганизаций.ПростойПоВинеРаботодателя</displaced>
+    </items>
+    <items id="f5645e3c-3b43-4ae6-8b96-e1c7698209fa">
+      <name>ДоплатаЗаПраздничныеИВыходные</name>
+      <description>Доплата за работу в праздники и выходные</description>
+      <code xsi:type="core:StringValue">
+        <value>00013</value>
+      </code>
+      <actionPeriodIsBase>true</actionPeriodIsBase>
+    </items>
+    <items id="9a80dc7a-d29e-4fa1-8375-53ff0fb93ea2">
+      <name>ДоплатаПоСреднемуБЛ</name>
+      <description>Доплата по больничным листам</description>
+      <code xsi:type="core:StringValue">
+        <value>00026</value>
+      </code>
+      <actionPeriodIsBase>true</actionPeriodIsBase>
+    </items>
+    <items id="6f04fbe8-febf-4c00-868e-c9109b046061">
+      <name>ОтпускБезОплатыУчебный</name>
+      <description>Дополнительный учебный отпуск без оплаты</description>
+      <code xsi:type="core:StringValue">
+        <value>00051</value>
+      </code>
+      <actionPeriodIsBase>true</actionPeriodIsBase>
+    </items>
+    <items id="35c7a5dd-d8e9-4aa0-8378-2a7e501d846a">
+      <name>ОкладПоДням</name>
+      <description>Оклад по дням</description>
+      <code xsi:type="core:StringValue">
+        <value>00001</value>
+      </code>
+      <actionPeriodIsBase>true</actionPeriodIsBase>
+      <displaced>ChartOfCalculationTypes.ОсновныеНачисленияОрганизаций.ОплатаБЛПоТравмеВБыту</displaced>
+      <displaced>ChartOfCalculationTypes.ОсновныеНачисленияОрганизаций.ОтпускБезОплатыУчебный</displaced>
+      <displaced>ChartOfCalculationTypes.ОсновныеНачисленияОрганизаций.ОплатаБЛПоТравмеНаПроизводстве</displaced>
+      <displaced>ChartOfCalculationTypes.ОсновныеНачисленияОрганизаций.ОплатаПоСреднемуБЛ</displaced>
+      <displaced>ChartOfCalculationTypes.ОсновныеНачисленияОрганизаций.ОплатаВыходныхДнейПоУходуЗаДетьмиИнвалидами</displaced>
+      <displaced>ChartOfCalculationTypes.ОсновныеНачисленияОрганизаций.ОплатаПоСреднемуОтпКалендарныеДни</displaced>
+      <displaced>ChartOfCalculationTypes.ОсновныеНачисленияОрганизаций.ОплатаПоСреднемуОтпШестидневка</displaced>
+      <displaced>ChartOfCalculationTypes.ОсновныеНачисленияОрганизаций.ОплатаПоСреднему</displaced>
+      <displaced>ChartOfCalculationTypes.ОсновныеНачисленияОрганизаций.ПростойОкладПоДням</displaced>
+      <displaced>ChartOfCalculationTypes.ОсновныеНачисленияОрганизаций.ПростойОкладПоЧасам</displaced>
+      <displaced>ChartOfCalculationTypes.ОсновныеНачисленияОрганизаций.ПростойТарифДневной</displaced>
+      <displaced>ChartOfCalculationTypes.ОсновныеНачисленияОрганизаций.ПростойТарифЧасовой</displaced>
+      <displaced>ChartOfCalculationTypes.ОсновныеНачисленияОрганизаций.ОтпускБезОплатыПоТКРФ</displaced>
+      <displaced>ChartOfCalculationTypes.ОсновныеНачисленияОрганизаций.ОтпускЗаСвойСчет</displaced>
+      <displaced>ChartOfCalculationTypes.ОсновныеНачисленияОрганизаций.ОтпускПоБеременностиИРодам</displaced>
+      <displaced>ChartOfCalculationTypes.ОсновныеНачисленияОрганизаций.ОтсутствиеПоБолезни</displaced>
+      <displaced>ChartOfCalculationTypes.ОсновныеНачисленияОрганизаций.ОтсутствиеПоБолезниПоБеременности</displaced>
+      <displaced>ChartOfCalculationTypes.ОсновныеНачисленияОрганизаций.Невыход</displaced>
+      <displaced>ChartOfCalculationTypes.ОсновныеНачисленияОрганизаций.Прогул</displaced>
+      <displaced>ChartOfCalculationTypes.ОсновныеНачисленияОрганизаций.ПростойПоВинеРаботодателя</displaced>
+    </items>
+    <items id="537ff7ed-5e51-48d1-bf5e-4f680cb3e1b7">
+      <name>ОкладПоЧасам</name>
+      <description>Оклад по часам</description>
+      <code xsi:type="core:StringValue">
+        <value>00002</value>
+      </code>
+      <actionPeriodIsBase>true</actionPeriodIsBase>
+      <displaced>ChartOfCalculationTypes.ОсновныеНачисленияОрганизаций.ОплатаБЛПоТравмеВБыту</displaced>
+      <displaced>ChartOfCalculationTypes.ОсновныеНачисленияОрганизаций.ОтпускБезОплатыУчебный</displaced>
+      <displaced>ChartOfCalculationTypes.ОсновныеНачисленияОрганизаций.ОплатаБЛПоТравмеНаПроизводстве</displaced>
+      <displaced>ChartOfCalculationTypes.ОсновныеНачисленияОрганизаций.ОплатаПоСреднемуБЛ</displaced>
+      <displaced>ChartOfCalculationTypes.ОсновныеНачисленияОрганизаций.ОплатаВыходныхДнейПоУходуЗаДетьмиИнвалидами</displaced>
+      <displaced>ChartOfCalculationTypes.ОсновныеНачисленияОрганизаций.ОплатаПоСреднемуОтпКалендарныеДни</displaced>
+      <displaced>ChartOfCalculationTypes.ОсновныеНачисленияОрганизаций.ОплатаПоСреднемуОтпШестидневка</displaced>
+      <displaced>ChartOfCalculationTypes.ОсновныеНачисленияОрганизаций.ОплатаПоСреднему</displaced>
+      <displaced>ChartOfCalculationTypes.ОсновныеНачисленияОрганизаций.ПростойОкладПоДням</displaced>
+      <displaced>ChartOfCalculationTypes.ОсновныеНачисленияОрганизаций.ПростойОкладПоЧасам</displaced>
+      <displaced>ChartOfCalculationTypes.ОсновныеНачисленияОрганизаций.ПростойТарифДневной</displaced>
+      <displaced>ChartOfCalculationTypes.ОсновныеНачисленияОрганизаций.ПростойТарифЧасовой</displaced>
+      <displaced>ChartOfCalculationTypes.ОсновныеНачисленияОрганизаций.ОтпускБезОплатыПоТКРФ</displaced>
+      <displaced>ChartOfCalculationTypes.ОсновныеНачисленияОрганизаций.ОтпускЗаСвойСчет</displaced>
+      <displaced>ChartOfCalculationTypes.ОсновныеНачисленияОрганизаций.ОтпускПоБеременностиИРодам</displaced>
+      <displaced>ChartOfCalculationTypes.ОсновныеНачисленияОрганизаций.ОтсутствиеПоБолезни</displaced>
+      <displaced>ChartOfCalculationTypes.ОсновныеНачисленияОрганизаций.ОтсутствиеПоБолезниПоБеременности</displaced>
+      <displaced>ChartOfCalculationTypes.ОсновныеНачисленияОрганизаций.Невыход</displaced>
+      <displaced>ChartOfCalculationTypes.ОсновныеНачисленияОрганизаций.Прогул</displaced>
+      <displaced>ChartOfCalculationTypes.ОсновныеНачисленияОрганизаций.ПростойПоВинеРаботодателя</displaced>
+    </items>
+    <items id="a322ff9b-9f7d-4857-871d-ba80927a631f">
+      <name>ОплатаБЛПоТравмеНаПроизводстве</name>
+      <description>Оплата БЛ по травме на производстве</description>
+      <code xsi:type="core:StringValue">
+        <value>00022</value>
+      </code>
+    </items>
+    <items id="5470f15f-ac51-4986-b9b8-110c90650815">
+      <name>ОплатаПоСреднемуБЛ</name>
+      <description>Оплата больничных листов</description>
+      <code xsi:type="core:StringValue">
+        <value>00021</value>
+      </code>
+    </items>
+    <items id="e5e448fa-aee4-410e-a7b7-0565b3b89a2b">
+      <name>ОплатаВыходныхДнейПоУходуЗаДетьмиИнвалидами</name>
+      <description>Оплата дополнительных выходных дней по уходу за детьми - инвалидами</description>
+      <code xsi:type="core:StringValue">
+        <value>00032</value>
+      </code>
+    </items>
+    <items id="14d57070-051e-48bf-b93c-35baa5a4fb64">
+      <name>ОплатаПоСреднемуОтпКалендарныеДни</name>
+      <description>Оплата отпуска по календарным дням</description>
+      <code xsi:type="core:StringValue">
+        <value>00041</value>
+      </code>
+      <displaced>ChartOfCalculationTypes.ОсновныеНачисленияОрганизаций.ОплатаБЛПоТравмеВБыту</displaced>
+      <displaced>ChartOfCalculationTypes.ОсновныеНачисленияОрганизаций.ОплатаБЛПоТравмеНаПроизводстве</displaced>
+      <displaced>ChartOfCalculationTypes.ОсновныеНачисленияОрганизаций.ОплатаПоСреднемуБЛ</displaced>
+      <displaced>ChartOfCalculationTypes.ОсновныеНачисленияОрганизаций.ОплатаВыходныхДнейПоУходуЗаДетьмиИнвалидами</displaced>
+      <displaced>ChartOfCalculationTypes.ОсновныеНачисленияОрганизаций.ОплатаПоСреднему</displaced>
+      <displaced>ChartOfCalculationTypes.ОсновныеНачисленияОрганизаций.ОтпускПоБеременностиИРодам</displaced>
+    </items>
+    <items id="157fb945-a244-42cf-a7c0-d1754a43a3ed">
+      <name>ОплатаПоСреднемуОтпШестидневка</name>
+      <description>Оплата отпуска по шестидневке</description>
+      <code xsi:type="core:StringValue">
+        <value>00042</value>
+      </code>
+      <displaced>ChartOfCalculationTypes.ОсновныеНачисленияОрганизаций.ОплатаБЛПоТравмеВБыту</displaced>
+      <displaced>ChartOfCalculationTypes.ОсновныеНачисленияОрганизаций.ОплатаБЛПоТравмеНаПроизводстве</displaced>
+      <displaced>ChartOfCalculationTypes.ОсновныеНачисленияОрганизаций.ОплатаПоСреднемуБЛ</displaced>
+      <displaced>ChartOfCalculationTypes.ОсновныеНачисленияОрганизаций.ОплатаВыходныхДнейПоУходуЗаДетьмиИнвалидами</displaced>
+      <displaced>ChartOfCalculationTypes.ОсновныеНачисленияОрганизаций.ОплатаПоСреднему</displaced>
+      <displaced>ChartOfCalculationTypes.ОсновныеНачисленияОрганизаций.ОтпускПоБеременностиИРодам</displaced>
+    </items>
+    <items id="e30175d8-7445-4696-883e-b50642380aa3">
+      <name>ТарифДневной</name>
+      <description>Оплата по дневному тарифу</description>
+      <code xsi:type="core:StringValue">
+        <value>00004</value>
+      </code>
+      <actionPeriodIsBase>true</actionPeriodIsBase>
+      <displaced>ChartOfCalculationTypes.ОсновныеНачисленияОрганизаций.ОплатаБЛПоТравмеВБыту</displaced>
+      <displaced>ChartOfCalculationTypes.ОсновныеНачисленияОрганизаций.ОтпускБезОплатыУчебный</displaced>
+      <displaced>ChartOfCalculationTypes.ОсновныеНачисленияОрганизаций.ОплатаБЛПоТравмеНаПроизводстве</displaced>
+      <displaced>ChartOfCalculationTypes.ОсновныеНачисленияОрганизаций.ОплатаПоСреднемуБЛ</displaced>
+      <displaced>ChartOfCalculationTypes.ОсновныеНачисленияОрганизаций.ОплатаВыходныхДнейПоУходуЗаДетьмиИнвалидами</displaced>
+      <displaced>ChartOfCalculationTypes.ОсновныеНачисленияОрганизаций.ОплатаПоСреднемуОтпКалендарныеДни</displaced>
+      <displaced>ChartOfCalculationTypes.ОсновныеНачисленияОрганизаций.ОплатаПоСреднемуОтпШестидневка</displaced>
+      <displaced>ChartOfCalculationTypes.ОсновныеНачисленияОрганизаций.ОплатаПоСреднему</displaced>
+      <displaced>ChartOfCalculationTypes.ОсновныеНачисленияОрганизаций.ПростойОкладПоДням</displaced>
+      <displaced>ChartOfCalculationTypes.ОсновныеНачисленияОрганизаций.ПростойОкладПоЧасам</displaced>
+      <displaced>ChartOfCalculationTypes.ОсновныеНачисленияОрганизаций.ПростойТарифДневной</displaced>
+      <displaced>ChartOfCalculationTypes.ОсновныеНачисленияОрганизаций.ПростойТарифЧасовой</displaced>
+      <displaced>ChartOfCalculationTypes.ОсновныеНачисленияОрганизаций.ОтпускБезОплатыПоТКРФ</displaced>
+      <displaced>ChartOfCalculationTypes.ОсновныеНачисленияОрганизаций.ОтпускЗаСвойСчет</displaced>
+      <displaced>ChartOfCalculationTypes.ОсновныеНачисленияОрганизаций.ОтпускПоБеременностиИРодам</displaced>
+      <displaced>ChartOfCalculationTypes.ОсновныеНачисленияОрганизаций.ОтсутствиеПоБолезни</displaced>
+      <displaced>ChartOfCalculationTypes.ОсновныеНачисленияОрганизаций.ОтсутствиеПоБолезниПоБеременности</displaced>
+      <displaced>ChartOfCalculationTypes.ОсновныеНачисленияОрганизаций.Невыход</displaced>
+      <displaced>ChartOfCalculationTypes.ОсновныеНачисленияОрганизаций.Прогул</displaced>
+      <displaced>ChartOfCalculationTypes.ОсновныеНачисленияОрганизаций.ПростойПоВинеРаботодателя</displaced>
+    </items>
+    <items id="21f47324-ca6f-4025-85e5-7b42eca8cb1e">
+      <name>СдельнаяОплата</name>
+      <description>Оплата по производственным нарядам</description>
+      <code xsi:type="core:StringValue">
+        <value>00005</value>
+      </code>
+      <actionPeriodIsBase>true</actionPeriodIsBase>
+      <displaced>ChartOfCalculationTypes.ОсновныеНачисленияОрганизаций.ОплатаБЛПоТравмеВБыту</displaced>
+      <displaced>ChartOfCalculationTypes.ОсновныеНачисленияОрганизаций.ОтпускБезОплатыУчебный</displaced>
+      <displaced>ChartOfCalculationTypes.ОсновныеНачисленияОрганизаций.ОплатаБЛПоТравмеНаПроизводстве</displaced>
+      <displaced>ChartOfCalculationTypes.ОсновныеНачисленияОрганизаций.ОплатаПоСреднемуБЛ</displaced>
+      <displaced>ChartOfCalculationTypes.ОсновныеНачисленияОрганизаций.ОплатаВыходныхДнейПоУходуЗаДетьмиИнвалидами</displaced>
+      <displaced>ChartOfCalculationTypes.ОсновныеНачисленияОрганизаций.ОплатаПоСреднемуОтпКалендарныеДни</displaced>
+      <displaced>ChartOfCalculationTypes.ОсновныеНачисленияОрганизаций.ОплатаПоСреднемуОтпШестидневка</displaced>
+      <displaced>ChartOfCalculationTypes.ОсновныеНачисленияОрганизаций.ОплатаПоСреднему</displaced>
+      <displaced>ChartOfCalculationTypes.ОсновныеНачисленияОрганизаций.ПростойОкладПоДням</displaced>
+      <displaced>ChartOfCalculationTypes.ОсновныеНачисленияОрганизаций.ПростойОкладПоЧасам</displaced>
+      <displaced>ChartOfCalculationTypes.ОсновныеНачисленияОрганизаций.ПростойТарифДневной</displaced>
+      <displaced>ChartOfCalculationTypes.ОсновныеНачисленияОрганизаций.ПростойТарифЧасовой</displaced>
+      <displaced>ChartOfCalculationTypes.ОсновныеНачисленияОрганизаций.ОтпускБезОплатыПоТКРФ</displaced>
+      <displaced>ChartOfCalculationTypes.ОсновныеНачисленияОрганизаций.ОтпускЗаСвойСчет</displaced>
+      <displaced>ChartOfCalculationTypes.ОсновныеНачисленияОрганизаций.ОтпускПоБеременностиИРодам</displaced>
+      <displaced>ChartOfCalculationTypes.ОсновныеНачисленияОрганизаций.ОтсутствиеПоБолезни</displaced>
+      <displaced>ChartOfCalculationTypes.ОсновныеНачисленияОрганизаций.ОтсутствиеПоБолезниПоБеременности</displaced>
+      <displaced>ChartOfCalculationTypes.ОсновныеНачисленияОрганизаций.Невыход</displaced>
+      <displaced>ChartOfCalculationTypes.ОсновныеНачисленияОрганизаций.Прогул</displaced>
+      <displaced>ChartOfCalculationTypes.ОсновныеНачисленияОрганизаций.ПростойПоВинеРаботодателя</displaced>
+    </items>
+    <items id="ebdfaa42-b440-43cb-ba8a-112bdeab9ea5">
+      <name>ОплатаПоСреднему</name>
+      <description>Оплата по среднему заработку</description>
+      <code xsi:type="core:StringValue">
+        <value>00031</value>
+      </code>
+    </items>
+    <items id="ae31633c-276c-412d-baff-c6a0a0e7cbfe">
+      <name>ТарифЧасовой</name>
+      <description>Оплата по часовому тарифу</description>
+      <code xsi:type="core:StringValue">
+        <value>00003</value>
+      </code>
+      <actionPeriodIsBase>true</actionPeriodIsBase>
+      <displaced>ChartOfCalculationTypes.ОсновныеНачисленияОрганизаций.ОплатаБЛПоТравмеВБыту</displaced>
+      <displaced>ChartOfCalculationTypes.ОсновныеНачисленияОрганизаций.ОтпускБезОплатыУчебный</displaced>
+      <displaced>ChartOfCalculationTypes.ОсновныеНачисленияОрганизаций.ОплатаБЛПоТравмеНаПроизводстве</displaced>
+      <displaced>ChartOfCalculationTypes.ОсновныеНачисленияОрганизаций.ОплатаПоСреднемуБЛ</displaced>
+      <displaced>ChartOfCalculationTypes.ОсновныеНачисленияОрганизаций.ОплатаВыходныхДнейПоУходуЗаДетьмиИнвалидами</displaced>
+      <displaced>ChartOfCalculationTypes.ОсновныеНачисленияОрганизаций.ОплатаПоСреднемуОтпКалендарныеДни</displaced>
+      <displaced>ChartOfCalculationTypes.ОсновныеНачисленияОрганизаций.ОплатаПоСреднемуОтпШестидневка</displaced>
+      <displaced>ChartOfCalculationTypes.ОсновныеНачисленияОрганизаций.ОплатаПоСреднему</displaced>
+      <displaced>ChartOfCalculationTypes.ОсновныеНачисленияОрганизаций.ПростойОкладПоДням</displaced>
+      <displaced>ChartOfCalculationTypes.ОсновныеНачисленияОрганизаций.ПростойОкладПоЧасам</displaced>
+      <displaced>ChartOfCalculationTypes.ОсновныеНачисленияОрганизаций.ПростойТарифДневной</displaced>
+      <displaced>ChartOfCalculationTypes.ОсновныеНачисленияОрганизаций.ПростойТарифЧасовой</displaced>
+      <displaced>ChartOfCalculationTypes.ОсновныеНачисленияОрганизаций.ОтпускБезОплатыПоТКРФ</displaced>
+      <displaced>ChartOfCalculationTypes.ОсновныеНачисленияОрганизаций.ОтпускЗаСвойСчет</displaced>
+      <displaced>ChartOfCalculationTypes.ОсновныеНачисленияОрганизаций.ОтпускПоБеременностиИРодам</displaced>
+      <displaced>ChartOfCalculationTypes.ОсновныеНачисленияОрганизаций.ОтсутствиеПоБолезни</displaced>
+      <displaced>ChartOfCalculationTypes.ОсновныеНачисленияОрганизаций.ОтсутствиеПоБолезниПоБеременности</displaced>
+      <displaced>ChartOfCalculationTypes.ОсновныеНачисленияОрганизаций.Невыход</displaced>
+      <displaced>ChartOfCalculationTypes.ОсновныеНачисленияОрганизаций.Прогул</displaced>
+      <displaced>ChartOfCalculationTypes.ОсновныеНачисленияОрганизаций.ПростойПоВинеРаботодателя</displaced>
+    </items>
+    <items id="a4f32050-0a62-4102-9853-076ea10cef27">
+      <name>ПочасовойПростойОкладПоЧасам</name>
+      <description>Оплата почасового простоя от оклада по часам</description>
+      <code xsi:type="core:StringValue">
+        <value>00066</value>
+      </code>
+      <actionPeriodIsBase>true</actionPeriodIsBase>
+    </items>
+    <items id="44d16773-9211-4457-ac72-9dd9503c54cb">
+      <name>ПочасовойПростойТарифЧасовой</name>
+      <description>Оплата почасового простоя по часовому тарифу</description>
+      <code xsi:type="core:StringValue">
+        <value>00067</value>
+      </code>
+      <actionPeriodIsBase>true</actionPeriodIsBase>
+    </items>
+    <items id="0260eaea-8db3-4afa-9dde-b914e469d278">
+      <name>ОплатаПраздничныхИВыходных</name>
+      <description>Оплата праздничных и выходных дней</description>
+      <code xsi:type="core:StringValue">
+        <value>00012</value>
+      </code>
+      <actionPeriodIsBase>true</actionPeriodIsBase>
+    </items>
+    <items id="6fd976ab-4383-486d-914e-365e8e249948">
+      <name>ПростойОкладПоДням</name>
+      <description>Оплата простоя от оклада по дням</description>
+      <code xsi:type="core:StringValue">
+        <value>00062</value>
+      </code>
+      <actionPeriodIsBase>true</actionPeriodIsBase>
+    </items>
+    <items id="aba52302-0014-4547-bc59-ca3789fe457d">
+      <name>ПростойОкладПоЧасам</name>
+      <description>Оплата простоя от оклада по часам</description>
+      <code xsi:type="core:StringValue">
+        <value>00063</value>
+      </code>
+      <actionPeriodIsBase>true</actionPeriodIsBase>
+    </items>
+    <items id="538b8a28-bf3e-43f0-868d-75171f6493e3">
+      <name>ПростойТарифДневной</name>
+      <description>Оплата простоя по дневному тарифу</description>
+      <code xsi:type="core:StringValue">
+        <value>00064</value>
+      </code>
+      <actionPeriodIsBase>true</actionPeriodIsBase>
+    </items>
+    <items id="2c0ad928-b31a-4148-828d-e1caf8133062">
+      <name>ПростойТарифЧасовой</name>
+      <description>Оплата простоя по часовому тарифу</description>
+      <code xsi:type="core:StringValue">
+        <value>00065</value>
+      </code>
+      <actionPeriodIsBase>true</actionPeriodIsBase>
+    </items>
+    <items id="98253058-5d57-4eb2-8a93-6a879c5daa7b">
+      <name>ОплатаСверхурочных</name>
+      <description>Оплата сверхурочных часов</description>
+      <code xsi:type="core:StringValue">
+        <value>00011</value>
+      </code>
+      <actionPeriodIsBase>true</actionPeriodIsBase>
+    </items>
+    <items id="f34641a7-2671-4a73-93d3-72712f93a31c">
+      <name>ОтпускБезОплатыПоТКРФ</name>
+      <description>Отпуск без оплаты согласно ТК РФ</description>
+      <code xsi:type="core:StringValue">
+        <value>00053</value>
+      </code>
+      <actionPeriodIsBase>true</actionPeriodIsBase>
+    </items>
+    <items id="9c42bc4c-1658-4e68-86b8-acec14ea99d4">
+      <name>ОтпускЗаСвойСчет</name>
+      <description>Отпуск за свой счет</description>
+      <code xsi:type="core:StringValue">
+        <value>00054</value>
+      </code>
+      <actionPeriodIsBase>true</actionPeriodIsBase>
+    </items>
+    <items id="078683d0-e508-46ce-a72f-26b711cedea2">
+      <name>ОтпускПоБеременностиИРодам</name>
+      <description>Отпуск по беременности и родам</description>
+      <code xsi:type="core:StringValue">
+        <value>00023</value>
+      </code>
+    </items>
+    <items id="9e6ec242-49f2-4320-a5aa-024c5d607aa3">
+      <name>ОтпускПоУходуЗаРебенкомБезОплаты</name>
+      <description>Отпуск по уходу за ребенком без оплаты</description>
+      <code xsi:type="core:StringValue">
+        <value>00052</value>
+      </code>
+      <actionPeriodIsBase>true</actionPeriodIsBase>
+    </items>
+    <items id="f117bb7c-8a6f-4763-9cda-4d4b80104703">
+      <name>ОтсутствиеПоБолезни</name>
+      <description>Отсутствие по болезни</description>
+      <code xsi:type="core:StringValue">
+        <value>10023</value>
+      </code>
+    </items>
+    <items id="62cbaa2c-6ddc-437e-a26e-9c459c73788e">
+      <name>ОтсутствиеПоБолезниПоБеременности</name>
+      <description>Отсутствие по болезни (по беременности и родам)</description>
+      <code xsi:type="core:StringValue">
+        <value>10024</value>
+      </code>
+    </items>
+    <items id="a9311674-ec75-4e6d-9777-ff9583b72b9e">
+      <name>Невыход</name>
+      <description>Отсутствие по невыясненной причине</description>
+      <code xsi:type="core:StringValue">
+        <value>00055</value>
+      </code>
+      <actionPeriodIsBase>true</actionPeriodIsBase>
+      <displaced>ChartOfCalculationTypes.ОсновныеНачисленияОрганизаций.ОплатаБЛПоТравмеВБыту</displaced>
+      <displaced>ChartOfCalculationTypes.ОсновныеНачисленияОрганизаций.ОтпускБезОплатыУчебный</displaced>
+      <displaced>ChartOfCalculationTypes.ОсновныеНачисленияОрганизаций.ОплатаБЛПоТравмеНаПроизводстве</displaced>
+      <displaced>ChartOfCalculationTypes.ОсновныеНачисленияОрганизаций.ОплатаПоСреднемуБЛ</displaced>
+      <displaced>ChartOfCalculationTypes.ОсновныеНачисленияОрганизаций.ОплатаВыходныхДнейПоУходуЗаДетьмиИнвалидами</displaced>
+      <displaced>ChartOfCalculationTypes.ОсновныеНачисленияОрганизаций.ОплатаПоСреднемуОтпКалендарныеДни</displaced>
+      <displaced>ChartOfCalculationTypes.ОсновныеНачисленияОрганизаций.ОплатаПоСреднемуОтпШестидневка</displaced>
+      <displaced>ChartOfCalculationTypes.ОсновныеНачисленияОрганизаций.ОплатаПоСреднему</displaced>
+      <displaced>ChartOfCalculationTypes.ОсновныеНачисленияОрганизаций.ПростойОкладПоДням</displaced>
+      <displaced>ChartOfCalculationTypes.ОсновныеНачисленияОрганизаций.ПростойОкладПоЧасам</displaced>
+      <displaced>ChartOfCalculationTypes.ОсновныеНачисленияОрганизаций.ПростойТарифДневной</displaced>
+      <displaced>ChartOfCalculationTypes.ОсновныеНачисленияОрганизаций.ПростойТарифЧасовой</displaced>
+      <displaced>ChartOfCalculationTypes.ОсновныеНачисленияОрганизаций.ОтпускБезОплатыПоТКРФ</displaced>
+      <displaced>ChartOfCalculationTypes.ОсновныеНачисленияОрганизаций.ОтпускЗаСвойСчет</displaced>
+      <displaced>ChartOfCalculationTypes.ОсновныеНачисленияОрганизаций.ОтпускПоБеременностиИРодам</displaced>
+      <displaced>ChartOfCalculationTypes.ОсновныеНачисленияОрганизаций.Прогул</displaced>
+      <displaced>ChartOfCalculationTypes.ОсновныеНачисленияОрганизаций.ПростойПоВинеРаботодателя</displaced>
+    </items>
+    <items id="1671e1b6-0281-489c-b191-50e6fb241e75">
+      <name>ПособиеПоУходуЗаРебенкомДо1_5Лет</name>
+      <description>Пособие по уходу за ребёнком до 1.5 лет</description>
+      <code xsi:type="core:StringValue">
+        <value>00071</value>
+      </code>
+      <actionPeriodIsBase>true</actionPeriodIsBase>
+    </items>
+    <items id="db5cc88b-4080-4061-8bba-42f22b500bb4">
+      <name>ПособиеПоУходуЗаРебенкомДо3Лет</name>
+      <description>Пособие по уходу за ребёнком до 3 лет</description>
+      <code xsi:type="core:StringValue">
+        <value>00072</value>
+      </code>
+      <actionPeriodIsBase>true</actionPeriodIsBase>
+    </items>
+    <items id="6afd5396-d24a-4dd3-ac83-0713aa89aa8f">
+      <name>ПочасовойПростойПоВинеРаботодателя</name>
+      <description>Почасовой простой по вине работодателя</description>
+      <code xsi:type="core:StringValue">
+        <value>00068</value>
+      </code>
+    </items>
+    <items id="37408837-5dbc-4d4b-9313-f97a95539e6d">
+      <name>Прогул</name>
+      <description>Прогул, простой по вине работника</description>
+      <code xsi:type="core:StringValue">
+        <value>00056</value>
+      </code>
+      <actionPeriodIsBase>true</actionPeriodIsBase>
+    </items>
+    <items id="7721e293-9d8d-478c-ad65-ecd65f4cc83d">
+      <name>ПростойПоВинеРаботодателя</name>
+      <description>Простой по вине работодателя</description>
+      <code xsi:type="core:StringValue">
+        <value>00061</value>
+      </code>
+    </items>
+    <items id="66f08438-f006-44e8-b9ee-32a8dcf557ba">
+      <name>РайонныйКоэффициент</name>
+      <description>Районный коэффициент</description>
+      <code xsi:type="core:StringValue">
+        <value>00070</value>
+      </code>
+      <actionPeriodIsBase>true</actionPeriodIsBase>
+    </items>
+    <items id="e4e04e49-103d-49d2-997a-9c7d068cf4c7">
+      <name>СевернаяНадбавка</name>
+      <description>Северная надбавка</description>
+      <code xsi:type="core:StringValue">
+        <value>00071</value>
+      </code>
+      <actionPeriodIsBase>true</actionPeriodIsBase>
+    </items>
+  </predefined>
+  <attributes uuid="f4da46fe-9290-4d03-b232-e4dda5471db7">
+    <name>СпособРасчета</name>
+    <synonym>
+      <key>ru</key>
+      <value>Способ расчета</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>EnumRef.СпособыРасчетаОплатыТруда</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+  </attributes>
+  <attributes uuid="cfdd7558-c93d-415e-a0d2-ea0cf119c107">
+    <name>ЗачетОтработанногоВремени</name>
+    <synonym>
+      <key>ru</key>
+      <value>Зачет отработанного времени</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </attributes>
+  <attributes uuid="d7844ad4-c287-4fb0-9fe8-e916dfa7f108">
+    <name>ЗачетНормыВремени</name>
+    <synonym>
+      <key>ru</key>
+      <value>Зачет нормы времени</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </attributes>
+  <attributes uuid="ba1b881e-c53d-45fe-997e-9023c3fadd38">
+    <name>СпособОтраженияВБухучете</name>
+    <synonym>
+      <key>ru</key>
+      <value>Способ отражения в бухучете</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.СпособыОтраженияЗарплатыВРеглУчете</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </attributes>
+  <attributes uuid="59466022-3ad0-463d-b18f-16af76d68f46">
+    <name>СтратегияОтраженияВУчете</name>
+    <synonym>
+      <key>ru</key>
+      <value>Стратегия отражения в учете</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>EnumRef.СтратегииОтраженияВРеглУчетеНачислений</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </attributes>
+  <attributes uuid="1e0f1546-8683-42ae-8c0e-66d22f6ad815">
+    <name>ОтнесениеРасходовКДеятельностиЕНВД</name>
+    <synonym>
+      <key>ru</key>
+      <value>Отнесение расходов к деятельности ЕНВД</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>EnumRef.ОтнесениеРасходовКДеятельностиЕНВД</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </attributes>
+  <attributes uuid="59e7af3f-aaed-4301-a187-151f551c1dd1">
+    <name>ВидНачисленияПоСт255НК</name>
+    <synonym>
+      <key>ru</key>
+      <value>Вид начисления по ст.255 НК</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>EnumRef.ВидыНачисленийОплатыТрудаПоСт255НК</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </attributes>
+  <attributes uuid="fbe4fe2a-58e6-4632-b391-4542e6a2dfd6">
+    <name>КодДоходаЕСН</name>
+    <synonym>
+      <key>ru</key>
+      <value>Способ отражения в ЕСН учете</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.ДоходыЕСН</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </attributes>
+  <attributes uuid="8bc5b158-3781-44c7-9495-9577758ee689">
+    <name>КодДоходаНДФЛ</name>
+    <synonym>
+      <key>ru</key>
+      <value>Код дохода НДФЛ</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.ДоходыНДФЛ</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </attributes>
+  <attributes uuid="924f6290-d3b2-4382-a16e-c6829f4a869e">
+    <name>КодДоходаФСС_НС</name>
+    <synonym>
+      <key>ru</key>
+      <value>Код дохода ФСС НС</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>EnumRef.ДоходыФСС_НС</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </attributes>
+  <attributes uuid="3f1cf375-b1ac-4a63-ae37-d3403f0c29c3">
+    <name>ЯвляетсяДоходомВНатуральнойФорме</name>
+    <synonym>
+      <key>ru</key>
+      <value>Является доходом в натуральной форме</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </attributes>
+  <attributes uuid="d25b8211-99d4-46e6-9794-e587540ecef8">
+    <name>УдалитьКатегорияРасчета</name>
+    <synonym>
+      <key>ru</key>
+      <value>Удалить категория расчета</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>EnumRef.УдалитьКатегорииРасчетов</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </attributes>
+  <attributes uuid="ad236156-7aa8-4168-b642-334ab1be0e7e">
+    <name>ПорядокОпределенияРасчетногоПериодаСреднегоЗаработка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Порядок определения расчетного периода среднего заработка</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>EnumRef.ПорядокОпределенияРасчетногоПериодаСреднегоЗаработка</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </attributes>
+  <attributes uuid="59cd7144-47de-45c2-ad5e-598bb3707e8e">
+    <name>ПериодРасчетаСреднегоЗаработка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Период расчета среднего заработка</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>2</precision>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </attributes>
+  <attributes uuid="8f9e9c4d-96ce-45ba-8c0b-618cbbb566a7">
+    <name>ВидВремени</name>
+    <synonym>
+      <key>ru</key>
+      <value>Вид времени</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>EnumRef.ВидыВремени</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+  </attributes>
+  <attributes uuid="24131ada-da42-4be6-a2d0-1f526a22281a">
+    <name>ОбозначениеВТабелеУчетаРабочегоВремени</name>
+    <synonym>
+      <key>ru</key>
+      <value>Обозначение в табеле учета рабочего времени</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.КлассификаторИспользованияРабочегоВремени</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <indexing>IndexWithAdditionalOrder</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+  </attributes>
+  <attributes uuid="d3b47e93-5db9-4d2d-9c53-28adc04b835c">
+    <name>ВидСтажа</name>
+    <synonym>
+      <key>ru</key>
+      <value>Вид стажа</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.ВидыСтажа</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </attributes>
+  <attributes uuid="fe640d9c-54d0-44d0-855c-b2ce46553afd">
+    <name>КоэффициентСтажа</name>
+    <synonym>
+      <key>ru</key>
+      <value>Коэффициент стажа</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.КоэффициентыСтажа</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </attributes>
+  <attributes uuid="6611ea91-0363-4774-9097-69f39eb30504">
+    <name>ТребуетВводаТарифногоРазряда</name>
+    <synonym>
+      <key>ru</key>
+      <value>Требует ввода тарифного разряда</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </attributes>
+  <attributes uuid="eef272e0-ce31-475c-b46e-5f2d590e0a12">
+    <name>УдалитьПоказатель1</name>
+    <synonym>
+      <key>ru</key>
+      <value>Показатель 1</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.ПоказателиСхемМотивации</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </attributes>
+  <attributes uuid="a312a368-bde0-4c39-aac5-dbdd90796518">
+    <name>УдалитьПоказатель2</name>
+    <synonym>
+      <key>ru</key>
+      <value>Показатель 2</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.ПоказателиСхемМотивации</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </attributes>
+  <attributes uuid="7e88f084-4a8f-49ee-beef-98aada8ae36d">
+    <name>УдалитьПоказатель3</name>
+    <synonym>
+      <key>ru</key>
+      <value>Показатель 3</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.ПоказателиСхемМотивации</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </attributes>
+  <attributes uuid="8ea92194-d9cc-4b1e-9588-7cdc67849be7">
+    <name>УдалитьПоказатель4</name>
+    <synonym>
+      <key>ru</key>
+      <value>Показатель 4</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.ПоказателиСхемМотивации</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </attributes>
+  <attributes uuid="91742a29-c0b9-4cfe-a560-bc18cf8dddd7">
+    <name>УдалитьПоказатель5</name>
+    <synonym>
+      <key>ru</key>
+      <value>Показатель 5</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.ПоказателиСхемМотивации</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </attributes>
+  <attributes uuid="f658939a-34bc-439e-b038-49846bec2d83">
+    <name>ЧастичноПодпадаетПодЕНВД</name>
+    <synonym>
+      <key>ru</key>
+      <value>Частично подпадает под ЕНВД</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </attributes>
+  <attributes uuid="4d3da3c6-2f2d-4acd-8ccd-ce25d639a4e1">
+    <name>ФормулаРасчета</name>
+    <synonym>
+      <key>ru</key>
+      <value>Формула расчета</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>String</types>
+      <stringQualifiers/>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </attributes>
+  <attributes uuid="ca55b7c3-b9ce-4e5d-a4b6-eb2d2060d92c">
+    <name>ПроизвольнаяФормулаРасчета</name>
+    <synonym>
+      <key>ru</key>
+      <value>Произвольная формула расчета</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </attributes>
+  <attributes uuid="78fc3c8f-d80d-4eb8-9cec-42bb83793e20">
+    <name>ВидПособияСоциальногоСтрахования</name>
+    <synonym>
+      <key>ru</key>
+      <value>Вид пособия социального страхования</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>EnumRef.ВидыПособийСоциальногоСтрахования</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </attributes>
+  <attributes uuid="69676afa-1802-4028-9f3f-d05e4a17793d">
+    <name>ВидСтажаСЗВ4</name>
+    <synonym>
+      <key>ru</key>
+      <value>Вид стажа СЗВ4</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>EnumRef.ВидыСтажаСЗВ4</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </attributes>
+  <attributes uuid="54d09e39-d1c3-4862-93d4-a24655df643c">
+    <name>ВидЕжегодногоОтпуска</name>
+    <synonym>
+      <key>ru</key>
+      <value>Вид ежегодного отпуска</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.ВидыЕжегодныхОтпусков</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </attributes>
+  <attributes uuid="2d22de6a-7e6d-471c-90e1-7a9cec943f96">
+    <name>СпособОтраженияВУпрУчете</name>
+    <synonym>
+      <key>ru</key>
+      <value>Способ отражения в упр учете</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.СпособыОтраженияЗарплатыВУпрУчете</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </attributes>
+  <attributes uuid="22e3c54f-b3c2-4e31-b7fd-a95b649864ae">
+    <name>КатегорияРасчета</name>
+    <synonym>
+      <key>ru</key>
+      <value>Категория расчета</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.КатегорииРасчетов</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </attributes>
+  <attributes uuid="94f19e1f-2da7-4760-8eef-633196db2e5d">
+    <name>НачисляетсяВЦеломЗаМесяц</name>
+    <synonym>
+      <key>ru</key>
+      <value>Начисляется в целом за месяц</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </attributes>
+  <attributes uuid="f8d46fd2-6846-4cc0-9136-8944af042480">
+    <name>ФормулаРасчетаПредставление</name>
+    <synonym>
+      <key>ru</key>
+      <value>Формула расчета представление</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>String</types>
+      <stringQualifiers/>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </attributes>
+  <attributes uuid="5bd9287a-55ff-460e-9692-9b1c156e3ba5">
+    <name>АвтоНачислятьПоТабелю</name>
+    <synonym>
+      <key>ru</key>
+      <value>Авто начислять по табелю</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </attributes>
+  <attributes uuid="5c9f331d-e12c-490d-8292-4dee30151c33">
+    <name>КодДоходаСтраховыеВзносы</name>
+    <synonym>
+      <key>ru</key>
+      <value>Код дохода страховые взносы</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.ДоходыПоСтраховымВзносам</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </attributes>
+  <attributes uuid="dbc7976a-b019-4aaf-a31e-1937e485f5b8">
+    <name>НеИспользовать</name>
+    <synonym>
+      <key>ru</key>
+      <value>Не использовать</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </attributes>
+  <tabularSections uuid="60482591-ad89-43b7-9ae7-88f3bb0eda33">
+    <producedTypes>
+      <objectType typeId="556e61c9-61f3-4935-9960-612be3ccd5ea" valueTypeId="33c56780-35d8-4a29-9989-c7a9ad372412"/>
+      <rowType typeId="e89dde1b-53e6-49f6-81b8-7fee07c088bb" valueTypeId="63665a3e-1fd3-4b4e-aa9b-c7ecde4d88c5"/>
+    </producedTypes>
+    <name>Показатели</name>
+    <synonym>
+      <key>ru</key>
+      <value>Показатели</value>
+    </synonym>
+    <comment></comment>
+    <attributes uuid="c9cac0b2-5cd0-4df9-a158-35985f4b75ff">
+      <name>Показатель</name>
+      <synonym>
+        <key>ru</key>
+        <value>Показатель</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>CatalogRef.ПоказателиСхемМотивации</types>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="fc5952ee-3927-49b4-aa98-75e76f40a4da">
+      <name>ЗапрашиватьПриКадровыхПеремещениях</name>
+      <synonym>
+        <key>ru</key>
+        <value>Запрашивать при кадровых перемещениях</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Boolean</types>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+    </attributes>
+  </tabularSections>
+  <forms uuid="668bd9ce-bccc-4586-b5f0-9dca3f51d97f">
+    <name>ФормаВидаРасчета</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма вида расчета</value>
+    </synonym>
+    <comment></comment>
+    <formType>Ordinary</formType>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="8bea9a86-1c24-474e-868b-c582ed45601b">
+    <name>ФормаСписка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма списка</value>
+    </synonym>
+    <comment></comment>
+    <formType>Ordinary</formType>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="616df08b-c46a-4844-ab0c-5a1bbf5bb4ba">
+    <name>ФормаВыбора</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма выбора</value>
+    </synonym>
+    <comment></comment>
+    <formType>Ordinary</formType>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+</mdclass:ChartOfCalculationTypes>

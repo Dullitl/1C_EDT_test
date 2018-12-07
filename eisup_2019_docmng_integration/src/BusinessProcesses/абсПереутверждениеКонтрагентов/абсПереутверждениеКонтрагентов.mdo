@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:BusinessProcess xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="d03ea352-8cb2-45c8-b0b5-79ba16cad7ba">
+  <producedTypes>
+    <objectType typeId="71efe62e-15fe-4a4d-a88e-70c7a5d09802" valueTypeId="994261b6-9773-41c9-8dc4-177275264218"/>
+    <refType typeId="f7d04a98-332b-4b67-a1af-08736aacd4fc" valueTypeId="8b994d91-b920-4295-b819-9ae138c1f322"/>
+    <selectionType typeId="a234e1da-5d87-4753-ad90-8a814508abe4" valueTypeId="65d3fc41-08c5-4804-bc3c-72d7996b2b1d"/>
+    <listType typeId="30ad112c-1724-4e34-a27e-48b3a6459558" valueTypeId="a5bd0df3-12e4-4020-a0d9-705af467c958"/>
+    <managerType typeId="375ea6b1-0cb9-4583-957f-db527378f48b" valueTypeId="b539b03a-f735-4892-a302-271f6a3a5202"/>
+    <routePointRef typeId="aea72a7c-3845-4387-936e-9186f5f6f54d" valueTypeId="24dc319a-b3ba-46f8-bee9-591c9ea740fd"/>
+  </producedTypes>
+  <name>абсПереутверждениеКонтрагентов</name>
+  <synonym>
+    <key>ru</key>
+    <value>Переутверждение контрагентов</value>
+  </synonym>
+  <comment></comment>
+  <useStandardCommands>true</useStandardCommands>
+  <inputByString>BusinessProcess.абсПереутверждениеКонтрагентов.StandardAttribute.Number</inputByString>
+  <fullTextSearchOnInputByString>DontUse</fullTextSearchOnInputByString>
+  <createOnInput>DontUse</createOnInput>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <fullTextSearch>Use</fullTextSearch>
+  <editType>InDialog</editType>
+  <defaultObjectForm>BusinessProcess.абсПереутверждениеКонтрагентов.Form.ФормаБизнесПроцесса</defaultObjectForm>
+  <defaultListForm>BusinessProcess.абсПереутверждениеКонтрагентов.Form.ФормаСписка</defaultListForm>
+  <auxiliaryObjectForm>BusinessProcess.абсПереутверждениеКонтрагентов.Form.ФормаБизнесПроцессаУправляемая</auxiliaryObjectForm>
+  <auxiliaryListForm>BusinessProcess.абсПереутверждениеКонтрагентов.Form.ФормаСпискаУправляемая</auxiliaryListForm>
+  <numberType>String</numberType>
+  <numberLength>9</numberLength>
+  <numberAllowedLength>Variable</numberAllowedLength>
+  <checkUnique>true</checkUnique>
+  <autonumbering>true</autonumbering>
+  <task>Task.абсЗадачаДоговора</task>
+  <attributes uuid="babc1c06-a933-4680-8ac1-082f819f8787">
+    <name>Контрагент</name>
+    <synonym>
+      <key>ru</key>
+      <value>Контрагент</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.Контрагенты</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="b47e2d7e-8672-4038-8ff3-2a15f2a273da">
+    <name>ПользовательИнициаторБП</name>
+    <synonym>
+      <key>ru</key>
+      <value>Пользователь инициатор БП</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.Пользователи</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="5c5cdb48-bb5e-428b-b923-bfcd2b8b3911">
+    <name>ТочкаСтарта</name>
+    <synonym>
+      <key>ru</key>
+      <value>Точка старта</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>BusinessProcessRoutePointRef.абсПереутверждениеКонтрагентов</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="6ae15b79-5d37-458d-be4b-7e2d7855100c">
+    <name>ЗаявкаНаИзменениеРеквизитов</name>
+    <synonym>
+      <key>ru</key>
+      <value>Заявка на изменение реквизитов</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>DocumentRef.абс_ЗаявкаНаИзменениеРеквизитовКонтрагента</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <forms uuid="d92a3e4e-789c-4eed-baa9-fe110830630e">
+    <name>ФормаБизнесПроцесса</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма бизнес процесса</value>
+    </synonym>
+    <comment></comment>
+    <formType>Ordinary</formType>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="a830c31d-8a20-4701-9973-ed338e5d18fa">
+    <name>ФормаСпискаУправляемая</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма списка управляемая</value>
+    </synonym>
+    <comment></comment>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="b73a8cee-f8b7-40f0-8173-ae353581802d">
+    <name>ФормаБизнесПроцессаУправляемая</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма бизнес процесса</value>
+    </synonym>
+    <comment></comment>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="f6a0ab0f-41d0-4000-9370-81e5e9dfa7f2">
+    <name>ФормаСписка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма списка</value>
+    </synonym>
+    <comment></comment>
+    <formType>Ordinary</formType>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+</mdclass:BusinessProcess>

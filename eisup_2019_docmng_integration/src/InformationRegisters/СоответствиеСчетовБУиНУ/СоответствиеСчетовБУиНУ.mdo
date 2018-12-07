@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="8ce68121-6b28-43bd-89a2-208bc3cc2bb7">
+  <producedTypes>
+    <selectionType typeId="82f71d84-2f7a-439f-b062-aaff1f85de42" valueTypeId="256a0fac-398e-4886-a8ad-67722efb0e09"/>
+    <listType typeId="bf2ba1db-89fc-4fc4-aea3-ad68b79ece72" valueTypeId="bf4bed3b-c6b5-44b6-88cf-491b7e004b5b"/>
+    <managerType typeId="3700a0e0-40a8-4243-b63a-c63f877249e2" valueTypeId="b607e12c-41bb-4bcb-9556-831301472275"/>
+    <recordSetType typeId="ef8d813c-f3f6-41c0-891b-687a71c32e97" valueTypeId="3a2036ae-db7c-493f-b0ed-3e5d5fb7ed25"/>
+    <recordKeyType typeId="0a69be59-a062-4c28-b5e6-6ca58c82aa45" valueTypeId="146a336a-1160-487e-9cbb-e414388707e5"/>
+    <recordType typeId="71a8a3a0-bbc5-413a-a751-faff3d77d9dd" valueTypeId="19f0d33b-3817-4068-a145-05ee423bf75d"/>
+    <recordManagerType typeId="2b481cb3-4276-4a7c-84e5-9615e716c066" valueTypeId="3cf3a111-e732-42a2-bb6b-61bdd31f5cb5"/>
+  </producedTypes>
+  <name>СоответствиеСчетовБУиНУ</name>
+  <synonym>
+    <key>ru</key>
+    <value>Соответствие счетов БУ и НУ</value>
+  </synonym>
+  <comment>(Регл)</comment>
+  <editType>InDialog</editType>
+  <defaultListForm>InformationRegister.СоответствиеСчетовБУиНУ.Form.ФормаСписка</defaultListForm>
+  <informationRegisterPeriodicity>Day</informationRegisterPeriodicity>
+  <writeMode>RecorderSubordinate</writeMode>
+  <help>
+    <pages>
+      <lang>ru</lang>
+    </pages>
+  </help>
+  <resources uuid="d462e8db-3d02-4f50-b26e-0063db9f718c">
+    <name>СчетНУ</name>
+    <synonym>
+      <key>ru</key>
+      <value>Счет НУ</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>ChartOfAccountsRef.Налоговый</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="898d2865-1888-404f-849b-63d6d5445e5a">
+    <name>Учитывается</name>
+    <synonym>
+      <key>ru</key>
+      <value>Учитывается</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <attributes uuid="94230009-e0de-4bc6-9d87-3502816b42be">
+    <name>Комментарий</name>
+    <synonym>
+      <key>ru</key>
+      <value>Комментарий</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>255</length>
+      </stringQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="497e958e-05ba-44c5-b601-63a5a2c551dc">
+    <name>РеквизитПредставление</name>
+    <synonym>
+      <key>ru</key>
+      <value>Представление реквизита</value>
+    </synonym>
+    <comment>Пользовательское представление реквизита</comment>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>255</length>
+      </stringQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <dimensions uuid="d80f5521-857e-4c41-806f-5debac42aa8c">
+    <name>СчетБУ</name>
+    <synonym>
+      <key>ru</key>
+      <value>Счет БУ</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>ChartOfAccountsRef.Хозрасчетный</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="e70b1949-d708-4b13-bd73-9deaa88f21ad">
+    <name>СчетКоррБУ</name>
+    <synonym>
+      <key>ru</key>
+      <value>Счет корр БУ</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>ChartOfAccountsRef.Хозрасчетный</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="4fe682b6-4a10-40d9-90cd-991772648c9b">
+    <name>ВидЗатратНУ</name>
+    <synonym>
+      <key>ru</key>
+      <value>Вид затрат НУ</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>EnumRef.ВидыРасходовНУ</types>
+      <types>EnumRef.ВидыПрочихДоходовИРасходов</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <forms uuid="8993771d-6491-4cc8-abf1-76d54fdfed72">
+    <name>ФормаСписка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма списка</value>
+    </synonym>
+    <comment></comment>
+    <formType>Ordinary</formType>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+</mdclass:InformationRegister>

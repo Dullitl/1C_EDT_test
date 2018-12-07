@@ -1,0 +1,134 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/"
+		xmlns:soap12bind="http://schemas.xmlsoap.org/wsdl/soap12/"
+		xmlns:soapbind="http://schemas.xmlsoap.org/wsdl/soap/"
+		xmlns:tns="http://www.abs-soft_FL.ru"
+		xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"
+		xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"
+		xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+		xmlns:xsd1="http://www.abs-soft_FL.ru"
+		name="abs_FLData"
+		targetNamespace="http://www.abs-soft_FL.ru">
+	<types>
+		<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+				xmlns:xs1="http://www.abs-soft_FL.ru"
+				targetNamespace="http://www.abs-soft_FL.ru"
+				attributeFormDefault="unqualified"
+				elementFormDefault="qualified">
+			<xs:complexType name="FLData">
+				<xs:sequence>
+					<xs:element name="Code"
+							type="xs:string"
+							nillable="true"
+							minOccurs="0"/>
+					<xs:element name="Family"
+							type="xs:string"
+							nillable="true"
+							minOccurs="0"/>
+					<xs:element name="Name"
+							type="xs:string"
+							nillable="true"
+							minOccurs="0"/>
+					<xs:element name="Patronym"
+							type="xs:string"
+							nillable="true"
+							minOccurs="0"/>
+					<xs:element name="DateOfBirth"
+							type="xs:date"
+							nillable="true"
+							minOccurs="0"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="FL_List">
+				<xs:sequence>
+					<xs:element name="FL_DataElements"
+							type="xsd1:FLData"
+							nillable="true"
+							minOccurs="0"
+							maxOccurs="unbounded"/>
+					<xs:element name="Error"
+							type="xs:string"
+							nillable="true"
+							minOccurs="0"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:element name="GetFLData">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="OrgCode"
+								type="xs:string"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="GetFLDataResponse">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="return"
+								type="xsd1:FL_List"
+								nillable="true"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:schema>
+	</types>
+	<message name="GetFLDataRequestMessage">
+		<part name="parameters"
+				element="tns:GetFLData"/>
+	</message>
+	<message name="GetFLDataResponseMessage">
+		<part name="parameters"
+				element="tns:GetFLDataResponse"/>
+	</message>
+	<portType name="abs_FLDataPortType">
+		<operation name="GetFLData">
+			<input name="GetFLDataRequest"
+					message="tns:GetFLDataRequestMessage"/>
+			<output name="GetFLDataResponse"
+					message="tns:GetFLDataResponseMessage"/>
+		</operation>
+	</portType>
+	<binding name="abs_FLDataSoapBinding"
+			type="tns:abs_FLDataPortType">
+		<soapbind:binding style="document"
+				transport="http://schemas.xmlsoap.org/soap/http"/>
+		<operation name="GetFLData">
+			<soapbind:operation style="document"
+					soapAction="http://www.abs-soft_FL.ru#abs_FLData:GetFLData"/>
+			<input>
+				<soapbind:body use="literal"/>
+			</input>
+			<output>
+				<soapbind:body use="literal"/>
+			</output>
+		</operation>
+	</binding>
+	<binding name="abs_FLDataSoap12Binding"
+			type="tns:abs_FLDataPortType">
+		<soap12bind:binding style="document"
+				transport="http://schemas.xmlsoap.org/soap/http"/>
+		<operation name="GetFLData">
+			<soap12bind:operation style="document"
+					soapAction="http://www.abs-soft_FL.ru#abs_FLData:GetFLData"/>
+			<input>
+				<soap12bind:body use="literal"/>
+			</input>
+			<output>
+				<soap12bind:body use="literal"/>
+			</output>
+		</operation>
+	</binding>
+	<service name="abs_FLData">
+		<port name="abs_FLDataSoap"
+				binding="tns:abs_FLDataSoapBinding">
+			<documentation> 
+				<wsi:Claim xmlns:wsi="http://ws-i.org/schemas/conformanceClaim/"
+						conformsTo="http://ws-i.org/profiles/basic/1.1"/>
+			</documentation>
+			<soapbind:address location="https://isup-ttk.transtk.ru/persondata/ws/fldata.1cws"/>
+		</port>
+		<port name="abs_FLDataSoap12"
+				binding="tns:abs_FLDataSoap12Binding">
+			<soap12bind:address location="https://isup-ttk.transtk.ru/persondata/ws/fldata.1cws"/>
+		</port>
+	</service>
+</definitions>

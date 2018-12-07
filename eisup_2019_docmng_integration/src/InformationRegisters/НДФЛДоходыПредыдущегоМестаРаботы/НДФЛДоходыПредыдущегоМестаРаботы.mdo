@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="8cab6a54-4786-46ec-bcc2-77cb6c1b5776">
+  <producedTypes>
+    <selectionType typeId="7e3ccba9-b68d-4427-80d2-c653ba255ebe" valueTypeId="223cb392-e126-4b76-9515-ac77c7952ac1"/>
+    <listType typeId="7b9aa34f-c479-44ee-a76d-635665abf6f1" valueTypeId="c91ef336-6336-40c8-b02d-97d9b54cf988"/>
+    <managerType typeId="f9b9406e-6948-4a95-92e6-6819a34ceab6" valueTypeId="579c75dd-779f-42b6-ad00-492f2c74257c"/>
+    <recordSetType typeId="dba16c19-8eb5-48c0-b435-d06e1d8ed193" valueTypeId="15caf59b-5e84-4353-b8e6-71cfd1e16795"/>
+    <recordKeyType typeId="1e0d069a-4c80-4cce-a717-e1ed2123fec5" valueTypeId="16f908df-8cbb-4eee-b98b-c003834db9bf"/>
+    <recordType typeId="024615a3-7004-4201-932d-2b8f16565f61" valueTypeId="c1ee17a0-9689-429d-9715-91374b754e84"/>
+    <recordManagerType typeId="f1a4d6b1-6de7-4c3f-9643-ca8ca3a40bac" valueTypeId="e428dbe8-3283-4a46-a363-701bb2322896"/>
+  </producedTypes>
+  <name>НДФЛДоходыПредыдущегоМестаРаботы</name>
+  <synonym>
+    <key>ru</key>
+    <value>Доходы с предыдущего места работы (НДФЛ)</value>
+  </synonym>
+  <comment>(Регл)</comment>
+  <defaultListForm>InformationRegister.НДФЛДоходыПредыдущегоМестаРаботы.Form.ФормаСписка</defaultListForm>
+  <resources uuid="3ee41bf4-5f33-4582-8db7-e5eed3de2fff">
+    <name>Размер</name>
+    <synonym>
+      <key>ru</key>
+      <value>Размер</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>2</scale>
+      </numberQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <dimensions uuid="8bd1b47f-d7cd-4580-84ea-a298fc780a7a">
+    <name>Организация</name>
+    <synonym>
+      <key>ru</key>
+      <value>Организация</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.Организации</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="15b9566c-36fa-45e0-af7d-8443b32551d2">
+    <name>МесяцНалоговогоПериода</name>
+    <synonym>
+      <key>ru</key>
+      <value>Месяц налогового периода</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Date</types>
+      <dateQualifiers>
+        <dateFractions>Date</dateFractions>
+      </dateQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="693c9e6b-634d-41e9-a136-c3bbd2870b82">
+    <name>ФизЛицо</name>
+    <synonym>
+      <key>ru</key>
+      <value>Физическое лицо</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.ФизическиеЛица</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <forms uuid="a703d00f-6775-42ee-91da-36df5017d32e">
+    <name>ФормаСписка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма списка</value>
+    </synonym>
+    <comment></comment>
+    <formType>Ordinary</formType>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+</mdclass:InformationRegister>

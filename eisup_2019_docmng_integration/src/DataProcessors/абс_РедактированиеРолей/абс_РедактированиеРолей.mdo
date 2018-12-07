@@ -1,0 +1,991 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:DataProcessor xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="97e051ea-d0d1-4676-a02e-ca6d4be5660a">
+  <producedTypes>
+    <objectType typeId="f47f091b-af37-44e0-bf1e-338133ce2ef8" valueTypeId="0f92b62c-fd68-49b4-ab2c-4fc26cc206eb"/>
+    <managerType typeId="c9062ca4-1393-47a8-ab94-5599f3570fbc" valueTypeId="ea7dd213-883d-4d97-90fb-b5d7e9be8118"/>
+  </producedTypes>
+  <name>абс_РедактированиеРолей</name>
+  <synonym>
+    <key>ru</key>
+    <value>Просмотр ролей</value>
+  </synonym>
+  <comment></comment>
+  <defaultForm>DataProcessor.абс_РедактированиеРолей.Form.Форма</defaultForm>
+  <attributes uuid="ca2cd155-d444-4045-9469-f0f1f707996b">
+    <name>Организация</name>
+    <synonym>
+      <key>ru</key>
+      <value>Организация</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.Организации</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="d98a0fc8-5449-4328-a01e-21972777f404">
+    <name>ГруппаПользователей</name>
+    <synonym>
+      <key>ru</key>
+      <value>Группа пользователей</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.ГруппыПользователей</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <tabularSections uuid="f0bb165b-7e11-4f0f-85e4-00120e7395f5">
+    <producedTypes>
+      <objectType typeId="82c1f164-e765-4dd5-af51-c8c79307565a" valueTypeId="3c0e5a7e-897e-46fe-a9d2-2835ac40a42e"/>
+      <rowType typeId="d8b53b55-6cdf-4f6b-aaeb-e2f66f8b37d4" valueTypeId="d1595a69-3853-422d-9c4b-db23e8bdd288"/>
+    </producedTypes>
+    <name>Пользователи</name>
+    <synonym>
+      <key>ru</key>
+      <value>Пользователи</value>
+    </synonym>
+    <comment></comment>
+    <standardAttributes>
+      <dataHistory>Use</dataHistory>
+      <name>LineNumber</name>
+      <comment></comment>
+      <fillValue xsi:type="core:UndefinedValue"/>
+      <fullTextSearch>Use</fullTextSearch>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+    </standardAttributes>
+    <attributes uuid="7f9451b0-0288-48ce-88e2-55cf6826297e">
+      <name>Фл</name>
+      <synonym>
+        <key>ru</key>
+        <value>Фл</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Boolean</types>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="95c31c6a-dfa2-44a4-bba6-fa882fe5da31">
+      <name>Пользователь</name>
+      <synonym>
+        <key>ru</key>
+        <value>Пользователь</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>CatalogRef.Пользователи</types>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="31c5633e-70a8-48e3-baae-af99e2ae00bc">
+      <name>ПользовательОС</name>
+      <synonym>
+        <key>ru</key>
+        <value>Пользователь ОС</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>100</length>
+        </stringQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:StringValue">
+        <value></value>
+      </fillValue>
+    </attributes>
+    <attributes uuid="c93f3253-3978-498e-9b73-272339a4fd56">
+      <name>абсСогласованиеКонтрагентов</name>
+      <synonym>
+        <key>ru</key>
+        <value>Согласование контрагентов</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Boolean</types>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="db5cbb08-5c72-477b-b15d-37a9a23a74e8">
+      <name>абсСогласованиеКонтрагентов_ИнициаторСозданияКонтрагентов</name>
+      <synonym>
+        <key>ru</key>
+        <value>Инициатор создания контрагентов</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Boolean</types>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="f798f773-9f70-43b7-97a0-6eb29b846c9b">
+      <name>абсСогласованиеКонтрагентов_ПроверкаДФМ</name>
+      <synonym>
+        <key>ru</key>
+        <value>Проверка ДФМ</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Boolean</types>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="c59e44a9-a513-48b7-8a28-684322171e9a">
+      <name>абсСогласованиеКонтрагентов_СогласованиеДЭБ</name>
+      <synonym>
+        <key>ru</key>
+        <value>Согласование ДЭБ</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Boolean</types>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="42922687-c53e-473f-96ff-9f5689d77379">
+      <name>абсСогласованиеДоговоров</name>
+      <synonym>
+        <key>ru</key>
+        <value>Абс согласование договоров</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Boolean</types>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="951e6c2a-a113-4112-80b1-0df3d8dadf13">
+      <name>абсСогласованиеДоговоров_ИнициаторСогласованияДоговора</name>
+      <synonym>
+        <key>ru</key>
+        <value>Инициатор согласования договора</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Boolean</types>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="afb488d0-a35f-4a3b-8b97-22971ac5efa2">
+      <name>абсСогласованиеДоговоров_ПроверкаДФМ</name>
+      <synonym>
+        <key>ru</key>
+        <value>Проверка ДФМ</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Boolean</types>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="661a6ce5-718f-4347-bf16-631892fb40fc">
+      <name>абсСогласованиеДоговоров_СогласованиеБухгалтером</name>
+      <synonym>
+        <key>ru</key>
+        <value>Согласование бухгалтером</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Boolean</types>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="3caba699-c0a5-4401-adac-308097baae88">
+      <name>абсСогласованиеДоговоров_СогласованиеДЭБ</name>
+      <synonym>
+        <key>ru</key>
+        <value>Согласование ДЭБ</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Boolean</types>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="7f1a6d69-3aca-4442-a84d-f4565604bb6c">
+      <name>абсСогласованиеДоговоров_СогласованиеДИБ</name>
+      <synonym>
+        <key>ru</key>
+        <value>Согласование ДИБ</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Boolean</types>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="ca00b092-3d96-4089-a596-3a9e3e695aef">
+      <name>абсСогласованиеДоговоров_СогласованиеДВКУР</name>
+      <synonym>
+        <key>ru</key>
+        <value>Согласование ДВКУР</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Boolean</types>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="ba0f15f8-f96b-4136-9fab-0b5a1a4b9545">
+      <name>абсСогласованиеДоговоров_СогласованиеПД</name>
+      <synonym>
+        <key>ru</key>
+        <value>Согласование ПД</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Boolean</types>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="b56d3afe-af99-4ed3-bc45-1ee8df5672cc">
+      <name>абсСогласованиеДоговоров_РегистрацияДоговора</name>
+      <synonym>
+        <key>ru</key>
+        <value>Подписание и регистрация</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Boolean</types>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="2844eac9-89aa-459d-a370-3cfb99010c5d">
+      <name>абсСогласованиеДоговоров_ИсполнениеДоговора</name>
+      <synonym>
+        <key>ru</key>
+        <value>Исполнение договора</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Boolean</types>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="a5dd2353-16ea-41b7-b4fb-27ff32f0bbad">
+      <name>абсСогласованиеДоговоров_КорректировкаДоговоровВИсполнении</name>
+      <synonym>
+        <key>ru</key>
+        <value>Корректирока договор в исполнении</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Boolean</types>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="b5cf77fa-0146-4de3-8d04-9359d9d61755">
+      <name>абсСогласованиеЗакупочногоЗаказа</name>
+      <synonym>
+        <key>ru</key>
+        <value>БП согласование закупочного заказа</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Boolean</types>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="1485e8f2-13bd-4256-9134-a83a3dc38609">
+      <name>абсСогласованиеЗакупочногоЗаказа_ИнициаторБПЗакупочныйЗаказ</name>
+      <synonym>
+        <key>ru</key>
+        <value>Инициатор закупочного заказа</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Boolean</types>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="c29f3a99-ed5d-4b2c-815e-7a855e0e616a">
+      <name>абсСогласованиеЗакупочногоЗаказа_ДиректорДирекции</name>
+      <synonym>
+        <key>ru</key>
+        <value>Директор дирекции</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Boolean</types>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="2810a2f0-341f-450e-afe9-3982c4fe0fcb">
+      <name>абсСогласованиеЗакупочногоЗаказа_РуководительДепартамента</name>
+      <synonym>
+        <key>ru</key>
+        <value>Руководитель Департамента</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Boolean</types>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="f68db307-e736-4e6b-9c83-ccc1cc21ae03">
+      <name>абсСогласованиеЗакупочногоЗаказа_РуководительЦФО</name>
+      <synonym>
+        <key>ru</key>
+        <value>Руководитель ЦФО</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Boolean</types>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="a7c9a249-460b-4793-9ec2-10cd5d7cd90f">
+      <name>абсСогласованиеЗакупочногоЗаказа_РуководительОФК</name>
+      <synonym>
+        <key>ru</key>
+        <value>Сотрудник ОФК</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Boolean</types>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="41b1eec5-23bd-4dac-ac43-be535a52b9c5">
+      <name>абсСогласованиеЗакупочногоЗаказа_РуководительДФМ</name>
+      <synonym>
+        <key>ru</key>
+        <value>Руководитель ДФМ</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Boolean</types>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="82fecef5-1995-450d-ad5b-c333670a8ffa">
+      <name>абсСогласованиеЗакупочногоЗаказа_РуководительЦФУ</name>
+      <synonym>
+        <key>ru</key>
+        <value>Руководитель ЦФУ</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Boolean</types>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="9e694747-aeda-41a1-9a63-bfd566847083">
+      <name>абсСогласованиеЗакупочногоЗаказа_ПервыйВицеПрезидент</name>
+      <synonym>
+        <key>ru</key>
+        <value>Первый Вице-президент</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Boolean</types>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="18161db5-b1b3-48ee-b1c2-74a26b7c8566">
+      <name>абсСогласованиеЗакупочногоЗаказа_Президент</name>
+      <synonym>
+        <key>ru</key>
+        <value>Президент</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Boolean</types>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="9008ff0a-8a65-4334-9227-87294af7c83d">
+      <name>абсСогласованиеСчетаНаОплату</name>
+      <synonym>
+        <key>ru</key>
+        <value>БП согласование счета на оплату</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Boolean</types>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="b50eca3c-2066-4c22-bf51-d14b980b3ebb">
+      <name>абсСогласованиеСчетаНаОплату_ПодготовкаСчетаНаОплату</name>
+      <synonym>
+        <key>ru</key>
+        <value>Подготовка счета на оплату</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Boolean</types>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="3eabf45f-3ce1-427a-a39f-a30d18a3642d">
+      <name>абсСогласованиеСчетаНаОплату_СозданиеТехническихСчетов</name>
+      <synonym>
+        <key>ru</key>
+        <value>Создание технических счетов</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Boolean</types>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="94d98622-262d-4678-8554-488be3b2a733">
+      <name>абсСогласованиеСчетаНаОплату_СогласованиеДРУ</name>
+      <synonym>
+        <key>ru</key>
+        <value>Согласование ДРУ</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Boolean</types>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="06c8caf2-397e-4f82-aa97-5377ce2bb7a8">
+      <name>абсСогласованиеСчетаНаОплату_РуководительОФК</name>
+      <synonym>
+        <key>ru</key>
+        <value>Сотрудник ОФК</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Boolean</types>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="0f51b84f-567b-4b80-9a32-8ceeabd9fa7d">
+      <name>абсСогласованиеСчетаНаОплату_РуководительДФМ</name>
+      <synonym>
+        <key>ru</key>
+        <value>Руководитель ДФМ</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Boolean</types>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="50b8fd74-7404-4c0a-a8f2-1a65b3f9d407">
+      <name>абсСогласованиеСчетаНаОплату_ПервыйВицеПрезидент</name>
+      <synonym>
+        <key>ru</key>
+        <value>Первый Вице-президент</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Boolean</types>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="df6c18af-c41e-4185-b71c-081fde9e4dd2">
+      <name>абсСогласованиеСчетаНаОплату_Президент</name>
+      <synonym>
+        <key>ru</key>
+        <value>Президент</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Boolean</types>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="8310ef34-cb72-45ba-9140-612fea496c0b">
+      <name>абсСогласованиеСчетаНаОплату_ДирККР</name>
+      <synonym>
+        <key>ru</key>
+        <value>Дир ККР</value>
+      </synonym>
+      <comment>По оборудованию позволяет перевести статус из согласован в исполнение</comment>
+      <type>
+        <types>Boolean</types>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="020be428-5fbe-45d7-afea-655b58a6b152">
+      <name>абсСогласованиеПервичныхДокументов</name>
+      <synonym>
+        <key>ru</key>
+        <value>БП согласование первичных документов</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Boolean</types>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="64b3a4d8-202d-43b0-86ce-d6bd12836b03">
+      <name>абсСогласованиеПервичныхДокументов_ИнициаторПервичногоДокумента</name>
+      <synonym>
+        <key>ru</key>
+        <value>Инициатор первичного документа</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Boolean</types>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="4cecea85-5ce5-443c-97e9-40ac777322e6">
+      <name>абсСогласованиеПервичныхДокументов_РуководительОФК</name>
+      <synonym>
+        <key>ru</key>
+        <value>Сотрудник ОФК</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Boolean</types>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="7f630929-ebbe-4229-a376-822e8ee059c3">
+      <name>абсСогласованиеПервичныхДокументов_СогласованиеБухгалтером</name>
+      <synonym>
+        <key>ru</key>
+        <value>Согласование бухгалтером</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Boolean</types>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="af3b1197-583e-494a-86bc-d5de62c7623b">
+      <name>абсСогласованиеПервичныхДокументов_БУ_Биллнг</name>
+      <synonym>
+        <key>ru</key>
+        <value>БУ - биллинг</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Boolean</types>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="08e05883-9a18-4f8e-80e8-d08ef1fa2251">
+      <name>абсСогласованиеПервичныхДокументов_БанковскаяГруппа</name>
+      <synonym>
+        <key>ru</key>
+        <value>Банковская группа</value>
+      </synonym>
+      <comment>Используется для проведения формирования платежек</comment>
+      <type>
+        <types>Boolean</types>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="fae65e5d-ee9f-4e55-a720-d88cfdbbb10a">
+      <name>абсСогласованиеБюджета</name>
+      <synonym>
+        <key>ru</key>
+        <value>БП согласование бюджета</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Boolean</types>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="8bdc0e33-0ec4-4e0c-8637-8f2b341cef92">
+      <name>абсСогласованиеБюджета_ИнициаторВводаБюджета</name>
+      <synonym>
+        <key>ru</key>
+        <value>Инициатор ввода бюджета</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Boolean</types>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="e49b0a45-758c-4d4c-956e-051a69483ff0">
+      <name>абсСогласованиеБюджета_СогласованиеБюджетаДирБА</name>
+      <synonym>
+        <key>ru</key>
+        <value>Согласование бюджета дирБА</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Boolean</types>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="18533989-b01e-46ac-b5fd-e6ffbeed8fbf">
+      <name>абсСогласованиеБюджета_СогласованиеБюджетаДЭИ</name>
+      <synonym>
+        <key>ru</key>
+        <value>Согласование бюджета ДЭИ</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Boolean</types>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="f068cb83-7bfa-443d-85ba-21c95b6117d0">
+      <name>абсСогласованиеБюджета_СогласованиеБюджетаДК</name>
+      <synonym>
+        <key>ru</key>
+        <value>Согласование бюджета ДК</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Boolean</types>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="18a6cb45-9c25-4076-9bed-74074d5213ba">
+      <name>абсСогласованиеНоменклатуры</name>
+      <synonym>
+        <key>ru</key>
+        <value>БП согласование номенклатуры</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Boolean</types>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="5cfb438f-10f8-4aa2-99b1-a22b1ffc4750">
+      <name>абсСогласованиеНоменклатуры_ПодготовкаНоменклатуры</name>
+      <synonym>
+        <key>ru</key>
+        <value>Подготовка номенклатуры</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Boolean</types>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="01cfecf2-acff-4e3b-949d-0665868c41d8">
+      <name>абсСогласованиеНоменклатуры_СотрудникГруппыНСИ</name>
+      <synonym>
+        <key>ru</key>
+        <value>Сотрудник группы НСИ</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Boolean</types>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="ebc656e4-6d76-49a9-aea9-d93391f8d4c1">
+      <name>Казначейство</name>
+      <synonym>
+        <key>ru</key>
+        <value>БП казначейство</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Boolean</types>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="56603331-8848-4f11-a859-2f476f4fbf9c">
+      <name>Казначейство_СотрудникДК</name>
+      <synonym>
+        <key>ru</key>
+        <value>Сотрудник ДК</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Boolean</types>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+  </tabularSections>
+  <tabularSections uuid="03655008-30ce-4e34-83b4-1d8758174749">
+    <producedTypes>
+      <objectType typeId="2fed9ab3-6c6c-410f-9211-dfd5051716c6" valueTypeId="e687e643-b460-4129-a115-c142043e2a87"/>
+      <rowType typeId="c7b9506e-79f8-497a-8f2d-579d2b2602dc" valueTypeId="a3ce5059-e67f-43d0-8620-300637b55184"/>
+    </producedTypes>
+    <name>Аналитика</name>
+    <synonym>
+      <key>ru</key>
+      <value>Аналитика</value>
+    </synonym>
+    <comment></comment>
+    <standardAttributes>
+      <dataHistory>Use</dataHistory>
+      <name>LineNumber</name>
+      <comment></comment>
+      <fillValue xsi:type="core:UndefinedValue"/>
+      <fullTextSearch>Use</fullTextSearch>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+    </standardAttributes>
+    <attributes uuid="2bd7eb1e-8a06-435c-89c0-4c8062369c6c">
+      <name>ФлЦФО</name>
+      <synonym>
+        <key>ru</key>
+        <value>Фл</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Boolean</types>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="01c2b7e8-fca0-44f6-bec6-91fdb7bfbaad">
+      <name>ЦФО</name>
+      <synonym>
+        <key>ru</key>
+        <value>ЦФО</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>CatalogRef.Подразделения</types>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="c4aadf39-59df-4be9-96c6-f8b59597fc4b">
+      <name>ФлЦФУ</name>
+      <synonym>
+        <key>ru</key>
+        <value>Фл </value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Boolean</types>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="c36fba09-9ebc-4c00-b2b1-3e1a89adc381">
+      <name>ЦФУ</name>
+      <synonym>
+        <key>ru</key>
+        <value>ЦФУ</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>CatalogRef.абс_ЦФУ</types>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="3eaa8125-f2ad-4578-b261-47373436f23d">
+      <name>Сотрудник</name>
+      <synonym>
+        <key>ru</key>
+        <value>Сотрудник</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>CatalogRef.СотрудникиОрганизаций</types>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+  </tabularSections>
+  <forms uuid="72fba1b8-997c-4e25-b941-1967cc2d875e">
+    <name>Форма</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма</value>
+    </synonym>
+    <comment></comment>
+    <formType>Ordinary</formType>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="28c01aa3-7d63-4a6d-a0bd-e31861eed1b1">
+    <name>ФормаАналитики</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма аналитики</value>
+    </synonym>
+    <comment></comment>
+    <formType>Ordinary</formType>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <templates uuid="542ff9a2-656f-4490-97ee-d45979f7cbaa">
+    <name>Макет</name>
+    <synonym>
+      <key>ru</key>
+      <value>Макет</value>
+    </synonym>
+    <comment></comment>
+  </templates>
+</mdclass:DataProcessor>

@@ -1,0 +1,162 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/"
+		xmlns:soap12bind="http://schemas.xmlsoap.org/wsdl/soap12/"
+		xmlns:soapbind="http://schemas.xmlsoap.org/wsdl/soap/"
+		xmlns:tns="http://www.abs-soft_Emp.ru"
+		xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"
+		xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"
+		xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+		xmlns:xsd1="http://www.abs-soft_Emp.ru"
+		name="abs_EmpData"
+		targetNamespace="http://www.abs-soft_Emp.ru">
+	<types>
+		<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+				xmlns:xs1="http://www.abs-soft_Emp.ru"
+				targetNamespace="http://www.abs-soft_Emp.ru"
+				attributeFormDefault="unqualified"
+				elementFormDefault="qualified">
+			<xs:complexType name="EmpData">
+				<xs:sequence>
+					<xs:element name="Code"
+							type="xs:string"
+							nillable="true"
+							minOccurs="0"/>
+					<xs:element name="FIO"
+							type="xs:string"
+							nillable="true"
+							minOccurs="0"/>
+					<xs:element name="CodeFL"
+							type="xs:string"
+							nillable="true"
+							minOccurs="0"/>
+					<xs:element name="Job"
+							type="xs:string"
+							nillable="true"
+							minOccurs="0"/>
+					<xs:element name="DataOfBirth"
+							type="xs:date"
+							nillable="true"
+							minOccurs="0"/>
+					<xs:element name="CodeJob"
+							type="xs:string"
+							nillable="true"
+							minOccurs="0"/>
+					<xs:element name="Grade"
+							type="xs:int"
+							nillable="true"
+							minOccurs="0"/>
+					<xs:element name="DepName"
+							type="xs:string"
+							nillable="true"
+							minOccurs="0"/>
+					<xs:element name="CodeDep"
+							type="xs:string"
+							nillable="true"
+							minOccurs="0"/>
+					<xs:element name="DateOfAdmission"
+							type="xs:date"
+							nillable="true"
+							minOccurs="0"/>
+					<xs:element name="DateOfDismissal"
+							type="xs:date"
+							nillable="true"
+							minOccurs="0"/>
+					<xs:element name="Login"
+							type="xs:string"
+							nillable="true"
+							minOccurs="0"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="Emp_List">
+				<xs:sequence>
+					<xs:element name="Emp_DataElements"
+							type="xsd1:EmpData"
+							nillable="true"
+							minOccurs="0"
+							maxOccurs="unbounded"/>
+					<xs:element name="Error"
+							type="xs:string"
+							nillable="true"
+							minOccurs="0"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:element name="GetEmpData">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="OrgCode"
+								type="xs:string"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="GetEmpDataResponse">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="return"
+								type="xsd1:Emp_List"
+								nillable="true"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:schema>
+	</types>
+	<message name="GetEmpDataRequestMessage">
+		<part name="parameters"
+				element="tns:GetEmpData"/>
+	</message>
+	<message name="GetEmpDataResponseMessage">
+		<part name="parameters"
+				element="tns:GetEmpDataResponse"/>
+	</message>
+	<portType name="abs_EmpDataPortType">
+		<operation name="GetEmpData">
+			<input name="GetEmpDataRequest"
+					message="tns:GetEmpDataRequestMessage"/>
+			<output name="GetEmpDataResponse"
+					message="tns:GetEmpDataResponseMessage"/>
+		</operation>
+	</portType>
+	<binding name="abs_EmpDataSoapBinding"
+			type="tns:abs_EmpDataPortType">
+		<soapbind:binding style="document"
+				transport="http://schemas.xmlsoap.org/soap/http"/>
+		<operation name="GetEmpData">
+			<soapbind:operation style="document"
+					soapAction="http://www.abs-soft_Emp.ru#abs_EmpData:GetEmpData"/>
+			<input>
+				<soapbind:body use="literal"/>
+			</input>
+			<output>
+				<soapbind:body use="literal"/>
+			</output>
+		</operation>
+	</binding>
+	<binding name="abs_EmpDataSoap12Binding"
+			type="tns:abs_EmpDataPortType">
+		<soap12bind:binding style="document"
+				transport="http://schemas.xmlsoap.org/soap/http"/>
+		<operation name="GetEmpData">
+			<soap12bind:operation style="document"
+					soapAction="http://www.abs-soft_Emp.ru#abs_EmpData:GetEmpData"/>
+			<input>
+				<soap12bind:body use="literal"/>
+			</input>
+			<output>
+				<soap12bind:body use="literal"/>
+			</output>
+		</operation>
+	</binding>
+	<service name="abs_EmpData">
+		<port name="abs_EmpDataSoap"
+				binding="tns:abs_EmpDataSoapBinding">
+			<documentation> 
+				<wsi:Claim xmlns:wsi="http://ws-i.org/schemas/conformanceClaim/"
+						conformsTo="http://ws-i.org/profiles/basic/1.1"/>
+			</documentation>
+			<soapbind:address location="https://isup-ttk.transtk.ru/ISUZK_EmpData/ws/EmpData.1cws"/>
+		</port>
+		<port name="abs_EmpDataSoap12"
+				binding="tns:abs_EmpDataSoap12Binding">
+			<soap12bind:address location="https://isup-ttk.transtk.ru/ISUZK_EmpData/ws/EmpData.1cws"/>
+		</port>
+	</service>
+</definitions>

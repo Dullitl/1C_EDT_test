@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="02fc8d42-2dac-41f0-ae81-60a5f71b9dad">
+  <producedTypes>
+    <selectionType typeId="2f54df84-9373-4160-b64e-11b2f7e52033" valueTypeId="6b54ce9c-8271-45a1-b5a6-92a9b40c86e1"/>
+    <listType typeId="8a35178e-8b82-450a-a8bf-99fcf74d6a23" valueTypeId="d0691f84-1864-4708-937f-4a298f3754e5"/>
+    <managerType typeId="6bb98ca6-68cc-4609-a4ea-a8b10001b9ec" valueTypeId="41bbd81a-4a97-48b3-9f75-9757c46d330b"/>
+    <recordSetType typeId="c3fd4c2d-19c3-4b7d-a152-64d09b1c7cb3" valueTypeId="39a20792-0322-42d5-9fa1-98a0e75e5ee3"/>
+    <recordKeyType typeId="4a24629f-1140-4aba-9690-1b67d25e4f38" valueTypeId="a209c8d6-5a93-496e-98c0-66e1168db69f"/>
+    <recordType typeId="630ec48a-3973-48ae-b6f0-9ba6d846239c" valueTypeId="77a4c449-687f-4a62-98ad-73d480ce1fa9"/>
+    <recordManagerType typeId="d4ff04ed-bc24-4658-885d-138eff19cb4b" valueTypeId="62832b9c-f492-4b37-acd9-61618153977e"/>
+  </producedTypes>
+  <name>ttk_НастройкаОтложенногоПроведенияДокументов</name>
+  <synonym>
+    <key>ru</key>
+    <value>Ttk настройка отложенного проведения документов</value>
+  </synonym>
+  <comment></comment>
+  <useStandardCommands>true</useStandardCommands>
+  <editType>InDialog</editType>
+  <defaultRecordForm>InformationRegister.ttk_НастройкаОтложенногоПроведенияДокументов.Form.ФормаЗаписи</defaultRecordForm>
+  <defaultListForm>InformationRegister.ttk_НастройкаОтложенногоПроведенияДокументов.Form.ФормаСписка</defaultListForm>
+  <informationRegisterPeriodicity>Day</informationRegisterPeriodicity>
+  <mainFilterOnPeriod>true</mainFilterOnPeriod>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <resources uuid="85936453-005f-4ced-86bc-8d929d48b2c2">
+    <name>ОтложенноеПроведениеВключено</name>
+    <synonym>
+      <key>ru</key>
+      <value>Отложенное проведение включено</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <dimensions uuid="3e25251d-47f6-4e25-a87f-3f55fd8c06c7">
+    <name>Организация</name>
+    <synonym>
+      <key>ru</key>
+      <value>Организация</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.Организации</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="47338032-ccff-4f7c-a3a3-058eb6ab1add">
+    <name>ВидДокумента</name>
+    <synonym>
+      <key>ru</key>
+      <value>Вид документа</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>250</length>
+      </stringQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:StringValue">
+      <value></value>
+    </fillValue>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <forms uuid="3d55ddd5-b790-4338-8a26-25359e62b8dd">
+    <name>ФормаСписка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма списка</value>
+    </synonym>
+    <comment></comment>
+    <formType>Ordinary</formType>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="2f1e28f8-10d5-4001-a4b8-dd318849de5b">
+    <name>ФормаЗаписи</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма записи</value>
+    </synonym>
+    <comment></comment>
+    <formType>Ordinary</formType>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+</mdclass:InformationRegister>

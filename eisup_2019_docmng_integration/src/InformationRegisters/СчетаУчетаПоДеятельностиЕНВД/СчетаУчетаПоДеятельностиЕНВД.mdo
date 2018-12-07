@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="6b209ee3-8a88-4fb8-9c1e-2f167583d3e9">
+  <producedTypes>
+    <selectionType typeId="0343092a-4f1f-432b-abb7-d984393bd427" valueTypeId="9dab3092-9519-45d0-b2da-0996bbc445c6"/>
+    <listType typeId="c024c118-722d-458f-86ae-595e64549c85" valueTypeId="148fd6ed-245b-4214-883f-fb4d78684c36"/>
+    <managerType typeId="307bd526-8b35-434f-8475-b6c8d047fe67" valueTypeId="ccb8a34c-0078-4d98-be46-5f8c2da0211a"/>
+    <recordSetType typeId="bea76248-ccf9-4bf6-8a4c-2cad0cf04327" valueTypeId="2ef54c72-da13-4dca-af02-d40fb2ec730b"/>
+    <recordKeyType typeId="725c154a-39aa-4cc6-8ac9-4f9c73845f49" valueTypeId="68492a09-3dd2-4212-a441-09ccb285cae3"/>
+    <recordType typeId="2ab779a2-0716-4468-ae4d-4e270863285c" valueTypeId="121ca241-ed4f-4d60-9ee1-e272586e7130"/>
+    <recordManagerType typeId="6a6c51d7-de13-4126-a91f-d5d5c93f0b89" valueTypeId="cd394509-445f-43b4-8ef5-80982cb5d1df"/>
+  </producedTypes>
+  <name>СчетаУчетаПоДеятельностиЕНВД</name>
+  <synonym>
+    <key>ru</key>
+    <value>Счета учета по деятельности, облагаемой ЕНВД</value>
+  </synonym>
+  <comment>(Регл) Счета учета по деятельности, облагаемой ЕНВД</comment>
+  <defaultListForm>InformationRegister.СчетаУчетаПоДеятельностиЕНВД.Form.ФормаСписка</defaultListForm>
+  <help>
+    <pages>
+      <lang>ru</lang>
+    </pages>
+  </help>
+  <resources uuid="dad248e5-7921-4080-a014-68302f7a78d5">
+    <name>ПодлежитРаспределению</name>
+    <synonym>
+      <key>ru</key>
+      <value>Подлежит распределению</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <dimensions uuid="4bc90be1-3cc0-4afd-8b81-e1ce3412b906">
+    <name>Счет</name>
+    <synonym>
+      <key>ru</key>
+      <value>Счет</value>
+    </synonym>
+    <comment>Счет бухгалтерского учета</comment>
+    <type>
+      <types>ChartOfAccountsRef.Хозрасчетный</types>
+      <types>ChartOfAccountsRef.Налоговый</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <forms uuid="ef2105c9-6fa7-4b54-a563-8faf770226c7">
+    <name>ФормаСписка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма списка</value>
+    </synonym>
+    <comment></comment>
+    <formType>Ordinary</formType>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+</mdclass:InformationRegister>

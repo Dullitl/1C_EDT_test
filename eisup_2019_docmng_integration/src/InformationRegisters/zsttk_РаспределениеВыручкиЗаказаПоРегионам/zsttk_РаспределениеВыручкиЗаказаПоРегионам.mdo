@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="eab6a11d-24ad-47a1-8db9-14993eb4b0bb">
+  <producedTypes>
+    <selectionType typeId="f50bfd4e-543b-4498-9090-fcdbf0e99145" valueTypeId="9c8840f6-49bc-4d0d-baf7-ead418267b7e"/>
+    <listType typeId="43f123ef-1dd9-4b3e-b7ed-1609b0a2b531" valueTypeId="1bdf7929-de7b-4fcf-bc23-6b1faefc44b4"/>
+    <managerType typeId="934c71e7-d66c-4f7a-8540-d82e14a7ecae" valueTypeId="30b1bb95-659a-4884-9e4b-22994653f1a2"/>
+    <recordSetType typeId="46b12f75-21c2-420b-b856-40ed96aa4eb3" valueTypeId="678ddedf-70eb-41fc-a61e-4018c2232f80"/>
+    <recordKeyType typeId="295a3353-0acb-4234-b4d2-e8449d675895" valueTypeId="cb5dc2ef-6fa9-4fbe-8e33-33670550fdad"/>
+    <recordType typeId="2936e9a3-1ac6-44bf-80a7-f71be818c3ec" valueTypeId="a7b30a3d-7ac5-460c-8d73-aa031a988f3c"/>
+    <recordManagerType typeId="b6cde355-d031-4038-9e27-8e882157a192" valueTypeId="c1b09153-92aa-4704-98a3-d63d730762ae"/>
+  </producedTypes>
+  <name>zsttk_РаспределениеВыручкиЗаказаПоРегионам</name>
+  <synonym>
+    <key>ru</key>
+    <value>Zsttk распределение выручки заказа по регионам</value>
+  </synonym>
+  <comment>Распределение выручки заказа по регионам</comment>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Active</name>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>LineNumber</name>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Recorder</name>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Period</name>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <informationRegisterPeriodicity>Month</informationRegisterPeriodicity>
+  <writeMode>RecorderSubordinate</writeMode>
+  <resources uuid="a7f8b54a-50a6-4712-8844-185264714919">
+    <name>Процент</name>
+    <synonym>
+      <key>ru</key>
+      <value>Процент</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>10</precision>
+      </numberQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <dimensions uuid="55c68b41-253d-4283-a178-f784df2a7951">
+    <name>Заказ</name>
+    <synonym>
+      <key>ru</key>
+      <value>Заказ</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>DocumentRef.ЗаказПокупателя</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="5bf9ec3f-be1e-4457-9a2d-e51ed2619e3b">
+    <name>СегментСети</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сегмент сети</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.СегментыСети</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+</mdclass:InformationRegister>

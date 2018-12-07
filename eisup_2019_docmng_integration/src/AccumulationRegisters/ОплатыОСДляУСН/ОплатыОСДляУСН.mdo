@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:AccumulationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="ece256c7-9e74-49f7-81be-463310154b0f">
+  <producedTypes>
+    <selectionType typeId="10f13b05-c9e1-4d08-80d1-a39d3c23ee9f" valueTypeId="4c5bdc2a-526d-46b8-9c30-3eb8eaf452f4"/>
+    <listType typeId="19d4f9f9-7935-4832-a718-b7b0083d2fc0" valueTypeId="678310d6-a836-4ce9-81ea-a478d20470da"/>
+    <managerType typeId="a68e1388-70ff-4270-95a2-489be42f0f1d" valueTypeId="ee0615e0-4246-42e8-8094-d2fc26b516c3"/>
+    <recordSetType typeId="566f2c8a-f594-430d-9bae-670acf83371f" valueTypeId="a7e74c95-99f5-401d-b311-f396b8cd6f73"/>
+    <recordKeyType typeId="e19eb417-ba81-4f46-b29a-4a2be6f220d5" valueTypeId="1ce44382-f1d0-47f9-9c7a-75ee5c842d3b"/>
+    <recordType typeId="fd68b02b-598a-4409-97a3-692a9166a0e3" valueTypeId="452cc9c8-8ea4-43c4-bfdb-782e0e392cb8"/>
+  </producedTypes>
+  <name>ОплатыОСДляУСН</name>
+  <synonym>
+    <key>ru</key>
+    <value>Зарегистрированные оплаты основных средств (УСН)</value>
+  </synonym>
+  <comment></comment>
+  <defaultListForm>AccumulationRegister.ОплатыОСДляУСН.Form.ФормаСписка</defaultListForm>
+  <registerType>Turnovers</registerType>
+  <enableTotalsSplitting>true</enableTotalsSplitting>
+  <resources uuid="0434fe79-1f28-455d-8ea2-3b3115c79861">
+    <name>СуммаОплаты</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сумма оплаты</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>2</scale>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </resources>
+  <dimensions uuid="9e958e0e-fe9c-4126-b19a-77a3e0ba41e0">
+    <name>ОсновноеСредство</name>
+    <synonym>
+      <key>ru</key>
+      <value>Основное средство</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.ОсновныеСредства</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="32ea7be9-8176-49f2-a42b-e785a1ac6bc1">
+    <name>Организация</name>
+    <synonym>
+      <key>ru</key>
+      <value>Организация</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.Организации</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="84689ef6-b8e3-431c-a2d7-7af33ffb0290">
+    <name>ДатаОплаты</name>
+    <synonym>
+      <key>ru</key>
+      <value>Дата оплаты</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Date</types>
+      <dateQualifiers>
+        <dateFractions>Date</dateFractions>
+      </dateQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="e3eaa5f7-7821-49b1-a15f-d6673cecc3a0">
+    <name>ДокументМодернизации</name>
+    <synonym>
+      <key>ru</key>
+      <value>Документ модернизации</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>DocumentRef.МодернизацияОС</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <forms uuid="11af14d6-0ebb-4776-a325-3de42350a9a4">
+    <name>ФормаСписка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма списка</value>
+    </synonym>
+    <comment></comment>
+    <formType>Ordinary</formType>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+</mdclass:AccumulationRegister>

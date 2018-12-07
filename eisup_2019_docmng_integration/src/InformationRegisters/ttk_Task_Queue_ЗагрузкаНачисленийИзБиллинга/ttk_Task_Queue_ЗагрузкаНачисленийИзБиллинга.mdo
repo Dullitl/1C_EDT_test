@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="2e61daef-0cd6-431f-9cf7-4a8a899cb83d">
+  <producedTypes>
+    <selectionType typeId="e66b943f-c894-46af-9ed3-448bcd564d81" valueTypeId="026490df-5407-4491-bb4c-fd64f31dee00"/>
+    <listType typeId="411f1857-22ae-4099-89a8-6798bbeec365" valueTypeId="a10f7919-aa3b-4e2d-a91e-79919d4ee4b2"/>
+    <managerType typeId="ded155ff-7a9b-49d4-9840-7da381404d13" valueTypeId="0bd519d9-5cf1-4948-9391-24d71d4869f1"/>
+    <recordSetType typeId="3da25621-bd7e-4fcf-9718-d60d1e988122" valueTypeId="5d14bcc2-f52f-4cf8-884c-d5f25bf45c29"/>
+    <recordKeyType typeId="70e4e970-e139-4a13-8912-94b16d3f5511" valueTypeId="db4844ec-b6fe-4d82-87c0-3e437909b80a"/>
+    <recordType typeId="374f77a9-9b97-47fe-9f9f-96d47d96c3a8" valueTypeId="0a43f26c-1163-4085-9e1e-cb9d7bd344d5"/>
+    <recordManagerType typeId="b35e9703-bb6c-4943-b365-09aeac7fa1c8" valueTypeId="784a1ed3-691f-40b9-98e5-f0da65c0ed2d"/>
+  </producedTypes>
+  <name>ttk_Task_Queue_ЗагрузкаНачисленийИзБиллинга</name>
+  <synonym>
+    <key>ru</key>
+    <value>Ttk task queue загрузка начислений из биллинга</value>
+  </synonym>
+  <comment></comment>
+  <editType>InDialog</editType>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <attributes uuid="8c2f29cd-9013-4582-acdc-86f676924707">
+    <name>ЦельОперации</name>
+    <synonym>
+      <key>ru</key>
+      <value>Цель операции</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>EnumRef.ttk_ОперацииСДокументамиНачислений</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="21637854-7007-464e-8062-9884b9f16982">
+    <name>Ответственный</name>
+    <synonym>
+      <key>ru</key>
+      <value>Ответственный</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.Пользователи</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="499fa647-4fbc-4e7e-9b96-fe6d030f930a">
+    <name>НачалоОперации</name>
+    <synonym>
+      <key>ru</key>
+      <value>Начало операции</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Date</types>
+      <dateQualifiers/>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="17255535-f9a2-4a8d-9e4e-c189519f545a">
+    <name>ОкончаниеОперации</name>
+    <synonym>
+      <key>ru</key>
+      <value>Окончание операции</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Date</types>
+      <dateQualifiers/>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="08aa3370-8152-413d-8c81-239d1f7484a2">
+    <name>СчетНаОплату</name>
+    <synonym>
+      <key>ru</key>
+      <value>Счет на оплату</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>DocumentRef.СчетНаОплатуПокупателю</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="33370a43-7796-471c-b1bd-48039cf415a8">
+    <name>Реализация</name>
+    <synonym>
+      <key>ru</key>
+      <value>Реализация</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>DocumentRef.РеализацияТоваровУслуг</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="096813e3-b14b-428f-99dd-d307fa3fa39b">
+    <name>КорректировкаРеализации</name>
+    <synonym>
+      <key>ru</key>
+      <value>Корректировка реализации</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>DocumentRef.КорректировкаРеализации</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="e2ac96c8-56e2-4e75-8cac-4ab50733a4fe">
+    <name>СчетФактура</name>
+    <synonym>
+      <key>ru</key>
+      <value>Счет фактура</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>DocumentRef.СчетФактураВыданный</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="8ca47b6e-d24d-4d7a-acb7-71c26aebc4a2">
+    <name>Пул</name>
+    <synonym>
+      <key>ru</key>
+      <value>Пул</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>10</precision>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="a495c7e1-8930-4eef-9c6b-892b5bb73a39">
+    <name>ЗадолженностьМГМН</name>
+    <synonym>
+      <key>ru</key>
+      <value>Задолженность МГМН</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>DocumentRef.абс_ЗадолженностьМГ_МН</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <dimensions uuid="43c182ae-ab8a-4aef-9b2e-85b2b164ad49">
+    <name>ДокументЗагрузки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Документ загрузки</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>DocumentRef.ttk_ЗагрузкаНачисленийИзБиллинга</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="813731b1-7531-46a3-9313-2a527188000b">
+    <name>СтрокаНомер</name>
+    <synonym>
+      <key>ru</key>
+      <value>Строка номер</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>10</precision>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+</mdclass:InformationRegister>

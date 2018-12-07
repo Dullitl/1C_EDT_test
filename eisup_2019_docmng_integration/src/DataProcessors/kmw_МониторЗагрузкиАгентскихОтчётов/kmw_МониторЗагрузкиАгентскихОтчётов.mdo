@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:DataProcessor xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="1b5d23d1-40f4-4866-9b5d-9585aa3ba24a">
+  <producedTypes>
+    <objectType typeId="6e64ed6b-7b76-41ee-a862-7143682b9b71" valueTypeId="302aed93-724f-4bf9-ac96-f6e6b8736a7d"/>
+    <managerType typeId="ee2ee41a-19a3-4190-a3fd-0cbdea2143ba" valueTypeId="9adbf107-2ff2-47b3-8e22-d6371c6848b8"/>
+  </producedTypes>
+  <name>kmw_МониторЗагрузкиАгентскихОтчётов</name>
+  <synonym>
+    <key>ru</key>
+    <value>Монитор загрузки агентских отчётов</value>
+  </synonym>
+  <comment></comment>
+  <defaultForm>DataProcessor.kmw_МониторЗагрузкиАгентскихОтчётов.Form.Форма</defaultForm>
+  <attributes uuid="42e58556-39b0-4ca9-936e-50605171aaca">
+    <name>ЗаПериод</name>
+    <synonym>
+      <key>ru</key>
+      <value>За период</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Date</types>
+      <dateQualifiers>
+        <dateFractions>Date</dateFractions>
+      </dateQualifiers>
+    </type>
+    <format>
+      <key>ru</key>
+      <value>ДФ=ММММ</value>
+    </format>
+    <toolTip>
+      <key>ru</key>
+      <value>Месяц отчётов</value>
+    </toolTip>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+  </attributes>
+  <attributes uuid="2ae0e247-90f8-4e0f-9585-d959be5fe8e5">
+    <name>Организация</name>
+    <synonym>
+      <key>ru</key>
+      <value>Организация</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.Организации</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+  </attributes>
+  <attributes uuid="fa31e8dd-ef92-43ce-b967-c95b46a4b46a">
+    <name>ПериодОтражения</name>
+    <synonym>
+      <key>ru</key>
+      <value>Период отражения</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.ас_ПериодыОтражения</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="c3b75121-8f77-4f0b-b4da-72dfc27a529f">
+    <name>ПутьФаловЗагрузки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Путь фалов загрузки</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>String</types>
+      <stringQualifiers/>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+  </attributes>
+  <tabularSections uuid="4e0bca1b-2007-45d4-bdec-b40c096a0605">
+    <producedTypes>
+      <objectType typeId="b2a6aef2-3366-48e5-8964-f4e77d79ec49" valueTypeId="6e35f369-53c7-4b14-afcd-47f63b2736f8"/>
+      <rowType typeId="515b52a0-ee95-4c75-9d78-700fa0401f8b" valueTypeId="5de8667c-1b65-49e6-abbd-f247707a1aaf"/>
+    </producedTypes>
+    <name>АгентскиеДоговоры</name>
+    <synonym>
+      <key>ru</key>
+      <value>Агентские договоры</value>
+    </synonym>
+    <comment></comment>
+    <standardAttributes>
+      <dataHistory>Use</dataHistory>
+      <name>LineNumber</name>
+      <comment></comment>
+      <fillValue xsi:type="core:UndefinedValue"/>
+      <fullTextSearch>Use</fullTextSearch>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+    </standardAttributes>
+    <attributes uuid="7871dbe9-ebc4-4f37-a993-509a169af065">
+      <name>Договор</name>
+      <synonym>
+        <key>ru</key>
+        <value>Договор</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>CatalogRef.ДоговорыКонтрагентов</types>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillChecking>ShowError</fillChecking>
+      <choiceParameters>
+        <name>Отбор.ВидДоговора</name>
+        <value xsi:type="core:ReferenceValue">
+          <value>Enum.ВидыДоговоровКонтрагентов.EnumValue.СКомиссионером</value>
+        </value>
+      </choiceParameters>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="ed6ca3f2-820c-4eaf-a7d0-b7d2199bfd4d">
+      <name>ДокументОКОП</name>
+      <synonym>
+        <key>ru</key>
+        <value>Документ ОКОП</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>DocumentRef.ОтчетКомиссионераОПродажах</types>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <choiceParameterLinks>
+        <name>Отбор.ДоговорКонтрагента</name>
+        <field>DataProcessor.kmw_МониторЗагрузкиАгентскихОтчётов.TabularSection.АгентскиеДоговоры.Attribute.Договор</field>
+      </choiceParameterLinks>
+      <choiceParameterLinks>
+        <name>Отбор.Дата</name>
+        <field>DataProcessor.kmw_МониторЗагрузкиАгентскихОтчётов.Attribute.ЗаПериод</field>
+      </choiceParameterLinks>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+  </tabularSections>
+  <forms uuid="f1f0b6fc-f677-40bb-8120-957967e6c087">
+    <name>Форма</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма</value>
+    </synonym>
+    <comment></comment>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="2c8e3249-b4cb-4037-a18f-afc6e9a8681d">
+    <name>Форма1</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма1</value>
+    </synonym>
+    <comment></comment>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+</mdclass:DataProcessor>

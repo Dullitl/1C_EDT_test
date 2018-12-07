@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="cab00b72-30df-41d6-8b6b-58aa8c796257">
+  <producedTypes>
+    <selectionType typeId="80191ad4-e3a2-4463-98ee-7fb9e6aa5c89" valueTypeId="f28f5232-ce61-49fa-90eb-46854d305385"/>
+    <listType typeId="bc74741c-8121-49c2-9e99-f5567081b3a7" valueTypeId="510021e0-63fe-4763-9476-3fb91372acf9"/>
+    <managerType typeId="f01e0bc2-f03f-45df-9e1a-ae6b69154720" valueTypeId="3644b4f7-1060-4f59-b0d3-ff69efaeb24d"/>
+    <recordSetType typeId="f8bf5cfb-3992-4fe0-a081-34361cb1a816" valueTypeId="277b5e8b-0240-4814-ab2c-88caf156c748"/>
+    <recordKeyType typeId="f8bc43c4-5c8f-41b7-97bf-975de534474d" valueTypeId="57e60661-65e9-48fc-a943-c4c1f5679f54"/>
+    <recordType typeId="43719ffc-2a8a-49e5-8799-5659bd52b680" valueTypeId="ff96e943-d310-490e-9872-0060b84423d8"/>
+    <recordManagerType typeId="ee0d2c31-cc03-464c-ad35-08ceb124a74b" valueTypeId="f4bb48e6-fd87-47fc-83c2-5afe8e0089b6"/>
+  </producedTypes>
+  <name>НачислениеАмортизацииНМАПоБазовойСтоимостиНалоговыйУчет</name>
+  <synonym>
+    <key>ru</key>
+    <value>Начисление амортизации НМА по базовой стоимости (нал. учет)</value>
+  </synonym>
+  <comment>(Регл) Начисление амортизации по базовой стоимости (налоговый учет)</comment>
+  <informationRegisterPeriodicity>RecorderPosition</informationRegisterPeriodicity>
+  <writeMode>RecorderSubordinate</writeMode>
+  <help>
+    <pages>
+      <lang>ru</lang>
+    </pages>
+  </help>
+  <resources uuid="066227d9-b0a9-418d-95b3-c73c17df090b">
+    <name>ПризнакНачисленияПоБазовойСтоимости</name>
+    <synonym>
+      <key>ru</key>
+      <value>Признак начисления по базовой стоимости</value>
+    </synonym>
+    <comment>Признак начисления по базовой стоимости (для нелинейного метода)</comment>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="71d9b63b-2e3a-4e52-9192-e957fd68c179">
+    <name>СуммаНакопленнойАмортизации</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сумма накопленной амортизации</value>
+    </synonym>
+    <comment>Сумма амортизации, накопленной в момент перехода к начислению по базовой стоимости</comment>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>2</scale>
+      </numberQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="e9831f7f-e919-4e0b-9cb7-659d5c764c79">
+    <name>ФактическийСрокПолезногоИспользования</name>
+    <synonym>
+      <key>ru</key>
+      <value>Фактический срок полезного использования</value>
+    </synonym>
+    <comment>Фактический срок полезного использования, накопленный на момент перехода к базовой стоимости</comment>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>4</precision>
+      </numberQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="03ba6ef5-69bf-4cca-ad78-ad3561a72223">
+    <name>БазоваяСтоимость</name>
+    <synonym>
+      <key>ru</key>
+      <value>Базовая стоимость</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>2</scale>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <dimensions uuid="b6e66da1-36df-4f68-8b79-735f93b2ba8e">
+    <name>НематериальныйАктив</name>
+    <synonym>
+      <key>ru</key>
+      <value>Нематериальный актив</value>
+    </synonym>
+    <comment>(Регл)</comment>
+    <type>
+      <types>CatalogRef.НематериальныеАктивы</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="bcb28d9b-28b1-4ccd-9854-9ee1e5e00661">
+    <name>Организация</name>
+    <synonym>
+      <key>ru</key>
+      <value>Организация</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.Организации</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+</mdclass:InformationRegister>

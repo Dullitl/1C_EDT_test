@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="6d61304e-9e66-4e9c-a382-176ea9ba116b">
+  <producedTypes>
+    <selectionType typeId="490bc711-855d-475f-9500-9938b0375fbf" valueTypeId="d5942f76-97fe-4a35-96c2-043db8b669fe"/>
+    <listType typeId="12ddd5b1-f0c3-484e-83c0-102c08503328" valueTypeId="78488aa2-a08a-4655-83e2-e9c2f00df78f"/>
+    <managerType typeId="d3ec03b7-51de-4b0a-aef4-713f59e54e5d" valueTypeId="478b519d-5d2c-4a7f-8f74-e6475a05d930"/>
+    <recordSetType typeId="73236ce8-06b7-484f-83ca-1a41dd31460a" valueTypeId="851680af-2b80-4e58-8c6c-7af4199749be"/>
+    <recordKeyType typeId="901be25c-439d-4ade-a801-47618872cda6" valueTypeId="2d6511b2-de7c-4633-b83b-861e8820005e"/>
+    <recordType typeId="e2dfeb78-5bfe-413f-9382-ea691d7baf7c" valueTypeId="29ce4078-1a57-4ddb-816d-daafeddda4cd"/>
+    <recordManagerType typeId="6fd69720-56f3-4f81-8f47-95db5337e7d5" valueTypeId="15282999-3e91-43e8-8215-2c8f3d5ccc8b"/>
+  </producedTypes>
+  <name>абс_ИзменениеСтатусовДоговоров</name>
+  <synonym>
+    <key>ru</key>
+    <value>Согласование договора</value>
+  </synonym>
+  <comment>54270</comment>
+  <useStandardCommands>true</useStandardCommands>
+  <defaultListForm>InformationRegister.абс_ИзменениеСтатусовДоговоров.Form.ФормаСписка</defaultListForm>
+  <auxiliaryListForm>InformationRegister.абс_ИзменениеСтатусовДоговоров.Form.ФормаСпискаУравляемая</auxiliaryListForm>
+  <informationRegisterPeriodicity>Second</informationRegisterPeriodicity>
+  <mainFilterOnPeriod>true</mainFilterOnPeriod>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <attributes uuid="794585b4-d542-4169-820e-2d21f0653228">
+    <name>Комментарий</name>
+    <synonym>
+      <key>ru</key>
+      <value>Комментарий</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>String</types>
+      <stringQualifiers/>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:StringValue">
+      <value></value>
+    </fillValue>
+  </attributes>
+  <attributes uuid="fa141f55-3e00-45c4-be49-32d05ecc928e">
+    <name>ВнутреннийНомер</name>
+    <synonym>
+      <key>ru</key>
+      <value>Внутренний номер</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>7</precision>
+      </numberQualifiers>
+    </type>
+    <format>
+      <key>ru</key>
+      <value>ЧЦ=7; ЧГ=</value>
+    </format>
+    <editFormat>
+      <key>ru</key>
+      <value>ЧЦ=7; ЧГ=</value>
+    </editFormat>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <dimensions uuid="1b2df31a-d6b2-476f-aff8-ca431295d0b7">
+    <name>Договор</name>
+    <synonym>
+      <key>ru</key>
+      <value>Договор</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.ДоговорыКонтрагентов</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="84e3ac1d-c6a5-48a8-bb34-bd5fb437e022">
+    <name>СтатусДоговора</name>
+    <synonym>
+      <key>ru</key>
+      <value>Статус договора</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>EnumRef.абсСтатусыДоговоров</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="4dc3e8d3-99a3-4975-aed7-23afc3889aa7">
+    <name>Исполнитель</name>
+    <synonym>
+      <key>ru</key>
+      <value>Исполнитель</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.Пользователи</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <forms uuid="e2bec408-d875-4cba-8c5f-15ab450e5470">
+    <name>ФормаСпискаУравляемая</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма списка</value>
+    </synonym>
+    <comment></comment>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="1a815ccf-ec21-4895-bce9-9ea086e37050">
+    <name>ФормаСписка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма списка</value>
+    </synonym>
+    <comment></comment>
+    <formType>Ordinary</formType>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <commands uuid="e964654e-236f-4999-ba2f-b2b59b4eca03">
+    <name>КомандаОткрытьИсториюИзмененияСтатусаДоговора</name>
+    <synonym>
+      <key>ru</key>
+      <value>Команда открыть историю изменения статуса договора</value>
+    </synonym>
+    <comment></comment>
+    <group>NavigationPanelOrdinary</group>
+    <commandParameterType/>
+    <representation>Auto</representation>
+    <shortcut></shortcut>
+  </commands>
+</mdclass:InformationRegister>

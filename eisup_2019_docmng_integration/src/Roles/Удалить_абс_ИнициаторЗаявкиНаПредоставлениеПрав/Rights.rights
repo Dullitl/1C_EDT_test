@@ -1,0 +1,786 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Rights xmlns="http://v8.1c.ru/8.2/roles" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="Rights" version="2.6">
+	<setForNewObjects>false</setForNewObjects>
+	<setForAttributesByDefault>true</setForAttributesByDefault>
+	<independentRightsOfChildObjects>false</independentRightsOfChildObjects>
+	<object>
+		<name>Interface.Общий</name>
+		<right>
+			<name>Use</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
+		<name>Interface.МеждународныйУчет</name>
+		<right>
+			<name>Use</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
+		<name>Interface.УправлениеЗакупками</name>
+		<right>
+			<name>Use</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
+		<name>Document.абс_ИнвентаризацияЗабалансОС.TabularSection.ОС.Attribute.СчетУчетаБУ</name>
+		<right>
+			<name>View</name>
+			<value>false</value>
+		</right>
+		<right>
+			<name>Edit</name>
+			<value>false</value>
+		</right>
+	</object>
+	<object>
+		<name>Document.абс_ИнвентаризацияЗабалансОС.Attribute.ДокументОснованиеВид</name>
+		<right>
+			<name>View</name>
+			<value>false</value>
+		</right>
+		<right>
+			<name>Edit</name>
+			<value>false</value>
+		</right>
+	</object>
+	<object>
+		<name>Interface.УправлениеПерсоналом</name>
+		<right>
+			<name>Use</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
+		<name>Document.абс_ИнвентаризацияЗабалансОС.Attribute.Контрагент</name>
+		<right>
+			<name>View</name>
+			<value>false</value>
+		</right>
+		<right>
+			<name>Edit</name>
+			<value>false</value>
+		</right>
+	</object>
+	<object>
+		<name>Document.абс_ИнвентаризацияЗабалансОС.TabularSection.ОС.Attribute.ОсновноеСредство</name>
+		<right>
+			<name>View</name>
+			<value>false</value>
+		</right>
+		<right>
+			<name>Edit</name>
+			<value>false</value>
+		</right>
+	</object>
+	<object>
+		<name>Document.абс_ИнвентаризацияЗабалансОС.Attribute.МОЛ</name>
+		<right>
+			<name>View</name>
+			<value>false</value>
+		</right>
+		<right>
+			<name>Edit</name>
+			<value>false</value>
+		</right>
+	</object>
+	<object>
+		<name>Document.абс_ИнвентаризацияЗабалансОС.Attribute.ДокументОснованиеДата</name>
+		<right>
+			<name>View</name>
+			<value>false</value>
+		</right>
+		<right>
+			<name>Edit</name>
+			<value>false</value>
+		</right>
+	</object>
+	<object>
+		<name>Interface.УправлениеЗаказами</name>
+		<right>
+			<name>Use</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
+		<name>Document.абс_ИнвентаризацияЗабалансОС.TabularSection.ИнвентаризационнаяКомиссия.Attribute.Председатель</name>
+		<right>
+			<name>View</name>
+			<value>false</value>
+		</right>
+		<right>
+			<name>Edit</name>
+			<value>false</value>
+		</right>
+	</object>
+	<object>
+		<name>Document.абс_ИнвентаризацияЗабалансОС.TabularSection.ОС.Attribute.НаличиеПоДаннымУчета</name>
+		<right>
+			<name>View</name>
+			<value>false</value>
+		</right>
+		<right>
+			<name>Edit</name>
+			<value>false</value>
+		</right>
+	</object>
+	<object>
+		<name>Interface.ЗаведующийУчетом</name>
+		<right>
+			<name>Use</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
+		<name>Catalog.СотрудникиОрганизаций</name>
+		<right>
+			<name>Read</name>
+			<value>false</value>
+			<restrictionByCondition>
+				<condition>#Если &amp;ИспользоватьОграничениеПоОрганизации ИЛИ &amp;ИспользоватьОграничениеПоФизическиеЛица #Тогда
+
+ТекущаяТаблица ИЗ Справочник.СотрудникиОрганизаций КАК ТекущаяТаблица
+	ЛЕВОЕ СОЕДИНЕНИЕ (ВЫБРАТЬ РАЗЛИЧНЫЕ
+		СоставГруппы.Ссылка КАК ГруппаПользователей
+	ИЗ
+		Справочник.ГруппыПользователей.ПользователиГруппы КАК СоставГруппы
+	ГДЕ
+		СоставГруппы.Пользователь = &amp;ТекущийПользователь) КАК ГруппыПользователей
+	ПО (ИСТИНА)
+	ЛЕВОЕ СОЕДИНЕНИЕ Справочник.Организации КАК ОбособленныеПодразделения
+	ПО (ОбособленныеПодразделения.ГоловнаяОрганизация = ТекущаяТаблица.Организация
+				И (НЕ ОбособленныеПодразделения.ГоловнаяОрганизация = ЗНАЧЕНИЕ(Справочник.Организации.ПустаяСсылка))
+			ИЛИ ОбособленныеПодразделения.Ссылка = ТекущаяТаблица.Организация)
+ГДЕ (ТекущаяТаблица.ЭтоГруппа
+			ИЛИ (НЕ 1 В
+						(ВЫБРАТЬ ПЕРВЫЕ 1
+							1 КАК ПолеОтбора
+						ИЗ
+							РегистрСведений.НазначениеВидовОбъектовДоступа КАК НазначениеВидовОбъектовДоступа
+						ГДЕ
+							НазначениеВидовОбъектовДоступа.ГруппаПользователей = ГруппыПользователей.ГруппаПользователей
+							И ВЫБОР
+								
+								#Если &amp;ИспользоватьОграничениеПоОрганизации #Тогда
+								КОГДА НазначениеВидовОбъектовДоступа.ВидОбъектаДоступа = ЗНАЧЕНИЕ(Перечисление.ВидыОбъектовДоступа.Организации)
+									ТОГДА ВЫБОР
+											КОГДА 1 В
+													(ВЫБРАТЬ ПЕРВЫЕ 1
+														1
+													ИЗ
+														(ВЫБРАТЬ
+															1 КАК ПолеОтбора
+														) КАК Оптмизация ВНУТРЕННЕЕ СОЕДИНЕНИЕ РегистрСведений.НастройкиПравДоступаПользователей КАК НастройкиПравДоступаПользователей
+															ПО
+																НастройкиПравДоступаПользователей.ОбъектДоступа = ОбособленныеПодразделения.Ссылка
+																	И НастройкиПравДоступаПользователей.ВидОбъектаДоступа = ЗНАЧЕНИЕ(Перечисление.ВидыОбъектовДоступа.Организации)
+																	И (НастройкиПравДоступаПользователей.Пользователь = НазначениеВидовОбъектовДоступа.ГруппаПользователей
+																		ИЛИ НастройкиПравДоступаПользователей.Пользователь = ЗНАЧЕНИЕ(Справочник.ГруппыПользователей.ВсеПользователи)))
+												ТОГДА ИСТИНА
+											ИНАЧЕ ЛОЖЬ
+										КОНЕЦ
+								#КонецЕсли
+								
+								#Если &amp;ИспользоватьОграничениеПоФизическиеЛица #Тогда
+								КОГДА НазначениеВидовОбъектовДоступа.ВидОбъектаДоступа = ЗНАЧЕНИЕ(Перечисление.ВидыОбъектовДоступа.ФизическиеЛица)
+									ТОГДА ВЫБОР
+											КОГДА 1 В
+													(ВЫБРАТЬ ПЕРВЫЕ 1
+														1
+													ИЗ
+														Справочник.ФизическиеЛица КАК ФизическиеЛица ВНУТРЕННЕЕ СОЕДИНЕНИЕ РегистрСведений.НастройкиПравДоступаПользователей КАК НастройкиПравДоступаПользователей
+															ПО
+																НастройкиПравДоступаПользователей.ОбъектДоступа = ФизическиеЛица.ГруппаДоступаФизическогоЛица
+																	И НастройкиПравДоступаПользователей.ВидОбъектаДоступа = ЗНАЧЕНИЕ(Перечисление.ВидыОбъектовДоступа.ФизическиеЛица)
+																	И НастройкиПравДоступаПользователей.ОбластьДанных = ЗНАЧЕНИЕ(Перечисление.ОбластиДанныхОбъектовДоступа.ФизическиеЛицаДанные)
+																	И (НастройкиПравДоступаПользователей.Пользователь = НазначениеВидовОбъектовДоступа.ГруппаПользователей
+																		ИЛИ НастройкиПравДоступаПользователей.Пользователь = ЗНАЧЕНИЕ(Справочник.ГруппыПользователей.ВсеПользователи))
+													ГДЕ
+														ФизическиеЛица.Ссылка = ТекущаяТаблица.Физлицо)
+												ТОГДА ИСТИНА
+											ИНАЧЕ ЛОЖЬ
+										КОНЕЦ
+								#КонецЕсли
+										
+								ИНАЧЕ ИСТИНА
+							КОНЕЦ = ЛОЖЬ))
+				И (НЕ ГруппыПользователей.ГруппаПользователей ЕСТЬ NULL ))
+#КонецЕсли</condition>
+			</restrictionByCondition>
+			<restrictionByCondition>
+				<field>Code</field>
+				<field>Parent</field>
+				<field>Ref</field>
+				<field>ВидДоговора</field>
+				<field>ДатаДоговора</field>
+				<field>НомерДоговора</field>
+				<field>Организация</field>
+				<condition/>
+			</restrictionByCondition>
+		</right>
+	</object>
+	<object>
+		<name>Interface.КадровыйУчетОрганизаций</name>
+		<right>
+			<name>Use</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
+		<name>Document.абс_ИнвентаризацияЗабалансОС.TabularSection.ОС.Attribute.НаличиеФактическое</name>
+		<right>
+			<name>View</name>
+			<value>false</value>
+		</right>
+		<right>
+			<name>Edit</name>
+			<value>false</value>
+		</right>
+	</object>
+	<object>
+		<name>Document.абс_ИнвентаризацияЗабалансОС.TabularSection.ОС.Attribute.Цена</name>
+		<right>
+			<name>View</name>
+			<value>false</value>
+		</right>
+		<right>
+			<name>Edit</name>
+			<value>false</value>
+		</right>
+	</object>
+	<object>
+		<name>Interface.Полный</name>
+		<right>
+			<name>Use</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
+		<name>Interface.УправлениеТорговлей</name>
+		<right>
+			<name>Use</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
+		<name>Interface.УправлениеПроизводством</name>
+		<right>
+			<name>Use</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
+		<name>Document.абс_ИнвентаризацияЗабалансОС.TabularSection.ОС.Attribute.СтоимостьФактическая</name>
+		<right>
+			<name>View</name>
+			<value>false</value>
+		</right>
+		<right>
+			<name>Edit</name>
+			<value>false</value>
+		</right>
+	</object>
+	<object>
+		<name>Document.абс_ЗаявкаНаДобавлениеИзменениеПрав</name>
+		<right>
+			<name>Read</name>
+			<value>true</value>
+			<restrictionByCondition>
+				<condition>#Организация("Организация")</condition>
+			</restrictionByCondition>
+		</right>
+		<right>
+			<name>Insert</name>
+			<value>true</value>
+		</right>
+		<right>
+			<name>Update</name>
+			<value>true</value>
+		</right>
+		<right>
+			<name>Delete</name>
+			<value>true</value>
+		</right>
+		<right>
+			<name>Posting</name>
+			<value>true</value>
+		</right>
+		<right>
+			<name>UndoPosting</name>
+			<value>true</value>
+		</right>
+		<right>
+			<name>View</name>
+			<value>true</value>
+		</right>
+		<right>
+			<name>InteractiveInsert</name>
+			<value>true</value>
+		</right>
+		<right>
+			<name>Edit</name>
+			<value>true</value>
+		</right>
+		<right>
+			<name>InteractiveSetDeletionMark</name>
+			<value>true</value>
+		</right>
+		<right>
+			<name>InteractiveClearDeletionMark</name>
+			<value>true</value>
+		</right>
+		<right>
+			<name>InteractivePosting</name>
+			<value>true</value>
+		</right>
+		<right>
+			<name>InteractivePostingRegular</name>
+			<value>true</value>
+		</right>
+		<right>
+			<name>InteractiveUndoPosting</name>
+			<value>true</value>
+		</right>
+		<right>
+			<name>InteractiveChangeOfPosted</name>
+			<value>true</value>
+		</right>
+		<right>
+			<name>InputByString</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
+		<name>Document.абс_ИнвентаризацияЗабалансОС.Attribute.Организация</name>
+		<right>
+			<name>View</name>
+			<value>false</value>
+		</right>
+		<right>
+			<name>Edit</name>
+			<value>false</value>
+		</right>
+	</object>
+	<object>
+		<name>Document.абс_ИнвентаризацияЗабалансОС.TabularSection.ИнвентаризационнаяКомиссия.Attribute.ФизЛицо</name>
+		<right>
+			<name>View</name>
+			<value>false</value>
+		</right>
+		<right>
+			<name>Edit</name>
+			<value>false</value>
+		</right>
+	</object>
+	<object>
+		<name>Document.абс_ИнвентаризацияЗабалансОС.TabularSection.ИнвентаризационнаяКомиссия</name>
+		<right>
+			<name>View</name>
+			<value>false</value>
+		</right>
+		<right>
+			<name>Edit</name>
+			<value>false</value>
+		</right>
+	</object>
+	<object>
+		<name>Document.абс_ИнвентаризацияЗабалансОС.Attribute.ПричинаПроведенияИнвентаризации</name>
+		<right>
+			<name>View</name>
+			<value>false</value>
+		</right>
+		<right>
+			<name>Edit</name>
+			<value>false</value>
+		</right>
+	</object>
+	<object>
+		<name>Interface.МастерСмены</name>
+		<right>
+			<name>Use</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
+		<name>Interface.БухгалтерскийИНалоговыйУчет</name>
+		<right>
+			<name>Use</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
+		<name>Interface.НаборПерсонала</name>
+		<right>
+			<name>Use</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
+		<name>Interface.УправлениеПродажами</name>
+		<right>
+			<name>Use</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
+		<name>Interface.АдминистрированиеПользователей</name>
+		<right>
+			<name>Use</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
+		<name>Interface.ИнтерфейсКассира</name>
+		<right>
+			<name>Use</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
+		<name>Interface.Планирование</name>
+		<right>
+			<name>Use</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
+		<name>Document.абс_ИнвентаризацияЗабалансОС.Attribute.ДатаНачалаИнвентаризации</name>
+		<right>
+			<name>View</name>
+			<value>false</value>
+		</right>
+		<right>
+			<name>Edit</name>
+			<value>false</value>
+		</right>
+	</object>
+	<object>
+		<name>Constant.абс_ДатаНачалаСинхронизацииВыплатыЗП</name>
+		<right>
+			<name>Read</name>
+			<value>true</value>
+		</right>
+		<right>
+			<name>View</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
+		<name>Document.абс_ИнвентаризацияЗабалансОС.TabularSection.ОС</name>
+		<right>
+			<name>View</name>
+			<value>false</value>
+		</right>
+		<right>
+			<name>Edit</name>
+			<value>false</value>
+		</right>
+	</object>
+	<object>
+		<name>Document.абс_ИнвентаризацияЗабалансОС.TabularSection.ОС.Attribute.СтоимостьПоДаннымУчета</name>
+		<right>
+			<name>View</name>
+			<value>false</value>
+		</right>
+		<right>
+			<name>Edit</name>
+			<value>false</value>
+		</right>
+	</object>
+	<object>
+		<name>Interface.РасчетЗарплатыОрганизаций</name>
+		<right>
+			<name>Use</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
+		<name>Document.абс_ИнвентаризацияЗабалансОС.Attribute.Ответственный</name>
+		<right>
+			<name>View</name>
+			<value>false</value>
+		</right>
+		<right>
+			<name>Edit</name>
+			<value>false</value>
+		</right>
+	</object>
+	<object>
+		<name>Interface.УправлениеОборудованием</name>
+		<right>
+			<name>Use</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
+		<name>Interface.абс_Проекты</name>
+		<right>
+			<name>Use</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
+		<name>Document.абс_ИнвентаризацияЗабалансОС.Attribute.ДатаОкончанияИнвентаризации</name>
+		<right>
+			<name>View</name>
+			<value>false</value>
+		</right>
+		<right>
+			<name>Edit</name>
+			<value>false</value>
+		</right>
+	</object>
+	<object>
+		<name>Document.абс_ИнвентаризацияЗабалансОС.Attribute.ДокументОснованиеНомер</name>
+		<right>
+			<name>View</name>
+			<value>false</value>
+		</right>
+		<right>
+			<name>Edit</name>
+			<value>false</value>
+		</right>
+	</object>
+	<object>
+		<name>Document.абс_ИнвентаризацияЗабалансОС.Attribute.Комментарий</name>
+		<right>
+			<name>View</name>
+			<value>false</value>
+		</right>
+		<right>
+			<name>Edit</name>
+			<value>false</value>
+		</right>
+	</object>
+	<object>
+		<name>Configuration.УправлениеТелекоммуникационнойКомпаниейКТТК</name>
+		<right>
+			<name>ThinClient</name>
+			<value>true</value>
+		</right>
+		<right>
+			<name>WebClient</name>
+			<value>true</value>
+		</right>
+		<right>
+			<name>SaveUserData</name>
+			<value>true</value>
+		</right>
+		<right>
+			<name>Output</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
+		<name>Interface.УправлениеЗапасами</name>
+		<right>
+			<name>Use</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
+		<name>Interface.УправлениеРозничнойТорговлей</name>
+		<right>
+			<name>Use</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
+		<name>Interface.абс_ИнтерфейсДНИР</name>
+		<right>
+			<name>Use</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
+		<name>Document.абс_ИнвентаризацияЗабалансОС.TabularSection.ОС.Attribute.МОЛ</name>
+		<right>
+			<name>View</name>
+			<value>false</value>
+		</right>
+		<right>
+			<name>Edit</name>
+			<value>false</value>
+		</right>
+	</object>
+	<object>
+		<name>Interface.УправлениеДенежнымиСредствами</name>
+		<right>
+			<name>Use</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
+		<name>Interface.Бюджетирование</name>
+		<right>
+			<name>Use</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
+		<name>Interface.абс_Забаланс</name>
+		<right>
+			<name>Use</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
+		<name>Document.абс_ИнвентаризацияЗабалансОС.Attribute.ПодразделениеОрганизации</name>
+		<right>
+			<name>View</name>
+			<value>false</value>
+		</right>
+		<right>
+			<name>Edit</name>
+			<value>false</value>
+		</right>
+	</object>
+	<object>
+		<name>Interface.Кладовщик</name>
+		<right>
+			<name>Use</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
+		<name>Document.абс_ИнвентаризацияЗабалансОС.StandardAttribute.Posted</name>
+		<right>
+			<name>View</name>
+			<value>false</value>
+		</right>
+		<right>
+			<name>Edit</name>
+			<value>false</value>
+		</right>
+	</object>
+	<object>
+		<name>Document.абс_ИнвентаризацияЗабалансОС.StandardAttribute.Ref</name>
+		<right>
+			<name>View</name>
+			<value>false</value>
+		</right>
+		<right>
+			<name>Edit</name>
+			<value>false</value>
+		</right>
+	</object>
+	<object>
+		<name>Document.абс_ИнвентаризацияЗабалансОС.StandardAttribute.DeletionMark</name>
+		<right>
+			<name>View</name>
+			<value>false</value>
+		</right>
+		<right>
+			<name>Edit</name>
+			<value>false</value>
+		</right>
+	</object>
+	<object>
+		<name>Document.абс_ИнвентаризацияЗабалансОС.StandardAttribute.Date</name>
+		<right>
+			<name>View</name>
+			<value>false</value>
+		</right>
+		<right>
+			<name>Edit</name>
+			<value>false</value>
+		</right>
+	</object>
+	<object>
+		<name>Document.абс_ИнвентаризацияЗабалансОС.StandardAttribute.Number</name>
+		<right>
+			<name>View</name>
+			<value>false</value>
+		</right>
+		<right>
+			<name>Edit</name>
+			<value>false</value>
+		</right>
+	</object>
+	<object>
+		<name>Constant.абс_АдресВебСервиса</name>
+		<right>
+			<name>Read</name>
+			<value>true</value>
+		</right>
+		<right>
+			<name>View</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
+		<name>Constant.абс_СинхронизацияВыплатыЗарплаты</name>
+		<right>
+			<name>Read</name>
+			<value>true</value>
+		</right>
+		<right>
+			<name>View</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
+		<name>Interface.РасчетыСПерсоналом</name>
+		<right>
+			<name>Use</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
+		<name>Document.абс_ИнвентаризацияЗабалансОС.TabularSection.ОС.Attribute.Контрагент</name>
+		<right>
+			<name>View</name>
+			<value>false</value>
+		</right>
+		<right>
+			<name>Edit</name>
+			<value>false</value>
+		</right>
+	</object>
+	<restrictionTemplate>
+		<name>Организация</name>
+		<condition>#Если &amp;ИспользоватьОграничениеПоОрганизации #Тогда
+#Если &amp;абс_ИспользоватьПараметрОтбораПоОрганизации #Тогда
+        ТекущаяТаблица
+        ИЗ
+            #ТекущаяТаблица КАК ТекущаяТаблица
+        ГДЕ
+            (ТекущаяТаблица.#Параметр(1) В (&amp;абс_ПараметрОтбораПоОрганизации))
+                    #Иначе
+ТекущаяТаблица
+ИЗ
+    #ТекущаяТаблица КАК ТекущаяТаблица
+        ЛЕВОЕ СОЕДИНЕНИЕ (ВЫБРАТЬ РАЗЛИЧНЫЕ
+            СоставГруппы.Ссылка КАК ГруппаПользователей
+        ИЗ
+            Справочник.ГруппыПользователей.ПользователиГруппы КАК СоставГруппы
+        ГДЕ
+            СоставГруппы.Пользователь = &amp;ТекущийПользователь) КАК ГруппыПользователей
+        ПО (ИСТИНА)
+ГДЕ
+НЕ ГруппыПользователей.ГруппаПользователей ЕСТЬ NULL
+И
+    (НЕ 1 В
+                (ВЫБРАТЬ ПЕРВЫЕ 1
+                    1
+                ИЗ
+                    РегистрСведений.НазначениеВидовОбъектовДоступа КАК НазначениеВидовОбъектовДоступа
+                                                                
+                    ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.НастройкиПравДоступаПользователей КАК НастройкиПравДоступаПользователей
+                        ПО
+                            НастройкиПравДоступаПользователей.ОбъектДоступа = ТекущаяТаблица.#Параметр(1)
+
+                                И НастройкиПравДоступаПользователей.ВидОбъектаДоступа = НазначениеВидовОбъектовДоступа.ВидОбъектаДоступа
+                                И НастройкиПравДоступаПользователей.ОбластьДанных = ЗНАЧЕНИЕ(Перечисление.ОбластиДанныхОбъектовДоступа.ПустаяСсылка)                                                                                                
+                                И НастройкиПравДоступаПользователей.Пользователь = ГруппыПользователей.ГруппаПользователей
+                ГДЕ                 
+                     НазначениеВидовОбъектовДоступа.ГруппаПользователей = ГруппыПользователей.ГруппаПользователей
+                           И НазначениеВидовОбъектовДоступа.ВидОбъектаДоступа В (ЗНАЧЕНИЕ(Перечисление.ВидыОбъектовДоступа.Организации))
+                
+                    И НастройкиПравДоступаПользователей.ОбъектДоступа ЕСТЬ NULL))
+#КонецЕсли
+#КонецЕсли</condition>
+	</restrictionTemplate>
+</Rights>

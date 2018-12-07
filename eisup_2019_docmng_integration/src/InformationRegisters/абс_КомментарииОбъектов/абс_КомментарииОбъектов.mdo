@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="0b7aa15e-21b5-4e99-a312-0e98a0d92351">
+  <producedTypes>
+    <selectionType typeId="9ec69a03-038b-4cd4-bae3-8fafc7142c33" valueTypeId="8effaca1-ee0a-4e3b-95aa-263f5225d603"/>
+    <listType typeId="b088e680-3d28-443e-a127-456d0940a2be" valueTypeId="078ef929-c1cd-4154-899f-9d84d8fb34ed"/>
+    <managerType typeId="589fb300-4cba-44f3-8bdd-07d54ccf83ce" valueTypeId="f87da893-ca7c-4ca9-a3af-eaceaba900b6"/>
+    <recordSetType typeId="7fbb0f6e-568c-4eeb-add1-4d36055b190a" valueTypeId="b7b65329-925a-470f-9521-814b333d9da5"/>
+    <recordKeyType typeId="d3a7cdaa-2166-4767-811a-415092ed525c" valueTypeId="7416e0e5-f2fb-427f-a2b4-ecec35566339"/>
+    <recordType typeId="f702fe60-c5e6-42d4-b96c-b8b5800be076" valueTypeId="19eb98c7-1599-4fcc-9539-c40c1ff599ad"/>
+    <recordManagerType typeId="ddbbc72f-a69c-4126-bf06-15e35d6b4e64" valueTypeId="a1d467cd-c9c8-404e-98c3-2c1b5f3b390a"/>
+  </producedTypes>
+  <name>абс_КомментарииОбъектов</name>
+  <synonym>
+    <key>ru</key>
+    <value>Комментарии объектов</value>
+  </synonym>
+  <comment></comment>
+  <editType>InDialog</editType>
+  <informationRegisterPeriodicity>Second</informationRegisterPeriodicity>
+  <mainFilterOnPeriod>true</mainFilterOnPeriod>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <resources uuid="5be3115a-acbe-495a-8409-31723be21191">
+    <name>Комментарий</name>
+    <synonym>
+      <key>ru</key>
+      <value>Комментарий</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>200</length>
+      </stringQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:StringValue">
+      <value></value>
+    </fillValue>
+  </resources>
+  <dimensions uuid="b9271a24-5665-4007-8909-28c1587cf458">
+    <name>Пользователь</name>
+    <synonym>
+      <key>ru</key>
+      <value>Пользователь</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.Пользователи</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="f6a22c62-112d-4881-805a-dedc04beec57">
+    <name>Оъект</name>
+    <synonym>
+      <key>ru</key>
+      <value>Оъект</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>DocumentRef.абс_ЗакупочныйЗаказ</types>
+      <types>CatalogRef.Контрагенты</types>
+      <types>DocumentRef.абс_СчетНаОплату</types>
+      <types>CatalogRef.ДоговорыКонтрагентов</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+</mdclass:InformationRegister>

@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:AccumulationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="3e6adc42-bb48-47b0-adb9-6717cf9234f0">
+  <producedTypes>
+    <selectionType typeId="db6004ec-6aa7-4714-860f-964223398af0" valueTypeId="432e8ec5-5878-4c46-b31b-d12185d55630"/>
+    <listType typeId="d31a46e7-ea9e-4dbe-9ef8-f3605f6bea18" valueTypeId="0d00e9e3-16d7-4906-aef2-2dc329848845"/>
+    <managerType typeId="30831795-01f1-4d5e-ade9-4f395287b4f2" valueTypeId="2d227027-6a59-49e8-bcca-d0734e2db5b0"/>
+    <recordSetType typeId="e2c6b05e-034d-42bf-9e20-29f41fa64415" valueTypeId="ebe611ba-4659-4145-82e4-a2f3778b3505"/>
+    <recordKeyType typeId="004488d2-74c5-4537-bc44-63b1421d0e9b" valueTypeId="2d562c7f-a857-4804-a25d-1232014018a5"/>
+    <recordType typeId="42d2df22-d0e2-4095-8c2e-a1a9364dad9c" valueTypeId="775b197a-1c00-4960-a6aa-c85fc23fdbb0"/>
+  </producedTypes>
+  <name>ОплатыНМАДляУСН</name>
+  <synonym>
+    <key>ru</key>
+    <value>Зарегистрированные оплаты нематериальных активов (УСН)</value>
+  </synonym>
+  <comment></comment>
+  <defaultListForm>AccumulationRegister.ОплатыНМАДляУСН.Form.ФормаСписка</defaultListForm>
+  <registerType>Turnovers</registerType>
+  <enableTotalsSplitting>true</enableTotalsSplitting>
+  <resources uuid="b633b7c7-e461-4329-aed0-b85a2525a217">
+    <name>СуммаОплаты</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сумма оплаты</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>2</scale>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </resources>
+  <dimensions uuid="91a9a75a-f43b-441e-b789-fd20aa5ad8ca">
+    <name>НематериальныйАктив</name>
+    <synonym>
+      <key>ru</key>
+      <value>Нематериальный актив</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.НематериальныеАктивы</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="3b8361ef-37fa-4d39-acd4-d342b3c731b0">
+    <name>Организация</name>
+    <synonym>
+      <key>ru</key>
+      <value>Организация</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.Организации</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="40252a77-a4c7-4ce1-861a-2c24e2adc8c0">
+    <name>ДатаОплаты</name>
+    <synonym>
+      <key>ru</key>
+      <value>Дата оплаты</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Date</types>
+      <dateQualifiers>
+        <dateFractions>Date</dateFractions>
+      </dateQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <forms uuid="aaaf0aae-d076-4949-96d0-428e1f3a4f17">
+    <name>ФормаСписка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма списка</value>
+    </synonym>
+    <comment></comment>
+    <formType>Ordinary</formType>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+</mdclass:AccumulationRegister>

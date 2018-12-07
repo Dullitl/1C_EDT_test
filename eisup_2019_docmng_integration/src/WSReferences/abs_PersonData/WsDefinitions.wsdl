@@ -1,0 +1,136 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/"
+		xmlns:soap12bind="http://schemas.xmlsoap.org/wsdl/soap12/"
+		xmlns:soapbind="http://schemas.xmlsoap.org/wsdl/soap/"
+		xmlns:tns="http://www.abs-soft.ru"
+		xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"
+		xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"
+		xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+		xmlns:xsd1="http://www.abs-soft.ru"
+		name="abs_PersonData"
+		targetNamespace="http://www.abs-soft.ru">
+	<types>
+		<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+				xmlns:xs1="http://www.abs-soft.ru"
+				targetNamespace="http://www.abs-soft.ru"
+				attributeFormDefault="unqualified"
+				elementFormDefault="qualified">
+			<xs:complexType name="Answer">
+				<xs:sequence>
+					<xs:element name="PersonData"
+							type="xsd1:PersonData"
+							nillable="true"/>
+					<xs:element name="Error"
+							type="xs:string"
+							nillable="true"
+							minOccurs="0"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="PersonData">
+				<xs:sequence>
+					<xs:element name="View"
+							type="xs:string"
+							nillable="true"
+							minOccurs="0"/>
+					<xs:element name="Series"
+							type="xs:string"
+							nillable="true"
+							minOccurs="0"/>
+					<xs:element name="Number"
+							type="xs:string"
+							nillable="true"
+							minOccurs="0"/>
+					<xs:element name="WhoIssued"
+							type="xs:string"
+							nillable="true"
+							minOccurs="0"/>
+					<xs:element name="DateOfIssue"
+							type="xs:date"
+							nillable="true"/>
+					<xs:element name="InsuranceNumber"
+							type="xs:string"
+							nillable="true"
+							minOccurs="0"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:element name="GetPersonData">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="PhysicalPersonCod"
+								type="xs:string"/>
+						<xs:element name="DateOfPeriod"
+								type="xs:date"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="GetPersonDataResponse">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="return"
+								type="xsd1:Answer"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:schema>
+	</types>
+	<message name="GetPersonDataRequestMessage">
+		<part name="parameters"
+				element="tns:GetPersonData"/>
+	</message>
+	<message name="GetPersonDataResponseMessage">
+		<part name="parameters"
+				element="tns:GetPersonDataResponse"/>
+	</message>
+	<portType name="abs_PersonDataPortType">
+		<operation name="GetPersonData">
+			<input name="GetPersonDataRequest"
+					message="tns:GetPersonDataRequestMessage"/>
+			<output name="GetPersonDataResponse"
+					message="tns:GetPersonDataResponseMessage"/>
+		</operation>
+	</portType>
+	<binding name="abs_PersonDataSoapBinding"
+			type="tns:abs_PersonDataPortType">
+		<soapbind:binding style="document"
+				transport="http://schemas.xmlsoap.org/soap/http"/>
+		<operation name="GetPersonData">
+			<soapbind:operation style="document"
+					soapAction="http://www.abs-soft.ru#abs_PersonData:GetPersonData"/>
+			<input>
+				<soapbind:body use="literal"/>
+			</input>
+			<output>
+				<soapbind:body use="literal"/>
+			</output>
+		</operation>
+	</binding>
+	<binding name="abs_PersonDataSoap12Binding"
+			type="tns:abs_PersonDataPortType">
+		<soap12bind:binding style="document"
+				transport="http://schemas.xmlsoap.org/soap/http"/>
+		<operation name="GetPersonData">
+			<soap12bind:operation style="document"
+					soapAction="http://www.abs-soft.ru#abs_PersonData:GetPersonData"/>
+			<input>
+				<soap12bind:body use="literal"/>
+			</input>
+			<output>
+				<soap12bind:body use="literal"/>
+			</output>
+		</operation>
+	</binding>
+	<service name="abs_PersonData">
+		<port name="abs_PersonDataSoap"
+				binding="tns:abs_PersonDataSoapBinding">
+			<documentation> 
+				<wsi:Claim xmlns:wsi="http://ws-i.org/schemas/conformanceClaim/"
+						conformsTo="http://ws-i.org/profiles/basic/1.1"/>
+			</documentation>
+			<soapbind:address location="https://isup-ttk.transtk.ru/ISUZK_PersonData/ws/PersonData.1cws"/>
+		</port>
+		<port name="abs_PersonDataSoap12"
+				binding="tns:abs_PersonDataSoap12Binding">
+			<soap12bind:address location="https://isup-ttk.transtk.ru/ISUZK_PersonData/ws/PersonData.1cws"/>
+		</port>
+	</service>
+</definitions>

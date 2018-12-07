@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:WebService xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="2cce2167-cfdf-45c0-b1ec-1d37adf9b7c1">
+  <name>Nomenclatures</name>
+  <synonym>
+    <key>ru</key>
+    <value>Nomenclatures</value>
+  </synonym>
+  <comment></comment>
+  <namespace>http://www.abs-softNom.ru/</namespace>
+  <xdtoPackages xsi:type="core:ReferenceValue">
+    <value>XDTOPackage.Nomenclatures</value>
+  </xdtoPackages>
+  <descriptorFileName>Nomenclatures.1cws</descriptorFileName>
+  <sessionMaxAge>20</sessionMaxAge>
+  <operations uuid="d0521228-9ee0-40d8-8a52-c7f9fb5872e8">
+    <name>NomenclaturesAdd</name>
+    <synonym>
+      <key>ru</key>
+      <value>Nomenclatures add</value>
+    </synonym>
+    <comment></comment>
+    <xdtoReturningValueType>
+      <name>Answer</name>
+      <nsUri>http://www.abs-softNom.ru/</nsUri>
+    </xdtoReturningValueType>
+    <transactioned>true</transactioned>
+    <procedureName>Добавить</procedureName>
+    <parameters uuid="fc009e65-0637-4d2a-a690-37aa4b565e69">
+      <name>PackXDTO</name>
+      <synonym>
+        <key>ru</key>
+        <value>Pack XDTO</value>
+      </synonym>
+      <comment></comment>
+      <xdtoValueType>
+        <name>NomenclaturesAdd</name>
+        <nsUri>http://www.abs-softNom.ru/</nsUri>
+      </xdtoValueType>
+    </parameters>
+  </operations>
+  <operations uuid="79fe39a8-b9d4-46b0-a2cf-9f4cc0c29a19">
+    <name>ConnectionTest</name>
+    <synonym>
+      <key>ru</key>
+      <value>Connection test</value>
+    </synonym>
+    <comment>Тест подключения</comment>
+    <xdtoReturningValueType>
+      <name>Answer</name>
+      <nsUri>http://www.abs-softNom.ru/</nsUri>
+    </xdtoReturningValueType>
+    <procedureName>ТестСоединения</procedureName>
+    <dataLockControlMode>Managed</dataLockControlMode>
+  </operations>
+  <operations uuid="63e4b1a9-ed3d-4ae4-b091-78af7830c2e6">
+    <name>NomenclatureChangeStatus</name>
+    <synonym>
+      <key>ru</key>
+      <value>Nomenclature change status</value>
+    </synonym>
+    <comment></comment>
+    <xdtoReturningValueType>
+      <name>Answer</name>
+      <nsUri>http://www.abs-softNom.ru/</nsUri>
+    </xdtoReturningValueType>
+    <transactioned>true</transactioned>
+    <procedureName>ИзменитьСтатусНоменклатуры</procedureName>
+    <parameters uuid="3b52a423-2625-446c-8892-43068c02332e">
+      <name>PackXDTO</name>
+      <synonym>
+        <key>ru</key>
+        <value>Pack XDTO</value>
+      </synonym>
+      <comment></comment>
+      <xdtoValueType>
+        <name>NomenclaturesAdd</name>
+        <nsUri>http://www.abs-softNom.ru/</nsUri>
+      </xdtoValueType>
+      <transferDirection>InOut</transferDirection>
+    </parameters>
+  </operations>
+</mdclass:WebService>

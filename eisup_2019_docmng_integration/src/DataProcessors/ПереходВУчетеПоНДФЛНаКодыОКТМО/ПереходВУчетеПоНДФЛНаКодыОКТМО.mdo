@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:DataProcessor xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="a79b474e-33fd-495d-b00a-9d7b94bae6f2">
+  <producedTypes>
+    <objectType typeId="29f461a1-2ba3-4a90-9086-9f12dfb3a0d5" valueTypeId="84de7461-9872-4e49-b602-8f26ef48e76c"/>
+    <managerType typeId="d0ce0c6e-64d6-4104-aaf5-26c26fd42f44" valueTypeId="a9621b18-4f9b-43f6-9549-fa858ccc405c"/>
+  </producedTypes>
+  <name>ПереходВУчетеПоНДФЛНаКодыОКТМО</name>
+  <synonym>
+    <key>ru</key>
+    <value>Переход в учете по НДФЛ на коды ОКТМО</value>
+  </synonym>
+  <comment></comment>
+  <defaultForm>DataProcessor.ПереходВУчетеПоНДФЛНаКодыОКТМО.Form.Форма</defaultForm>
+  <tabularSections uuid="c4c431e5-5c13-4980-9931-e852eb89501b">
+    <producedTypes>
+      <objectType typeId="afed4348-124c-4caa-b0c0-979dd21258a5" valueTypeId="1ade088b-ab56-4ea8-9139-16aefcafd08c"/>
+      <rowType typeId="4edf3918-4c75-482e-a9dc-cf7712840968" valueTypeId="0c5bc13a-f700-4fcb-8330-ee2a4bc8a76a"/>
+    </producedTypes>
+    <name>ТаблицаСоответствияКодовОКАТОиОКТМО</name>
+    <synonym>
+      <key>ru</key>
+      <value>Таблица соответствия кодов ОКАТО и ОКТМО</value>
+    </synonym>
+    <comment></comment>
+    <standardAttributes>
+      <dataHistory>Use</dataHistory>
+      <name>LineNumber</name>
+      <comment></comment>
+      <fillValue xsi:type="core:UndefinedValue"/>
+      <fullTextSearch>Use</fullTextSearch>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+    </standardAttributes>
+    <attributes uuid="24564e35-dafe-4111-8f00-cc3d53bd5371">
+      <name>Отметка</name>
+      <synonym>
+        <key>ru</key>
+        <value>Отметка</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Boolean</types>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="91723e4c-3c0f-4129-9959-69dd12eff56d">
+      <name>Организация</name>
+      <synonym>
+        <key>ru</key>
+        <value>Организация</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>CatalogRef.Организации</types>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="a24b9619-c0fb-4454-a8eb-0716362048a9">
+      <name>Подразделение</name>
+      <synonym>
+        <key>ru</key>
+        <value>Подразделение</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>CatalogRef.ПодразделенияОрганизаций</types>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="456583ed-1fa4-458a-8da0-288ef881dbea">
+      <name>КодПоОКАТО</name>
+      <synonym>
+        <key>ru</key>
+        <value>Код по ОКАТО</value>
+      </synonym>
+      <comment>(Регл)</comment>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>11</length>
+        </stringQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:StringValue">
+        <value></value>
+      </fillValue>
+    </attributes>
+    <attributes uuid="5701191e-3696-4d32-b950-400556df99e8">
+      <name>КодПоОКТМО</name>
+      <synonym>
+        <key>ru</key>
+        <value>Код по ОКТМО</value>
+      </synonym>
+      <comment>(Регл)</comment>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>11</length>
+        </stringQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:StringValue">
+        <value></value>
+      </fillValue>
+    </attributes>
+  </tabularSections>
+  <tabularSections uuid="19200217-91ad-4ee9-bdb7-4ebc7ea31da7">
+    <producedTypes>
+      <objectType typeId="d1cf15db-7fff-43e5-8364-7ad3ac8a98f3" valueTypeId="8fe75808-2326-4b92-9b18-d00833945e67"/>
+      <rowType typeId="39f64361-c759-4fd7-8d99-ebf2032ec176" valueTypeId="4862d891-62c3-4f9a-9c81-4a5be3b126d9"/>
+    </producedTypes>
+    <name>Регистраторы</name>
+    <synonym>
+      <key>ru</key>
+      <value>Регистраторы</value>
+    </synonym>
+    <comment></comment>
+    <standardAttributes>
+      <dataHistory>Use</dataHistory>
+      <name>LineNumber</name>
+      <comment></comment>
+      <fillValue xsi:type="core:UndefinedValue"/>
+      <fullTextSearch>Use</fullTextSearch>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+    </standardAttributes>
+    <attributes uuid="30b5d167-8c39-4457-8fc0-b2bd92d724fa">
+      <name>КодПоОКАТО</name>
+      <synonym>
+        <key>ru</key>
+        <value>Код по ОКАТО</value>
+      </synonym>
+      <comment>(Регл)</comment>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>11</length>
+        </stringQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:StringValue">
+        <value></value>
+      </fillValue>
+    </attributes>
+    <attributes uuid="04c775bf-928e-4c2c-a1ca-c5e5b3c9f3ce">
+      <name>Документ</name>
+      <synonym>
+        <key>ru</key>
+        <value>Документ</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>DocumentRef</types>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+  </tabularSections>
+  <forms uuid="516a2f9b-b7b8-449e-a358-996cb8a62115">
+    <name>Форма</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма</value>
+    </synonym>
+    <comment></comment>
+    <formType>Ordinary</formType>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+</mdclass:DataProcessor>

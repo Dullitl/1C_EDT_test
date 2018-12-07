@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="6004c43f-0157-4766-a78b-577ae525a16c">
+  <producedTypes>
+    <selectionType typeId="47ee2408-61a8-4c16-92c4-2ebb36a6fb81" valueTypeId="47576e51-3740-49e1-a8cc-03cee84fa108"/>
+    <listType typeId="11f70547-245e-4da9-9ae7-a89a823f39cb" valueTypeId="c441ca69-d4e9-4ade-84e8-ac4079d4b90f"/>
+    <managerType typeId="b463ea36-cd4b-4536-b425-ba1c47976f1a" valueTypeId="078728a4-7f97-475c-91d5-930cadd1ad39"/>
+    <recordSetType typeId="94f17704-6e97-4615-bb2e-8e467c0ac863" valueTypeId="c4e251a4-09a4-4c4e-b70d-b71e6c90a20f"/>
+    <recordKeyType typeId="05e42ed3-d5c8-4870-8a7b-45d910142496" valueTypeId="6afa4107-19c1-488d-8467-a1e0f66263b6"/>
+    <recordType typeId="d56b667e-f623-4e4f-825c-a5615f4e1390" valueTypeId="9848cfa8-748c-4f9f-960b-e58515002521"/>
+    <recordManagerType typeId="9ea35c34-cda3-43d5-b06c-c8c35a74d298" valueTypeId="488c1ad6-5316-4e77-960b-c350932d374f"/>
+  </producedTypes>
+  <name>ЛимитыОтпускаМатериалов</name>
+  <synonym>
+    <key>ru</key>
+    <value>Лимиты отпуска материалов</value>
+  </synonym>
+  <comment>(Упр)</comment>
+  <informationRegisterPeriodicity>RecorderPosition</informationRegisterPeriodicity>
+  <writeMode>RecorderSubordinate</writeMode>
+  <resources uuid="16a6a326-8c36-453f-8227-df4263b6d9b6">
+    <name>ЛимитОтпуска</name>
+    <synonym>
+      <key>ru</key>
+      <value>Лимит отпуска</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>3</scale>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="02181df8-a037-4f07-96d9-e06972cd4761">
+    <name>КонтролироватьЛимит</name>
+    <synonym>
+      <key>ru</key>
+      <value>Контролировать лимит</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <dimensions uuid="9a93fff1-6e66-4c23-98f0-7b0f537db96c">
+    <name>Номенклатура</name>
+    <synonym>
+      <key>ru</key>
+      <value>Номенклатура</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.Номенклатура</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="a9e29e7d-6e40-4310-b87f-1b99f0e652d6">
+    <name>ХарактеристикаНоменклатуры</name>
+    <synonym>
+      <key>ru</key>
+      <value>Характеристика номенклатуры</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.ХарактеристикиНоменклатуры</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="96212970-f0dd-4c38-9cad-d41398e4d722">
+    <name>Склад</name>
+    <synonym>
+      <key>ru</key>
+      <value>Склад</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.Склады</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="2b0dfe7f-1e3a-4980-80f0-b98d94321617">
+    <name>Подразделение</name>
+    <synonym>
+      <key>ru</key>
+      <value>Подразделение</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.Подразделения</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="bebd84b1-8518-4a5f-a563-a2689f081023">
+    <name>Периодичность</name>
+    <synonym>
+      <key>ru</key>
+      <value>Периодичность</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>EnumRef.Периодичность</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+</mdclass:InformationRegister>

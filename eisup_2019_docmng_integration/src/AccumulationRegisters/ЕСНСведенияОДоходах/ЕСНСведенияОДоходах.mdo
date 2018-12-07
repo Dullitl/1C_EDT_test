@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:AccumulationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="3b206ba7-2f66-4957-9166-ad48433e5a40">
+  <producedTypes>
+    <selectionType typeId="5cf36261-574c-4198-b23c-1dd29f58cd30" valueTypeId="4c1d1eef-ed60-4475-9c22-ffb50e25457e"/>
+    <listType typeId="7c786611-ccce-45ca-80d9-0a28b33643e8" valueTypeId="e39e0d1b-3f9f-4a16-93ee-4f3c5f1cf528"/>
+    <managerType typeId="30894fe3-c9f2-45ad-a347-7ec826e59b16" valueTypeId="06024b61-4c7f-4470-be11-56f973524f36"/>
+    <recordSetType typeId="2b73687a-191e-4fcb-9200-1fcbe6fe60f9" valueTypeId="0d58bb2e-fb1a-47bd-a0bb-8d5aa4822972"/>
+    <recordKeyType typeId="195fa415-9b5a-4d81-aef5-443b0bcdb0bd" valueTypeId="2d8a3c3d-0efa-4cf0-9fce-475360a32175"/>
+    <recordType typeId="c62fb0ea-d915-45f7-8055-cd292dddba55" valueTypeId="e53bbcef-338c-43f5-81a8-5b4941209f9a"/>
+  </producedTypes>
+  <name>ЕСНСведенияОДоходах</name>
+  <synonym>
+    <key>ru</key>
+    <value>ЕСН Сведения о доходах</value>
+  </synonym>
+  <comment>(Регл)</comment>
+  <defaultListForm>AccumulationRegister.ЕСНСведенияОДоходах.Form.ФормаСписка</defaultListForm>
+  <registerType>Turnovers</registerType>
+  <enableTotalsSplitting>true</enableTotalsSplitting>
+  <resources uuid="62addfc2-9dd9-4a50-8f55-32f7a9a7093d">
+    <name>Результат</name>
+    <synonym>
+      <key>ru</key>
+      <value>Результат</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>2</scale>
+      </numberQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </resources>
+  <resources uuid="e9f0df8f-0477-467a-873b-4a729748e94a">
+    <name>Скидка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Скидка</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>2</scale>
+      </numberQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </resources>
+  <attributes uuid="696b4dbe-318f-4dde-89d0-3d58d0a11c8b">
+    <name>КодДоходаЕСН</name>
+    <synonym>
+      <key>ru</key>
+      <value>Код дохода ЕСН</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.ДоходыЕСН</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </attributes>
+  <attributes uuid="abd88fb9-b7d5-4068-9c03-e5cc9588584b">
+    <name>ОблагаетсяЕНВД</name>
+    <synonym>
+      <key>ru</key>
+      <value>Облагается ЕНВД</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </attributes>
+  <attributes uuid="6fdc22d9-2ed7-4186-a1c9-c260a111d848">
+    <name>ОбособленноеПодразделение</name>
+    <synonym>
+      <key>ru</key>
+      <value>Обособленное подразделение</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.Организации</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </attributes>
+  <dimensions uuid="ac5aca4d-d1ef-4863-895c-8c4c18c9132e">
+    <name>Организация</name>
+    <synonym>
+      <key>ru</key>
+      <value>Организация</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.Организации</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="85a73196-a1d1-4c5c-abda-0058b548c607">
+    <name>ФизЛицо</name>
+    <synonym>
+      <key>ru</key>
+      <value>Физическое лицо</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.ФизическиеЛица</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <forms uuid="cf6534e2-ae28-490b-820c-5e6d20fa2548">
+    <name>ФормаСписка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма списка</value>
+    </synonym>
+    <comment></comment>
+    <formType>Ordinary</formType>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+</mdclass:AccumulationRegister>

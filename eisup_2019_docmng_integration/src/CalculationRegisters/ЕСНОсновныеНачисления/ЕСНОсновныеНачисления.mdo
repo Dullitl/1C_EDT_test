@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:CalculationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="e247d87b-b3af-4a3c-baea-c23816348469">
+  <producedTypes>
+    <selectionType typeId="69bb3312-96ed-4176-9d50-26e24dea83a6" valueTypeId="dca2ce22-17d4-45e1-a69a-2fdaecef103c"/>
+    <listType typeId="f717cdb5-4135-4fab-8e54-d2c16050df1b" valueTypeId="c1cb0b5f-77fb-4a87-8566-f346c4597bd6"/>
+    <managerType typeId="9510a58c-e6f4-4f6c-b312-89cfe051f484" valueTypeId="4ff872bd-6845-4387-9d82-5d004a91cc64"/>
+    <recordSetType typeId="b63b4650-9802-4a98-95e8-16f31e45f778" valueTypeId="6aeaec62-af6a-4049-b461-2ec34d52b698"/>
+    <recordKeyType typeId="599e2398-b95d-441c-b148-79692c57a9d3" valueTypeId="b3077c36-5b6f-4738-959e-13373d478ad3"/>
+    <recordType typeId="0879e513-70fc-40af-bdc9-bab1a42948a1" valueTypeId="588b6666-e937-4cf8-af9c-e1c1536fbc72"/>
+    <recalcsType typeId="17b2a3b1-f2a1-4e5b-8541-495854e539b0" valueTypeId="224cd051-b30e-4449-add6-115a4a103aa2"/>
+  </producedTypes>
+  <name>ЕСНОсновныеНачисления</name>
+  <synonym>
+    <key>ru</key>
+    <value>Отражение основных начислений в учете для целей исчисления страховых взносов (ЕСН)</value>
+  </synonym>
+  <comment>(Регл)</comment>
+  <defaultListForm>CalculationRegister.ЕСНОсновныеНачисления.Form.ФормаСписка</defaultListForm>
+  <periodicity>Month</periodicity>
+  <actionPeriod>true</actionPeriod>
+  <schedule>InformationRegister.ГрафикиРаботыПоВидамВремени</schedule>
+  <scheduleValue>InformationRegister.ГрафикиРаботыПоВидамВремени.Resource.ОсновноеЗначение</scheduleValue>
+  <scheduleDate>InformationRegister.ГрафикиРаботыПоВидамВремени.Dimension.Дата</scheduleDate>
+  <chartOfCalculationTypes>ChartOfCalculationTypes.ОсновныеНачисленияОрганизаций</chartOfCalculationTypes>
+  <resources uuid="9c8d2d5b-a549-41ad-adce-d4163a25ce64">
+    <name>Результат</name>
+    <synonym>
+      <key>ru</key>
+      <value>Результат</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>2</scale>
+      </numberQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </resources>
+  <attributes uuid="c15c8428-903d-4249-81bc-b3346ec7602c">
+    <name>ГрафикРаботы</name>
+    <synonym>
+      <key>ru</key>
+      <value>График работы</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.ГрафикиРаботы</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <scheduleLink>InformationRegister.ГрафикиРаботыПоВидамВремени.Dimension.ГрафикРаботы</scheduleLink>
+  </attributes>
+  <attributes uuid="af4b04b2-359f-44bf-a2f5-9c84ab7b89bb">
+    <name>ВидУчетаВремени</name>
+    <synonym>
+      <key>ru</key>
+      <value>Вид учета времени</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>EnumRef.ВидыУчетаВремени</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <scheduleLink>InformationRegister.ГрафикиРаботыПоВидамВремени.Dimension.ВидУчетаВремени</scheduleLink>
+  </attributes>
+  <attributes uuid="c779d51b-c00b-4b2c-9602-a0850c75a0fb">
+    <name>КодДоходаЕСН</name>
+    <synonym>
+      <key>ru</key>
+      <value>Код дохода по стаховым взносам (ЕСН)</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.ДоходыЕСН</types>
+      <types>CatalogRef.ДоходыПоСтраховымВзносам</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </attributes>
+  <attributes uuid="9a42b704-4c49-43cb-8ac3-afa141988a9e">
+    <name>ОблагаетсяЕНВД</name>
+    <synonym>
+      <key>ru</key>
+      <value>Облагается ЕНВД</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </attributes>
+  <attributes uuid="1e2776f7-b2b9-4a07-bbb0-08eaf1be7759">
+    <name>ОбособленноеПодразделение</name>
+    <synonym>
+      <key>ru</key>
+      <value>Обособленное подразделение</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.Организации</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </attributes>
+  <attributes uuid="b3977d3a-eeb4-450f-99be-6e2192b53d34">
+    <name>ДокументОснование</name>
+    <synonym>
+      <key>ru</key>
+      <value>Документ основание</value>
+    </synonym>
+    <comment>Документ, который зарегистрировал начисление</comment>
+    <type>
+      <types>DocumentRef</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </attributes>
+  <attributes uuid="48a0ce18-542b-418b-948f-e63fdb7b6152">
+    <name>ОблагаетсяПоДополнительномуТарифу</name>
+    <synonym>
+      <key>ru</key>
+      <value>Облагается по дополнительному тарифу</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </attributes>
+  <dimensions uuid="70bec73d-b8a3-48a5-8f9b-f6e216453cf0">
+    <name>Сотрудник</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сотрудник</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.СотрудникиОрганизаций</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <baseDimension>true</baseDimension>
+  </dimensions>
+  <dimensions uuid="45edf3df-4d63-4400-96ab-9c97c1b5963b">
+    <name>ФизЛицо</name>
+    <synonym>
+      <key>ru</key>
+      <value>Физическое лицо</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.ФизическиеЛица</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </dimensions>
+  <dimensions uuid="81855044-49fd-4898-a6a3-1bd4c52fff40">
+    <name>Организация</name>
+    <synonym>
+      <key>ru</key>
+      <value>Организация</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.Организации</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </dimensions>
+  <dimensions uuid="2310c801-d31e-483a-a167-85fe89043482">
+    <name>УдалитьПриказ</name>
+    <synonym>
+      <key>ru</key>
+      <value>Удалить приказ</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>DocumentRef.ПриемНаРаботуВОрганизацию</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </dimensions>
+  <forms uuid="e4ac68ff-6469-44c6-a895-acea0d52739d">
+    <name>ФормаСписка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма списка</value>
+    </synonym>
+    <comment></comment>
+    <formType>Ordinary</formType>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+</mdclass:CalculationRegister>

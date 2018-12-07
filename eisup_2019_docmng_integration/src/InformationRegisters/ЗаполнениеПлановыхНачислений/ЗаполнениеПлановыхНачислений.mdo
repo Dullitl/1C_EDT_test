@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="9b06d0d9-8b6d-4193-93d1-8701c2838612">
+  <producedTypes>
+    <selectionType typeId="77f889c5-9c49-474a-b6b7-b9467db84a1e" valueTypeId="3077fde3-bfe4-4477-af21-4fdaacbfb224"/>
+    <listType typeId="f977b1b4-7118-4ad3-8b0a-943c9c5b0385" valueTypeId="c3dbc214-e651-4d1a-be10-36da8f44de4d"/>
+    <managerType typeId="fb80203f-5a15-4e33-bb22-98f9fa9d4bf1" valueTypeId="970d8ef1-da31-4b50-84ec-d626edeef3c5"/>
+    <recordSetType typeId="95517859-2403-4395-8b05-103632b4fc3c" valueTypeId="eb545bcb-0102-47c3-8c50-8f4265f9d260"/>
+    <recordKeyType typeId="44249f7b-f736-4879-be82-789cf5ece0cf" valueTypeId="5417e8ef-025c-4f24-8c98-15fd1d8d3958"/>
+    <recordType typeId="c79b44c8-ca3a-45af-a05c-5401625849d0" valueTypeId="c5d5082d-9b7a-4156-86b8-ba3dbdbc9f54"/>
+    <recordManagerType typeId="11ebcf57-7c37-4bf4-94a4-86e7b5a01ab0" valueTypeId="b464a628-6755-4994-beb0-b164b394c35b"/>
+  </producedTypes>
+  <name>ЗаполнениеПлановыхНачислений</name>
+  <synonym>
+    <key>ru</key>
+    <value>Заполнение плановых начислений</value>
+  </synonym>
+  <comment></comment>
+  <attributes uuid="6724f502-7ac5-4786-989b-37526c5e4202">
+    <name>ОбособленноеПодразделение</name>
+    <synonym>
+      <key>ru</key>
+      <value>Обособленное подразделение</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.Организации</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="236ffb75-21b7-43a2-aa52-c76e985ef8af">
+    <name>ПериодРегистрации</name>
+    <synonym>
+      <key>ru</key>
+      <value>Период регистрации</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Date</types>
+      <dateQualifiers>
+        <dateFractions>Date</dateFractions>
+      </dateQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <dimensions uuid="d7bcf491-3802-4a12-ae80-a80412c66436">
+    <name>ОбъектЗаполнения</name>
+    <synonym>
+      <key>ru</key>
+      <value>Объект заполнения</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>DocumentRef.НачислениеЗарплатыРаботникамОрганизаций</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="f680b703-c8d5-4d63-8066-a6e63331faf6">
+    <name>Сотрудник</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сотрудник</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.СотрудникиОрганизаций</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+</mdclass:InformationRegister>

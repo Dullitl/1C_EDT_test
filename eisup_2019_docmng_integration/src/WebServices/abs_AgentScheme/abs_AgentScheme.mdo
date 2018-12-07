@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:WebService xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="0a9a74e0-2a68-441a-9b57-580c18c3de3a">
+  <name>abs_AgentScheme</name>
+  <synonym>
+    <key>ru</key>
+    <value>Agent scheme (ABS)</value>
+  </synonym>
+  <comment>Web-сервис предназначен для синхронизации поступления услуг от агентов (физ.лиц)</comment>
+  <namespace>http://www.abs-soft.ru/AgentScheme</namespace>
+  <xdtoPackages xsi:type="core:ReferenceValue">
+    <value>XDTOPackage.abs_AgentScheme</value>
+  </xdtoPackages>
+  <descriptorFileName>AgentScheme.1cws</descriptorFileName>
+  <sessionMaxAge>20</sessionMaxAge>
+  <operations uuid="13b3d36a-db1e-40ff-885c-d56f0b3ca79b">
+    <name>ObnovitAktAgenta</name>
+    <synonym>
+      <key>ru</key>
+      <value>Obnovit akt agenta</value>
+    </synonym>
+    <comment></comment>
+    <xdtoReturningValueType>
+      <name>Rezult</name>
+      <nsUri>http://www.abs-soft.ru/AgentScheme</nsUri>
+    </xdtoReturningValueType>
+    <transactioned>true</transactioned>
+    <procedureName>ObnovitAktAgenta</procedureName>
+    <dataLockControlMode>Managed</dataLockControlMode>
+    <parameters uuid="789c21f3-21c6-4ec6-9c6e-767a63097d93">
+      <name>Number</name>
+      <synonym>
+        <key>ru</key>
+        <value>Number</value>
+      </synonym>
+      <comment></comment>
+      <xdtoValueType>
+        <name>string</name>
+        <nsUri>http://www.w3.org/2001/XMLSchema</nsUri>
+      </xdtoValueType>
+    </parameters>
+    <parameters uuid="7fdc70f7-a336-40e9-b479-d46b594364ee">
+      <name>Date</name>
+      <synonym>
+        <key>ru</key>
+        <value>Date</value>
+      </synonym>
+      <comment></comment>
+      <xdtoValueType>
+        <name>date</name>
+        <nsUri>http://www.w3.org/2001/XMLSchema</nsUri>
+      </xdtoValueType>
+    </parameters>
+    <parameters uuid="61b9e375-5f88-4dd1-986d-77dc7821d920">
+      <name>Data</name>
+      <synonym>
+        <key>ru</key>
+        <value>Data</value>
+      </synonym>
+      <comment></comment>
+      <xdtoValueType>
+        <name>string</name>
+        <nsUri>http://www.w3.org/2001/XMLSchema</nsUri>
+      </xdtoValueType>
+    </parameters>
+    <parameters uuid="e4901082-cea6-4299-b776-ad1385268dd4">
+      <name>UIN</name>
+      <synonym>
+        <key>ru</key>
+        <value>UIN</value>
+      </synonym>
+      <comment></comment>
+      <xdtoValueType>
+        <name>string</name>
+        <nsUri>http://www.w3.org/2001/XMLSchema</nsUri>
+      </xdtoValueType>
+    </parameters>
+  </operations>
+  <operations uuid="eaa9df3a-90c8-4461-8414-c77fac08d515">
+    <name>GetDogovorData</name>
+    <synonym>
+      <key>ru</key>
+      <value>Get dogovor data</value>
+    </synonym>
+    <comment></comment>
+    <xdtoReturningValueType>
+      <name>string</name>
+      <nsUri>http://www.w3.org/2001/XMLSchema</nsUri>
+    </xdtoReturningValueType>
+    <procedureName>GetDogovorData</procedureName>
+    <dataLockControlMode>Managed</dataLockControlMode>
+    <parameters uuid="4d868514-4721-4327-b6b4-a47d9bc4006c">
+      <name>Code</name>
+      <synonym>
+        <key>ru</key>
+        <value>Code</value>
+      </synonym>
+      <comment></comment>
+      <xdtoValueType>
+        <name>string</name>
+        <nsUri>http://www.w3.org/2001/XMLSchema</nsUri>
+      </xdtoValueType>
+    </parameters>
+  </operations>
+</mdclass:WebService>

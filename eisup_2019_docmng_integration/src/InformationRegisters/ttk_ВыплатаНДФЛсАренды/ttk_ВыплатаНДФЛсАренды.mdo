@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="1b635a1c-f231-4ce3-8baa-629e0b745866">
+  <producedTypes>
+    <selectionType typeId="f71f19fa-60cb-498b-9a9e-f1645bc7e55b" valueTypeId="f102fb22-494c-444c-9f8e-5804be2d841a"/>
+    <listType typeId="9f3c15bb-09aa-43f0-ad39-33a88e08f33f" valueTypeId="a855d24b-f178-4e87-a2fb-72a76fe5bc1b"/>
+    <managerType typeId="ea4f101c-62fd-43c7-8492-2129e9e4cb5f" valueTypeId="c79542bb-1b7a-4517-836b-f274f2170d9f"/>
+    <recordSetType typeId="ef5b4378-6259-43e6-be33-092887546563" valueTypeId="fb6bfa0c-53f7-4a2c-b2c9-56f410f40ba8"/>
+    <recordKeyType typeId="3a4e965b-2c0e-4762-be72-cc9be5d9e4fe" valueTypeId="502b07fd-4d70-4da6-ba36-222df44af8ab"/>
+    <recordType typeId="7887bc62-67b2-4d1f-8eae-4b65ce1ca071" valueTypeId="3895c74c-134c-4a91-9923-3e9511d58972"/>
+    <recordManagerType typeId="9dc88c54-f863-46ef-ba8e-50ef8d88d73b" valueTypeId="7ccafffe-1ad5-40dd-b70f-c7840e0ac46c"/>
+  </producedTypes>
+  <name>ttk_ВыплатаНДФЛсАренды</name>
+  <synonym>
+    <key>ru</key>
+    <value>Выплата НДФЛ с аренды</value>
+  </synonym>
+  <comment></comment>
+  <editType>InDialog</editType>
+  <writeMode>RecorderSubordinate</writeMode>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <resources uuid="f5748416-ea76-4283-8330-b48180b309c6">
+    <name>СуммаНДФЛ</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сумма НДФЛ</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>10</precision>
+        <scale>2</scale>
+      </numberQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="dd1e7c3a-2a67-4bc4-976e-5700ea1a6bd9">
+    <name>СуммаВыплатыФЛ</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сумма выплаты ФЛ</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>10</precision>
+        <scale>2</scale>
+      </numberQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="ee6c2b29-b294-411d-92d3-b53fe535f5e9">
+    <name>СуммаАренды</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сумма аренды</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>10</precision>
+        <scale>2</scale>
+      </numberQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <attributes uuid="28b7ccd3-4db8-48e0-8cd3-7a92253a074e">
+    <name>ВыгруженоВИСУЗК</name>
+    <synonym>
+      <key>ru</key>
+      <value>Выгружено в ИСУЗК</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="62fcbee8-86be-4065-8639-d5654a2026b1">
+    <name>КомментарийВыгрузкиВИСУЗК</name>
+    <synonym>
+      <key>ru</key>
+      <value>Комментарий выгрузки в ИСУЗК</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>String</types>
+      <stringQualifiers/>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:StringValue">
+      <value></value>
+    </fillValue>
+  </attributes>
+  <dimensions uuid="6d72943d-d52b-499f-8af8-c8ef1e0aca94">
+    <name>ФизическоеЛицо</name>
+    <synonym>
+      <key>ru</key>
+      <value>Физическое лицо</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.ФизическиеЛица</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="7230b252-892c-4b17-9627-5e2a9daa5dab">
+    <name>Организация</name>
+    <synonym>
+      <key>ru</key>
+      <value>Организация</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.Организации</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="dd28d541-6fd3-4914-9fbd-389999ecf49d">
+    <name>СчетНаВыплатуАренды</name>
+    <synonym>
+      <key>ru</key>
+      <value>Счет на выплату аренды</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>DocumentRef.абс_СчетНаОплату</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="8608e39c-b168-4dea-8e86-59b26110c7e7">
+    <name>Контрагент</name>
+    <synonym>
+      <key>ru</key>
+      <value>Контрагент</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.Контрагенты</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="452bbc1b-80d8-4c36-9740-893829e1064d">
+    <name>ДоговорКонтрагента</name>
+    <synonym>
+      <key>ru</key>
+      <value>Договор контрагента</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.ДоговорыКонтрагентов</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="51cf2d55-49ba-4422-ae70-e0409b83c702">
+    <name>Оплата</name>
+    <synonym>
+      <key>ru</key>
+      <value>Оплата</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>DocumentRef.абс_Оплата</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+</mdclass:InformationRegister>

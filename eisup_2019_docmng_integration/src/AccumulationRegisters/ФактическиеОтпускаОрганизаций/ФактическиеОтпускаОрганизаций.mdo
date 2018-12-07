@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:AccumulationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="7fa1932c-8848-43e3-921f-94f7c605d11d">
+  <producedTypes>
+    <selectionType typeId="ec8e4f5d-a23e-4d99-8a1c-c1aff0bd7cc9" valueTypeId="2b46b908-0628-4f68-b016-e4e79e858ed4"/>
+    <listType typeId="654e2757-d457-45e4-8b3a-5976138850a3" valueTypeId="54c9f091-e067-43ad-88ab-20b84d11b30a"/>
+    <managerType typeId="9131c89b-d570-4b0b-9d5a-8f6d0c73a666" valueTypeId="7a027549-3715-452f-bd73-cdfe36c47ef3"/>
+    <recordSetType typeId="364e1e18-e62b-4eb9-99eb-dad5240e8235" valueTypeId="c9338d5a-37ba-4f99-9b86-12184fb914ac"/>
+    <recordKeyType typeId="328e49db-c94a-4000-b783-042b7cff0e83" valueTypeId="fa5f88d1-9bee-461d-a52f-8e3f2297895e"/>
+    <recordType typeId="469bfb4e-45c7-4e6f-a4dd-d2e913538825" valueTypeId="7208f212-8f66-4a33-b640-c91f84871cfa"/>
+  </producedTypes>
+  <name>ФактическиеОтпускаОрганизаций</name>
+  <synonym>
+    <key>ru</key>
+    <value>Фактические отпуска организаций</value>
+  </synonym>
+  <comment>(Регл)</comment>
+  <registerType>Turnovers</registerType>
+  <enableTotalsSplitting>true</enableTotalsSplitting>
+  <resources uuid="3c3401ca-6afd-4999-99b6-448b0fac770e">
+    <name>Количество</name>
+    <synonym>
+      <key>ru</key>
+      <value>Количество</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>5</precision>
+        <scale>2</scale>
+      </numberQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </resources>
+  <attributes uuid="a9d083c0-b8da-44ec-8216-2a74dcf75399">
+    <name>ДатаОкончания</name>
+    <synonym>
+      <key>ru</key>
+      <value>Дата окончания</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Date</types>
+      <dateQualifiers>
+        <dateFractions>Date</dateFractions>
+      </dateQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </attributes>
+  <attributes uuid="a30769d1-3a65-4acf-a370-830c71cae29b">
+    <name>Компенсация</name>
+    <synonym>
+      <key>ru</key>
+      <value>Компенсация</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </attributes>
+  <attributes uuid="483f2768-445e-49bf-adab-82f090b3e958">
+    <name>ДатаРегистрации</name>
+    <synonym>
+      <key>ru</key>
+      <value>Дата регистрации</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Date</types>
+      <dateQualifiers/>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </attributes>
+  <dimensions uuid="930e232b-36be-408d-9e02-de84d432e222">
+    <name>Сотрудник</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сотрудник</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.СотрудникиОрганизаций</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="7a418d2a-1820-4608-91fd-34735008ec1d">
+    <name>ВидЕжегодногоОтпуска</name>
+    <synonym>
+      <key>ru</key>
+      <value>Вид ежегодного отпуска</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.ВидыЕжегодныхОтпусков</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+</mdclass:AccumulationRegister>

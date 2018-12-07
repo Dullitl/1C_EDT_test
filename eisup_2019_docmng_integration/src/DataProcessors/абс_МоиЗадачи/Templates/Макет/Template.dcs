@@ -1,0 +1,246 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<DataCompositionSchema xmlns="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcscom="http://v8.1c.ru/8.1/data-composition-system/common" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<dataSource>
+		<name>ИсточникДанных1</name>
+		<dataSourceType>Local</dataSourceType>
+	</dataSource>
+	<dataSet xsi:type="DataSetQuery">
+		<name>НаборДанных</name>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>БизнесПроцесс</dataPath>
+			<field>БизнесПроцесс</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ВидЗадачи</dataPath>
+			<field>ВидЗадачи</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Выполнена</dataPath>
+			<field>Выполнена</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Дата</dataPath>
+			<field>Дата</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Исполнитель</dataPath>
+			<field>Исполнитель</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Исполнитель</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Комментарий</dataPath>
+			<field>Комментарий</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Наименование</dataPath>
+			<field>Наименование</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ОбъектЗадачи</dataPath>
+			<field>ОбъектЗадачи</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Организация</dataPath>
+			<field>Организация</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Роль</dataPath>
+			<field>Роль</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ТочкаМаршрута</dataPath>
+			<field>ТочкаМаршрута</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Задача</dataPath>
+			<field>Задача</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Инициатор</dataPath>
+			<field>Инициатор</field>
+		</field>
+		<dataSource>ИсточникДанных1</dataSource>
+		<query>ВЫБРАТЬ
+	абсЗадачаДоговораЗадачиПоИсполнителю.Ссылка КАК Задача,
+	абсЗадачаДоговораЗадачиПоИсполнителю.Дата КАК Дата,
+	абсЗадачаДоговораЗадачиПоИсполнителю.БизнесПроцесс КАК БизнесПроцесс,
+	абсЗадачаДоговораЗадачиПоИсполнителю.ТочкаМаршрута КАК ТочкаМаршрута,
+	абсЗадачаДоговораЗадачиПоИсполнителю.Наименование КАК Наименование,
+	абсЗадачаДоговораЗадачиПоИсполнителю.Выполнена КАК Выполнена,
+	абсЗадачаДоговораЗадачиПоИсполнителю.ОбъектЗадачи КАК ОбъектЗадачи,
+	абсЗадачаДоговораЗадачиПоИсполнителю.ВидЗадачи КАК ВидЗадачи,
+	абсЗадачаДоговораЗадачиПоИсполнителю.ИнициаторБП КАК Инициатор,
+	абсЗадачаДоговораЗадачиПоИсполнителю.Комментарий КАК Комментарий,
+	абсЗадачаДоговораЗадачиПоИсполнителю.Роль КАК Роль,
+	абсЗадачаДоговораЗадачиПоИсполнителю.Организация КАК Организация,
+	абсЗадачаДоговораЗадачиПоИсполнителю.Исполнитель КАК Исполнитель
+{ВЫБРАТЬ
+	Задача.*,
+	Дата,
+	БизнесПроцесс.*,
+	ТочкаМаршрута.*,
+	Наименование,
+	Выполнена,
+	ОбъектЗадачи.*,
+	ВидЗадачи.*,
+	Инициатор.*,
+	Комментарий,
+	Роль.*,
+	Организация.*,
+	Исполнитель.*}
+ИЗ
+	Задача.абсЗадачаДоговора.ЗадачиПоИсполнителю(
+			&amp;Исполнитель,
+			Выполнена = ЛОЖЬ
+				И НЕ БизнесПроцесс.Завершен {(Дата МЕЖДУ &amp;ДатаНачала И &amp;ДатаОкончания)}) КАК абсЗадачаДоговораЗадачиПоИсполнителю
+{ГДЕ
+	абсЗадачаДоговораЗадачиПоИсполнителю.Организация.*,
+	абсЗадачаДоговораЗадачиПоИсполнителю.Роль.*,
+	абсЗадачаДоговораЗадачиПоИсполнителю.ВидЗадачи.*,
+	абсЗадачаДоговораЗадачиПоИсполнителю.ОбъектЗадачи.*}
+
+СГРУППИРОВАТЬ ПО
+	абсЗадачаДоговораЗадачиПоИсполнителю.Ссылка,
+	абсЗадачаДоговораЗадачиПоИсполнителю.Дата,
+	абсЗадачаДоговораЗадачиПоИсполнителю.БизнесПроцесс,
+	абсЗадачаДоговораЗадачиПоИсполнителю.ТочкаМаршрута,
+	абсЗадачаДоговораЗадачиПоИсполнителю.Наименование,
+	абсЗадачаДоговораЗадачиПоИсполнителю.Выполнена,
+	абсЗадачаДоговораЗадачиПоИсполнителю.ОбъектЗадачи,
+	абсЗадачаДоговораЗадачиПоИсполнителю.ВидЗадачи,
+	абсЗадачаДоговораЗадачиПоИсполнителю.ИнициаторБП,
+	абсЗадачаДоговораЗадачиПоИсполнителю.Комментарий,
+	абсЗадачаДоговораЗадачиПоИсполнителю.Роль,
+	абсЗадачаДоговораЗадачиПоИсполнителю.Организация,
+	абсЗадачаДоговораЗадачиПоИсполнителю.Исполнитель
+
+УПОРЯДОЧИТЬ ПО
+	Дата</query>
+	</dataSet>
+	<parameter>
+		<name>Исполнитель</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Исполнитель</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:CatalogRef.Пользователи</v8:Type>
+		</valueType>
+		<value xsi:nil="true"/>
+		<useRestriction>true</useRestriction>
+		<availableAsField>false</availableAsField>
+		<denyIncompleteValues>true</denyIncompleteValues>
+		<use>Always</use>
+	</parameter>
+	<parameter>
+		<name>ДатаНачала</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Дата начала</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>true</useRestriction>
+		<availableAsField>false</availableAsField>
+		<use>Always</use>
+	</parameter>
+	<parameter>
+		<name>ДатаОкончания</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Дата окончания</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>true</useRestriction>
+		<availableAsField>false</availableAsField>
+		<use>Always</use>
+	</parameter>
+	<settingsVariant>
+		<dcsset:name>Основной</dcsset:name>
+		<dcsset:presentation xsi:type="xs:string">Основной</dcsset:presentation>
+		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
+			<dcsset:selection>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Задача</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>БизнесПроцесс</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ВидЗадачи</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:field>Выполнена</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Дата</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:field>Исполнитель</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Комментарий</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:field>Наименование</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ОбъектЗадачи</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Организация</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:field>Роль</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ТочкаМаршрута</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Инициатор</dcsset:field>
+				</dcsset:item>
+			</dcsset:selection>
+			<dcsset:dataParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Исполнитель</dcscor:parameter>
+					<dcscor:value xsi:nil="true"/>
+					<dcsset:userSettingID>ec68238c-c101-4c41-8562-0ab8864a246e</dcsset:userSettingID>
+				</dcscor:item>
+			</dcsset:dataParameters>
+			<dcsset:item xsi:type="dcsset:StructureItemGroup">
+				<dcsset:order>
+					<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+				</dcsset:order>
+				<dcsset:selection>
+					<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+				</dcsset:selection>
+			</dcsset:item>
+		</dcsset:settings>
+	</settingsVariant>
+</DataCompositionSchema>

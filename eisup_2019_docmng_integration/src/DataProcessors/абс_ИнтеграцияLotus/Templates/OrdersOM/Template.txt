@@ -1,0 +1,23 @@
+﻿IF  NOT EXISTS(select * from information_schema.tables where TABLE_NAME = 'OrdersOM')
+	Create table OrdersOM
+	(
+		OM_id					nchar(40) not null,
+		organization			nchar(40)not null,
+		contactor				nchar(40) not null,
+		agreement				nchar(40) not null,
+		project_id				nchar(40) not null,
+		amount					numeric(15,2) not null,
+		payment_amount			numeric(15,1),
+		install_amount			numeric(15,2),
+		date_on					datetime,
+		date_off				datetime,
+		status					nchar(40),
+		type_service			nvarchar(255),
+		capacity				numeric(10,0),
+		point_A					nvarchar(255),
+		point_B					nvarchar(255),
+		manager					nvarchar(255),
+		order_date				datetime,	
+	)
+ELSE
+	print('Таблица OrdersOM уже существует')

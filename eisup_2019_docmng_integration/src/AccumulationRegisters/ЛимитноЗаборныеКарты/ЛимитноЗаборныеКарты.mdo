@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:AccumulationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="6a10bde2-a385-4163-afab-4ae88309f756">
+  <producedTypes>
+    <selectionType typeId="b230460a-3b09-43e3-b5b4-5095ad342327" valueTypeId="a549bf8c-0fee-450c-81a4-5077d6ea9218"/>
+    <listType typeId="dd83f627-efea-4d9f-a5db-8db2c2531fc8" valueTypeId="dd0badf3-0385-4dc0-bd1f-480d3180df9f"/>
+    <managerType typeId="c8503e02-0add-42b2-bd39-8cc612aae2b8" valueTypeId="ccc91457-a4db-4972-ad30-60c3a249c361"/>
+    <recordSetType typeId="9845b279-522e-4a9e-82a0-a7d4c45f1245" valueTypeId="8d8a9fee-7831-4278-94a0-5fa192ce4652"/>
+    <recordKeyType typeId="4798937d-1f74-4279-8ddf-73abe75d8e03" valueTypeId="20cc1dd1-9a45-4fe8-a6ce-0a942c692bc5"/>
+    <recordType typeId="f2a7443d-00f8-44c2-b611-32f81497e9da" valueTypeId="6cd66865-e364-4bd5-8c37-e979e23efabb"/>
+  </producedTypes>
+  <name>ЛимитноЗаборныеКарты</name>
+  <synonym>
+    <key>ru</key>
+    <value>Лимитно заборные карты</value>
+  </synonym>
+  <comment>(Упр)</comment>
+  <registerType>Turnovers</registerType>
+  <enableTotalsSplitting>true</enableTotalsSplitting>
+  <resources uuid="1af9f8f7-97f9-4ecd-9fc8-0616fafd9e47">
+    <name>Отпущено</name>
+    <synonym>
+      <key>ru</key>
+      <value>Отпущено</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>3</scale>
+      </numberQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </resources>
+  <resources uuid="869b9c66-ff8b-41ee-bb31-4616b0f897da">
+    <name>ОтпущеноСверхЛимита</name>
+    <synonym>
+      <key>ru</key>
+      <value>Отпущено сверх лимита</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>3</scale>
+      </numberQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </resources>
+  <resources uuid="e24e151b-33d4-4827-b8ff-6997719ae205">
+    <name>Возвращено</name>
+    <synonym>
+      <key>ru</key>
+      <value>Возвращено</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>3</scale>
+      </numberQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </resources>
+  <dimensions uuid="44b61764-013d-46d1-acd1-84dd8cbd1c47">
+    <name>Номенклатура</name>
+    <synonym>
+      <key>ru</key>
+      <value>Номенклатура</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.Номенклатура</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="68ff597a-ee45-4ebb-af27-0c0ac16d1d9b">
+    <name>ХарактеристикаНоменклатуры</name>
+    <synonym>
+      <key>ru</key>
+      <value>Характеристика номенклатуры</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.ХарактеристикиНоменклатуры</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="f4c842e7-96c1-45e6-a0d5-a632efd046f8">
+    <name>Склад</name>
+    <synonym>
+      <key>ru</key>
+      <value>Склад</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.Склады</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="e9ae6e1f-1146-4b54-acf8-f75211efe8aa">
+    <name>Подразделение</name>
+    <synonym>
+      <key>ru</key>
+      <value>Подразделение</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.Подразделения</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+</mdclass:AccumulationRegister>

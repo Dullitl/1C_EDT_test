@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="78c82266-9592-454e-8728-0ffc737a4fd3">
+  <producedTypes>
+    <selectionType typeId="065ec797-7039-43b1-9131-1c6e5c848d5e" valueTypeId="07a8ccd8-dc4a-4353-a193-5213ac3fc61f"/>
+    <listType typeId="9297d2df-2f72-47ed-a8c3-1890e4e3ff44" valueTypeId="f7c51126-8120-4dae-ba2f-091ca639ddcd"/>
+    <managerType typeId="131399b5-5e5f-496d-bc43-01cd7a4c26e4" valueTypeId="7ed1d4a4-1766-4431-aaf1-4d176e42f582"/>
+    <recordSetType typeId="5c9f331f-89f8-40cc-9652-655714c0244d" valueTypeId="08ffb18d-3174-4f69-9c22-15e0db7c481d"/>
+    <recordKeyType typeId="15851f10-d748-4a12-ada0-b6a178f29c61" valueTypeId="937d71d2-5cc1-4003-ae88-f46cecb8ca53"/>
+    <recordType typeId="5290e21b-b34c-4067-b99f-ca971ce89d3f" valueTypeId="71453f4f-3865-4380-8061-340940956758"/>
+    <recordManagerType typeId="f1128672-bc21-46e9-82ab-bbc359bd44b0" valueTypeId="ae823f0a-38bb-4b8f-818d-054e710989b9"/>
+  </producedTypes>
+  <name>абс_ИзменениеСтатусовСчетаНаОплату</name>
+  <synonym>
+    <key>ru</key>
+    <value>Изменение статусов счета на оплату</value>
+  </synonym>
+  <comment></comment>
+  <useStandardCommands>true</useStandardCommands>
+  <editType>InDialog</editType>
+  <defaultListForm>InformationRegister.абс_ИзменениеСтатусовСчетаНаОплату.Form.ФормаСписка</defaultListForm>
+  <informationRegisterPeriodicity>Second</informationRegisterPeriodicity>
+  <mainFilterOnPeriod>true</mainFilterOnPeriod>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <resources uuid="a9c01035-819a-415e-9815-3d2353c8b6a6">
+    <name>Комментарий</name>
+    <synonym>
+      <key>ru</key>
+      <value>Комментарий</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>String</types>
+      <stringQualifiers/>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:StringValue">
+      <value></value>
+    </fillValue>
+  </resources>
+  <resources uuid="d607b14d-5417-4bf0-9595-e909c9c5eb4f">
+    <name>ДолжностьОтветственного</name>
+    <synonym>
+      <key>ru</key>
+      <value>Должность</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.ДолжностиОрганизаций</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <attributes uuid="b81c0824-c156-4389-889d-906a7b8ca1ce">
+    <name>ВнутреннийНомер</name>
+    <synonym>
+      <key>ru</key>
+      <value>Внутренний номер</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>7</precision>
+      </numberQualifiers>
+    </type>
+    <format>
+      <key>ru</key>
+      <value>ЧЦ=7; ЧГ=</value>
+    </format>
+    <editFormat>
+      <key>ru</key>
+      <value>ЧЦ=7; ЧГ=</value>
+    </editFormat>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <dimensions uuid="e53ef7f3-be8d-4040-8604-82007756983a">
+    <name>СчетНаОплату</name>
+    <synonym>
+      <key>ru</key>
+      <value>Счет на оплату</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>DocumentRef.абс_СчетНаОплату</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="987c1f0c-ac9c-4a11-b0a9-6242949c96cc">
+    <name>СтатусСчетаНаОплату</name>
+    <synonym>
+      <key>ru</key>
+      <value>Статус</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>EnumRef.абсСтатусыСчетов</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="3a9f4b97-1c37-4b86-afcb-b8c9cc97ec0d">
+    <name>Пользователь</name>
+    <synonym>
+      <key>ru</key>
+      <value>Пользователь</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.Пользователи</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <forms uuid="47fba8cf-6ac9-4d3a-9f3c-023cdf4730fc">
+    <name>ФормаСписка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма списка</value>
+    </synonym>
+    <comment></comment>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <commands uuid="91144d22-6721-4e0c-a753-810173ef2b0e">
+    <name>ОткрытьСписокСогласованияСчета</name>
+    <synonym>
+      <key>ru</key>
+      <value>Согласование счета </value>
+    </synonym>
+    <comment></comment>
+    <group>FormNavigationPanelGoTo</group>
+    <commandParameterType>
+      <types>DocumentRef.абс_СчетНаОплату</types>
+    </commandParameterType>
+    <representation>Auto</representation>
+    <shortcut></shortcut>
+  </commands>
+</mdclass:InformationRegister>

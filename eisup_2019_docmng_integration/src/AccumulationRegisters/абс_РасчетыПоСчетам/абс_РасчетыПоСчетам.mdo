@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:AccumulationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="701d2591-ce12-4551-bae2-8d580e75a5e2">
+  <producedTypes>
+    <selectionType typeId="823611cf-7d45-41ac-9913-74f0fc357d9d" valueTypeId="71012929-6b4d-4794-9efd-7b2f4f4785be"/>
+    <listType typeId="ea4a7273-2258-4919-972e-9433ee4a1f0e" valueTypeId="db5ddef5-cdac-45da-ae10-8dc5f83d936d"/>
+    <managerType typeId="784d613c-f42d-42cf-99f8-afb1bb3b76f8" valueTypeId="39997780-3d4b-4266-8e9c-6ea39f162d24"/>
+    <recordSetType typeId="cc8c08d9-bccf-48e9-bea9-89aece70ea25" valueTypeId="fe6bd58e-2b06-4c5d-9ecd-92a2933d5dcf"/>
+    <recordKeyType typeId="e1fcba3b-8655-460d-9403-4218c753b92e" valueTypeId="f62ddd42-8778-4eb9-8ee9-35727a2d85b1"/>
+    <recordType typeId="e571b387-2c14-4d21-bfd2-5785ad096338" valueTypeId="e44ab874-fabb-49d7-abf7-1459db5f1531"/>
+  </producedTypes>
+  <name>абс_РасчетыПоСчетам</name>
+  <synonym>
+    <key>ru</key>
+    <value>Расчеты по счетам</value>
+  </synonym>
+  <comment></comment>
+  <registerType>Turnovers</registerType>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <enableTotalsSplitting>true</enableTotalsSplitting>
+  <resources uuid="9ce43cd5-9054-4808-8a1e-30555853612c">
+    <name>СуммаВал</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сумма вал</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>2</scale>
+      </numberQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </resources>
+  <resources uuid="80ea861e-4d54-479a-843d-70e8371bb705">
+    <name>Сумма</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сумма</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>2</scale>
+      </numberQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </resources>
+  <dimensions uuid="f53ed0b7-f8f2-4a88-b6ad-d4d894567a1c">
+    <name>Организация</name>
+    <synonym>
+      <key>ru</key>
+      <value>Организация</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.Организации</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="12c82963-e669-47fd-99b8-fb1747ba6b25">
+    <name>Оплата</name>
+    <synonym>
+      <key>ru</key>
+      <value>Оплата</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>DocumentRef.абс_Оплата</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="5e64c4af-0aa3-4c1c-9dfc-6dad23d83830">
+    <name>Счет</name>
+    <synonym>
+      <key>ru</key>
+      <value>Счет</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>DocumentRef.абс_СчетНаОплату</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+</mdclass:AccumulationRegister>

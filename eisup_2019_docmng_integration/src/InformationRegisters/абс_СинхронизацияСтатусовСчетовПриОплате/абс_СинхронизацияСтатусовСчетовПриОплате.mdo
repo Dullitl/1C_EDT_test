@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="ef9ac4c0-6cf3-49bf-8cdf-5185b971cb77">
+  <producedTypes>
+    <selectionType typeId="5bc6337a-e873-462f-a85f-304c4121bf70" valueTypeId="21b099a0-bf33-484b-8804-5561b702384b"/>
+    <listType typeId="5008bebb-5843-49ab-bd16-e60fcdb11c6e" valueTypeId="04fea6fa-8532-48ee-a538-ece042461ac1"/>
+    <managerType typeId="93064662-d07a-4340-a70f-71b02aebf207" valueTypeId="8618c7f9-f639-4d26-8754-152a5d1fa08c"/>
+    <recordSetType typeId="84b8ce31-f73c-4528-b289-97af9db94f7a" valueTypeId="65e37c01-6f77-4c26-ae6f-b9b58917b51e"/>
+    <recordKeyType typeId="dde0b905-a60c-4dd4-826f-2dbf8dfce251" valueTypeId="f091c279-82df-4d36-9578-fd501324a2e9"/>
+    <recordType typeId="be804d4b-1ab6-49fc-b8fd-e6e632f9b909" valueTypeId="be8cc377-7b57-46e8-b9e4-b9af2d1e4768"/>
+    <recordManagerType typeId="53a40910-260d-4481-a4b9-8864b3907019" valueTypeId="be7e89d9-f761-4049-9993-4dca7b0e199c"/>
+  </producedTypes>
+  <name>абс_СинхронизацияСтатусовСчетовПриОплате</name>
+  <synonym>
+    <key>ru</key>
+    <value>Синхронизация статусов счетов при оплате</value>
+  </synonym>
+  <comment></comment>
+  <editType>InDialog</editType>
+  <informationRegisterPeriodicity>Second</informationRegisterPeriodicity>
+  <mainFilterOnPeriod>true</mainFilterOnPeriod>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <resources uuid="1b2cbc70-550e-423b-9b42-7b182f4023a3">
+    <name>ТребуетсяСинхронизация</name>
+    <synonym>
+      <key>ru</key>
+      <value>Требуется синхронизация</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="8d7482ce-d52a-40a2-aaf2-fecbb5cafeb5">
+    <name>ВыполненоСОшибками</name>
+    <synonym>
+      <key>ru</key>
+      <value>Выполнено с ошибками</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="41bfce79-94f6-43dd-a1b9-634a811c1cda">
+    <name>ТекстОшибки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Текст ошибки</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>String</types>
+      <stringQualifiers/>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:StringValue">
+      <value></value>
+    </fillValue>
+  </resources>
+  <dimensions uuid="85916ee9-3cc6-46c8-9b53-593947f7e664">
+    <name>Организация</name>
+    <synonym>
+      <key>ru</key>
+      <value>Организация</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.Организации</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="50e8cc65-8354-4285-8390-2e3c6645fac5">
+    <name>ПлатежноеПоручение</name>
+    <synonym>
+      <key>ru</key>
+      <value>Платежное поручение</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>DocumentRef.ПлатежноеПоручениеИсходящее</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="213b289d-f3e3-43c7-a757-b13050877c6e">
+    <name>СчетНаОплату</name>
+    <synonym>
+      <key>ru</key>
+      <value>Счет на оплату</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>DocumentRef.абс_СчетНаОплату</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="43600873-edb9-49ea-9da9-fcbdf0444a81">
+    <name>Оплата</name>
+    <synonym>
+      <key>ru</key>
+      <value>Оплата</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>DocumentRef.абс_Оплата</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="858f389c-b42e-4809-a161-ff5d516506e5">
+    <name>ЗРС</name>
+    <synonym>
+      <key>ru</key>
+      <value>ЗРС</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>DocumentRef.ЗаявкаНаРасходованиеСредств</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="3ddb9566-5610-42eb-913c-e065f5295df9">
+    <name>СтатусСчета</name>
+    <synonym>
+      <key>ru</key>
+      <value>Статус счета</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>EnumRef.абсСтатусыСчетов</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="7f20c649-f9a7-4613-97a0-70e6e5c2c667">
+    <name>Платеж</name>
+    <synonym>
+      <key>ru</key>
+      <value>Платеж</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>DocumentRef.абс_Платеж</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+</mdclass:InformationRegister>

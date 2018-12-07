@@ -1,0 +1,670 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Rights xmlns="http://v8.1c.ru/8.2/roles" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="Rights" version="2.6">
+	<setForNewObjects>false</setForNewObjects>
+	<setForAttributesByDefault>false</setForAttributesByDefault>
+	<independentRightsOfChildObjects>true</independentRightsOfChildObjects>
+	<object>
+		<name>Catalog.ВнешниеОбработки</name>
+		<right>
+			<name>Read</name>
+			<value>false</value>
+			<restrictionByCondition>
+				<condition>ТекущаяТаблица ИЗ #ТекущаяТаблица КАК ТекущаяТаблица
+    ЛЕВОЕ СОЕДИНЕНИЕ (ВЫБРАТЬ РАЗЛИЧНЫЕ
+        СоставГруппы.Ссылка КАК ГруппаПользователей
+    ИЗ
+        Справочник.ГруппыПользователей.ПользователиГруппы КАК СоставГруппы
+    ГДЕ
+        СоставГруппы.Пользователь = &amp;ТекущийПользователь) КАК ГруппыПользователей
+    ПО (&amp;ИспользоватьОграниченияПравДоступаНаУровнеЗаписей)
+ГДЕ (&amp;ИспользоватьОграниченияПравДоступаНаУровнеЗаписей = ЛОЖЬ
+ИЛИ ТекущаяТаблица.ЭтоГруппа
+            ИЛИ (НЕ 1 В
+                        (ВЫБРАТЬ ПЕРВЫЕ 1
+                            1 КАК ПолеОтбора
+                        ИЗ
+                            РегистрСведений.НазначениеВидовОбъектовДоступа КАК НазначениеВидовОбъектовДоступа
+                        ГДЕ
+                            НазначениеВидовОбъектовДоступа.ГруппаПользователей = ГруппыПользователей.ГруппаПользователей
+                            И ВЫБОР
+                                КОГДА НазначениеВидовОбъектовДоступа.ВидОбъектаДоступа = ЗНАЧЕНИЕ(Перечисление.ВидыОбъектовДоступа.ВнешниеОбработки)
+                                    ТОГДА ВЫБОР
+                                            КОГДА 1 В
+                                                    (ВЫБРАТЬ ПЕРВЫЕ 1
+                                                        1
+                                                    ИЗ
+                                                        (ВЫБРАТЬ
+                                                            1 КАК ПолеОтбора
+                                                        ) КАК Оптимизация ВНУТРЕННЕЕ СОЕДИНЕНИЕ РегистрСведений.НастройкиПравДоступаПользователей КАК НастройкиПравДоступаПользователей
+                                                            ПО
+                                                                НастройкиПравДоступаПользователей.ОбъектДоступа = ТекущаяТаблица.Ссылка
+                                                                    И НастройкиПравДоступаПользователей.ВидОбъектаДоступа = ЗНАЧЕНИЕ(Перечисление.ВидыОбъектовДоступа.ВнешниеОбработки)
+                                                                    И (НастройкиПравДоступаПользователей.Пользователь = НазначениеВидовОбъектовДоступа.ГруппаПользователей
+                                                                        ИЛИ НастройкиПравДоступаПользователей.Пользователь = ЗНАЧЕНИЕ(Справочник.ГруппыПользователей.ВсеПользователи)))
+                                                ТОГДА ИСТИНА
+                                            ИНАЧЕ ЛОЖЬ
+                                        КОНЕЦ
+                                ИНАЧЕ ИСТИНА
+                            КОНЕЦ = ЛОЖЬ))
+                И (НЕ ГруппыПользователей.ГруппаПользователей ЕСТЬ NULL ))</condition>
+			</restrictionByCondition>
+			<restrictionByCondition>
+				<field>Code</field>
+				<field>Ref</field>
+				<condition/>
+			</restrictionByCondition>
+		</right>
+		<right>
+			<name>Insert</name>
+			<value>false</value>
+			<restrictionByCondition>
+				<condition>ТекущаяТаблица ИЗ #ТекущаяТаблица КАК ТекущаяТаблица
+	ЛЕВОЕ СОЕДИНЕНИЕ (ВЫБРАТЬ РАЗЛИЧНЫЕ
+		СоставГруппы.Ссылка КАК ГруппаПользователей
+	ИЗ
+		Справочник.ГруппыПользователей.ПользователиГруппы КАК СоставГруппы
+	ГДЕ
+		СоставГруппы.Пользователь = &amp;ТекущийПользователь) КАК ГруппыПользователей
+	ПО (&amp;ИспользоватьОграниченияПравДоступаНаУровнеЗаписей)
+ГДЕ (&amp;ИспользоватьОграниченияПравДоступаНаУровнеЗаписей = ЛОЖЬ
+ИЛИ ТекущаяТаблица.ЭтоГруппа
+			ИЛИ (НЕ 1 В
+						(ВЫБРАТЬ ПЕРВЫЕ 1
+							1 КАК ПолеОтбора
+						ИЗ
+							РегистрСведений.НазначениеВидовОбъектовДоступа КАК НазначениеВидовОбъектовДоступа
+						ГДЕ
+							НазначениеВидовОбъектовДоступа.ГруппаПользователей = ГруппыПользователей.ГруппаПользователей
+							И ВЫБОР
+								КОГДА НазначениеВидовОбъектовДоступа.ВидОбъектаДоступа = ЗНАЧЕНИЕ(Перечисление.ВидыОбъектовДоступа.ВнешниеОбработки)
+									ТОГДА ВЫБОР
+											КОГДА 1 В
+													(ВЫБРАТЬ ПЕРВЫЕ 1
+														1
+													ИЗ
+														(ВЫБРАТЬ
+															1 КАК ПолеОтбора
+														) КАК Оптимизация ВНУТРЕННЕЕ СОЕДИНЕНИЕ РегистрСведений.НастройкиПравДоступаПользователей КАК НастройкиПравДоступаПользователей
+															ПО
+																НастройкиПравДоступаПользователей.ОбъектДоступа = ТекущаяТаблица.Ссылка
+																	И НастройкиПравДоступаПользователей.Запись
+																	И НастройкиПравДоступаПользователей.ВидОбъектаДоступа = ЗНАЧЕНИЕ(Перечисление.ВидыОбъектовДоступа.ВнешниеОбработки)
+																	И (НастройкиПравДоступаПользователей.Пользователь = НазначениеВидовОбъектовДоступа.ГруппаПользователей
+																		ИЛИ НастройкиПравДоступаПользователей.Пользователь = ЗНАЧЕНИЕ(Справочник.ГруппыПользователей.ВсеПользователи)))
+												ТОГДА ИСТИНА
+											ИНАЧЕ ЛОЖЬ
+										КОНЕЦ
+								ИНАЧЕ ИСТИНА
+							КОНЕЦ = ЛОЖЬ))
+				И (НЕ ГруппыПользователей.ГруппаПользователей ЕСТЬ NULL ))</condition>
+			</restrictionByCondition>
+		</right>
+		<right>
+			<name>Update</name>
+			<value>false</value>
+			<restrictionByCondition>
+				<condition>ТекущаяТаблица ИЗ #ТекущаяТаблица КАК ТекущаяТаблица
+    ЛЕВОЕ СОЕДИНЕНИЕ (ВЫБРАТЬ РАЗЛИЧНЫЕ
+        СоставГруппы.Ссылка КАК ГруппаПользователей
+    ИЗ
+        Справочник.ГруппыПользователей.ПользователиГруппы КАК СоставГруппы
+    ГДЕ
+        СоставГруппы.Пользователь = &amp;ТекущийПользователь) КАК ГруппыПользователей
+    ПО (&amp;ИспользоватьОграниченияПравДоступаНаУровнеЗаписей)
+ГДЕ (&amp;ИспользоватьОграниченияПравДоступаНаУровнеЗаписей = ЛОЖЬ
+ИЛИ ТекущаяТаблица.ЭтоГруппа
+            ИЛИ (НЕ 1 В
+                        (ВЫБРАТЬ ПЕРВЫЕ 1
+                            1 КАК ПолеОтбора
+                        ИЗ
+                            РегистрСведений.НазначениеВидовОбъектовДоступа КАК НазначениеВидовОбъектовДоступа
+                        ГДЕ
+                            НазначениеВидовОбъектовДоступа.ГруппаПользователей = ГруппыПользователей.ГруппаПользователей
+                            И ВЫБОР
+                                КОГДА НазначениеВидовОбъектовДоступа.ВидОбъектаДоступа = ЗНАЧЕНИЕ(Перечисление.ВидыОбъектовДоступа.ВнешниеОбработки)
+                                    ТОГДА ВЫБОР
+                                            КОГДА 1 В
+                                                    (ВЫБРАТЬ ПЕРВЫЕ 1
+                                                        1
+                                                    ИЗ
+                                                        (ВЫБРАТЬ
+                                                            1 КАК ПолеОтбора
+                                                        ) КАК Оптимизация ВНУТРЕННЕЕ СОЕДИНЕНИЕ РегистрСведений.НастройкиПравДоступаПользователей КАК НастройкиПравДоступаПользователей
+                                                            ПО
+                                                                НастройкиПравДоступаПользователей.ОбъектДоступа = ТекущаяТаблица.Ссылка
+                                                                    И НастройкиПравДоступаПользователей.Запись
+                                                                    И НастройкиПравДоступаПользователей.ВидОбъектаДоступа = ЗНАЧЕНИЕ(Перечисление.ВидыОбъектовДоступа.ВнешниеОбработки)
+                                                                    И (НастройкиПравДоступаПользователей.Пользователь = НазначениеВидовОбъектовДоступа.ГруппаПользователей
+                                                                        ИЛИ НастройкиПравДоступаПользователей.Пользователь = ЗНАЧЕНИЕ(Справочник.ГруппыПользователей.ВсеПользователи)))
+                                                ТОГДА ИСТИНА
+                                            ИНАЧЕ ЛОЖЬ
+                                        КОНЕЦ
+                                ИНАЧЕ ИСТИНА
+                            КОНЕЦ = ЛОЖЬ))
+                И (НЕ ГруппыПользователей.ГруппаПользователей ЕСТЬ NULL ))</condition>
+			</restrictionByCondition>
+		</right>
+	</object>
+	<object>
+		<name>CommonForm.ФормаРезультатOnLineОбмена</name>
+		<right>
+			<name>View</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
+		<name>CommonForm.ФормаНастройкиПлатежаУСН</name>
+		<right>
+			<name>View</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
+		<name>CommonForm.ФормаСпискаНастроекОбмена</name>
+		<right>
+			<name>View</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
+		<name>CommonForm.ПечатьДокументов</name>
+		<right>
+			<name>View</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
+		<name>CommonForm.ФормаОшибокКадровыхПеремещений</name>
+		<right>
+			<name>View</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
+		<name>CommonForm.ФормаИндикацииПроцессаПолученияОтправкиПисемЭлектроннойПочты</name>
+		<right>
+			<name>View</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
+		<name>CommonForm.ФормаВводаКурсаИКратности</name>
+		<right>
+			<name>View</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
+		<name>CommonForm.НастройкаОтправкиОтчета</name>
+		<right>
+			<name>View</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
+		<name>CommonForm.ФормаВыбораПараметровАвторезервирования</name>
+		<right>
+			<name>View</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
+		<name>CommonForm.ФормаВыбораКодаВидаТранспортногоСредства</name>
+		<right>
+			<name>View</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
+		<name>CommonForm.ФормаВводаДанныхСЗВ4</name>
+		<right>
+			<name>View</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
+		<name>CommonForm.ФормаЗагрузкиКлассификатораИзXML</name>
+		<right>
+			<name>View</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
+		<name>CommonForm.ФормаВводаПароля</name>
+		<right>
+			<name>View</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
+		<name>CommonForm.ФормаВыбораКодаЛьготы</name>
+		<right>
+			<name>View</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
+		<name>CommonForm.РедакторФормулРасчета</name>
+		<right>
+			<name>View</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
+		<name>CommonForm.НастройкиМонитораОбменаДанными</name>
+		<right>
+			<name>View</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
+		<name>CommonForm.ФормаПодбораИзКлассификатора</name>
+		<right>
+			<name>View</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
+		<name>CommonForm.ВводУсловийОтбораМатериаловВЭксплуатации</name>
+		<right>
+			<name>View</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
+		<name>CommonForm.ФормаДополнительнойНастройкиОтчета</name>
+		<right>
+			<name>View</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
+		<name>CommonForm.ФормаРедактированияНастроекПодключенияКИнформационнойБазе</name>
+		<right>
+			<name>View</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
+		<name>CommonForm.ФормаВыбораКБК</name>
+		<right>
+			<name>View</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
+		<name>CommonForm.НастройкаПараметровОбращенияВОтделТехническойПоддержки</name>
+		<right>
+			<name>View</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
+		<name>CommonForm.ФормаНастройкиПараметровПанелиПользователя</name>
+		<right>
+			<name>View</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
+		<name>CommonForm.ОсновнаяФормаКонстант</name>
+		<right>
+			<name>View</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
+		<name>CommonForm.ФормаВыбораПользователяWindows</name>
+		<right>
+			<name>View</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
+		<name>CommonForm.ФормаВыбораКонтрагентаДоговораЗаказа</name>
+		<right>
+			<name>View</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
+		<name>CommonForm.ФормаВыбораВариантаСопоставления</name>
+		<right>
+			<name>View</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
+		<name>CommonForm.ФормаВводаМестаРождения</name>
+		<right>
+			<name>View</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
+		<name>CommonForm.ФормаРасшифровкиАналитическихОтчетов</name>
+		<right>
+			<name>View</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
+		<name>CommonForm.ФормаВыбораКодаКатегорииЗемель</name>
+		<right>
+			<name>View</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
+		<name>CommonForm.ФормаВыбораПечатныхФорм</name>
+		<right>
+			<name>View</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
+		<name>CommonForm.ФормаВводаГражданстваФизлица</name>
+		<right>
+			<name>View</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
+		<name>Catalog.ПроизвольныеОтчеты</name>
+		<right>
+			<name>Read</name>
+			<value>true</value>
+		</right>
+		<right>
+			<name>Insert</name>
+			<value>true</value>
+		</right>
+		<right>
+			<name>Update</name>
+			<value>true</value>
+		</right>
+		<right>
+			<name>View</name>
+			<value>true</value>
+		</right>
+		<right>
+			<name>InteractiveInsert</name>
+			<value>true</value>
+		</right>
+		<right>
+			<name>Edit</name>
+			<value>true</value>
+		</right>
+		<right>
+			<name>InteractiveSetDeletionMark</name>
+			<value>true</value>
+		</right>
+		<right>
+			<name>InteractiveClearDeletionMark</name>
+			<value>true</value>
+		</right>
+		<right>
+			<name>InputByString</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
+		<name>CommonForm.ФормаРедактированияСпискаПолейКомпоновки</name>
+		<right>
+			<name>View</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
+		<name>CommonForm.ПодборПользователейДляНастройкиПравДоступа</name>
+		<right>
+			<name>View</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
+		<name>CommonForm.ФормаВыбораЗаказа</name>
+		<right>
+			<name>View</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
+		<name>CommonForm.ВыборБонуснойНоменклатуры</name>
+		<right>
+			<name>View</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
+		<name>CommonForm.ФормаНастройкиСтруктурыОтчета</name>
+		<right>
+			<name>View</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
+		<name>CommonForm.ФормаРаботыСоСпискомЗначений</name>
+		<right>
+			<name>View</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
+		<name>CommonForm.УстановкаДатыЗапретаИзмененияДанных</name>
+		<right>
+			<name>View</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
+		<name>Constant.абс_ДатаНачалаСинхронизацииВыплатыЗП</name>
+		<right>
+			<name>Read</name>
+			<value>true</value>
+		</right>
+		<right>
+			<name>View</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
+		<name>CommonForm.ФормаВыбораПечатнойФормыПоУмолчанию</name>
+		<right>
+			<name>View</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
+		<name>CommonForm.ФормаВыбораРежимаЗаполненияПоЗаказам</name>
+		<right>
+			<name>View</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
+		<name>CommonForm.ФормаНастройкаПоСубконто</name>
+		<right>
+			<name>View</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
+		<name>CommonForm.НастройкаФайлаОбновленияКонфигурации</name>
+		<right>
+			<name>View</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
+		<name>CommonForm.ФормаРедактированияТекста</name>
+		<right>
+			<name>View</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
+		<name>CommonForm.ФормаНастройкиКолонтитулов</name>
+		<right>
+			<name>View</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
+		<name>CommonForm.ФормаВыбораДоступногоПоляКомпоновщикаНастроек</name>
+		<right>
+			<name>View</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
+		<name>CommonForm.ФормаВыполненияОбменаДанными</name>
+		<right>
+			<name>View</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
+		<name>Configuration.УправлениеТелекоммуникационнойКомпаниейКТТК</name>
+		<right>
+			<name>ThinClient</name>
+			<value>true</value>
+		</right>
+		<right>
+			<name>WebClient</name>
+			<value>true</value>
+		</right>
+		<right>
+			<name>ThickClient</name>
+			<value>true</value>
+		</right>
+		<right>
+			<name>AllFunctionsMode</name>
+			<value>true</value>
+		</right>
+		<right>
+			<name>SaveUserData</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
+		<name>CommonForm.ФормаСтруктурыПодчиненности</name>
+		<right>
+			<name>View</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
+		<name>CommonForm.ФормаПараметрыЭлектронногоОбменаДокументами</name>
+		<right>
+			<name>View</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
+		<name>CommonForm.ХодВыполненияОбработкиДанных</name>
+		<right>
+			<name>View</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
+		<name>CommonForm.ФормаВыбораСклада</name>
+		<right>
+			<name>View</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
+		<name>CommonForm.МониторНастроекОбменаДанными</name>
+		<right>
+			<name>View</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
+		<name>CommonForm.ФормаИзмененияГраницыРассмотренияЭлектронногоПисьма</name>
+		<right>
+			<name>View</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
+		<name>DataProcessor.УниверсальныйОбменДаннымиXML</name>
+		<right>
+			<name>Use</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
+		<name>CommonForm.РедактированиеДокументаУдостоверяющегоЛичность</name>
+		<right>
+			<name>View</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
+		<name>Constant.абс_АдресВебСервиса</name>
+		<right>
+			<name>Read</name>
+			<value>true</value>
+		</right>
+		<right>
+			<name>View</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
+		<name>CommonForm.ДиалогРегламентногоЗадания</name>
+		<right>
+			<name>View</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
+		<name>CommonForm.ДиалогВопрос</name>
+		<right>
+			<name>View</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
+		<name>CommonForm.ФормаНапоминания</name>
+		<right>
+			<name>View</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
+		<name>Constant.абс_СинхронизацияВыплатыЗарплаты</name>
+		<right>
+			<name>Read</name>
+			<value>true</value>
+		</right>
+		<right>
+			<name>View</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
+		<name>CommonForm.ФормаЦеныИВалюта</name>
+		<right>
+			<name>View</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
+		<name>CommonForm.РезультатыПроведения</name>
+		<right>
+			<name>View</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
+		<name>CommonForm.ФормаВыбораСотрудников</name>
+		<right>
+			<name>View</name>
+			<value>true</value>
+		</right>
+	</object>
+</Rights>

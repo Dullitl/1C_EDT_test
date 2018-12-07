@@ -1,0 +1,230 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<DataCompositionSchema xmlns="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcscom="http://v8.1c.ru/8.1/data-composition-system/common" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<dataSource>
+		<name>ИсточникДанных1</name>
+		<dataSourceType>Local</dataSourceType>
+	</dataSource>
+	<dataSet xsi:type="DataSetQuery">
+		<name>Отчет</name>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ДатаНачалаСогласования</dataPath>
+			<field>ДатаНачалаСогласования</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ДатаТекущегоСтатуса</dataPath>
+			<field>ДатаТекущегоСтатуса</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ЗакупочныйЗаказ</dataPath>
+			<field>ЗакупочныйЗаказ</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ГруппаДоговора</dataPath>
+			<field>ГруппаДоговора</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Договор</dataPath>
+			<field>Договор</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Контрагент</dataPath>
+			<field>Контрагент</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ПредметДоговора</dataPath>
+			<field>ПредметДоговора</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СуммаБезНДС</dataPath>
+			<field>СуммаБезНДС</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ТипДоговора</dataPath>
+			<field>ТипДоговора</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Инициатор</dataPath>
+			<field>Инициатор</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Статус</dataPath>
+			<field>Статус</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>КодДоговора</dataPath>
+			<field>КодДоговора</field>
+		</field>
+		<dataSource>ИсточникДанных1</dataSource>
+		<query>ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	ДоговорыЗЗ.ДоговорКонтрагента.Код КАК КодДоговора,
+	ДоговорыЗЗ.ДоговорКонтрагента КАК Договор,
+	ДоговорыЗЗ.ДоговорКонтрагента.Владелец КАК Контрагент,
+	ДоговорыЗЗ.ДоговорКонтрагента.Родитель КАК ГруппаДоговора,
+	ДоговорыЗЗ.ДоговорКонтрагента.абс_ТипДоговора КАК ТипДоговора,
+	ДоговорыЗЗ.ДоговорКонтрагента.абс_ПредметДоговораСодержание КАК ПредметДоговора,
+	ДоговорыЗЗ.ДоговорКонтрагента.абс_СуммаБезНДС КАК СуммаБезНДС,
+	СтатусыДоговоров.ДатаНачалаСогласования КАК ДатаНачалаСогласования,
+	СтатусыДоговоров.ДатаТекущегоСтатуса КАК ДатаТекущегоСтатуса,
+	ДоговорыЗЗ.Ссылка КАК ЗакупочныйЗаказ,
+	ДоговорыЗЗ.ДоговорКонтрагента.абс_Ответственный КАК Инициатор,
+	ДоговорыЗЗ.ДоговорКонтрагента.абс_СтатусДоговора КАК Статус
+ИЗ
+	(ВЫБРАТЬ
+		абс_ЗакупочныйЗаказДоговоры.Ссылка КАК Ссылка,
+		абс_ЗакупочныйЗаказДоговоры.ДоговорКонтрагента КАК ДоговорКонтрагента
+	ИЗ
+		Документ.абс_ЗакупочныйЗаказ.Договоры КАК абс_ЗакупочныйЗаказДоговоры) КАК ДоговорыЗЗ
+		ЛЕВОЕ СОЕДИНЕНИЕ (ВЫБРАТЬ
+			ДоговорыКонтрагентов.Ссылка КАК ДоговорКонтрагента,
+			ТекущийСтатусДоговора.Период КАК ДатаТекущегоСтатуса,
+			ДатаНачалаСогласованияДоговора.Период КАК ДатаНачалаСогласования
+		ИЗ
+			Справочник.ДоговорыКонтрагентов КАК ДоговорыКонтрагентов
+				ЛЕВОЕ СОЕДИНЕНИЕ (ВЫБРАТЬ
+					абс_ИзменениеСтатусовДоговоров.Договор КАК Договор,
+					МАКСИМУМ(абс_ИзменениеСтатусовДоговоров.Период) КАК Период
+				ИЗ
+					РегистрСведений.абс_ИзменениеСтатусовДоговоров КАК абс_ИзменениеСтатусовДоговоров
+				
+				СГРУППИРОВАТЬ ПО
+					абс_ИзменениеСтатусовДоговоров.Договор) КАК ТекущийСтатусДоговора
+				ПО ДоговорыКонтрагентов.Ссылка = ТекущийСтатусДоговора.Договор
+				ЛЕВОЕ СОЕДИНЕНИЕ (ВЫБРАТЬ
+					абс_ИзменениеСтатусовДоговоров.Договор КАК Договор,
+					МИНИМУМ(абс_ИзменениеСтатусовДоговоров.Период) КАК Период
+				ИЗ
+					РегистрСведений.абс_ИзменениеСтатусовДоговоров КАК абс_ИзменениеСтатусовДоговоров
+				
+				СГРУППИРОВАТЬ ПО
+					абс_ИзменениеСтатусовДоговоров.Договор) КАК ДатаНачалаСогласованияДоговора
+				ПО ДоговорыКонтрагентов.Ссылка = ДатаНачалаСогласованияДоговора.Договор) КАК СтатусыДоговоров
+		ПО ДоговорыЗЗ.ДоговорКонтрагента = СтатусыДоговоров.ДоговорКонтрагента
+
+СГРУППИРОВАТЬ ПО
+	СтатусыДоговоров.ДатаНачалаСогласования,
+	СтатусыДоговоров.ДатаТекущегоСтатуса,
+	ДоговорыЗЗ.ДоговорКонтрагента,
+	ДоговорыЗЗ.ДоговорКонтрагента.Владелец,
+	ДоговорыЗЗ.ДоговорКонтрагента.Родитель,
+	ДоговорыЗЗ.ДоговорКонтрагента.абс_ТипДоговора,
+	ДоговорыЗЗ.ДоговорКонтрагента.абс_ПредметДоговораСодержание,
+	ДоговорыЗЗ.ДоговорКонтрагента.абс_СуммаБезНДС,
+	ДоговорыЗЗ.Ссылка,
+	ДоговорыЗЗ.ДоговорКонтрагента.абс_Ответственный,
+	ДоговорыЗЗ.ДоговорКонтрагента.абс_СтатусДоговора</query>
+	</dataSet>
+	<settingsVariant>
+		<dcsset:name>Основной</dcsset:name>
+		<dcsset:presentation xsi:type="xs:string">Основной</dcsset:presentation>
+		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
+			<dcsset:selection>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>КодДоговора</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Инициатор</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Контрагент</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ГруппаДоговора</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Договор</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ТипДоговора</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ПредметДоговора</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>СуммаБезНДС</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Статус</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ДатаНачалаСогласования</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ДатаТекущегоСтатуса</dcsset:field>
+				</dcsset:item>
+				<dcsset:userSettingID>c93269a2-ee28-4a40-8226-23ce2ed2a5c6</dcsset:userSettingID>
+			</dcsset:selection>
+			<dcsset:filter>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">ЗакупочныйЗаказ.Ответственный</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+					<dcsset:right xsi:type="dcscor:DesignTimeValue">Справочник.Пользователи.ПустаяСсылка</dcsset:right>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">ДатаНачалаСогласования</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+					<dcsset:right xsi:type="v8:StandardBeginningDate">
+						<v8:variant xsi:type="v8:StandardBeginningDateVariant">Custom</v8:variant>
+						<v8:date>0001-01-01T00:00:00</v8:date>
+					</dcsset:right>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">ДатаТекущегоСтатуса</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+					<dcsset:right xsi:type="v8:StandardBeginningDate">
+						<v8:variant xsi:type="v8:StandardBeginningDateVariant">Custom</v8:variant>
+						<v8:date>0001-01-01T00:00:00</v8:date>
+					</dcsset:right>
+				</dcsset:item>
+				<dcsset:userSettingID>a8f8b3bf-6b6e-49bf-84c7-0410a63d3c1b</dcsset:userSettingID>
+			</dcsset:filter>
+			<dcsset:order>
+				<dcsset:viewMode>Normal</dcsset:viewMode>
+			</dcsset:order>
+			<dcsset:conditionalAppearance>
+				<dcsset:viewMode>Normal</dcsset:viewMode>
+				<dcsset:userSettingID>80494f28-590d-4bf9-b2ac-0cbf147670cc</dcsset:userSettingID>
+			</dcsset:conditionalAppearance>
+			<dcsset:outputParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Заголовок</dcscor:parameter>
+					<dcscor:value xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Отчет по согласованию закупочных заказов</v8:content>
+						</v8:item>
+					</dcscor:value>
+				</dcscor:item>
+			</dcsset:outputParameters>
+			<dcsset:item xsi:type="dcsset:StructureItemGroup">
+				<dcsset:order>
+					<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+				</dcsset:order>
+				<dcsset:selection>
+					<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+				</dcsset:selection>
+				<dcsset:item xsi:type="dcsset:StructureItemGroup">
+					<dcsset:groupItems>
+						<dcsset:item xsi:type="dcsset:GroupItemField">
+							<dcsset:field>ЗакупочныйЗаказ</dcsset:field>
+							<dcsset:groupType>Items</dcsset:groupType>
+							<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+							<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+							<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+						</dcsset:item>
+					</dcsset:groupItems>
+					<dcsset:order>
+						<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+					</dcsset:order>
+					<dcsset:selection>
+						<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+					</dcsset:selection>
+				</dcsset:item>
+			</dcsset:item>
+			<dcsset:itemsViewMode>Normal</dcsset:itemsViewMode>
+			<dcsset:itemsUserSettingID>cb88ab2b-0459-4093-a35a-1fbed2378d7b</dcsset:itemsUserSettingID>
+		</dcsset:settings>
+	</settingsVariant>
+</DataCompositionSchema>

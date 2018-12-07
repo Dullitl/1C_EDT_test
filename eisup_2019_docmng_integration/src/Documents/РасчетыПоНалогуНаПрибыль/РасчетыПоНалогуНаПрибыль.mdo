@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Document xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="b5769733-10fd-48bf-bcc8-09ef99732bb2">
+  <producedTypes>
+    <objectType typeId="1f42eb7a-0c31-4aba-b436-67c3ad935336" valueTypeId="72945099-0e23-4957-aef5-2bea2346059a"/>
+    <refType typeId="c038c259-ecbe-4792-b36d-019327e2e534" valueTypeId="1e8e1067-c072-422a-87c9-f8ddee8bdc8e"/>
+    <selectionType typeId="105b02a4-5052-4091-97a5-2446f74a4ebc" valueTypeId="b0724721-cd9d-4e60-8e5d-f4f89ba27ff5"/>
+    <listType typeId="bdbf4720-4126-4638-85b4-85ce8c753107" valueTypeId="5842a5e8-ccad-4e91-81ec-6fdde14e4121"/>
+    <managerType typeId="eb3f1270-d5bf-4544-aeea-af8c313e1002" valueTypeId="9a3daac6-ff2b-459a-a6ef-6e14c10515b3"/>
+  </producedTypes>
+  <name>РасчетыПоНалогуНаПрибыль</name>
+  <synonym>
+    <key>ru</key>
+    <value>Расчеты по налогу на прибыль</value>
+  </synonym>
+  <comment>(Регл)</comment>
+  <inputByString>Document.РасчетыПоНалогуНаПрибыль.StandardAttribute.Number</inputByString>
+  <fullTextSearchOnInputByString>DontUse</fullTextSearchOnInputByString>
+  <createOnInput>Use</createOnInput>
+  <help>
+    <pages>
+      <lang>ru</lang>
+    </pages>
+  </help>
+  <fullTextSearch>Use</fullTextSearch>
+  <numberType>String</numberType>
+  <numberLength>17</numberLength>
+  <numberPeriodicity>Year</numberPeriodicity>
+  <checkUnique>true</checkUnique>
+  <autonumbering>true</autonumbering>
+  <defaultObjectForm>Document.РасчетыПоНалогуНаПрибыль.Form.ФормаДокумента</defaultObjectForm>
+  <defaultListForm>Document.РасчетыПоНалогуНаПрибыль.Form.ФормаСписка</defaultListForm>
+  <defaultChoiceForm>Document.РасчетыПоНалогуНаПрибыль.Form.ФормаВыбора</defaultChoiceForm>
+  <realTimePosting>Deny</realTimePosting>
+  <registerRecordsDeletion>AutoDeleteOff</registerRecordsDeletion>
+  <registerRecordsWritingOnPost>WriteModified</registerRecordsWritingOnPost>
+  <registerRecords>AccumulationRegister.абс_НезавершенноеПроизводствоБУ</registerRecords>
+  <registerRecords>AccountingRegister.Хозрасчетный</registerRecords>
+  <attributes uuid="6f87e6f5-2411-4e79-a182-4b2fea7f3f55">
+    <name>Комментарий</name>
+    <synonym>
+      <key>ru</key>
+      <value>Комментарий</value>
+    </synonym>
+    <comment>(Общ) Любая дополнительная информация</comment>
+    <type>
+      <types>String</types>
+      <stringQualifiers/>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="01e2f574-5187-44bc-8515-c9ab5fd7cc77">
+    <name>Организация</name>
+    <synonym>
+      <key>ru</key>
+      <value>Организация</value>
+    </synonym>
+    <comment>(Общ)</comment>
+    <type>
+      <types>CatalogRef.Организации</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="ff5c94f2-65f8-4289-8fd8-fa28047b7661">
+    <name>Ответственный</name>
+    <synonym>
+      <key>ru</key>
+      <value>Ответственный</value>
+    </synonym>
+    <comment>(Общ)</comment>
+    <type>
+      <types>CatalogRef.Пользователи</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="7f7cf893-ea1f-49b4-836f-c05cecd18f40">
+    <name>ПериодРегистрации</name>
+    <synonym>
+      <key>ru</key>
+      <value>Период регистрации</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Date</types>
+      <dateQualifiers>
+        <dateFractions>Date</dateFractions>
+      </dateQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="22a4a640-6bc1-4e64-94b7-279528fdbd7b">
+    <name>ВидОперацииРасчетаРазниц</name>
+    <synonym>
+      <key>ru</key>
+      <value>Вид операции расчета разниц</value>
+    </synonym>
+    <comment>0- расчет ПНА, ПНО, ОНА, ОНО и налога на прибыль, 1 - ввод остатков по ОНА и ОНО через счет 000, 2 - ввод остатков по ОНА и ОНО через счет 84</comment>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>10</precision>
+      </numberQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="77b63465-6be7-42de-aa12-5edba9c4058b">
+    <name>абс_НеИспользоватьУбытокПрошлогоПериода</name>
+    <synonym>
+      <key>ru</key>
+      <value>Не использовать убыток прошлого периода</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <forms uuid="f43bfc7b-6a2f-45e6-a129-3d409512dee2">
+    <name>ФормаДокумента</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма документа</value>
+    </synonym>
+    <comment></comment>
+    <formType>Ordinary</formType>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="9fef1a10-ee54-43c9-b647-2d7a5b374f7b">
+    <name>ФормаСписка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма списка</value>
+    </synonym>
+    <comment></comment>
+    <formType>Ordinary</formType>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="8989cd25-0b3f-4f8e-8081-8164cc0b7778">
+    <name>ФормаВыбора</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма выбора</value>
+    </synonym>
+    <comment></comment>
+    <formType>Ordinary</formType>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+</mdclass:Document>

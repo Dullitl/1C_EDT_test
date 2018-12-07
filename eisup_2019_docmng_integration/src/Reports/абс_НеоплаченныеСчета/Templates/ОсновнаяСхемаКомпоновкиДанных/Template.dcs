@@ -1,0 +1,226 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<DataCompositionSchema xmlns="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcscom="http://v8.1c.ru/8.1/data-composition-system/common" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<dataSource>
+		<name>ИсточникДанных1</name>
+		<dataSourceType>Local</dataSourceType>
+	</dataSource>
+	<dataSet xsi:type="DataSetQuery">
+		<name>НаборДанных1</name>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ДатаСогласования</dataPath>
+			<field>ДатаСогласования</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ОплатитьДо</dataPath>
+			<field>ОплатитьДо</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Недоплачено</dataPath>
+			<field>Недоплачено</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СуммаСчета</dataPath>
+			<field>СуммаСчета</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СчетНаОплату</dataPath>
+			<field>СчетНаОплату</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ВходящаяДата</dataPath>
+			<field>ВходящаяДата</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ВходящийНомер</dataPath>
+			<field>ВходящийНомер</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Контрагент</dataPath>
+			<field>Контрагент</field>
+		</field>
+		<dataSource>ИсточникДанных1</dataSource>
+		<query>ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	абс_ИзменениеСтатусовСчетаНаОплату.СчетНаОплату,
+	МАКСИМУМ(абс_ИзменениеСтатусовСчетаНаОплату.Период) КАК ДатаПоследнегоСтатуса
+ПОМЕСТИТЬ Статусы
+ИЗ
+	РегистрСведений.абс_ИзменениеСтатусовСчетаНаОплату КАК абс_ИзменениеСтатусовСчетаНаОплату
+ГДЕ
+	абс_ИзменениеСтатусовСчетаНаОплату.СчетНаОплату.ДатаПлатежа &lt;= &amp;ОплатитьДо
+	И (НЕ абс_ИзменениеСтатусовСчетаНаОплату.СчетНаОплату.ПометкаУдаления)
+	И абс_ИзменениеСтатусовСчетаНаОплату.Период &lt;= &amp;ДатаСогласования
+
+СГРУППИРОВАТЬ ПО
+	абс_ИзменениеСтатусовСчетаНаОплату.СчетНаОплату
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	Статусы.СчетНаОплату КАК Счет,
+	Статусы.СчетНаОплату.СуммаПлатежа КАК СуммаПлатежа,
+	Статусы.СчетНаОплату.ДатаПлатежа КАК ОплатитьДо,
+	Статусы.ДатаПоследнегоСтатуса КАК ДатаСогласования
+ПОМЕСТИТЬ Счета
+ИЗ
+	Статусы КАК Статусы
+		ВНУТРЕННЕЕ СОЕДИНЕНИЕ РегистрСведений.абс_ИзменениеСтатусовСчетаНаОплату КАК абс_ИзменениеСтатусовСчетаНаОплату
+		ПО Статусы.СчетНаОплату = абс_ИзменениеСтатусовСчетаНаОплату.СчетНаОплату
+			И Статусы.ДатаПоследнегоСтатуса = абс_ИзменениеСтатусовСчетаНаОплату.Период
+ГДЕ
+	абс_ИзменениеСтатусовСчетаНаОплату.СтатусСчетаНаОплату = ЗНАЧЕНИЕ(Перечисление.абсСтатусыСчетов.Согласован)
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	абс_СчетНаОплатуОплаты.Ссылка КАК Счет,
+	СУММА(абс_СчетНаОплатуОплаты.СуммаПлатежа) КАК Оплачено
+ПОМЕСТИТЬ ОплаченныеСчета
+ИЗ
+	Документ.абс_СчетНаОплату.Оплаты КАК абс_СчетНаОплатуОплаты
+ГДЕ
+	абс_СчетНаОплатуОплаты.Ссылка В
+			(ВЫБРАТЬ
+				Счета.Счет
+			ИЗ
+				Счета)
+	И абс_СчетНаОплатуОплаты.СтатусОплаты = ЗНАЧЕНИЕ(Перечисление.абсСтатусыСчетов.Оплачен)
+
+СГРУППИРОВАТЬ ПО
+	абс_СчетНаОплатуОплаты.Ссылка
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	Счета.Счет КАК СчетНаОплату,
+	Счета.ОплатитьДо,
+	Счета.ДатаСогласования,
+	Счета.СуммаПлатежа КАК СуммаСчета,
+	Счета.СуммаПлатежа - ЕСТЬNULL(ОплаченныеСчета.Оплачено, 0) КАК Недоплачено,
+	Счета.Счет.Контрагент КАК Контрагент,
+	Счета.Счет.ДатаВходящегоСчета КАК ВходящаяДата,
+	Счета.Счет.НомерВходящегоСчета КАК ВходящийНомер
+ИЗ
+	Счета КАК Счета
+		ЛЕВОЕ СОЕДИНЕНИЕ ОплаченныеСчета КАК ОплаченныеСчета
+		ПО Счета.Счет = ОплаченныеСчета.Счет
+ГДЕ
+	Счета.СуммаПлатежа &gt; ЕСТЬNULL(ОплаченныеСчета.Оплачено, 0)</query>
+	</dataSet>
+	<totalField>
+		<dataPath>СуммаСчета</dataPath>
+		<expression>Сумма(СуммаСчета)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>Недоплачено</dataPath>
+		<expression>Сумма(Недоплачено)</expression>
+	</totalField>
+	<parameter>
+		<name>ОплатитьДо</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Оплатить до</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>Date</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>true</useRestriction>
+	</parameter>
+	<parameter>
+		<name>ДатаСогласования</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Дата согласования</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>true</useRestriction>
+	</parameter>
+	<settingsVariant>
+		<dcsset:name>Основной</dcsset:name>
+		<dcsset:presentation xsi:type="xs:string">Основной</dcsset:presentation>
+		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
+			<dcsset:selection>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>СчетНаОплату</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Контрагент</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ВходящаяДата</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ВходящийНомер</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ДатаСогласования</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ОплатитьДо</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>СуммаСчета</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Недоплачено</dcsset:field>
+				</dcsset:item>
+			</dcsset:selection>
+			<dcsset:order>
+				<dcsset:item xsi:type="dcsset:OrderItemField">
+					<dcsset:field>СчетНаОплату.Дата</dcsset:field>
+					<dcsset:orderType>Asc</dcsset:orderType>
+				</dcsset:item>
+			</dcsset:order>
+			<dcsset:conditionalAppearance>
+				<dcsset:item>
+					<dcsset:selection>
+						<dcsset:item>
+							<dcsset:field>Недоплачено</dcsset:field>
+						</dcsset:item>
+						<dcsset:item>
+							<dcsset:field>СуммаСчета</dcsset:field>
+						</dcsset:item>
+					</dcsset:selection>
+					<dcsset:filter/>
+					<dcsset:appearance>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>Формат</dcscor:parameter>
+							<dcscor:value xsi:type="xs:string">ЧДЦ=2</dcscor:value>
+						</dcscor:item>
+					</dcsset:appearance>
+				</dcsset:item>
+			</dcsset:conditionalAppearance>
+			<dcsset:outputParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ВыводитьПараметрыДанных</dcscor:parameter>
+					<dcscor:value xsi:type="dcsset:DataCompositionTextOutputType">DontOutput</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ВыводитьОтбор</dcscor:parameter>
+					<dcscor:value xsi:type="dcsset:DataCompositionTextOutputType">DontOutput</dcscor:value>
+				</dcscor:item>
+			</dcsset:outputParameters>
+			<dcsset:item xsi:type="dcsset:StructureItemGroup">
+				<dcsset:order>
+					<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+				</dcsset:order>
+				<dcsset:selection>
+					<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+				</dcsset:selection>
+			</dcsset:item>
+		</dcsset:settings>
+	</settingsVariant>
+</DataCompositionSchema>

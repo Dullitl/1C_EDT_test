@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Task xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="6511f381-d5f0-4a48-afdb-c436becec1a5">
+  <producedTypes>
+    <objectType typeId="50d43350-eb80-4a21-ac7d-377ae193454c" valueTypeId="ac31bf37-69b2-4e31-a215-2dff469869e8"/>
+    <refType typeId="7405ce34-450d-447e-83c3-80d4b425ea8f" valueTypeId="b36bcca7-bcdd-4b55-8cc6-4294464e01ec"/>
+    <selectionType typeId="38dc9d8f-5f99-49d1-b1eb-88c80aff74ff" valueTypeId="54fe59d7-624a-4499-ae9e-36cdeebe3191"/>
+    <listType typeId="e925c2a7-e39b-4f1f-b2b1-48d57a3a48da" valueTypeId="3fcec92b-7f37-4449-873c-0516d896ffb8"/>
+    <managerType typeId="1fb6446e-ccd1-43bd-8b0a-4d5e23b2a1bd" valueTypeId="65cac95d-8545-45c3-9b26-5b66c8a1db63"/>
+  </producedTypes>
+  <name>абсЗадачаДоговора</name>
+  <synonym>
+    <key>ru</key>
+    <value>Персональные задачи</value>
+  </synonym>
+  <comment></comment>
+  <useStandardCommands>true</useStandardCommands>
+  <inputByString>Task.абсЗадачаДоговора.StandardAttribute.Description</inputByString>
+  <inputByString>Task.абсЗадачаДоговора.StandardAttribute.Number</inputByString>
+  <fullTextSearchOnInputByString>DontUse</fullTextSearchOnInputByString>
+  <createOnInput>DontUse</createOnInput>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <fullTextSearch>Use</fullTextSearch>
+  <objectPresentation>
+    <key>ru</key>
+    <value>Задачи по согласованию</value>
+  </objectPresentation>
+  <numberType>String</numberType>
+  <numberLength>15</numberLength>
+  <numberAllowedLength>Variable</numberAllowedLength>
+  <checkUnique>true</checkUnique>
+  <autonumbering>true</autonumbering>
+  <taskNumberAutoPrefix>DontUse</taskNumberAutoPrefix>
+  <descriptionLength>100</descriptionLength>
+  <addressing>InformationRegister.РолиИИсполнители</addressing>
+  <mainAddressingAttribute>Task.абсЗадачаДоговора.AddressingAttribute.Исполнитель</mainAddressingAttribute>
+  <currentPerformer>SessionParameter.ТекущийПользователь</currentPerformer>
+  <defaultPresentation>AsDescription</defaultPresentation>
+  <editType>InDialog</editType>
+  <defaultObjectForm>Task.абсЗадачаДоговора.Form.ФормаЗадачи</defaultObjectForm>
+  <defaultListForm>Task.абсЗадачаДоговора.Form.ФормаСписка</defaultListForm>
+  <auxiliaryObjectForm>Task.абсЗадачаДоговора.Form.ФормаЗадачиУправляемая</auxiliaryObjectForm>
+  <auxiliaryListForm>Task.абсЗадачаДоговора.Form.ФормаСпискаУправляемая</auxiliaryListForm>
+  <attributes uuid="7a17e06f-bab6-4d08-be12-ec25b5a15eb8">
+    <name>Организация</name>
+    <synonym>
+      <key>ru</key>
+      <value>Организация</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.Организации</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="a8cb80d4-bf0c-4486-947a-a1ad957d0d9f">
+    <name>ОбъектЗадачи</name>
+    <synonym>
+      <key>ru</key>
+      <value>Объект задачи</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>DocumentRef.АктОбОказанииПроизводственныхУслуг</types>
+      <types>DocumentRef.абс_ЗадачаВТехподдержку</types>
+      <types>CatalogRef.НоменклатурныеГруппы</types>
+      <types>DocumentRef.ТребованиеНакладная</types>
+      <types>CatalogRef.ПрочиеДоходыИРасходы</types>
+      <types>DocumentRef.абс_РезервыПроизведенныхРасходов</types>
+      <types>CatalogRef.ОсновныеСредства</types>
+      <types>DocumentRef.ДоговорНаВыполнениеРаботСФизЛицом</types>
+      <types>DocumentRef.ПередачаТоваров</types>
+      <types>DocumentRef.РеализацияТоваровУслуг</types>
+      <types>DocumentRef.абс_ЗакупочныйЗаказ</types>
+      <types>DocumentRef.ПоступлениеТоваровУслуг</types>
+      <types>DocumentRef.абс_РеклассификацияБюджета</types>
+      <types>CatalogRef.Контрагенты</types>
+      <types>DocumentRef.абс_ЗаявкаНаДобавлениеИзменениеПрав</types>
+      <types>DocumentRef.ПеремещениеТоваров</types>
+      <types>DocumentRef.абс_ГрупповаяРеклассификацияБюджета</types>
+      <types>DocumentRef.абс_СчетНаОплату</types>
+      <types>DocumentRef.абс_ЗаявкаНаИзменениеРеквизитовКонтрагента</types>
+      <types>DocumentRef.Абс_АктПриёмкиВыполненныхРабот</types>
+      <types>CatalogRef.Номенклатура</types>
+      <types>DocumentRef.КомплектацияНоменклатуры</types>
+      <types>DocumentRef.абс_ВводБюджета</types>
+      <types>DocumentRef.АвансовыйОтчет</types>
+      <types>CatalogRef.СтатьиЗатрат</types>
+      <types>DocumentRef.ПолучениеУслугПоПереработке</types>
+      <types>CatalogRef.ДоговорыКонтрагентов</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="971c55bb-7148-4bef-bb74-7368c7323611">
+    <name>ВидЗадачи</name>
+    <synonym>
+      <key>ru</key>
+      <value>Вид задачи</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.ВидыЗадачПользователей</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="6f8765c8-ddfb-41cd-be5c-1faf19392a88">
+    <name>ИнициаторБП</name>
+    <synonym>
+      <key>ru</key>
+      <value>Инициатор</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.Пользователи</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="10639562-c1fb-41d2-9cee-b30f2e3ded43">
+    <name>Комментарий</name>
+    <synonym>
+      <key>ru</key>
+      <value>Комментарий</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>75</length>
+      </stringQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:StringValue">
+      <value></value>
+    </fillValue>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="e9fda7ed-6d78-448c-af8d-321f771a2a99">
+    <name>УведомлениеОтправлено</name>
+    <synonym>
+      <key>ru</key>
+      <value>Уведомление отправлено</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <forms uuid="12ea7eee-0e0c-43bb-acac-cb9204e6d6bb">
+    <name>ФормаСписка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма списка</value>
+    </synonym>
+    <comment></comment>
+    <formType>Ordinary</formType>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="241e34e4-0cbf-411f-8c87-2bebbd29d6b4">
+    <name>ФормаЗадачи</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма задачи</value>
+    </synonym>
+    <comment></comment>
+    <formType>Ordinary</formType>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="2ee97430-296a-4449-9784-b1c166080187">
+    <name>ФормаСпискаВсехЗадач</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма списка всех задач</value>
+    </synonym>
+    <comment></comment>
+    <formType>Ordinary</formType>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="1b5adf13-e905-4f8c-a406-2ea043bb538b">
+    <name>ФормаСпискаУправляемая</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма списка управляемая</value>
+    </synonym>
+    <comment></comment>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="3eb7f670-f7eb-4889-baab-510298bfde80">
+    <name>ФормаЗадачиУправляемая</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма задачи</value>
+    </synonym>
+    <comment></comment>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <addressingAttributes uuid="8877369a-ffb7-4e11-b0dc-9aa32ecc3db1">
+    <name>Исполнитель</name>
+    <synonym>
+      <key>ru</key>
+      <value>Исполнитель</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.Пользователи</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <addressingDimension>InformationRegister.РолиИИсполнители.Dimension.Исполнитель</addressingDimension>
+    <fullTextSearch>Use</fullTextSearch>
+  </addressingAttributes>
+  <addressingAttributes uuid="ba843c93-7443-4591-b054-61e5d095ae9c">
+    <name>Роль</name>
+    <synonym>
+      <key>ru</key>
+      <value>Роль</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.РолиИсполнителей</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <addressingDimension>InformationRegister.РолиИИсполнители.Dimension.Роль</addressingDimension>
+    <fullTextSearch>Use</fullTextSearch>
+  </addressingAttributes>
+</mdclass:Task>

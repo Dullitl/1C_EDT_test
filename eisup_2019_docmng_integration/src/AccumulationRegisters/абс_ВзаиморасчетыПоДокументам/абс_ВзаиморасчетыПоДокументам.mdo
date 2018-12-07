@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:AccumulationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="416c3b54-3890-4fd9-88d0-3754a3bf868d">
+  <producedTypes>
+    <selectionType typeId="851e4531-60b6-454e-937c-d02aee92c3e0" valueTypeId="ffe0aaa6-fc71-4bc0-8b7e-913a2a875e8c"/>
+    <listType typeId="8132394c-077c-4cc8-99ad-57a46482d160" valueTypeId="3593e3da-6bff-424e-9c41-2e96b6eed182"/>
+    <managerType typeId="3696a0a3-7ff7-438e-aa0b-469751095e25" valueTypeId="901bb95d-f511-4a71-aa73-0815ac3857b4"/>
+    <recordSetType typeId="5cbf5d64-60cc-4cbf-97bd-5dad41fb6dfe" valueTypeId="0a29b26b-9e9f-4783-994e-c766da44d48a"/>
+    <recordKeyType typeId="49ec3091-6b5e-4007-bc30-7b31010eef0d" valueTypeId="341b7cfc-6fa7-40b2-8ced-d68d9152dd9b"/>
+    <recordType typeId="613a78f7-cf73-4654-88ee-0f8e86de45a2" valueTypeId="e2c43b30-4c89-46bd-a6a7-106a6096dbde"/>
+  </producedTypes>
+  <name>абс_ВзаиморасчетыПоДокументам</name>
+  <synonym>
+    <key>ru</key>
+    <value>Взаиморасчеты по документам</value>
+  </synonym>
+  <comment></comment>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <enableTotalsSplitting>true</enableTotalsSplitting>
+  <resources uuid="9af065de-a2e9-47a4-8ac8-eecb782e0dc9">
+    <name>СуммаВзаиморасчетов</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сумма взаиморасчетов</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>2</scale>
+      </numberQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </resources>
+  <resources uuid="9962be59-f4ed-4194-939d-4882d4df8807">
+    <name>СуммаРегл</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сумма регл</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>2</scale>
+      </numberQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </resources>
+  <dimensions uuid="6b7b7742-b3ee-4dc9-97a3-d80e98e678b7">
+    <name>Контрагент</name>
+    <synonym>
+      <key>ru</key>
+      <value>Контрагент</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.Контрагенты</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="2ae2eee0-a84a-47be-ae57-9fbe9e3cd7ad">
+    <name>ДоговорКонтрагента</name>
+    <synonym>
+      <key>ru</key>
+      <value>Договор контрагента</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.ДоговорыКонтрагентов</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="0ec2ad3c-3154-497d-bfe6-04b8d25b5062">
+    <name>Документ</name>
+    <synonym>
+      <key>ru</key>
+      <value>Документ</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>DocumentRef.АктОбОказанииПроизводственныхУслуг</types>
+      <types>DocumentRef.ПлатежноеПоручениеВходящее</types>
+      <types>DocumentRef.ДокументРасчетовСКонтрагентом</types>
+      <types>DocumentRef.абс_Платежка</types>
+      <types>DocumentRef.КорректировкаДолга</types>
+      <types>DocumentRef.РеализацияТоваровУслуг</types>
+      <types>DocumentRef.ПередачаОС</types>
+      <types>DocumentRef.ПлатежныйОрдерСписаниеДенежныхСредств</types>
+      <types>DocumentRef.ОтчетКомиссионераОПродажах</types>
+      <types>DocumentRef.ПлатежныйОрдерПоступлениеДенежныхСредств</types>
+      <types>DocumentRef.ПлатежноеПоручениеИсходящее</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+</mdclass:AccumulationRegister>

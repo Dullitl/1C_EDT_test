@@ -1,0 +1,261 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/"
+		xmlns:soap12bind="http://schemas.xmlsoap.org/wsdl/soap12/"
+		xmlns:soapbind="http://schemas.xmlsoap.org/wsdl/soap/"
+		xmlns:tns="Dogovor_Act"
+		xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"
+		xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"
+		xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+		xmlns:xsd1="Dogovor_Act"
+		name="abs_Dogovor_Act_Integration"
+		targetNamespace="Dogovor_Act">
+	<types>
+		<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+				xmlns:xs1="Dogovor_Act"
+				targetNamespace="Dogovor_Act"
+				elementFormDefault="qualified">
+			<xs:element name="CreateDogovor">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="Number"
+								type="xs:string"/>
+						<xs:element name="Date"
+								type="xs:date"/>
+						<xs:element name="Data"
+								type="xs:string"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="CreateDogovorResponse">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="return"
+								type="xs:boolean"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="CreateAct">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="Number"
+								type="xs:string"/>
+						<xs:element name="Date"
+								type="xs:date"/>
+						<xs:element name="Data"
+								type="xs:string"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="CreateActResponse">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="return"
+								type="xs:boolean"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="ChangeStatusDogovor">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="Number"
+								type="xs:string"/>
+						<xs:element name="ID"
+								type="xs:string"/>
+						<xs:element name="Status"
+								type="xs:string"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="ChangeStatusDogovorResponse">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="return"
+								type="xs:boolean"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="ChangeStatusAct">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="Number"
+								type="xs:string"/>
+						<xs:element name="ID"
+								type="xs:string"/>
+						<xs:element name="Status"
+								type="xs:string"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="ChangeStatusActResponse">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="return"
+								type="xs:boolean"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:schema>
+	</types>
+	<message name="CreateDogovorRequestMessage">
+		<part name="parameters"
+				element="tns:CreateDogovor"/>
+	</message>
+	<message name="CreateDogovorResponseMessage">
+		<part name="parameters"
+				element="tns:CreateDogovorResponse"/>
+	</message>
+	<message name="CreateActRequestMessage">
+		<part name="parameters"
+				element="tns:CreateAct"/>
+	</message>
+	<message name="CreateActResponseMessage">
+		<part name="parameters"
+				element="tns:CreateActResponse"/>
+	</message>
+	<message name="ChangeStatusDogovorRequestMessage">
+		<part name="parameters"
+				element="tns:ChangeStatusDogovor"/>
+	</message>
+	<message name="ChangeStatusDogovorResponseMessage">
+		<part name="parameters"
+				element="tns:ChangeStatusDogovorResponse"/>
+	</message>
+	<message name="ChangeStatusActRequestMessage">
+		<part name="parameters"
+				element="tns:ChangeStatusAct"/>
+	</message>
+	<message name="ChangeStatusActResponseMessage">
+		<part name="parameters"
+				element="tns:ChangeStatusActResponse"/>
+	</message>
+	<portType name="abs_Dogovor_Act_IntegrationPortType">
+		<operation name="CreateDogovor">
+			<input name="CreateDogovorRequest"
+					message="tns:CreateDogovorRequestMessage"/>
+			<output name="CreateDogovorResponse"
+					message="tns:CreateDogovorResponseMessage"/>
+		</operation>
+		<operation name="CreateAct">
+			<input name="CreateActRequest"
+					message="tns:CreateActRequestMessage"/>
+			<output name="CreateActResponse"
+					message="tns:CreateActResponseMessage"/>
+		</operation>
+		<operation name="ChangeStatusDogovor">
+			<input name="ChangeStatusDogovorRequest"
+					message="tns:ChangeStatusDogovorRequestMessage"/>
+			<output name="ChangeStatusDogovorResponse"
+					message="tns:ChangeStatusDogovorResponseMessage"/>
+		</operation>
+		<operation name="ChangeStatusAct">
+			<input name="ChangeStatusActRequest"
+					message="tns:ChangeStatusActRequestMessage"/>
+			<output name="ChangeStatusActResponse"
+					message="tns:ChangeStatusActResponseMessage"/>
+		</operation>
+	</portType>
+	<binding name="abs_Dogovor_Act_IntegrationSoapBinding"
+			type="tns:abs_Dogovor_Act_IntegrationPortType">
+		<soapbind:binding style="document"
+				transport="http://schemas.xmlsoap.org/soap/http"/>
+		<operation name="CreateDogovor">
+			<soapbind:operation style="document"
+					soapAction="Dogovor_Act#abs_Dogovor_Act_Integration:CreateDogovor"/>
+			<input>
+				<soapbind:body use="literal"/>
+			</input>
+			<output>
+				<soapbind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="CreateAct">
+			<soapbind:operation style="document"
+					soapAction="Dogovor_Act#abs_Dogovor_Act_Integration:CreateAct"/>
+			<input>
+				<soapbind:body use="literal"/>
+			</input>
+			<output>
+				<soapbind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="ChangeStatusDogovor">
+			<soapbind:operation style="document"
+					soapAction="Dogovor_Act#abs_Dogovor_Act_Integration:ChangeStatusDogovor"/>
+			<input>
+				<soapbind:body use="literal"/>
+			</input>
+			<output>
+				<soapbind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="ChangeStatusAct">
+			<soapbind:operation style="document"
+					soapAction="Dogovor_Act#abs_Dogovor_Act_Integration:ChangeStatusAct"/>
+			<input>
+				<soapbind:body use="literal"/>
+			</input>
+			<output>
+				<soapbind:body use="literal"/>
+			</output>
+		</operation>
+	</binding>
+	<binding name="abs_Dogovor_Act_IntegrationSoap12Binding"
+			type="tns:abs_Dogovor_Act_IntegrationPortType">
+		<soap12bind:binding style="document"
+				transport="http://schemas.xmlsoap.org/soap/http"/>
+		<operation name="CreateDogovor">
+			<soap12bind:operation style="document"
+					soapAction="Dogovor_Act#abs_Dogovor_Act_Integration:CreateDogovor"/>
+			<input>
+				<soap12bind:body use="literal"/>
+			</input>
+			<output>
+				<soap12bind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="CreateAct">
+			<soap12bind:operation style="document"
+					soapAction="Dogovor_Act#abs_Dogovor_Act_Integration:CreateAct"/>
+			<input>
+				<soap12bind:body use="literal"/>
+			</input>
+			<output>
+				<soap12bind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="ChangeStatusDogovor">
+			<soap12bind:operation style="document"
+					soapAction="Dogovor_Act#abs_Dogovor_Act_Integration:ChangeStatusDogovor"/>
+			<input>
+				<soap12bind:body use="literal"/>
+			</input>
+			<output>
+				<soap12bind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="ChangeStatusAct">
+			<soap12bind:operation style="document"
+					soapAction="Dogovor_Act#abs_Dogovor_Act_Integration:ChangeStatusAct"/>
+			<input>
+				<soap12bind:body use="literal"/>
+			</input>
+			<output>
+				<soap12bind:body use="literal"/>
+			</output>
+		</operation>
+	</binding>
+	<service name="abs_Dogovor_Act_Integration">
+		<port name="abs_Dogovor_Act_IntegrationSoap"
+				binding="tns:abs_Dogovor_Act_IntegrationSoapBinding">
+			<documentation> 
+				<wsi:Claim xmlns:wsi="http://ws-i.org/schemas/conformanceClaim/"
+						conformsTo="http://ws-i.org/profiles/basic/1.1"/>
+			</documentation>
+			<soapbind:address location="https://isup-ttk.transtk.ru/persondata/ws/Dogovor_Act_Integration.1cws"/>
+		</port>
+		<port name="abs_Dogovor_Act_IntegrationSoap12"
+				binding="tns:abs_Dogovor_Act_IntegrationSoap12Binding">
+			<soap12bind:address location="https://isup-ttk.transtk.ru/persondata/ws/Dogovor_Act_Integration.1cws"/>
+		</port>
+	</service>
+</definitions>

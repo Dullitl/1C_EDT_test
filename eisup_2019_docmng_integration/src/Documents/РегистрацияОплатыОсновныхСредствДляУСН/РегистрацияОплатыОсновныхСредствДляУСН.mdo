@@ -1,0 +1,327 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Document xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="1070f53b-70da-41a6-927d-c315304c9722">
+  <producedTypes>
+    <objectType typeId="724f1851-f2ca-4271-b7c0-7fd50486c476" valueTypeId="8e43141a-945b-4fde-aca5-7c247cc03083"/>
+    <refType typeId="ade331fa-edf4-4f6c-bb25-cc74571c1e54" valueTypeId="b8a0ebab-e633-45e3-850a-44fa96fc85ec"/>
+    <selectionType typeId="d55bf1ed-9974-42b1-a128-ad8cfee96fe8" valueTypeId="dfc204d5-da60-4144-a335-d8541eb36b09"/>
+    <listType typeId="de32e804-32cd-460e-a1fb-f3042fc34118" valueTypeId="7ca2842a-ab9d-4823-87fe-34ba482b78fb"/>
+    <managerType typeId="d58f3829-df57-414c-80a1-a9dd04a06150" valueTypeId="6c039973-f9f3-4759-b3f1-4f9749965733"/>
+  </producedTypes>
+  <name>РегистрацияОплатыОсновныхСредствДляУСН</name>
+  <synonym>
+    <key>ru</key>
+    <value>Регистрация оплаты ОС и НМА для УСН</value>
+  </synonym>
+  <comment></comment>
+  <inputByString>Document.РегистрацияОплатыОсновныхСредствДляУСН.StandardAttribute.Number</inputByString>
+  <fullTextSearchOnInputByString>DontUse</fullTextSearchOnInputByString>
+  <createOnInput>Use</createOnInput>
+  <help>
+    <pages>
+      <lang>ru</lang>
+    </pages>
+  </help>
+  <fullTextSearch>Use</fullTextSearch>
+  <numberType>String</numberType>
+  <numberLength>11</numberLength>
+  <numberPeriodicity>Year</numberPeriodicity>
+  <checkUnique>true</checkUnique>
+  <autonumbering>true</autonumbering>
+  <defaultObjectForm>Document.РегистрацияОплатыОсновныхСредствДляУСН.Form.ФормаДокумента</defaultObjectForm>
+  <defaultListForm>Document.РегистрацияОплатыОсновныхСредствДляУСН.Form.ФормаСписка</defaultListForm>
+  <defaultChoiceForm>Document.РегистрацияОплатыОсновныхСредствДляУСН.Form.ФормаВыбора</defaultChoiceForm>
+  <realTimePosting>Deny</realTimePosting>
+  <registerRecordsDeletion>AutoDeleteOff</registerRecordsDeletion>
+  <registerRecordsWritingOnPost>WriteModified</registerRecordsWritingOnPost>
+  <registerRecords>AccumulationRegister.ОплатыНМАДляУСН</registerRecords>
+  <registerRecords>AccumulationRegister.ОплатыОСДляУСН</registerRecords>
+  <attributes uuid="90588d31-5f76-441f-943c-a4d3251f11bf">
+    <name>Организация</name>
+    <synonym>
+      <key>ru</key>
+      <value>Организация</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.Организации</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="2dccfb9e-8256-435f-b554-622611f39863">
+    <name>Ответственный</name>
+    <synonym>
+      <key>ru</key>
+      <value>Ответственный</value>
+    </synonym>
+    <comment>(Общ)</comment>
+    <type>
+      <types>CatalogRef.Пользователи</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="7516f531-ae79-40e5-8fb4-68cf9e99f51c">
+    <name>Комментарий</name>
+    <synonym>
+      <key>ru</key>
+      <value>Комментарий</value>
+    </synonym>
+    <comment>(Общ) Любая дополнительная информация</comment>
+    <type>
+      <types>String</types>
+      <stringQualifiers/>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <forms uuid="e9d5cefa-cfe7-4e7e-814f-08d919e9d17f">
+    <name>ФормаСписка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма списка</value>
+    </synonym>
+    <comment></comment>
+    <formType>Ordinary</formType>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="c857d54d-5d59-4717-8cdb-e2c2ec0eecc9">
+    <name>ФормаДокумента</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма документа</value>
+    </synonym>
+    <comment></comment>
+    <formType>Ordinary</formType>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="70c213e6-be5c-4c91-80f6-2b708bfd00fe">
+    <name>ФормаВыбора</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма выбора</value>
+    </synonym>
+    <comment></comment>
+    <formType>Ordinary</formType>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <tabularSections uuid="2a2a95b0-f32b-4069-9a6b-bf7a24b77bca">
+    <producedTypes>
+      <objectType typeId="5edf89df-b8f3-49fe-a195-6ab467abbdef" valueTypeId="4fbd12e7-1962-4a17-ace0-0e4b37e8a502"/>
+      <rowType typeId="b938be2f-dcd0-434b-8a4e-7651868922fd" valueTypeId="89816a86-42fa-4d5f-834c-5a6ec886fe14"/>
+    </producedTypes>
+    <name>Оплата</name>
+    <synonym>
+      <key>ru</key>
+      <value>Оплата</value>
+    </synonym>
+    <comment></comment>
+    <attributes uuid="cadfa4d7-d4e0-4db9-920b-852919e37216">
+      <name>ОсновноеСредство</name>
+      <synonym>
+        <key>ru</key>
+        <value>Основное средство</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>CatalogRef.ОсновныеСредства</types>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="5cad5785-a538-47e5-a5ee-836205b57b00">
+      <name>ДатаОплаты</name>
+      <synonym>
+        <key>ru</key>
+        <value>Дата оплаты</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Date</types>
+        <dateQualifiers>
+          <dateFractions>Date</dateFractions>
+        </dateQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="b63b95cb-ff44-4ce8-9cb7-da359a731b46">
+      <name>СуммаОплаты</name>
+      <synonym>
+        <key>ru</key>
+        <value>Сумма оплаты</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>15</precision>
+          <scale>2</scale>
+          <nonNegative>true</nonNegative>
+        </numberQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+  </tabularSections>
+  <tabularSections uuid="c0e583f7-f582-4db8-bf56-c8b3f49190d2">
+    <producedTypes>
+      <objectType typeId="3d3d9299-b116-42d2-b60d-96a02c0d2ca3" valueTypeId="86535919-bed3-4742-88e6-2941f35fdbcb"/>
+      <rowType typeId="2a2740a5-01a3-4b76-922e-aa8657a46187" valueTypeId="f80d3413-b927-4e11-a7b5-ec654d91624a"/>
+    </producedTypes>
+    <name>ОплатаНМА</name>
+    <synonym>
+      <key>ru</key>
+      <value>Оплата НМА</value>
+    </synonym>
+    <comment></comment>
+    <attributes uuid="094cdbc1-6cfe-470f-863a-ac504fe160ef">
+      <name>НематериальныйАктив</name>
+      <synonym>
+        <key>ru</key>
+        <value>Нематериальный актив</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>CatalogRef.НематериальныеАктивы</types>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="02c17659-1f44-4632-9152-d71651a4cf6b">
+      <name>ДатаОплаты</name>
+      <synonym>
+        <key>ru</key>
+        <value>Дата оплаты</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Date</types>
+        <dateQualifiers>
+          <dateFractions>Date</dateFractions>
+        </dateQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="27025594-10e9-44d0-955f-537bb627dc0f">
+      <name>СуммаОплаты</name>
+      <synonym>
+        <key>ru</key>
+        <value>Сумма оплаты</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>15</precision>
+          <scale>2</scale>
+          <nonNegative>true</nonNegative>
+        </numberQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+  </tabularSections>
+  <tabularSections uuid="f12e7972-7e71-4840-8479-1d9214191b6a">
+    <producedTypes>
+      <objectType typeId="652bc630-75c0-4df7-a53d-ce8514473d70" valueTypeId="5547c8ca-cc96-45fc-bce1-e9bae1bd3b62"/>
+      <rowType typeId="d1e8407b-3290-43b0-9101-cf9f649918b7" valueTypeId="83d068aa-2b5a-4540-9da2-98556041d9ac"/>
+    </producedTypes>
+    <name>ОплатаМодернизацииОС</name>
+    <synonym>
+      <key>ru</key>
+      <value>Оплата модернизации ОС</value>
+    </synonym>
+    <comment></comment>
+    <attributes uuid="a63c5d6b-6e9a-4ad4-9cef-f6625442b284">
+      <name>ДокументМодернизации</name>
+      <synonym>
+        <key>ru</key>
+        <value>Документ модернизации</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>DocumentRef.МодернизацияОС</types>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="75946248-cbf0-49f1-94b2-11f21cb9a0c0">
+      <name>ДатаОплаты</name>
+      <synonym>
+        <key>ru</key>
+        <value>Дата оплаты</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Date</types>
+        <dateQualifiers>
+          <dateFractions>Date</dateFractions>
+        </dateQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="0c3b18d1-91ec-4114-bfe7-6571ce98cf01">
+      <name>СуммаОплаты</name>
+      <synonym>
+        <key>ru</key>
+        <value>Сумма оплаты</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>15</precision>
+          <scale>2</scale>
+          <nonNegative>true</nonNegative>
+        </numberQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+  </tabularSections>
+</mdclass:Document>

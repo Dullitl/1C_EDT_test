@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="265eab76-40ef-4e29-934d-7e280adda15d">
+  <producedTypes>
+    <selectionType typeId="78fb755f-fd2c-4a1a-b2d6-5df60c6e9d4a" valueTypeId="1a40328e-ecde-41b5-957d-b1d9b42b540b"/>
+    <listType typeId="afe0e466-7c2a-423e-a758-e37b3c5cb8b4" valueTypeId="63c601db-5214-4382-bb8e-cb370d6eccdb"/>
+    <managerType typeId="dbd423d5-e89c-4f24-a60f-353fbbb91e7d" valueTypeId="dd57488e-1db9-4c13-9043-62ed7481f791"/>
+    <recordSetType typeId="df91d0e1-8e06-477f-8d57-87745916e558" valueTypeId="758a612e-f6f7-4888-b605-531b3cc94d59"/>
+    <recordKeyType typeId="c28bd61f-d429-4682-9800-82b5a49b8481" valueTypeId="a8c5c4ba-a451-4e1e-b7ab-0220fdf48d16"/>
+    <recordType typeId="c3b216f7-911f-4aa7-abb8-42070c9b8ef0" valueTypeId="c9d90e83-b1cd-40bb-a649-251da01b3476"/>
+    <recordManagerType typeId="f75964e7-4178-4ecc-a81f-feb057421ed0" valueTypeId="d45c5784-d427-4a1f-bcce-37bb0c3f9b60"/>
+  </producedTypes>
+  <name>абс_ИзмененияСтатусовДебиторки</name>
+  <synonym>
+    <key>ru</key>
+    <value>Статусы работы с дебиторской задолженностью</value>
+  </synonym>
+  <comment></comment>
+  <editType>InDialog</editType>
+  <informationRegisterPeriodicity>Second</informationRegisterPeriodicity>
+  <mainFilterOnPeriod>true</mainFilterOnPeriod>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <attributes uuid="af313814-1147-475e-9ede-e4f438d8983e">
+    <name>Комментарий</name>
+    <synonym>
+      <key>ru</key>
+      <value>Комментарий</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>500</length>
+      </stringQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:StringValue">
+      <value></value>
+    </fillValue>
+  </attributes>
+  <attributes uuid="33e23218-87a1-41d2-9e2a-d4cc16251f54">
+    <name>ВнутреннийНомер</name>
+    <synonym>
+      <key>ru</key>
+      <value>Внутренний номер</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>7</precision>
+      </numberQualifiers>
+    </type>
+    <format>
+      <key>ru</key>
+      <value>ЧЦ=7; ЧГ=</value>
+    </format>
+    <editFormat>
+      <key>ru</key>
+      <value>ЧЦ=7; ЧГ=</value>
+    </editFormat>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <dimensions uuid="22ea0010-978a-4961-b233-7c47d1e9f817">
+    <name>Контрагент</name>
+    <synonym>
+      <key>ru</key>
+      <value>Контрагент</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.Контрагенты</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="23b6ceb9-3ffc-4e3f-9b56-007152dcc655">
+    <name>СтатусРабот</name>
+    <synonym>
+      <key>ru</key>
+      <value>Статус работ</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.абс_СтатусыРабот</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="d1a92137-a63c-4c14-9ff4-e95b146038d9">
+    <name>Исполнитель</name>
+    <synonym>
+      <key>ru</key>
+      <value>Исполнитель</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.Пользователи</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+</mdclass:InformationRegister>

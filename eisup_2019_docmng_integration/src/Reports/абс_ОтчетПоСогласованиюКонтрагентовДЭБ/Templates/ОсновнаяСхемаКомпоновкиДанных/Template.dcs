@@ -1,0 +1,256 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<DataCompositionSchema xmlns="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcscom="http://v8.1c.ru/8.1/data-composition-system/common" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<dataSource>
+		<name>ИсточникДанных1</name>
+		<dataSourceType>Local</dataSourceType>
+	</dataSource>
+	<dataSet xsi:type="DataSetQuery">
+		<name>НаборДанных1</name>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ИсполнительДЭБ</dataPath>
+			<field>ИсполнительДЭБ</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ОтклоненоКонтрагентов</dataPath>
+			<field>ОтклоненоКонтрагентов</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СогласованоКонтрагентов</dataPath>
+			<field>СогласованоКонтрагентов</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ПериодГод</dataPath>
+			<field>ПериодГод</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ПериодДень</dataPath>
+			<field>ПериодДень</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ПериодКвартал</dataPath>
+			<field>ПериодКвартал</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ПериодМесяц</dataPath>
+			<field>ПериодМесяц</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ПериодНеделя</dataPath>
+			<field>ПериодНеделя</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Период</dataPath>
+			<field>Период</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ПоступилоНаСогласование</dataPath>
+			<field>ПоступилоНаСогласование</field>
+		</field>
+		<dataSource>ИсточникДанных1</dataSource>
+		<query>ВЫБРАТЬ
+	НАЧАЛОПЕРИОДА(Данные.Период, ГОД) КАК ПериодГод,
+	НАЧАЛОПЕРИОДА(Данные.Период, КВАРТАЛ) КАК ПериодКвартал,
+	НАЧАЛОПЕРИОДА(Данные.Период, МЕСЯЦ) КАК ПериодМесяц,
+	НАЧАЛОПЕРИОДА(Данные.Период, НЕДЕЛЯ) КАК ПериодНеделя,
+	НАЧАЛОПЕРИОДА(Данные.Период, ДЕНЬ) КАК ПериодДень,
+	Данные.Период КАК Период,
+	Данные.ИсполнительДЭБ КАК ИсполнительДЭБ,
+	КОЛИЧЕСТВО(РАЗЛИЧНЫЕ Данные.КонтрагентСогласован) КАК СогласованоКонтрагентов,
+	КОЛИЧЕСТВО(РАЗЛИЧНЫЕ Данные.КонтрагентОтклонен) КАК ОтклоненоКонтрагентов,
+	КОЛИЧЕСТВО(РАЗЛИЧНЫЕ Данные.ПоступилоНаСогласование) КАК ПоступилоНаСогласование
+ИЗ
+	(ВЫБРАТЬ
+		СогласовыннеКонтрагентыЗаПериод.Пользователь КАК ИсполнительДЭБ,
+		СогласовыннеКонтрагентыЗаПериод.Период КАК Период,
+		СогласовыннеКонтрагентыЗаПериод.Контрагент КАК КонтрагентСогласован,
+		NULL КАК КонтрагентОтклонен,
+		NULL КАК ПоступилоНаСогласование
+	ИЗ
+		(ВЫБРАТЬ
+			абс_ИзменениеСтатусовКонтрагентов.Контрагент КАК Контрагент,
+			абс_ИзменениеСтатусовКонтрагентов.Пользователь КАК Пользователь,
+			абс_ИзменениеСтатусовКонтрагентов.Период КАК Период
+		ИЗ
+			РегистрСведений.абс_ИзменениеСтатусовКонтрагентов КАК абс_ИзменениеСтатусовКонтрагентов
+		ГДЕ
+			абс_ИзменениеСтатусовКонтрагентов.СтатусКонтрагента В (ЗНАЧЕНИЕ(Перечисление.абсСтатусыконтрагентов.ПроверкаДФМ))
+			И абс_ИзменениеСтатусовКонтрагентов.Пользователь В
+					(ВЫБРАТЬ
+						РолиИИсполнители.Исполнитель
+					ИЗ
+						РегистрСведений.РолиИИсполнители КАК РолиИИсполнители
+					ГДЕ
+						РолиИИсполнители.Роль = ЗНАЧЕНИЕ(Справочник.РолиИсполнителей.СогласованиеДЭБ))) КАК СогласовыннеКонтрагентыЗаПериод
+	
+	ОБЪЕДИНИТЬ ВСЕ
+	
+	ВЫБРАТЬ
+		ОтклоненныеКонтрагентыЗаПериод.Пользователь,
+		ОтклоненныеКонтрагентыЗаПериод.Период,
+		NULL,
+		ОтклоненныеКонтрагентыЗаПериод.Контрагент,
+		NULL
+	ИЗ
+		(ВЫБРАТЬ
+			абс_ИзменениеСтатусовКонтрагентов.Контрагент КАК Контрагент,
+			абс_ИзменениеСтатусовКонтрагентов.Пользователь КАК Пользователь,
+			абс_ИзменениеСтатусовКонтрагентов.Период КАК Период
+		ИЗ
+			РегистрСведений.абс_ИзменениеСтатусовКонтрагентов КАК абс_ИзменениеСтатусовКонтрагентов
+		ГДЕ
+			абс_ИзменениеСтатусовКонтрагентов.СтатусКонтрагента В (ЗНАЧЕНИЕ(Перечисление.абсСтатусыконтрагентов.Отказ))
+			И абс_ИзменениеСтатусовКонтрагентов.Пользователь В
+					(ВЫБРАТЬ
+						РолиИИсполнители.Исполнитель
+					ИЗ
+						РегистрСведений.РолиИИсполнители КАК РолиИИсполнители
+					ГДЕ
+						РолиИИсполнители.Роль = ЗНАЧЕНИЕ(Справочник.РолиИсполнителей.СогласованиеДЭБ))) КАК ОтклоненныеКонтрагентыЗаПериод
+	
+	ОБЪЕДИНИТЬ ВСЕ
+	
+	ВЫБРАТЬ
+		NULL,
+		абс_ИзменениеСтатусовКонтрагентов.Период,
+		NULL,
+		NULL,
+		абс_ИзменениеСтатусовКонтрагентов.Контрагент
+	ИЗ
+		РегистрСведений.абс_ИзменениеСтатусовКонтрагентов КАК абс_ИзменениеСтатусовКонтрагентов
+	ГДЕ
+		абс_ИзменениеСтатусовКонтрагентов.СтатусКонтрагента = ЗНАЧЕНИЕ(Перечисление.абсСтатусыКонтрагентов.СогласованиеДЭБ)) КАК Данные
+
+СГРУППИРОВАТЬ ПО
+	Данные.ИсполнительДЭБ,
+	Данные.Период</query>
+	</dataSet>
+	<totalField>
+		<dataPath>СогласованоКонтрагентов</dataPath>
+		<expression>Сумма(СогласованоКонтрагентов)</expression>
+		<group>ИсполнительДЭБ</group>
+		<group>Период</group>
+		<group>ПериодГод</group>
+		<group>ПериодДень</group>
+		<group>ПериодКвартал</group>
+		<group>ПериодМесяц</group>
+		<group>ПериодНеделя</group>
+		<group>ОбщийИтог</group>
+	</totalField>
+	<totalField>
+		<dataPath>ОтклоненоКонтрагентов</dataPath>
+		<expression>Сумма(ОтклоненоКонтрагентов)</expression>
+		<group>ИсполнительДЭБ</group>
+		<group>Период</group>
+		<group>ПериодГод</group>
+		<group>ПериодДень</group>
+		<group>ПериодКвартал</group>
+		<group>ПериодМесяц</group>
+		<group>ПериодНеделя</group>
+		<group>ОбщийИтог</group>
+	</totalField>
+	<totalField>
+		<dataPath>ПоступилоНаСогласование</dataPath>
+		<expression>Сумма(ПоступилоНаСогласование)</expression>
+		<group>ИсполнительДЭБ</group>
+		<group>Период</group>
+		<group>ПериодГод</group>
+		<group>ПериодДень</group>
+		<group>ПериодКвартал</group>
+		<group>ПериодМесяц</group>
+		<group>ПериодНеделя</group>
+		<group>ОбщийИтог</group>
+	</totalField>
+	<parameter>
+		<name>Период</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Период</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>v8:StandardPeriod</v8:Type>
+		</valueType>
+		<value xsi:type="v8:StandardPeriod">
+			<v8:variant xsi:type="v8:StandardPeriodVariant">FromBeginningOfThisWeek</v8:variant>
+		</value>
+		<useRestriction>false</useRestriction>
+	</parameter>
+	<settingsVariant>
+		<dcsset:name>Основной</dcsset:name>
+		<dcsset:presentation xsi:type="xs:string">Основной</dcsset:presentation>
+		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
+			<dcsset:selection>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ПоступилоНаСогласование</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ОтклоненоКонтрагентов</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>СогласованоКонтрагентов</dcsset:field>
+				</dcsset:item>
+			</dcsset:selection>
+			<dcsset:dataParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Период</dcscor:parameter>
+					<dcscor:value xsi:type="v8:StandardPeriod">
+						<v8:variant xsi:type="v8:StandardPeriodVariant">ThisYear</v8:variant>
+					</dcscor:value>
+					<dcsset:userSettingID>ec5ce80a-3fb0-4aab-a628-a04f3bd96b00</dcsset:userSettingID>
+				</dcscor:item>
+			</dcsset:dataParameters>
+			<dcsset:item xsi:type="dcsset:StructureItemGroup">
+				<dcsset:groupItems>
+					<dcsset:item xsi:type="dcsset:GroupItemField">
+						<dcsset:field>ПериодКвартал</dcsset:field>
+						<dcsset:groupType>Items</dcsset:groupType>
+						<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+						<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+						<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+					</dcsset:item>
+				</dcsset:groupItems>
+				<dcsset:order>
+					<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+				</dcsset:order>
+				<dcsset:selection>
+					<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+				</dcsset:selection>
+				<dcsset:item xsi:type="dcsset:StructureItemGroup">
+					<dcsset:groupItems>
+						<dcsset:item xsi:type="dcsset:GroupItemField">
+							<dcsset:field>ПериодМесяц</dcsset:field>
+							<dcsset:groupType>Items</dcsset:groupType>
+							<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+							<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+							<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+						</dcsset:item>
+					</dcsset:groupItems>
+					<dcsset:order>
+						<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+					</dcsset:order>
+					<dcsset:selection>
+						<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+					</dcsset:selection>
+					<dcsset:item xsi:type="dcsset:StructureItemGroup">
+						<dcsset:groupItems>
+							<dcsset:item xsi:type="dcsset:GroupItemField">
+								<dcsset:field>ПериодНеделя</dcsset:field>
+								<dcsset:groupType>Items</dcsset:groupType>
+								<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+								<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+								<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+							</dcsset:item>
+						</dcsset:groupItems>
+						<dcsset:order>
+							<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+						</dcsset:order>
+						<dcsset:selection>
+							<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+						</dcsset:selection>
+					</dcsset:item>
+				</dcsset:item>
+			</dcsset:item>
+		</dcsset:settings>
+	</settingsVariant>
+</DataCompositionSchema>

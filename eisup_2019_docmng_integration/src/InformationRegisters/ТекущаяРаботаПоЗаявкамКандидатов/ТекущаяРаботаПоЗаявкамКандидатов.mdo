@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="4e55d60c-f7bd-412e-9864-6fdd24057516">
+  <producedTypes>
+    <selectionType typeId="bb12e24c-95b3-4e9b-b33f-768d8c97d5d7" valueTypeId="27bebb71-c752-473e-827d-39ed25f78e3a"/>
+    <listType typeId="0d6c617a-5c9e-4fc2-9fc1-19be30a28952" valueTypeId="4aa898de-6029-48fd-91d4-d9b570a4ae6c"/>
+    <managerType typeId="476c098d-9812-4295-a425-d6b89aba559e" valueTypeId="ebdca048-5b09-458b-b891-9c83e82e16b3"/>
+    <recordSetType typeId="1af4053f-1e09-4afc-b68e-e078aebd4aeb" valueTypeId="2aa01aa9-cf73-437e-9b6e-f4c0555937be"/>
+    <recordKeyType typeId="d22ea290-e172-46c2-8688-38d8b7e4727f" valueTypeId="f4c48037-9983-48af-93c0-b4fdec472280"/>
+    <recordType typeId="f993ec1a-0161-4d8a-acdd-509763288051" valueTypeId="658a5419-2465-4115-9654-7666362daac3"/>
+    <recordManagerType typeId="6e5697b9-a91c-4236-a53c-62e461c2c0c6" valueTypeId="82394d5f-ca69-4e6b-ac86-3826c79f1447"/>
+  </producedTypes>
+  <name>ТекущаяРаботаПоЗаявкамКандидатов</name>
+  <synonym>
+    <key>ru</key>
+    <value>Текущая работа по заявкам кандидатов</value>
+  </synonym>
+  <comment>(Упр)</comment>
+  <editType>InDialog</editType>
+  <defaultRecordForm>InformationRegister.ТекущаяРаботаПоЗаявкамКандидатов.Form.ФормаЗаписи</defaultRecordForm>
+  <informationRegisterPeriodicity>Day</informationRegisterPeriodicity>
+  <mainFilterOnPeriod>true</mainFilterOnPeriod>
+  <resources uuid="8c5d3323-4358-4421-988b-21ac466faeab">
+    <name>Описание</name>
+    <synonym>
+      <key>ru</key>
+      <value>Описание</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>1000</length>
+      </stringQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="d16cdaa8-e661-448a-a4d4-897f5cc5d8af">
+    <name>Состояние</name>
+    <synonym>
+      <key>ru</key>
+      <value>Состояние</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.СостоянияЗаявокКандидатов</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <dimensions uuid="768975b9-7cfb-472c-90f3-3808fd9d47bb">
+    <name>ЗаявкаКандидата</name>
+    <synonym>
+      <key>ru</key>
+      <value>Заявка кандидата</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.ЗаявкиКандидатов</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <forms uuid="8f464303-1971-45c9-a2e4-ca7eac16c1b8">
+    <name>ФормаЗаписи</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма записи</value>
+    </synonym>
+    <comment></comment>
+    <formType>Ordinary</formType>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+</mdclass:InformationRegister>

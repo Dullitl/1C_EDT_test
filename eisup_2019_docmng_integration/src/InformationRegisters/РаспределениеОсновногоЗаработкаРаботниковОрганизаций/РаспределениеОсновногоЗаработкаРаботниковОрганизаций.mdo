@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="b77b1ca2-bf80-4fad-a87c-28beea7fa78c">
+  <producedTypes>
+    <selectionType typeId="636efe44-d875-4674-b650-fbd54eebd392" valueTypeId="1c6d4607-c3f4-48e1-9e37-0022ccbb9db4"/>
+    <listType typeId="7105f8fa-1868-4000-aaf6-7ac25c728c13" valueTypeId="05653918-3fa7-4b22-a0af-4c88c938f5c5"/>
+    <managerType typeId="677cda35-6b2b-433d-8d5e-8269c33f3756" valueTypeId="c3eb239d-8f61-4e3e-b0c2-666b3ef14c2e"/>
+    <recordSetType typeId="044d4262-bd35-4d87-a9f7-ec9e8f48b87d" valueTypeId="10aeacc5-440f-4e64-b4ec-bc247497ade2"/>
+    <recordKeyType typeId="c647f54c-b957-458e-b2be-3dd9c34df800" valueTypeId="95521806-1d51-4789-9c83-444d30a7177a"/>
+    <recordType typeId="317c67db-86f3-4eed-8e67-a2e60a296726" valueTypeId="75e122b9-fe2d-40cd-aeac-5e309c7f124d"/>
+    <recordManagerType typeId="f60761f7-c8b3-4767-9aed-34b8e5a056ac" valueTypeId="76a8ff34-2839-4500-bcb1-3439225b4de1"/>
+  </producedTypes>
+  <name>РаспределениеОсновногоЗаработкаРаботниковОрганизаций</name>
+  <synonym>
+    <key>ru</key>
+    <value>Распределение основного заработка сотрудников организаций</value>
+  </synonym>
+  <comment></comment>
+  <defaultListForm>InformationRegister.РаспределениеОсновногоЗаработкаРаботниковОрганизаций.Form.ФормаСписка</defaultListForm>
+  <writeMode>RecorderSubordinate</writeMode>
+  <resources uuid="d5843ab7-1bed-402b-91ef-fb87fa95c4a9">
+    <name>ДоляСпособаОтражения</name>
+    <synonym>
+      <key>ru</key>
+      <value>Доля способа отражения</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>8</precision>
+        <scale>5</scale>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="8e856cd5-81dd-4282-9678-c6fa05e73f3f">
+    <name>ПодпадаетПодЕНВД</name>
+    <synonym>
+      <key>ru</key>
+      <value>Подпадает под ЕНВД</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <dimensions uuid="5b0587ba-20ea-467c-9f9d-99a90d6b7fcb">
+    <name>ПериодРегистрации</name>
+    <synonym>
+      <key>ru</key>
+      <value>Период регистрации</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Date</types>
+      <dateQualifiers>
+        <dateFractions>Date</dateFractions>
+      </dateQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="33e66f8b-2a2f-4820-8a63-0cdbf74e4f08">
+    <name>Сотрудник</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сотрудник</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.СотрудникиОрганизаций</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="9405bfd7-d4a5-42c4-b7bb-ffdf3a7253fb">
+    <name>СпособОтраженияВБухучете</name>
+    <synonym>
+      <key>ru</key>
+      <value>Способ отражения в бухучете</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.СпособыОтраженияЗарплатыВРеглУчете</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="4e1a7564-f670-4805-b5e9-999eaed5f207">
+    <name>Организация</name>
+    <synonym>
+      <key>ru</key>
+      <value>Организация</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.Организации</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <forms uuid="c9246b55-9919-48a9-a5de-9b2c2a376cb6">
+    <name>ФормаСписка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма списка</value>
+    </synonym>
+    <comment></comment>
+    <formType>Ordinary</formType>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+</mdclass:InformationRegister>

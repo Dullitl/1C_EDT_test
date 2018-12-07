@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="babc1f90-0b27-4a61-a456-2049c74df206">
+  <producedTypes>
+    <selectionType typeId="a24eac96-ae9b-4e91-9769-406da351d52b" valueTypeId="a70fc8ff-0900-4f22-99ec-925b093ee657"/>
+    <listType typeId="796e4e17-0624-4f38-9c41-c930dfd717ea" valueTypeId="a5e45afb-9b2b-4625-981f-d073351a866d"/>
+    <managerType typeId="eeb87e20-4c89-4f4d-8f68-128e7dd311a3" valueTypeId="0cae7e9e-9e31-4d04-9d93-8d1d3c94a266"/>
+    <recordSetType typeId="0e024633-1d6e-471e-83ee-c9fa5db844bb" valueTypeId="f9c00488-07e9-48f0-bc23-52c6fa3fb670"/>
+    <recordKeyType typeId="e686c125-b562-4a9f-8314-8184558fadea" valueTypeId="9a11c2e5-c96f-43bb-a2b1-3fb0804268d8"/>
+    <recordType typeId="72f7d22e-114f-4f5d-b3df-899c9692a96a" valueTypeId="e941a1fc-4fb7-470e-867e-d8a9a03ba013"/>
+    <recordManagerType typeId="815b83d5-3b3d-4142-8770-996805ee1ad8" valueTypeId="c6b2cb66-1695-4174-8ba4-ba910d3deacd"/>
+  </producedTypes>
+  <name>ttk_ИсторияИзмененияГрафикаПоставок</name>
+  <synonym>
+    <key>ru</key>
+    <value>Ttk история изменения графика поставок</value>
+  </synonym>
+  <comment></comment>
+  <editType>InDialog</editType>
+  <informationRegisterPeriodicity>Second</informationRegisterPeriodicity>
+  <writeMode>RecorderSubordinate</writeMode>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <resources uuid="3a130b28-31ac-4874-9fd1-5c2aa364aeb6">
+    <name>Сумма</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сумма</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>12</precision>
+        <scale>4</scale>
+      </numberQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="fd028f80-26bf-47c7-b03c-3e0651459d38">
+    <name>СуммаДоИзменения</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сумма до изменения</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>12</precision>
+        <scale>4</scale>
+      </numberQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="49b24c03-7253-46ec-bc47-f22acc26d7b4">
+    <name>АвторЗаписи</name>
+    <synonym>
+      <key>ru</key>
+      <value>Автор записи</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.Пользователи</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <dimensions uuid="5744abf6-a829-40ac-8cf5-57913392fd39">
+    <name>Документ</name>
+    <synonym>
+      <key>ru</key>
+      <value>Документ</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>DocumentRef.абс_ЗакупочныйЗаказ</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="d540aaea-5022-4a83-97a6-24ceed614550">
+    <name>ПериодГрафика</name>
+    <synonym>
+      <key>ru</key>
+      <value>Период графика</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Date</types>
+      <dateQualifiers>
+        <dateFractions>Date</dateFractions>
+      </dateQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+</mdclass:InformationRegister>

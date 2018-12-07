@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Catalog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="fa90839a-a06b-4df0-940e-4ed25b16b781">
+  <producedTypes>
+    <objectType typeId="74413d83-1c79-4ce7-a746-d4fea9db6df8" valueTypeId="3db0d28d-eb4b-4ee2-bb0e-640f3c1c0340"/>
+    <refType typeId="ca370a34-3b49-45b9-8031-26befef1684d" valueTypeId="93fe7898-cf0b-44ad-a2a2-d1cc98fcbe8d"/>
+    <selectionType typeId="68a555e1-5b05-4c57-8d2e-910757edba06" valueTypeId="e99c4b06-f916-431c-b76c-e9b443fb4e35"/>
+    <listType typeId="3eb47b82-eeda-4a8e-9093-483d1f345c65" valueTypeId="7500cad0-1bf5-4a1a-b364-c0bbad784ea0"/>
+    <managerType typeId="b2e413e2-f746-41a9-ae02-0707ddb5efe2" valueTypeId="7e841b50-0771-4334-8b36-64a4671c1fa8"/>
+  </producedTypes>
+  <name>ВидыОплатЧекаККМ</name>
+  <synonym>
+    <key>ru</key>
+    <value>Виды оплат чека ККМ</value>
+  </synonym>
+  <comment>(Общ)</comment>
+  <inputByString>Catalog.ВидыОплатЧекаККМ.StandardAttribute.Description</inputByString>
+  <inputByString>Catalog.ВидыОплатЧекаККМ.StandardAttribute.Code</inputByString>
+  <fullTextSearchOnInputByString>DontUse</fullTextSearchOnInputByString>
+  <createOnInput>Use</createOnInput>
+  <help>
+    <pages>
+      <lang>ru</lang>
+    </pages>
+  </help>
+  <fullTextSearch>Use</fullTextSearch>
+  <hierarchical>true</hierarchical>
+  <levelCount>2</levelCount>
+  <foldersOnTop>true</foldersOnTop>
+  <codeLength>9</codeLength>
+  <descriptionLength>50</descriptionLength>
+  <codeType>String</codeType>
+  <checkUnique>true</checkUnique>
+  <autonumbering>true</autonumbering>
+  <defaultPresentation>AsDescription</defaultPresentation>
+  <predefined>
+    <items id="07b72861-e2a5-49f0-bcca-d7e2e0b0c3d5">
+      <name>Наличные</name>
+      <description>Наличные</description>
+      <code xsi:type="core:StringValue">
+        <value>000000001</value>
+      </code>
+    </items>
+  </predefined>
+  <editType>InDialog</editType>
+  <choiceMode>BothWays</choiceMode>
+  <defaultObjectForm>Catalog.ВидыОплатЧекаККМ.Form.ФормаЭлемента</defaultObjectForm>
+  <defaultFolderForm>Catalog.ВидыОплатЧекаККМ.Form.ФормаГруппы</defaultFolderForm>
+  <defaultListForm>Catalog.ВидыОплатЧекаККМ.Form.ФормаСписка</defaultListForm>
+  <defaultChoiceForm>Catalog.ВидыОплатЧекаККМ.Form.ФормаВыбора</defaultChoiceForm>
+  <attributes uuid="669d4dd3-d4d2-4b67-bcf1-625f5a28fb4a">
+    <name>ТипОплаты</name>
+    <synonym>
+      <key>ru</key>
+      <value>Тип оплаты</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>EnumRef.ТипыОплатЧекаККМ</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="4bd487d7-6c61-47f8-acdb-fb26ea10f689">
+    <name>БанкКредитор</name>
+    <synonym>
+      <key>ru</key>
+      <value>Банк-кредитор</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.Контрагенты</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="550c7e46-9d54-4807-ba69-5bb7bba52a2f">
+    <name>ДоговорВзаиморасчетовБанкаКредитора</name>
+    <synonym>
+      <key>ru</key>
+      <value>Договор взаиморасчетов банка-кредитора</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.ДоговорыКонтрагентов</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="30f7eb81-d7f2-4a1a-8650-f0ca62699324">
+    <name>ПроцентБанковскойКомиссии</name>
+    <synonym>
+      <key>ru</key>
+      <value>Процент банковской комиссии</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>5</precision>
+        <scale>2</scale>
+      </numberQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <forms uuid="2c986b93-9aac-424e-a381-579fdeb45ca0">
+    <name>ФормаСписка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма списка</value>
+    </synonym>
+    <comment></comment>
+    <formType>Ordinary</formType>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="67b7fe74-414b-48d1-9523-12e954730da1">
+    <name>ФормаВыбора</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма выбора</value>
+    </synonym>
+    <comment></comment>
+    <formType>Ordinary</formType>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="05bda943-e87a-4231-a45d-935e1ab0fa90">
+    <name>ФормаГруппы</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма группы</value>
+    </synonym>
+    <comment></comment>
+    <formType>Ordinary</formType>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="405f0a37-8183-43bf-90fd-fa7cd314ccb4">
+    <name>ФормаЭлемента</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма элемента</value>
+    </synonym>
+    <comment></comment>
+    <formType>Ordinary</formType>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+</mdclass:Catalog>

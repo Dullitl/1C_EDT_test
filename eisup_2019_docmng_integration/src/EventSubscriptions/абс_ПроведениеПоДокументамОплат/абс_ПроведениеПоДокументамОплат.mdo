@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:EventSubscription xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="0b821c8f-fd98-4d49-a743-172e18815a9b">
+  <name>абс_ПроведениеПоДокументамОплат</name>
+  <synonym>
+    <key>ru</key>
+    <value>Проведение по документам оплат</value>
+  </synonym>
+  <comment></comment>
+  <source>
+    <types>DocumentObject.ПлатежноеПоручениеВходящее</types>
+    <types>DocumentObject.ПлатежноеПоручениеИсходящее</types>
+    <types>DocumentObject.абс_СчетНаОплату</types>
+  </source>
+  <event>Posting</event>
+  <handler>CommonModule.абс_Бюджетирование.абс_ПроведениеПоДокументамОплатОбработкаПроведения</handler>
+</mdclass:EventSubscription>

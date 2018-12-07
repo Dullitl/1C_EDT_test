@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:AccumulationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="36b9b9f2-8b72-4593-915e-2fab26ec4073">
+  <producedTypes>
+    <selectionType typeId="39343d88-e12e-4f68-a62f-714171a9c3ae" valueTypeId="a6c5d02c-99a7-47ce-a052-6587e37ee158"/>
+    <listType typeId="f1090d1d-2497-4eb0-b585-9727faaac566" valueTypeId="1cbcd1fd-f1b4-4f77-8994-4c3847fbbc45"/>
+    <managerType typeId="1b67ce85-5ffb-4faf-a1ae-f61f0538e95b" valueTypeId="5fd130f4-06ac-4210-8d82-73b21749c0c5"/>
+    <recordSetType typeId="d3cabad0-24b5-449c-873c-3675d6f5274a" valueTypeId="be33a934-36f7-4857-bc8f-6ef048db0f7b"/>
+    <recordKeyType typeId="8f5e4e8e-b61f-4701-b7e2-4c8980cd8b21" valueTypeId="2d53e07a-59cb-4e59-970d-ef48c61280e5"/>
+    <recordType typeId="f538ae3d-6b90-46d7-92b4-f8d75173a239" valueTypeId="9fbaf159-dbdc-4565-b6b1-2b53f0a8a722"/>
+  </producedTypes>
+  <name>ВзаиморасчетыСРаботникамиОрганизаций</name>
+  <synonym>
+    <key>ru</key>
+    <value>Взаиморасчеты с сотрудниками организаций</value>
+  </synonym>
+  <comment>(Регл)</comment>
+  <enableTotalsSplitting>true</enableTotalsSplitting>
+  <resources uuid="5bf4ce1d-1715-4393-982d-aeb09ff37d82">
+    <name>СуммаВзаиморасчетов</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сумма взаиморасчетов</value>
+    </synonym>
+    <comment>Сумма в валюте взаиморасчетов</comment>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>2</scale>
+      </numberQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </resources>
+  <attributes uuid="fbb5c05b-0d53-43ac-bfcc-c1ee823eded7">
+    <name>ХарактерВыплаты</name>
+    <synonym>
+      <key>ru</key>
+      <value>Характер выплаты</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>EnumRef.ХарактерВыплатыЗарплаты</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </attributes>
+  <attributes uuid="d7f05cc3-98f4-44ef-b9c5-05a929437803">
+    <name>СпособВыплаты</name>
+    <synonym>
+      <key>ru</key>
+      <value>Способ выплаты</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>EnumRef.СпособыВыплатыЗарплаты</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </attributes>
+  <attributes uuid="1515b267-0fe8-41d7-a6cf-15d5b9677691">
+    <name>Ведомость</name>
+    <synonym>
+      <key>ru</key>
+      <value>Ведомость</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>DocumentRef.ЗарплатаКВыплатеОрганизаций</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </attributes>
+  <dimensions uuid="89009ea3-5334-4c56-b1b6-7459943821b6">
+    <name>Физлицо</name>
+    <synonym>
+      <key>ru</key>
+      <value>Физлицо</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.ФизическиеЛица</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="2511610f-31a9-4e44-9040-4d603a8ee560">
+    <name>Организация</name>
+    <synonym>
+      <key>ru</key>
+      <value>Организация</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.Организации</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="8a7767a0-7c79-4804-876b-42c33bebe993">
+    <name>ПериодВзаиморасчетов</name>
+    <synonym>
+      <key>ru</key>
+      <value>Период взаиморасчетов</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Date</types>
+      <dateQualifiers>
+        <dateFractions>Date</dateFractions>
+      </dateQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+</mdclass:AccumulationRegister>

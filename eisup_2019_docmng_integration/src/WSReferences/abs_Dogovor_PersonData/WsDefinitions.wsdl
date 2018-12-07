@@ -1,0 +1,437 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/"
+		xmlns:soap12bind="http://schemas.xmlsoap.org/wsdl/soap12/"
+		xmlns:soapbind="http://schemas.xmlsoap.org/wsdl/soap/"
+		xmlns:tns="http://www.abs-soft_Dogovor_PersonData.ru"
+		xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"
+		xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"
+		xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+		xmlns:xsd1="http://www.abs-soft_Dogovor_PersonData.ru"
+		name="abs_Dogovor_PersonData"
+		targetNamespace="http://www.abs-soft_Dogovor_PersonData.ru">
+	<types>
+		<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+				xmlns:xs1="http://www.abs-soft_Dogovor_PersonData.ru"
+				targetNamespace="http://www.abs-soft_Dogovor_PersonData.ru"
+				attributeFormDefault="unqualified"
+				elementFormDefault="qualified">
+			<xs:complexType name="Answer">
+				<xs:sequence>
+					<xs:element name="DogovorPersonData"
+							type="xsd1:DogovorPersonData"
+							nillable="true"/>
+					<xs:element name="Error"
+							type="xs:string"
+							nillable="true"
+							minOccurs="0"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="DogovorPersonData">
+				<xs:sequence>
+					<xs:element name="DateOfBirth"
+							type="xs:date"
+							nillable="true"/>
+					<xs:element name="Passport"
+							type="xs:string"
+							nillable="true"
+							minOccurs="0"/>
+					<xs:element name="AddressPropiska"
+							type="xs:string"
+							nillable="true"
+							minOccurs="0"/>
+					<xs:element name="Address"
+							type="xs:string"
+							nillable="true"
+							minOccurs="0"/>
+					<xs:element name="AddressPropiskaRep"
+							type="xs:string"
+							nillable="true"
+							minOccurs="0"/>
+					<xs:element name="AddressRep"
+							type="xs:string"
+							nillable="true"
+							minOccurs="0"/>
+					<xs:element name="Pol"
+							type="xs:string"
+							nillable="true"
+							minOccurs="0"/>
+					<xs:element name="INN"
+							type="xs:string"
+							nillable="true"
+							minOccurs="0"/>
+					<xs:element name="PFR"
+							type="xs:string"
+							nillable="true"
+							minOccurs="0"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="File">
+				<xs:sequence>
+					<xs:element name="FileDescription"
+							type="xsd1:FileDescription"
+							nillable="true"
+							minOccurs="0"/>
+					<xs:element name="base64Binary"
+							type="xs:base64Binary"
+							nillable="true"
+							minOccurs="0"/>
+					<xs:element name="Error"
+							type="xs:string"
+							nillable="true"
+							minOccurs="0"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="FileAnswer">
+				<xs:sequence>
+					<xs:element name="ID"
+							type="xs:string"
+							nillable="true"
+							minOccurs="0"/>
+					<xs:element name="Error"
+							type="xs:string"
+							nillable="true"
+							minOccurs="0"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="FileDescription">
+				<xs:sequence>
+					<xs:element name="Name"
+							type="xs:string"/>
+					<xs:element name="DateTime"
+							type="xs:dateTime"/>
+					<xs:element name="Size"
+							type="xs:decimal"/>
+					<xs:element name="User"
+							type="xs:string"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="FileList">
+				<xs:sequence>
+					<xs:element name="FileDescriptionList"
+							type="xsd1:FileDescription"
+							nillable="true"
+							minOccurs="0"
+							maxOccurs="unbounded"/>
+					<xs:element name="Error"
+							type="xs:string"
+							nillable="true"
+							minOccurs="0"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:element name="GetDogovorPersonData">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="Number"
+								type="xs:string"/>
+						<xs:element name="Date"
+								type="xs:date"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="GetDogovorPersonDataResponse">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="return"
+								type="xsd1:Answer"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="PutDogovorPersonData">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="Number"
+								type="xs:string"/>
+						<xs:element name="Date"
+								type="xs:date"/>
+						<xs:element name="DateOfBirth"
+								type="xs:date"/>
+						<xs:element name="Passport"
+								type="xs:string"/>
+						<xs:element name="AddressPropiska"
+								type="xs:string"/>
+						<xs:element name="Address"
+								type="xs:string"/>
+						<xs:element name="AddressPropiskaRep"
+								type="xs:string"/>
+						<xs:element name="AddressRep"
+								type="xs:string"/>
+						<xs:element name="Pol"
+								type="xs:string"/>
+						<xs:element name="INN"
+								type="xs:string"/>
+						<xs:element name="PFR"
+								type="xs:string"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="PutDogovorPersonDataResponse">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="return"
+								type="xs:boolean"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="PutDogovorFile">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="DocumentType"
+								type="xs:string"/>
+						<xs:element name="ID"
+								type="xs:string"/>
+						<xs:element name="Date"
+								type="xs:date"/>
+						<xs:element name="File"
+								type="xsd1:File"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="PutDogovorFileResponse">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="return"
+								type="xsd1:FileAnswer"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="GetDogovorFile">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="DocumentType"
+								type="xs:string"/>
+						<xs:element name="ID"
+								type="xs:string"/>
+						<xs:element name="Date"
+								type="xs:date"/>
+						<xs:element name="Name"
+								type="xs:string"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="GetDogovorFileResponse">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="return"
+								type="xsd1:File"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="GetDogovorFileList">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="DocumentType"
+								type="xs:string"/>
+						<xs:element name="ID"
+								type="xs:string"/>
+						<xs:element name="Date"
+								type="xs:date"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="GetDogovorFileListResponse">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="return"
+								type="xsd1:FileList"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:schema>
+	</types>
+	<message name="GetDogovorPersonDataRequestMessage">
+		<part name="parameters"
+				element="tns:GetDogovorPersonData"/>
+	</message>
+	<message name="GetDogovorPersonDataResponseMessage">
+		<part name="parameters"
+				element="tns:GetDogovorPersonDataResponse"/>
+	</message>
+	<message name="PutDogovorPersonDataRequestMessage">
+		<part name="parameters"
+				element="tns:PutDogovorPersonData"/>
+	</message>
+	<message name="PutDogovorPersonDataResponseMessage">
+		<part name="parameters"
+				element="tns:PutDogovorPersonDataResponse"/>
+	</message>
+	<message name="PutDogovorFileRequestMessage">
+		<part name="parameters"
+				element="tns:PutDogovorFile"/>
+	</message>
+	<message name="PutDogovorFileResponseMessage">
+		<part name="parameters"
+				element="tns:PutDogovorFileResponse"/>
+	</message>
+	<message name="GetDogovorFileRequestMessage">
+		<part name="parameters"
+				element="tns:GetDogovorFile"/>
+	</message>
+	<message name="GetDogovorFileResponseMessage">
+		<part name="parameters"
+				element="tns:GetDogovorFileResponse"/>
+	</message>
+	<message name="GetDogovorFileListRequestMessage">
+		<part name="parameters"
+				element="tns:GetDogovorFileList"/>
+	</message>
+	<message name="GetDogovorFileListResponseMessage">
+		<part name="parameters"
+				element="tns:GetDogovorFileListResponse"/>
+	</message>
+	<portType name="abs_Dogovor_PersonDataPortType">
+		<operation name="GetDogovorPersonData">
+			<input name="GetDogovorPersonDataRequest"
+					message="tns:GetDogovorPersonDataRequestMessage"/>
+			<output name="GetDogovorPersonDataResponse"
+					message="tns:GetDogovorPersonDataResponseMessage"/>
+		</operation>
+		<operation name="PutDogovorPersonData">
+			<input name="PutDogovorPersonDataRequest"
+					message="tns:PutDogovorPersonDataRequestMessage"/>
+			<output name="PutDogovorPersonDataResponse"
+					message="tns:PutDogovorPersonDataResponseMessage"/>
+		</operation>
+		<operation name="PutDogovorFile">
+			<input name="PutDogovorFileRequest"
+					message="tns:PutDogovorFileRequestMessage"/>
+			<output name="PutDogovorFileResponse"
+					message="tns:PutDogovorFileResponseMessage"/>
+		</operation>
+		<operation name="GetDogovorFile">
+			<input name="GetDogovorFileRequest"
+					message="tns:GetDogovorFileRequestMessage"/>
+			<output name="GetDogovorFileResponse"
+					message="tns:GetDogovorFileResponseMessage"/>
+		</operation>
+		<operation name="GetDogovorFileList">
+			<input name="GetDogovorFileListRequest"
+					message="tns:GetDogovorFileListRequestMessage"/>
+			<output name="GetDogovorFileListResponse"
+					message="tns:GetDogovorFileListResponseMessage"/>
+		</operation>
+	</portType>
+	<binding name="abs_Dogovor_PersonDataSoapBinding"
+			type="tns:abs_Dogovor_PersonDataPortType">
+		<soapbind:binding style="document"
+				transport="http://schemas.xmlsoap.org/soap/http"/>
+		<operation name="GetDogovorPersonData">
+			<soapbind:operation style="document"
+					soapAction="http://www.abs-soft_Dogovor_PersonData.ru#abs_Dogovor_PersonData:GetDogovorPersonData"/>
+			<input>
+				<soapbind:body use="literal"/>
+			</input>
+			<output>
+				<soapbind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="PutDogovorPersonData">
+			<soapbind:operation style="document"
+					soapAction="http://www.abs-soft_Dogovor_PersonData.ru#abs_Dogovor_PersonData:PutDogovorPersonData"/>
+			<input>
+				<soapbind:body use="literal"/>
+			</input>
+			<output>
+				<soapbind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="PutDogovorFile">
+			<soapbind:operation style="document"
+					soapAction="http://www.abs-soft_Dogovor_PersonData.ru#abs_Dogovor_PersonData:PutDogovorFile"/>
+			<input>
+				<soapbind:body use="literal"/>
+			</input>
+			<output>
+				<soapbind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="GetDogovorFile">
+			<soapbind:operation style="document"
+					soapAction="http://www.abs-soft_Dogovor_PersonData.ru#abs_Dogovor_PersonData:GetDogovorFile"/>
+			<input>
+				<soapbind:body use="literal"/>
+			</input>
+			<output>
+				<soapbind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="GetDogovorFileList">
+			<soapbind:operation style="document"
+					soapAction="http://www.abs-soft_Dogovor_PersonData.ru#abs_Dogovor_PersonData:GetDogovorFileList"/>
+			<input>
+				<soapbind:body use="literal"/>
+			</input>
+			<output>
+				<soapbind:body use="literal"/>
+			</output>
+		</operation>
+	</binding>
+	<binding name="abs_Dogovor_PersonDataSoap12Binding"
+			type="tns:abs_Dogovor_PersonDataPortType">
+		<soap12bind:binding style="document"
+				transport="http://schemas.xmlsoap.org/soap/http"/>
+		<operation name="GetDogovorPersonData">
+			<soap12bind:operation style="document"
+					soapAction="http://www.abs-soft_Dogovor_PersonData.ru#abs_Dogovor_PersonData:GetDogovorPersonData"/>
+			<input>
+				<soap12bind:body use="literal"/>
+			</input>
+			<output>
+				<soap12bind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="PutDogovorPersonData">
+			<soap12bind:operation style="document"
+					soapAction="http://www.abs-soft_Dogovor_PersonData.ru#abs_Dogovor_PersonData:PutDogovorPersonData"/>
+			<input>
+				<soap12bind:body use="literal"/>
+			</input>
+			<output>
+				<soap12bind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="PutDogovorFile">
+			<soap12bind:operation style="document"
+					soapAction="http://www.abs-soft_Dogovor_PersonData.ru#abs_Dogovor_PersonData:PutDogovorFile"/>
+			<input>
+				<soap12bind:body use="literal"/>
+			</input>
+			<output>
+				<soap12bind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="GetDogovorFile">
+			<soap12bind:operation style="document"
+					soapAction="http://www.abs-soft_Dogovor_PersonData.ru#abs_Dogovor_PersonData:GetDogovorFile"/>
+			<input>
+				<soap12bind:body use="literal"/>
+			</input>
+			<output>
+				<soap12bind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="GetDogovorFileList">
+			<soap12bind:operation style="document"
+					soapAction="http://www.abs-soft_Dogovor_PersonData.ru#abs_Dogovor_PersonData:GetDogovorFileList"/>
+			<input>
+				<soap12bind:body use="literal"/>
+			</input>
+			<output>
+				<soap12bind:body use="literal"/>
+			</output>
+		</operation>
+	</binding>
+	<service name="abs_Dogovor_PersonData">
+		<port name="abs_Dogovor_PersonDataSoap"
+				binding="tns:abs_Dogovor_PersonDataSoapBinding">
+			<documentation> 
+				<wsi:Claim xmlns:wsi="http://ws-i.org/schemas/conformanceClaim/"
+						conformsTo="http://ws-i.org/profiles/basic/1.1"/>
+			</documentation>
+			<soapbind:address location="https://isup-ttk.transtk.ru/persondata/ws/Dogovor_PersonData.1cws"/>
+		</port>
+		<port name="abs_Dogovor_PersonDataSoap12"
+				binding="tns:abs_Dogovor_PersonDataSoap12Binding">
+			<soap12bind:address location="https://isup-ttk.transtk.ru/persondata/ws/Dogovor_PersonData.1cws"/>
+		</port>
+	</service>
+</definitions>

@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:BusinessProcess xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="00fb6b81-ffed-421e-af9f-58cda7391eef">
+  <producedTypes>
+    <objectType typeId="98e82af2-109a-47c5-8048-5097d5e8f59d" valueTypeId="bd574d8f-61f5-46ec-a459-b51e58976016"/>
+    <refType typeId="94562cc8-2f75-4e85-b5d5-19d3000cac90" valueTypeId="f845b7d1-0aec-4aa6-9155-14545d2432bd"/>
+    <selectionType typeId="2ebf29e3-0ffe-4f6e-b6ac-c73937816a67" valueTypeId="c58da5bf-f6ad-492f-a780-3f440e213018"/>
+    <listType typeId="2a86395c-012d-44cc-ab05-a3d019863772" valueTypeId="03e106e6-1a2d-449e-a54e-6933c69151fe"/>
+    <managerType typeId="8cc87c60-b8d8-4c11-8757-5c631340e370" valueTypeId="671b7cf2-7cc8-48f3-9c7e-174e259f7f3d"/>
+    <routePointRef typeId="06bb1950-2fc9-4ff7-8dc7-43528cb28eef" valueTypeId="cbae53a4-8534-4463-ae8e-f06d3c2ac693"/>
+  </producedTypes>
+  <name>абсУточнениеСчетаНаОплату</name>
+  <synonym>
+    <key>ru</key>
+    <value>Уточнение счета на оплату</value>
+  </synonym>
+  <comment></comment>
+  <useStandardCommands>true</useStandardCommands>
+  <inputByString>BusinessProcess.абсУточнениеСчетаНаОплату.StandardAttribute.Number</inputByString>
+  <fullTextSearchOnInputByString>DontUse</fullTextSearchOnInputByString>
+  <createOnInput>DontUse</createOnInput>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <fullTextSearch>Use</fullTextSearch>
+  <editType>InDialog</editType>
+  <defaultObjectForm>BusinessProcess.абсУточнениеСчетаНаОплату.Form.ФормаБизнесПроцесса</defaultObjectForm>
+  <defaultListForm>BusinessProcess.абсУточнениеСчетаНаОплату.Form.ФормаСписка</defaultListForm>
+  <auxiliaryObjectForm>BusinessProcess.абсУточнениеСчетаНаОплату.Form.ФормаБизнесПроцессаУправляемая</auxiliaryObjectForm>
+  <auxiliaryListForm>BusinessProcess.абсУточнениеСчетаНаОплату.Form.ФормаСпискаУправляемая</auxiliaryListForm>
+  <numberType>String</numberType>
+  <numberLength>9</numberLength>
+  <numberAllowedLength>Variable</numberAllowedLength>
+  <checkUnique>true</checkUnique>
+  <autonumbering>true</autonumbering>
+  <task>Task.абсЗадачаДоговора</task>
+  <attributes uuid="da184cd9-227a-417c-bce2-45dae6da3c51">
+    <name>ПользовательИнициаторБП</name>
+    <synonym>
+      <key>ru</key>
+      <value>Инициатор БП</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.Пользователи</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="09306bcc-91df-4c9c-954b-f166ddd7cf3b">
+    <name>ПользовательИнициаторСогласования</name>
+    <synonym>
+      <key>ru</key>
+      <value>Инициатор согласования</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.Пользователи</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="3b154343-9c37-44bc-89d0-4d0bb247cc1c">
+    <name>СчетНаОплату</name>
+    <synonym>
+      <key>ru</key>
+      <value>Счет на оплату</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>DocumentRef.абс_СчетНаОплату</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="3dc4938a-e96b-498e-8410-7871b533a66a">
+    <name>Организация</name>
+    <synonym>
+      <key>ru</key>
+      <value>Организация</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.Организации</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <forms uuid="44617178-fdbd-40d4-b3f6-f062d764266e">
+    <name>ФормаБизнесПроцесса</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма бизнес процесса</value>
+    </synonym>
+    <comment></comment>
+    <formType>Ordinary</formType>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="cafb1e8a-f9fb-419c-9416-6cf2ee966c0f">
+    <name>ФормаСписка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма списка</value>
+    </synonym>
+    <comment></comment>
+    <formType>Ordinary</formType>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="d62c9c70-e54b-4a50-bc72-5fd5445ad3dc">
+    <name>ФормаСпискаУправляемая</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма списка управляемая</value>
+    </synonym>
+    <comment></comment>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="bc74d702-579b-46fb-94a9-36ae3157cae6">
+    <name>ФормаБизнесПроцессаУправляемая</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма бизнес процесса управляемая</value>
+    </synonym>
+    <comment></comment>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+</mdclass:BusinessProcess>

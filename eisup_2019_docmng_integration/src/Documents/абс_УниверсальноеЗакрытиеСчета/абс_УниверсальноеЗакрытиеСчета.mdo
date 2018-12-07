@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Document xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="67a088a6-feba-4723-8853-278fdb7235a1">
+  <producedTypes>
+    <objectType typeId="ba7c79ee-e66e-47dd-8a29-b6ae06ae76ee" valueTypeId="3bed4398-b90e-44bd-8772-201ad6c9f06b"/>
+    <refType typeId="0c15e67e-f6b9-4799-b674-ee5b356d8f51" valueTypeId="a61e9ee5-4f7a-4b39-80ff-5384ba0d1bc9"/>
+    <selectionType typeId="edc8d77b-1d69-46f7-9a17-ff6cf9ddb66f" valueTypeId="50347d0b-4ab1-425d-a5a1-5edfbd3f1d11"/>
+    <listType typeId="dc068b81-1f60-497b-ad8e-4c2acd370a19" valueTypeId="675084e4-e9ea-4e44-aa2d-5f5fe4ff4869"/>
+    <managerType typeId="7d566b47-ea1c-4997-bffd-7272bc61c326" valueTypeId="b797ca60-5342-4fff-a086-596315324180"/>
+  </producedTypes>
+  <name>абс_УниверсальноеЗакрытиеСчета</name>
+  <synonym>
+    <key>ru</key>
+    <value>Универсальное закрытие счетов</value>
+  </synonym>
+  <comment></comment>
+  <inputByString>Document.абс_УниверсальноеЗакрытиеСчета.StandardAttribute.Number</inputByString>
+  <fullTextSearchOnInputByString>DontUse</fullTextSearchOnInputByString>
+  <createOnInput>Use</createOnInput>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <fullTextSearch>Use</fullTextSearch>
+  <numberType>String</numberType>
+  <numberLength>17</numberLength>
+  <numberAllowedLength>Variable</numberAllowedLength>
+  <checkUnique>true</checkUnique>
+  <autonumbering>true</autonumbering>
+  <defaultObjectForm>Document.абс_УниверсальноеЗакрытиеСчета.Form.ФормаДокумента</defaultObjectForm>
+  <defaultListForm>Document.абс_УниверсальноеЗакрытиеСчета.Form.ФормаСписка</defaultListForm>
+  <posting>Deny</posting>
+  <realTimePosting>Deny</realTimePosting>
+  <registerRecordsDeletion>AutoDeleteOff</registerRecordsDeletion>
+  <registerRecords>AccumulationRegister.абс_НезавершенноеПроизводствоБУ</registerRecords>
+  <registerRecords>AccumulationRegister.абс_НезавершенноеПроизводствоНУ</registerRecords>
+  <registerRecords>AccountingRegister.Хозрасчетный</registerRecords>
+  <registerRecords>AccumulationRegister.ОборотыБюджетов</registerRecords>
+  <registerRecords>AccumulationRegister.НезавершенноеПроизводствоНалоговыйУчет</registerRecords>
+  <registerRecords>AccumulationRegister.НезавершенноеПроизводствоБухгалтерскийУчет</registerRecords>
+  <registerRecords>AccumulationRegister.Затраты</registerRecords>
+  <registerRecords>AccumulationRegister.ЗатратыНалоговыйУчет</registerRecords>
+  <registerRecords>AccountingRegister.Налоговый</registerRecords>
+  <registerRecords>AccumulationRegister.ЗатратыБухгалтерскийУчет</registerRecords>
+  <attributes uuid="b2320a97-519d-4584-8bc2-ab5df5b39ca5">
+    <name>Комментарий</name>
+    <synonym>
+      <key>ru</key>
+      <value>Комментарий</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>String</types>
+      <stringQualifiers/>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:StringValue">
+      <value></value>
+    </fillValue>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="6122e1fe-51ed-4dc8-89de-524ebcd3cd40">
+    <name>Организация</name>
+    <synonym>
+      <key>ru</key>
+      <value>Организация</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.Организации</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="7d76d5ab-7ad5-4836-9b87-8e9c4d975ca7">
+    <name>Ответственный</name>
+    <synonym>
+      <key>ru</key>
+      <value>Ответственный</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.Пользователи</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="96a2f4c6-ab4f-49e3-b81d-a12bbaee77e3">
+    <name>ЗакрыватьНаДату</name>
+    <synonym>
+      <key>ru</key>
+      <value>Закрывать на дату</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <forms uuid="4f9e9dac-490d-4283-a234-d03b2d9be347">
+    <name>ФормаСписка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма списка</value>
+    </synonym>
+    <comment></comment>
+    <formType>Ordinary</formType>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="f53f9e05-3158-418f-b026-01fbd9fef110">
+    <name>ФормаДокумента</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма документа</value>
+    </synonym>
+    <comment></comment>
+    <formType>Ordinary</formType>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <tabularSections uuid="c11c1f42-4b6f-4a7a-a8ef-f073ee1c97e2">
+    <producedTypes>
+      <objectType typeId="1d7e5e9d-ae0b-4ce1-abdf-1e19db608297" valueTypeId="128722ce-1e8c-4796-8a4e-89368d5283e9"/>
+      <rowType typeId="0b7ee280-53a6-46e5-9d98-8d7d7f975327" valueTypeId="e314e2e0-089d-4f43-900d-ebf6b317b47e"/>
+    </producedTypes>
+    <name>ПравилаЗакрытия</name>
+    <synonym>
+      <key>ru</key>
+      <value>Правила закрытия</value>
+    </synonym>
+    <comment></comment>
+    <attributes uuid="50d11bc9-3b60-4475-8b5f-90537c77ddec">
+      <name>Правило</name>
+      <synonym>
+        <key>ru</key>
+        <value>Правило</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>CatalogRef.абс_ПравилаЗакрытияСчетов</types>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+  </tabularSections>
+</mdclass:Document>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:WebService xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="d74d9486-275e-411f-89ec-c979050d7d1b">
+  <name>abs_ViplataZarplati</name>
+  <synonym>
+    <key>ru</key>
+    <value>Viplata zarplati (ABS)</value>
+  </synonym>
+  <comment>Web servise предназначен синхронизации ведомостей з/п</comment>
+  <namespace>Viplata_Zarplati</namespace>
+  <xdtoPackages xsi:type="core:ReferenceValue">
+    <value>XDTOPackage.Viplata_Zarplati</value>
+  </xdtoPackages>
+  <descriptorFileName>Viplata_Zarplati.1cws</descriptorFileName>
+  <sessionMaxAge>20</sessionMaxAge>
+  <operations uuid="7103ab47-b707-40fb-a31e-664bc30b4340">
+    <name>CreateVedomost</name>
+    <synonym>
+      <key>ru</key>
+      <value>Create vedomost</value>
+    </synonym>
+    <comment>Метод предназначен для создание ведомостей з/п в ЕИСУП</comment>
+    <xdtoReturningValueType>
+      <name>Rezult</name>
+      <nsUri>Viplata_Zarplati</nsUri>
+    </xdtoReturningValueType>
+    <procedureName>CreateVedomost</procedureName>
+    <dataLockControlMode>Managed</dataLockControlMode>
+    <parameters uuid="143b4057-0fce-4d2d-b931-f10daddf722b">
+      <name>Number</name>
+      <synonym>
+        <key>ru</key>
+        <value>Number</value>
+      </synonym>
+      <comment></comment>
+      <xdtoValueType>
+        <name>string</name>
+        <nsUri>http://www.w3.org/2001/XMLSchema</nsUri>
+      </xdtoValueType>
+    </parameters>
+    <parameters uuid="981ebe90-7183-413d-95c7-394a988c21eb">
+      <name>Date</name>
+      <synonym>
+        <key>ru</key>
+        <value>Date</value>
+      </synonym>
+      <comment></comment>
+      <xdtoValueType>
+        <name>date</name>
+        <nsUri>http://www.w3.org/2001/XMLSchema</nsUri>
+      </xdtoValueType>
+    </parameters>
+    <parameters uuid="b43ca64c-a784-4e2f-97d4-c49ec0d4cd37">
+      <name>Data</name>
+      <synonym>
+        <key>ru</key>
+        <value>Data</value>
+      </synonym>
+      <comment></comment>
+      <xdtoValueType>
+        <name>string</name>
+        <nsUri>http://www.w3.org/2001/XMLSchema</nsUri>
+      </xdtoValueType>
+    </parameters>
+  </operations>
+</mdclass:WebService>

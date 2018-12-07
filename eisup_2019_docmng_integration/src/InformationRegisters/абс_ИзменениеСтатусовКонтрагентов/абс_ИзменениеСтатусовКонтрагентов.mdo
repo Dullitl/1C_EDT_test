@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="437ba368-b46d-47e0-96fe-85adce3a83a3">
+  <producedTypes>
+    <selectionType typeId="9432240b-413b-4408-87e7-7db7227257fe" valueTypeId="2ac8e3bb-1de8-41e4-ad0f-df7fd5209351"/>
+    <listType typeId="d2ab5a78-5be4-480a-9408-def50f2c2b5f" valueTypeId="cc9720bf-6704-49e6-bac7-770ed5492dc5"/>
+    <managerType typeId="32da5db5-911f-4d9a-a18c-5d1b5e3f2b2e" valueTypeId="2101b97b-bc35-435e-97a9-411ba10da5a8"/>
+    <recordSetType typeId="3a00ee12-dddd-44e7-982a-f60e3cbacb02" valueTypeId="2120ed96-2d44-458e-99bc-b3c7e809aa24"/>
+    <recordKeyType typeId="7a74b7f0-f609-45aa-a9ba-413d3d57afcd" valueTypeId="afcaae48-b706-4157-88f3-449e8486b6ba"/>
+    <recordType typeId="3d5f9675-1959-4561-85f6-e9f7f07287d7" valueTypeId="a0af0907-7efc-4aa3-8026-34d06b932128"/>
+    <recordManagerType typeId="5b5e191e-6309-41bc-87b6-d285ecd8a45b" valueTypeId="08320f2f-9889-4103-93bd-87f5a98af260"/>
+  </producedTypes>
+  <name>абс_ИзменениеСтатусовКонтрагентов</name>
+  <synonym>
+    <key>ru</key>
+    <value>Согласование контрагента</value>
+  </synonym>
+  <comment></comment>
+  <useStandardCommands>true</useStandardCommands>
+  <defaultListForm>InformationRegister.абс_ИзменениеСтатусовКонтрагентов.Form.ФормаСпискаУправляемая</defaultListForm>
+  <auxiliaryListForm>InformationRegister.абс_ИзменениеСтатусовКонтрагентов.Form.ФормаСпискаУправляемая</auxiliaryListForm>
+  <informationRegisterPeriodicity>Second</informationRegisterPeriodicity>
+  <mainFilterOnPeriod>true</mainFilterOnPeriod>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <attributes uuid="b7f394d8-7041-4340-ab50-6e9bcd14bd63">
+    <name>Комментарий</name>
+    <synonym>
+      <key>ru</key>
+      <value>Комментарий</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>200</length>
+      </stringQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:StringValue">
+      <value></value>
+    </fillValue>
+  </attributes>
+  <attributes uuid="2f13ef46-126f-4dec-bcfc-552fea33a136">
+    <name>ВнутреннийНомер</name>
+    <synonym>
+      <key>ru</key>
+      <value>Внутренний номер</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>7</precision>
+      </numberQualifiers>
+    </type>
+    <format>
+      <key>ru</key>
+      <value>ЧЦ=7; ЧГ=</value>
+    </format>
+    <editFormat>
+      <key>ru</key>
+      <value>ЧЦ=7; ЧГ=</value>
+    </editFormat>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <dimensions uuid="d0ea36e8-6476-4a6b-9eb8-8d124b46ba8a">
+    <name>Контрагент</name>
+    <synonym>
+      <key>ru</key>
+      <value>Контрагент</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.ttk_КонтрагентыВГО</types>
+      <types>CatalogRef.Контрагенты</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="a5c3b118-9526-4af2-8ba7-df50480b0991">
+    <name>СтатусКонтрагента</name>
+    <synonym>
+      <key>ru</key>
+      <value>Статус контрагента</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>EnumRef.абсСтатусыКонтрагентов</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="724463fd-b18d-4328-8797-3edd2117786d">
+    <name>Пользователь</name>
+    <synonym>
+      <key>ru</key>
+      <value>Пользователь</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.Пользователи</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <forms uuid="fa37d0a2-49a0-44ec-be78-da255a18696b">
+    <name>ФормаСпискаУправляемая</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма списка управляемая</value>
+    </synonym>
+    <comment></comment>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="1a656b50-0de0-4d7f-b253-134588bf2495">
+    <name>ФормаСписка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма списка</value>
+    </synonym>
+    <comment></comment>
+    <formType>Ordinary</formType>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <commands uuid="1cbf0059-952a-4026-87f0-9f7ba99a1e45">
+    <name>ОткрытьИсториюИзмененияСостоянийКонтрагента</name>
+    <synonym>
+      <key>ru</key>
+      <value>Открыть историю изменения состояний контрагента</value>
+    </synonym>
+    <comment></comment>
+    <group>NavigationPanelOrdinary</group>
+    <commandParameterType/>
+    <representation>Auto</representation>
+    <shortcut></shortcut>
+  </commands>
+</mdclass:InformationRegister>

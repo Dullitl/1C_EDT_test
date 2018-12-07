@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:AccumulationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="2b1773ed-e447-420f-a1c1-95f3c1de0d8f">
+  <producedTypes>
+    <selectionType typeId="ebb01b7a-0e69-4dcb-841b-f4cb2aeec3c0" valueTypeId="5814f006-cb2c-423c-8fbb-16b85c3876b6"/>
+    <listType typeId="f7387258-2a3c-4d29-98a1-64664db55ac6" valueTypeId="1c14d70c-01c2-477e-a982-6adc56294e17"/>
+    <managerType typeId="de81fb3f-cca5-46a6-b460-4a543ae683a8" valueTypeId="4b19d9dc-8772-4e12-b9cc-d04dfe116d43"/>
+    <recordSetType typeId="9e581f00-3add-4c53-a7f1-d25301dd49c4" valueTypeId="d815ad55-9810-4c0f-b884-38be26c59dc5"/>
+    <recordKeyType typeId="0ebe24ba-b1e0-4ff3-8d9b-6ac668c1bd44" valueTypeId="39474be4-cfba-44e6-94db-4125ced8bd53"/>
+    <recordType typeId="d05a8279-b567-4c8f-9a16-ebf0558e7935" valueTypeId="eee2e197-9752-4d7d-a43f-11ee7bae4a9c"/>
+  </producedTypes>
+  <name>РасчетПервойПоловиныМесяца</name>
+  <synonym>
+    <key>ru</key>
+    <value>Расчет первой половины месяца</value>
+  </synonym>
+  <comment>(Регл)</comment>
+  <registerType>Turnovers</registerType>
+  <enableTotalsSplitting>true</enableTotalsSplitting>
+  <resources uuid="31667245-7338-446b-9290-a9dbd3bb0c52">
+    <name>СуммаВзаиморасчетов</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сумма взаиморасчетов</value>
+    </synonym>
+    <comment>Сумма в валюте взаиморасчетов</comment>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>2</scale>
+      </numberQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </resources>
+  <attributes uuid="b8746134-0851-4ae8-9d18-fad211c20894">
+    <name>Сотрудник</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сотрудник</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.СотрудникиОрганизаций</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </attributes>
+  <dimensions uuid="ec7c41ec-ce70-4692-bfaf-b1e995f4d362">
+    <name>Физлицо</name>
+    <synonym>
+      <key>ru</key>
+      <value>Физлицо</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.ФизическиеЛица</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="41a15a36-bcea-4f67-9875-484532b3bf38">
+    <name>Организация</name>
+    <synonym>
+      <key>ru</key>
+      <value>Организация</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.Организации</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+</mdclass:AccumulationRegister>

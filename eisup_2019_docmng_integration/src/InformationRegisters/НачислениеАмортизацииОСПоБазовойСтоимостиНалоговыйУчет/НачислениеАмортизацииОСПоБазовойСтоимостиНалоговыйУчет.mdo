@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="aab8ba2b-fe0a-4df2-929b-12f26e66eab5">
+  <producedTypes>
+    <selectionType typeId="7e140419-4aae-429e-9b66-25167895aa11" valueTypeId="84a6903b-d6c8-4b93-bd1e-94c6baa6f610"/>
+    <listType typeId="be701e7d-d01f-4999-8bf7-b6a503cbeb3c" valueTypeId="c7ed5f0e-6f93-427d-9dc1-d7dbbef8dc85"/>
+    <managerType typeId="47f5a055-cc7e-4c6d-b3e7-9b4d9ff51ca0" valueTypeId="f1a2021d-5f25-46db-b788-06d164fe96b9"/>
+    <recordSetType typeId="93764717-405d-4092-9dc1-60651177ad95" valueTypeId="73e80746-3173-4179-a60f-3863b5f00772"/>
+    <recordKeyType typeId="0fb5d00f-4568-4c2d-97e4-816ed346ea39" valueTypeId="ff282f43-c285-4a16-a038-058f35a2cb74"/>
+    <recordType typeId="94bf0be8-a17b-43e2-b966-bbf8f8e9660f" valueTypeId="30f20c03-4df4-43ea-a6f6-1c8048137571"/>
+    <recordManagerType typeId="aefac099-c0dc-4f3b-9501-6c5e5a2c893e" valueTypeId="d5cb5706-99e8-4f18-896a-5dad33c67dd6"/>
+  </producedTypes>
+  <name>НачислениеАмортизацииОСПоБазовойСтоимостиНалоговыйУчет</name>
+  <synonym>
+    <key>ru</key>
+    <value>Начисление амортизации ОС по базовой стоимости (нал. учет)</value>
+  </synonym>
+  <comment>(Регл) Начисление амортизации по базовой стоимости (налоговый учет)</comment>
+  <informationRegisterPeriodicity>RecorderPosition</informationRegisterPeriodicity>
+  <writeMode>RecorderSubordinate</writeMode>
+  <help>
+    <pages>
+      <lang>ru</lang>
+    </pages>
+  </help>
+  <resources uuid="8f8ede8c-01c7-4241-8178-1549b775205f">
+    <name>ПризнакНачисленияПоБазовойСтоимости</name>
+    <synonym>
+      <key>ru</key>
+      <value>Признак начисления по базовой стоимости</value>
+    </synonym>
+    <comment>Признак начисления по базовой стоимости (для нелинейного метода)</comment>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="71699f6b-938e-4f50-a078-ba2d77c07a41">
+    <name>СуммаНакопленнойАмортизации</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сумма накопленной амортизации</value>
+    </synonym>
+    <comment>Сумма амортизации, накопленной в момент перехода к начислению по базовой стоимости</comment>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>2</scale>
+      </numberQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="e6ea9f0b-b0d6-40f7-a1cd-d24859d3e141">
+    <name>ФактическийСрокполезногоИспользования</name>
+    <synonym>
+      <key>ru</key>
+      <value>Фактический срокполезного использования</value>
+    </synonym>
+    <comment>Фактический срок полезного использования, накопленный на момент перехода к базовой стоимости</comment>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>4</precision>
+      </numberQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <dimensions uuid="03554291-ee2d-4926-a8eb-81b542462875">
+    <name>ОсновноеСредство</name>
+    <synonym>
+      <key>ru</key>
+      <value>Основное средство</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.ОсновныеСредства</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="78cbae7e-7075-40fa-9f4c-44140892c72a">
+    <name>Организация</name>
+    <synonym>
+      <key>ru</key>
+      <value>Организация</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.Организации</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+</mdclass:InformationRegister>

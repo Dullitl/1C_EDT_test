@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:ExchangePlan xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="4a2c06ee-e6d0-4c0d-ac45-d3824bdc56dd" thisNode="2f57682a-e5f3-474b-b6f7-b82098b82be8">
+  <producedTypes>
+    <objectType typeId="3e87a1c8-7390-49da-8afd-f07fa134401c" valueTypeId="0be7cd91-8091-4bd2-b3b7-cb1a40381f95"/>
+    <refType typeId="f9e1d8bc-0ecd-4b35-a04b-20fcf6ef1d19" valueTypeId="14b6ec18-c98d-4077-a8dd-d927bd6ca7aa"/>
+    <selectionType typeId="0f489eac-1da3-481d-a0ac-c1affc8f2f41" valueTypeId="bac3c9c3-c120-4c23-a8ed-9638844da5e4"/>
+    <listType typeId="e7b2a9be-0451-4e9d-9121-b72939281eca" valueTypeId="60401a03-f4f9-4b76-99cd-3c37b4f61bcd"/>
+    <managerType typeId="9d86ab95-2c19-4e48-a686-9d372102d36a" valueTypeId="f330eb6b-fe11-47ce-8815-fc64b0281baa"/>
+  </producedTypes>
+  <name>ОбменУправлениеПредприятиемУправлениеТорговлей</name>
+  <synonym>
+    <key>ru</key>
+    <value>Обмен УПП - УТ</value>
+  </synonym>
+  <comment>Обмен УПП - УТ</comment>
+  <inputByString>ExchangePlan.ОбменУправлениеПредприятиемУправлениеТорговлей.StandardAttribute.Description</inputByString>
+  <inputByString>ExchangePlan.ОбменУправлениеПредприятиемУправлениеТорговлей.StandardAttribute.Code</inputByString>
+  <fullTextSearchOnInputByString>DontUse</fullTextSearchOnInputByString>
+  <createOnInput>DontUse</createOnInput>
+  <fullTextSearch>Use</fullTextSearch>
+  <codeLength>3</codeLength>
+  <descriptionLength>100</descriptionLength>
+  <defaultPresentation>AsDescription</defaultPresentation>
+  <editType>InDialog</editType>
+  <choiceMode>BothWays</choiceMode>
+  <defaultObjectForm>ExchangePlan.ОбменУправлениеПредприятиемУправлениеТорговлей.Form.ФормаУзла</defaultObjectForm>
+  <defaultListForm>ExchangePlan.ОбменУправлениеПредприятиемУправлениеТорговлей.Form.ФормаСписка</defaultListForm>
+  <attributes uuid="34fbfaf2-5b50-4c95-bda9-fe4d567427d2">
+    <name>ДатаНачалаВыгрузкиДокументов</name>
+    <synonym>
+      <key>ru</key>
+      <value>Дата начала выгрузки документов</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Date</types>
+      <dateQualifiers>
+        <dateFractions>Date</dateFractions>
+      </dateQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </attributes>
+  <attributes uuid="3f95c6ae-3800-47b2-a539-dae8b762fc68">
+    <name>ПрефиксДляЗагружаемыхДокументов</name>
+    <synonym>
+      <key>ru</key>
+      <value>Префикс для загружаемых документов</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>2</length>
+      </stringQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </attributes>
+  <attributes uuid="57dc66db-e968-4a3d-9d72-1e106c339886">
+    <name>ИспользоватьИнформациюОМестеСозданияОбъектовПриВыгрузкеИЗагрузкеДанных</name>
+    <synonym>
+      <key>ru</key>
+      <value>Использовать информацию о месте создания объектов при выгрузке и загрузке данных</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </attributes>
+  <tabularSections uuid="35c48384-8686-4345-a08c-c731ca89f5f3">
+    <producedTypes>
+      <objectType typeId="cb14a2f7-a269-4d74-b03f-a3041c641c7f" valueTypeId="b5b77171-1eee-4251-861c-a6dc9e2b0ec1"/>
+      <rowType typeId="366b44cb-6733-41a6-8ae3-a5f5b3cf5833" valueTypeId="14d4de03-49ac-4de2-afeb-34694727e2cd"/>
+    </producedTypes>
+    <name>Организации</name>
+    <synonym>
+      <key>ru</key>
+      <value>Организации</value>
+    </synonym>
+    <comment></comment>
+    <attributes uuid="1b28bb14-818c-4db6-bdd9-9ef7fad2f7d2">
+      <name>Организация</name>
+      <synonym>
+        <key>ru</key>
+        <value>Организация</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>CatalogRef.Организации</types>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <indexing>Index</indexing>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+  </tabularSections>
+  <forms uuid="0c8ae488-dd31-4d2f-be5d-e005cd5b0bb3">
+    <name>ФормаСписка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма списка</value>
+    </synonym>
+    <comment></comment>
+    <formType>Ordinary</formType>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="0a9e993e-b744-4d2c-84f2-19b2d7bfd4bb">
+    <name>ФормаУзла</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма узла</value>
+    </synonym>
+    <comment></comment>
+    <formType>Ordinary</formType>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+</mdclass:ExchangePlan>

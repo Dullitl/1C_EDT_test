@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:DataProcessor xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="0c6dd5e0-d896-4d26-9b29-74c855a58183">
+  <producedTypes>
+    <objectType typeId="5f583aad-750a-4251-a902-4368f66fe70c" valueTypeId="9ace3e6c-1ffb-4f37-9388-2f98e434d201"/>
+    <managerType typeId="cc5cb4a5-bac5-4d66-a572-dbe1eb2b32e9" valueTypeId="3ec957e9-241f-4294-83fe-3f8f510d77b8"/>
+  </producedTypes>
+  <name>абс_ОценкаПроизводительностиПоОрганизациям</name>
+  <synonym>
+    <key>ru</key>
+    <value>Оценка производительности по организациям</value>
+  </synonym>
+  <comment></comment>
+  <defaultForm>DataProcessor.абс_ОценкаПроизводительностиПоОрганизациям.Form.Форма</defaultForm>
+  <help>
+    <pages>
+      <lang>ru</lang>
+    </pages>
+  </help>
+  <attributes uuid="39526f2f-fce8-4f94-a461-841b623c02aa">
+    <name>Период</name>
+    <synonym>
+      <key>ru</key>
+      <value>Период</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>StandardPeriod</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="364ae761-fb5d-4e18-a609-75eda81ed3c4">
+    <name>Шаг</name>
+    <synonym>
+      <key>ru</key>
+      <value>Шаг</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>6</length>
+      </stringQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="31ef1d6a-c6f3-406d-a2aa-eefee34cecec">
+    <name>Диаграмма</name>
+    <synonym>
+      <key>ru</key>
+      <value>Диаграмма</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Chart</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="305f3b6b-cbff-492a-ba2c-7e19f5067486">
+    <name>Организация</name>
+    <synonym>
+      <key>ru</key>
+      <value>Организация</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.Организации</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <tabularSections uuid="48581202-ae8f-4980-a2ff-6e0a4ec4b4e8">
+    <producedTypes>
+      <objectType typeId="b8882b16-ca04-4bd1-b355-dd62ef4d0fea" valueTypeId="3f99406c-fd6e-4237-8e24-7e1054277fea"/>
+      <rowType typeId="1a5337dd-75d8-4682-bcd2-5e05e7515080" valueTypeId="810a2a64-7eee-4dbe-b148-a0e4b6ed37f5"/>
+    </producedTypes>
+    <name>Производительность</name>
+    <synonym>
+      <key>ru</key>
+      <value>Производительность</value>
+    </synonym>
+    <comment></comment>
+    <standardAttributes>
+      <dataHistory>Use</dataHistory>
+      <name>LineNumber</name>
+      <comment></comment>
+      <fillValue xsi:type="core:UndefinedValue"/>
+      <fullTextSearch>Use</fullTextSearch>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+    </standardAttributes>
+    <attributes uuid="97657942-0a7b-4363-8f2a-8395a4547118">
+      <name>КлючеваяОперация</name>
+      <synonym>
+        <key>ru</key>
+        <value>Ключевая операция</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>EnumRef.КлючевыеОперации</types>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillChecking>ShowError</fillChecking>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="a84711da-d8a0-498c-9295-7fe72fa54721">
+      <name>ЦелевоеВремя</name>
+      <synonym>
+        <key>ru</key>
+        <value>Целевое время</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>15</precision>
+          <scale>2</scale>
+          <nonNegative>true</nonNegative>
+        </numberQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+  </tabularSections>
+  <forms uuid="8bdcc45c-ba99-4711-a1e7-000df263666a">
+    <name>Форма</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма</value>
+    </synonym>
+    <comment></comment>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="d7203787-c939-4424-8cfb-1bce54b414a8">
+    <name>НастройкаПодсистемы</name>
+    <synonym>
+      <key>ru</key>
+      <value>Настройка подсистемы</value>
+    </synonym>
+    <comment></comment>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+</mdclass:DataProcessor>

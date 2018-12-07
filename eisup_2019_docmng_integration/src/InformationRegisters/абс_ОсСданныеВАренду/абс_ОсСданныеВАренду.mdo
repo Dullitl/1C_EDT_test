@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="722ed88f-c1d6-4c31-8b98-276f54482f4b">
+  <producedTypes>
+    <selectionType typeId="4665a8bc-88a2-4639-9176-92833da0d4ae" valueTypeId="6c0e9427-40de-43f6-af6d-c8f354fc2721"/>
+    <listType typeId="ec866ce1-9b6d-40b2-9ef5-54c86fbb8931" valueTypeId="8d0bd0ff-ba09-45f1-95ea-b329b3217336"/>
+    <managerType typeId="ed34e0dc-6952-440c-9a7e-d27d6992ebdc" valueTypeId="69d55290-ddaa-4dea-84a3-50459fec9548"/>
+    <recordSetType typeId="bf941f56-0bf9-461d-9283-5376e010d33b" valueTypeId="be1e86ec-feeb-4697-b195-3f70b4f515e8"/>
+    <recordKeyType typeId="550d9afa-6dfe-491f-b683-7cd56b2c56ab" valueTypeId="19d16695-5423-47e7-9e8b-24a37179c254"/>
+    <recordType typeId="0e5861cc-9a46-477d-b639-0d785ffd1d7a" valueTypeId="c94e7065-1457-4ad5-806c-72017b19b2e3"/>
+    <recordManagerType typeId="a3f4b821-bb8f-40ba-afec-c72d88a16d0b" valueTypeId="6e312211-6edc-427b-b712-e5a5a30bf9a9"/>
+  </producedTypes>
+  <name>абс_ОсСданныеВАренду</name>
+  <synonym>
+    <key>ru</key>
+    <value>ОС сданные в аренду</value>
+  </synonym>
+  <comment></comment>
+  <editType>InDialog</editType>
+  <informationRegisterPeriodicity>Day</informationRegisterPeriodicity>
+  <writeMode>RecorderSubordinate</writeMode>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <resources uuid="94cc8058-1075-4cca-a5ca-7a933f6c86cb">
+    <name>ДатаСдачиВАренду</name>
+    <synonym>
+      <key>ru</key>
+      <value>Дата сдачи в аренду</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Date</types>
+      <dateQualifiers>
+        <dateFractions>Date</dateFractions>
+      </dateQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="3d44a768-6da3-4d6c-aa57-de2a9448197c">
+    <name>ОжидаемаяДатаВозврата</name>
+    <synonym>
+      <key>ru</key>
+      <value>Ожидаемая дата возврата</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Date</types>
+      <dateQualifiers>
+        <dateFractions>Date</dateFractions>
+      </dateQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="47568196-3832-4bdb-89d3-bd94693d2e8d">
+    <name>НомерДоговора</name>
+    <synonym>
+      <key>ru</key>
+      <value>Номер договора</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>50</length>
+      </stringQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:StringValue">
+      <value></value>
+    </fillValue>
+  </resources>
+  <resources uuid="f94f17b6-684c-44ee-a695-47077b55da25">
+    <name>СобытиеОС</name>
+    <synonym>
+      <key>ru</key>
+      <value>Событие ОС</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.СобытияОС</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <dimensions uuid="f9f67b12-71cd-4cce-9b8c-95a58625951d">
+    <name>Организация</name>
+    <synonym>
+      <key>ru</key>
+      <value>Организация</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.Организации</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="2311be1e-07bd-4194-996e-8464086b4782">
+    <name>ОС</name>
+    <synonym>
+      <key>ru</key>
+      <value>ОС</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.ОсновныеСредства</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="55b1e805-d06c-4275-9833-c509c7d8c411">
+    <name>Арендатор</name>
+    <synonym>
+      <key>ru</key>
+      <value>Арендатор</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.Контрагенты</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+</mdclass:InformationRegister>

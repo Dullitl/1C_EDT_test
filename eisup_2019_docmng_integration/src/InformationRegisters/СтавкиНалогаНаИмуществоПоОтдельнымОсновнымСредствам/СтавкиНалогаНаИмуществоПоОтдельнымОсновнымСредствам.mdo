@@ -1,0 +1,445 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="b582f785-954b-480f-bc24-0e894c224a11">
+  <producedTypes>
+    <selectionType typeId="9d3f123f-7742-4d74-8b81-7055a1a04a5b" valueTypeId="42914407-038e-41ab-a5e6-3fd8acfda0a7"/>
+    <listType typeId="c7b2cf7d-0b20-49dc-ab94-394f7135f1f1" valueTypeId="880bd16d-8986-436d-85db-de6a289efd82"/>
+    <managerType typeId="650e7950-3784-493e-bab2-28dbf06cbda4" valueTypeId="e519d2de-2b8f-4efa-b893-ec2b6e72ebe5"/>
+    <recordSetType typeId="ea7cf322-2479-4795-a882-29671fa963a6" valueTypeId="8ab0e0fa-57ee-4864-ab4c-a31a908c4b39"/>
+    <recordKeyType typeId="2d27797e-43df-4b55-9bfc-ac19cea5fd9d" valueTypeId="784c55b4-610e-43cc-9ad0-36ee4e096c5c"/>
+    <recordType typeId="aa63a823-e32e-460f-81fc-9e707040a630" valueTypeId="e5144ba3-10b1-47d7-bb1b-f34ab8f05f2a"/>
+    <recordManagerType typeId="967f911d-7ad8-4499-b361-42f95013cb9d" valueTypeId="8f15fe9e-3b85-4108-99a1-96a9acf363e1"/>
+  </producedTypes>
+  <name>СтавкиНалогаНаИмуществоПоОтдельнымОсновнымСредствам</name>
+  <synonym>
+    <key>ru</key>
+    <value>Ставки налога на имущество по отдельным основным средствам</value>
+  </synonym>
+  <comment></comment>
+  <editType>InDialog</editType>
+  <defaultRecordForm>InformationRegister.СтавкиНалогаНаИмуществоПоОтдельнымОсновнымСредствам.Form.ФормаЗаписи</defaultRecordForm>
+  <defaultListForm>InformationRegister.СтавкиНалогаНаИмуществоПоОтдельнымОсновнымСредствам.Form.ФормаСписка</defaultListForm>
+  <informationRegisterPeriodicity>Day</informationRegisterPeriodicity>
+  <help>
+    <pages>
+      <lang>ru</lang>
+    </pages>
+  </help>
+  <resources uuid="0e0a59cf-16f7-4759-9699-b1f44c557874">
+    <name>ПостановкаНаУчетВНалоговомОргане</name>
+    <synonym>
+      <key>ru</key>
+      <value>Постановка на учет в налоговом органе</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>EnumRef.ПостановкаНаУчетВНалоговомОргане</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="f334a951-846a-48b2-8b46-885d224be3c6">
+    <name>НалоговыйОрган</name>
+    <synonym>
+      <key>ru</key>
+      <value>Налоговый орган</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.РегистрацияВИФНС</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+  </resources>
+  <resources uuid="bd4f6e7e-4739-4b58-aaf1-6910796ee055">
+    <name>ПорядокНалогообложения</name>
+    <synonym>
+      <key>ru</key>
+      <value>Порядок налогообложения</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>EnumRef.ПорядокНалогообложенияИмущества</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="21267db2-680b-43d1-896c-34178516293a">
+    <name>НалоговаяСтавка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Налоговая ставка</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>3</precision>
+        <scale>2</scale>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="fb7712aa-183d-4112-848c-abd78be8d254">
+    <name>КодНалоговойЛьготыОсвобождениеОтНалогообложения</name>
+    <synonym>
+      <key>ru</key>
+      <value>Код налоговой льготы (освобождение от налогообложения) </value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>7</length>
+      </stringQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="2c32d603-2e97-4244-9b19-8481860ad2ca">
+    <name>СниженнаяНалоговаяСтавка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сниженная налоговая ставка</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>3</precision>
+        <scale>2</scale>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="bc3e986b-c8f5-4c68-856c-4fda950d0568">
+    <name>УдалитьВходитВСоставЕСГС</name>
+    <synonym>
+      <key>ru</key>
+      <value>(не используется)</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="d6334a99-dd3c-4e70-be7d-1519f0be0d1f">
+    <name>УдалитьРасположенВРазныхСубъектахФедерации</name>
+    <synonym>
+      <key>ru</key>
+      <value>(не используется)</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="77f3c72d-e009-42fb-b932-b25f8dc0f418">
+    <name>ДоляСтоимостиЧислитель</name>
+    <synonym>
+      <key>ru</key>
+      <value>Доля стоимости (числитель)</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>10</precision>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="0b5193ea-1a68-4705-9679-771600ca2b6b">
+    <name>ДоляСтоимостиЗнаменатель</name>
+    <synonym>
+      <key>ru</key>
+      <value>Доля стоимости (знаменатель)</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>10</precision>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="91e5ec2a-8301-4488-bb23-a8f9ce5fb53c">
+    <name>ВидИмущества</name>
+    <synonym>
+      <key>ru</key>
+      <value>Вид имущества</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>EnumRef.ВидыИмущества</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:ReferenceValue">
+      <value>Enum.ВидыИмущества.EnumValue.ОсобенностиОтсутствуют</value>
+    </fillValue>
+  </resources>
+  <resources uuid="dbf1cd0d-7b2c-4520-9d23-8bbc6c7f84d2">
+    <name>НалоговаяБаза</name>
+    <synonym>
+      <key>ru</key>
+      <value>Налоговая база</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>EnumRef.НалоговаяБазаПоНалогуНаИмущество</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:ReferenceValue">
+      <value>Enum.НалоговаяБазаПоНалогуНаИмущество.EnumValue.СреднегодоваяСтоимость</value>
+    </fillValue>
+  </resources>
+  <resources uuid="37fce229-8bec-4aa9-9f3c-9f8ea1222170">
+    <name>КадастроваяСтоимость</name>
+    <synonym>
+      <key>ru</key>
+      <value>Кадастровая стоимость</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>2</scale>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="32dedb5c-9bdf-4cd4-827a-9885ed373248">
+    <name>СуммаУменьшенияНалоговойБазы</name>
+    <synonym>
+      <key>ru</key>
+      <value>на установленную местным нормативным актом сумму:</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>2</scale>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <attributes uuid="305a38ab-d4ff-4e1f-814c-b08eaa08419b">
+    <name>Комментарий</name>
+    <synonym>
+      <key>ru</key>
+      <value>Комментарий</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>String</types>
+      <stringQualifiers/>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <dimensions uuid="3228b770-592a-4e20-9b4f-f0dcb9b23ec8">
+    <name>Организация</name>
+    <synonym>
+      <key>ru</key>
+      <value>Организация</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.Организации</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="4f1aadb7-3840-4640-96b2-52a940ca3a9f">
+    <name>ОсновноеСредство</name>
+    <synonym>
+      <key>ru</key>
+      <value>Основное средство</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.ОсновныеСредства</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="82dc9c79-2328-4659-b323-6de27d7b4e14">
+    <name>КодПоОКАТО</name>
+    <synonym>
+      <key>ru</key>
+      <value>Код по ОКАТО</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>11</length>
+      </stringQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="2bca291d-804c-4a0d-b2da-cf498ae67dc0">
+    <name>КодПоОКТМО</name>
+    <synonym>
+      <key>ru</key>
+      <value>Код по ОКТМО</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>11</length>
+      </stringQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <forms uuid="a329ffbf-e8f8-479b-ad0c-d71145887879">
+    <name>ФормаЗаписи</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма записи</value>
+    </synonym>
+    <comment></comment>
+    <formType>Ordinary</formType>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="6afb4cdb-818c-4a28-8f96-7c23faf1c58d">
+    <name>ФормаСписка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма списка</value>
+    </synonym>
+    <comment></comment>
+    <formType>Ordinary</formType>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="8d243525-3757-4210-a042-cc25d307b061">
+    <name>ФормаУстановкиОсобенностей</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма установки особенностей</value>
+    </synonym>
+    <comment></comment>
+    <formType>Ordinary</formType>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <templates uuid="b2476071-ac8b-461e-99c4-bdb44dbfd081">
+    <name>ЛьготыПоНалогуНаИмущество</name>
+    <synonym>
+      <key>ru</key>
+      <value>Льготы по налогу на имущество</value>
+    </synonym>
+    <comment></comment>
+  </templates>
+</mdclass:InformationRegister>

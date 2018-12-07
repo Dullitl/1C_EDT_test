@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:WebService xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="9f5272e1-31c7-41e2-9c7a-b5a2874af605">
+  <name>Dogovory</name>
+  <synonym>
+    <key>ru</key>
+    <value>Dogovory</value>
+  </synonym>
+  <comment>Работа с договорами посредством вебсервисов</comment>
+  <namespace>http://www.sample-package.org</namespace>
+  <xdtoPackages xsi:type="core:ReferenceValue">
+    <value>XDTOPackage.Dogovory</value>
+  </xdtoPackages>
+  <descriptorFileName>ws1.1cws</descriptorFileName>
+  <sessionMaxAge>20</sessionMaxAge>
+  <operations uuid="c0a757bd-c45e-4b44-a2f7-e1dfc4039db4">
+    <name>DogovoryAdd</name>
+    <synonym>
+      <key>ru</key>
+      <value>Dogovory add</value>
+    </synonym>
+    <comment>Регистрация договора со статусом подготовка</comment>
+    <xdtoReturningValueType>
+      <name>Answer</name>
+      <nsUri>http://www.sample-package.org</nsUri>
+    </xdtoReturningValueType>
+    <procedureName>DogovoryAdd</procedureName>
+    <parameters uuid="31929d32-f4b2-4641-b08e-83d620c3c47d">
+      <name>PackXDTO</name>
+      <synonym>
+        <key>ru</key>
+        <value>Pack XDTO</value>
+      </synonym>
+      <comment></comment>
+      <xdtoValueType>
+        <name>DogovoryAdd</name>
+        <nsUri>http://www.sample-package.org</nsUri>
+      </xdtoValueType>
+    </parameters>
+  </operations>
+  <operations uuid="cb7d7eae-94bd-4ba8-a12d-4a05933380d9">
+    <name>ConnectionTest</name>
+    <synonym>
+      <key>ru</key>
+      <value>Connection test</value>
+    </synonym>
+    <comment>Тест подключения</comment>
+    <xdtoReturningValueType>
+      <name>Answer</name>
+      <nsUri>http://www.sample-package.org</nsUri>
+    </xdtoReturningValueType>
+    <procedureName>ТестСоединения</procedureName>
+    <dataLockControlMode>Managed</dataLockControlMode>
+  </operations>
+</mdclass:WebService>

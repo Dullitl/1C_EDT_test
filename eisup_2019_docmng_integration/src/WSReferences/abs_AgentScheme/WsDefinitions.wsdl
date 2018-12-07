@@ -1,0 +1,164 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/"
+		xmlns:soap12bind="http://schemas.xmlsoap.org/wsdl/soap12/"
+		xmlns:soapbind="http://schemas.xmlsoap.org/wsdl/soap/"
+		xmlns:tns="http://www.abs-soft.ru/AgentScheme"
+		xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"
+		xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"
+		xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+		xmlns:xsd1="http://www.abs-soft.ru/AgentScheme"
+		name="abs_AgentScheme"
+		targetNamespace="http://www.abs-soft.ru/AgentScheme">
+	<types>
+		<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+				xmlns:xs1="http://www.abs-soft.ru/AgentScheme"
+				targetNamespace="http://www.abs-soft.ru/AgentScheme"
+				attributeFormDefault="unqualified"
+				elementFormDefault="qualified">
+			<xs:complexType name="Rezult">
+				<xs:sequence>
+					<xs:element name="Rez"
+							type="xs:boolean"
+							nillable="true"/>
+					<xs:element name="Error"
+							type="xs:string"
+							nillable="true"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:element name="SozdatAktAgenta">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="Number"
+								type="xs:string"/>
+						<xs:element name="Date"
+								type="xs:date"/>
+						<xs:element name="Data"
+								type="xs:string"/>
+						<xs:element name="UIN"
+								type="xs:string"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="SozdatAktAgentaResponse">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="return"
+								type="xsd1:Rezult"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="SaveDogovor">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="Code"
+								type="xs:string"/>
+						<xs:element name="Data"
+								type="xs:string"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="SaveDogovorResponse">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="return"
+								type="xsd1:Rezult"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:schema>
+	</types>
+	<message name="SozdatAktAgentaRequestMessage">
+		<part name="parameters"
+				element="tns:SozdatAktAgenta"/>
+	</message>
+	<message name="SozdatAktAgentaResponseMessage">
+		<part name="parameters"
+				element="tns:SozdatAktAgentaResponse"/>
+	</message>
+	<message name="SaveDogovorRequestMessage">
+		<part name="parameters"
+				element="tns:SaveDogovor"/>
+	</message>
+	<message name="SaveDogovorResponseMessage">
+		<part name="parameters"
+				element="tns:SaveDogovorResponse"/>
+	</message>
+	<portType name="abs_AgentSchemePortType">
+		<operation name="SozdatAktAgenta">
+			<input name="SozdatAktAgentaRequest"
+					message="tns:SozdatAktAgentaRequestMessage"/>
+			<output name="SozdatAktAgentaResponse"
+					message="tns:SozdatAktAgentaResponseMessage"/>
+		</operation>
+		<operation name="SaveDogovor">
+			<input name="SaveDogovorRequest"
+					message="tns:SaveDogovorRequestMessage"/>
+			<output name="SaveDogovorResponse"
+					message="tns:SaveDogovorResponseMessage"/>
+		</operation>
+	</portType>
+	<binding name="abs_AgentSchemeSoapBinding"
+			type="tns:abs_AgentSchemePortType">
+		<soapbind:binding style="document"
+				transport="http://schemas.xmlsoap.org/soap/http"/>
+		<operation name="SozdatAktAgenta">
+			<soapbind:operation style="document"
+					soapAction="http://www.abs-soft.ru/AgentScheme#abs_AgentScheme:SozdatAktAgenta"/>
+			<input>
+				<soapbind:body use="literal"/>
+			</input>
+			<output>
+				<soapbind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="SaveDogovor">
+			<soapbind:operation style="document"
+					soapAction="http://www.abs-soft.ru/AgentScheme#abs_AgentScheme:SaveDogovor"/>
+			<input>
+				<soapbind:body use="literal"/>
+			</input>
+			<output>
+				<soapbind:body use="literal"/>
+			</output>
+		</operation>
+	</binding>
+	<binding name="abs_AgentSchemeSoap12Binding"
+			type="tns:abs_AgentSchemePortType">
+		<soap12bind:binding style="document"
+				transport="http://schemas.xmlsoap.org/soap/http"/>
+		<operation name="SozdatAktAgenta">
+			<soap12bind:operation style="document"
+					soapAction="http://www.abs-soft.ru/AgentScheme#abs_AgentScheme:SozdatAktAgenta"/>
+			<input>
+				<soap12bind:body use="literal"/>
+			</input>
+			<output>
+				<soap12bind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="SaveDogovor">
+			<soap12bind:operation style="document"
+					soapAction="http://www.abs-soft.ru/AgentScheme#abs_AgentScheme:SaveDogovor"/>
+			<input>
+				<soap12bind:body use="literal"/>
+			</input>
+			<output>
+				<soap12bind:body use="literal"/>
+			</output>
+		</operation>
+	</binding>
+	<service name="abs_AgentScheme">
+		<port name="abs_AgentSchemeSoap"
+				binding="tns:abs_AgentSchemeSoapBinding">
+			<documentation> 
+				<wsi:Claim xmlns:wsi="http://ws-i.org/schemas/conformanceClaim/"
+						conformsTo="http://ws-i.org/profiles/basic/1.1"/>
+			</documentation>
+			<soapbind:address location="https://isup-ttk.transtk.ru/persondata/ws/AgentScheme.1cws"/>
+		</port>
+		<port name="abs_AgentSchemeSoap12"
+				binding="tns:abs_AgentSchemeSoap12Binding">
+			<soap12bind:address location="https://isup-ttk.transtk.ru/persondata/ws/AgentScheme.1cws"/>
+		</port>
+	</service>
+</definitions>

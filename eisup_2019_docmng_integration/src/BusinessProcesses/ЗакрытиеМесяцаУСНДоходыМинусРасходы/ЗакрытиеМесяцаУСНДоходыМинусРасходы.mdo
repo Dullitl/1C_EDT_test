@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:BusinessProcess xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="09a0af78-cf7b-4acd-ae78-6138674b088b">
+  <producedTypes>
+    <objectType typeId="d308d95e-0e42-4d25-8cc5-c32c88b9007d" valueTypeId="8ec2d2b1-d974-4cf1-bd2f-db6228c17c32"/>
+    <refType typeId="973311c4-049a-4b1c-8194-4809511f2a82" valueTypeId="ecb4a90a-0028-4aea-b8f1-8a686b395d08"/>
+    <selectionType typeId="038fae86-378f-4f0d-b7d8-8ecdf31615e8" valueTypeId="48542a0c-46f8-459d-9527-cd2b47bb4575"/>
+    <listType typeId="8567188c-5876-41d6-850f-e0659249b8f3" valueTypeId="8e8b25b4-9073-47f9-9381-f2ebb3feb3ed"/>
+    <managerType typeId="4af704f0-6a7f-496e-8d8c-ff6c76e05fee" valueTypeId="d8d8452c-7377-4280-b915-a8191f973422"/>
+    <routePointRef typeId="f653eda7-98f8-40f2-87a2-2b2e3d23a621" valueTypeId="abd4ca79-bfb5-4fcd-8a1b-25042dc153b7"/>
+  </producedTypes>
+  <name>ЗакрытиеМесяцаУСНДоходыМинусРасходы</name>
+  <synonym>
+    <key>ru</key>
+    <value>Закрытие месяца (УСН доходы - расходы)</value>
+  </synonym>
+  <comment></comment>
+  <inputByString>BusinessProcess.ЗакрытиеМесяцаУСНДоходыМинусРасходы.StandardAttribute.Number</inputByString>
+  <fullTextSearchOnInputByString>DontUse</fullTextSearchOnInputByString>
+  <createOnInput>DontUse</createOnInput>
+  <editType>InDialog</editType>
+  <defaultObjectForm>BusinessProcess.ЗакрытиеМесяцаУСНДоходыМинусРасходы.Form.ФормаБизнесПроцесса</defaultObjectForm>
+  <defaultListForm>BusinessProcess.ЗакрытиеМесяцаУСНДоходыМинусРасходы.Form.ФормаСписка</defaultListForm>
+  <defaultChoiceForm>BusinessProcess.ЗакрытиеМесяцаУСНДоходыМинусРасходы.Form.ФормаВыбора</defaultChoiceForm>
+  <numberType>String</numberType>
+  <numberLength>9</numberLength>
+  <checkUnique>true</checkUnique>
+  <autonumbering>true</autonumbering>
+  <task>Task.РегламентныеОперацииЗакрытияМесяца</task>
+  <attributes uuid="18016436-a379-451a-b903-4a433337c4a5">
+    <name>Организация</name>
+    <synonym>
+      <key>ru</key>
+      <value>Организация</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.Организации</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="d00a4482-b7ec-415d-9d39-32b9f7bebb97">
+    <name>ОсновнойБизнесПроцесс</name>
+    <synonym>
+      <key>ru</key>
+      <value>Основной бизнес процесс</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>BusinessProcessRef.ЗакрытиеМесяца</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <forms uuid="412d30ee-0d57-4f3b-96b4-d795411bb246">
+    <name>ФормаСписка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма списка</value>
+    </synonym>
+    <comment></comment>
+    <formType>Ordinary</formType>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="0e6aead4-6bb4-4043-aad8-11f64fec3da9">
+    <name>ФормаВыбора</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма выбора</value>
+    </synonym>
+    <comment></comment>
+    <formType>Ordinary</formType>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="2094704f-d377-4701-9137-b821a85ca69a">
+    <name>ФормаБизнесПроцесса</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма бизнес процесса</value>
+    </synonym>
+    <comment></comment>
+    <formType>Ordinary</formType>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+</mdclass:BusinessProcess>

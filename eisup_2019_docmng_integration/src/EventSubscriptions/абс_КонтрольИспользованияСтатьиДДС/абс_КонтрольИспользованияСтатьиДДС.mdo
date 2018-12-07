@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:EventSubscription xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="cd35773d-e3df-44e2-a115-a52c7f28fba4">
+  <name>абс_КонтрольИспользованияСтатьиДДС</name>
+  <synonym>
+    <key>ru</key>
+    <value>Контроль использования статьи ДДС</value>
+  </synonym>
+  <comment></comment>
+  <source>
+    <types>DocumentObject.ЗаявкаНаРасходованиеСредств</types>
+    <types>DocumentObject.абс_СчетНаОплату</types>
+  </source>
+  <event>BeforeWrite</event>
+  <handler>CommonModule.абс_СлужебныеФункции.абс_КонтрольИспользованияСтатьиДДСПередЗаписью</handler>
+</mdclass:EventSubscription>

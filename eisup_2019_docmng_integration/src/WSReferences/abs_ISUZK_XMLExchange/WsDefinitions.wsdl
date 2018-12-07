@@ -1,0 +1,120 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/"
+		xmlns:soap12bind="http://schemas.xmlsoap.org/wsdl/soap12/"
+		xmlns:soapbind="http://schemas.xmlsoap.org/wsdl/soap/"
+		xmlns:tns="abs_XMLExchange"
+		xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"
+		xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"
+		xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+		xmlns:xsd1="abs_XMLData"
+		xmlns:xsd2="abs_XMLExchange"
+		name="abs_XMLExchange"
+		targetNamespace="abs_XMLExchange">
+	<types>
+		<xs:schema xmlns:tns="abs_XMLData"
+				xmlns:xs="http://www.w3.org/2001/XMLSchema"
+				targetNamespace="abs_XMLData"
+				attributeFormDefault="unqualified"
+				elementFormDefault="qualified">
+			<xs:complexType name="Answer">
+				<xs:sequence>
+					<xs:element name="AnswerXMLString"
+							type="xs:string"/>
+					<xs:element name="Result"
+							type="xs:boolean"/>
+					<xs:element name="Error"
+							type="xs:string"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="XMLData">
+				<xs:sequence>
+					<xs:element name="XMLString"
+							type="xs:string"/>
+				</xs:sequence>
+			</xs:complexType>
+		</xs:schema>
+		<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+				xmlns:xs1="abs_XMLData"
+				xmlns:xs2="abs_XMLExchange"
+				targetNamespace="abs_XMLExchange"
+				elementFormDefault="qualified">
+			<xs:import namespace="abs_XMLData"/>
+			<xs:element name="PutData">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="XMLData"
+								type="xsd1:XMLData"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="PutDataResponse">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="return"
+								type="xsd1:Answer"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:schema>
+	</types>
+	<message name="PutDataRequestMessage">
+		<part name="parameters"
+				element="tns:PutData"/>
+	</message>
+	<message name="PutDataResponseMessage">
+		<part name="parameters"
+				element="tns:PutDataResponse"/>
+	</message>
+	<portType name="abs_XMLExchangePortType">
+		<operation name="PutData">
+			<input name="PutDataRequest"
+					message="tns:PutDataRequestMessage"/>
+			<output name="PutDataResponse"
+					message="tns:PutDataResponseMessage"/>
+		</operation>
+	</portType>
+	<binding name="abs_XMLExchangeSoapBinding"
+			type="tns:abs_XMLExchangePortType">
+		<soapbind:binding style="document"
+				transport="http://schemas.xmlsoap.org/soap/http"/>
+		<operation name="PutData">
+			<soapbind:operation style="document"
+					soapAction="abs_XMLExchange#abs_XMLExchange:PutData"/>
+			<input>
+				<soapbind:body use="literal"/>
+			</input>
+			<output>
+				<soapbind:body use="literal"/>
+			</output>
+		</operation>
+	</binding>
+	<binding name="abs_XMLExchangeSoap12Binding"
+			type="tns:abs_XMLExchangePortType">
+		<soap12bind:binding style="document"
+				transport="http://schemas.xmlsoap.org/soap/http"/>
+		<operation name="PutData">
+			<soap12bind:operation style="document"
+					soapAction="abs_XMLExchange#abs_XMLExchange:PutData"/>
+			<input>
+				<soap12bind:body use="literal"/>
+			</input>
+			<output>
+				<soap12bind:body use="literal"/>
+			</output>
+		</operation>
+	</binding>
+	<service name="abs_XMLExchange">
+		<port name="abs_XMLExchangeSoap"
+				binding="tns:abs_XMLExchangeSoapBinding">
+			<documentation> 
+				<wsi:Claim xmlns:wsi="http://ws-i.org/schemas/conformanceClaim/"
+						conformsTo="http://ws-i.org/profiles/basic/1.1"/>
+			</documentation>
+			<soapbind:address location="https://isup-ttk.transtk.ru/ISUZK_XMLExchange/ws/XMLExchange.1cws"/>
+		</port>
+		<port name="abs_XMLExchangeSoap12"
+				binding="tns:abs_XMLExchangeSoap12Binding">
+			<soap12bind:address location="https://isup-ttk.transtk.ru/ISUZK_XMLExchange/ws/XMLExchange.1cws"/>
+		</port>
+	</service>
+</definitions>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:EventSubscription xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="ca7ce7c8-cddb-42b3-a8c0-7da0da2b9bca">
+  <name>ПриПроведенииПроверкаПериодаРегистрации</name>
+  <synonym>
+    <key>ru</key>
+    <value>При проведении проверка периода регистрации</value>
+  </synonym>
+  <comment>Проверка соответствия периода регистрации и даты документа</comment>
+  <source>
+    <types>DocumentObject.РасчетыПоНалогуНаПрибыль</types>
+    <types>DocumentObject.РасходыНаДобровольноеСтрахование</types>
+    <types>DocumentObject.АмортизацияНМАМеждународный</types>
+    <types>DocumentObject.ПогашениеСтоимости</types>
+    <types>DocumentObject.АмортизацияОС</types>
+    <types>DocumentObject.КорректировкаСтоимостиСписанияТоваров</types>
+    <types>DocumentObject.АмортизацияОСМеждународный</types>
+    <types>DocumentObject.ОпределениеФинансовыхРезультатов</types>
+    <types>DocumentObject.РегламентныеОперацииНалоговогоУчетаПоНалогуНаПрибыль</types>
+    <types>DocumentObject.РасчетСебестоимостиВыпуска</types>
+    <types>DocumentObject.СписаниеРасходовБудущихПериодов</types>
+    <types>DocumentObject.ЗакрытиеГода</types>
+    <types>DocumentObject.РасчетНДСпоПродукции</types>
+    <types>DocumentObject.АмортизацияНМА</types>
+  </source>
+  <event>Posting</event>
+  <handler>CommonModule.ЗаполнениеДокументов.ПриПроведенииПроверитьЗаполнениеПериодаРегистрации</handler>
+</mdclass:EventSubscription>

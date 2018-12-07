@@ -1,0 +1,406 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/"
+		xmlns:soap12bind="http://schemas.xmlsoap.org/wsdl/soap12/"
+		xmlns:soapbind="http://schemas.xmlsoap.org/wsdl/soap/"
+		xmlns:tns="http://www.abs-soft_Contractors.ru"
+		xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"
+		xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"
+		xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+		xmlns:xsd1="http://www.abs-soft_Contractors.ru"
+		name="abs_Contractors"
+		targetNamespace="http://www.abs-soft_Contractors.ru">
+	<types>
+		<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+				xmlns:xs1="http://www.abs-soft_Contractors.ru"
+				targetNamespace="http://www.abs-soft_Contractors.ru"
+				attributeFormDefault="unqualified"
+				elementFormDefault="qualified">
+			<xs:complexType name="Answer">
+				<xs:sequence>
+					<xs:element name="PersonDataIndividual"
+							type="xsd1:PersonDataIndividual"
+							nillable="true"
+							minOccurs="0"/>
+					<xs:element name="Error"
+							type="xs:string"
+							nillable="true"
+							minOccurs="0"/>
+					<xs:element name="Result"
+							type="xs:boolean"
+							nillable="true"
+							minOccurs="0"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="Contact">
+				<xs:sequence>
+					<xs:element name="ContactType"
+							type="xs:string"
+							nillable="true"
+							minOccurs="0"/>
+					<xs:element name="ContactView"
+							type="xs:string"
+							nillable="true"
+							minOccurs="0"/>
+					<xs:element name="ContactPresent"
+							type="xs:string"
+							nillable="true"
+							minOccurs="0"/>
+					<xs:element name="PostCode"
+							type="xs:string"
+							nillable="true"
+							minOccurs="0"/>
+					<xs:element name="Region"
+							type="xs:string"
+							nillable="true"
+							minOccurs="0"/>
+					<xs:element name="Area"
+							type="xs:string"
+							nillable="true"
+							minOccurs="0"/>
+					<xs:element name="City"
+							type="xs:string"
+							nillable="true"
+							minOccurs="0"/>
+					<xs:element name="Village"
+							type="xs:string"
+							nillable="true"
+							minOccurs="0"/>
+					<xs:element name="Street"
+							type="xs:string"
+							nillable="true"
+							minOccurs="0"/>
+					<xs:element name="House"
+							type="xs:string"
+							nillable="true"
+							minOccurs="0"/>
+					<xs:element name="Building"
+							type="xs:string"
+							nillable="true"
+							minOccurs="0"/>
+					<xs:element name="Apartment"
+							type="xs:string"
+							nillable="true"
+							minOccurs="0"/>
+					<xs:element name="HouseType"
+							type="xs:string"
+							nillable="true"
+							minOccurs="0"/>
+					<xs:element name="BuildingType"
+							type="xs:string"
+							nillable="true"
+							minOccurs="0"/>
+					<xs:element name="ApartmentType"
+							type="xs:string"
+							nillable="true"
+							minOccurs="0"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="ContractorType">
+				<xs:sequence>
+					<xs:element name="Code"
+							type="xs:string"
+							nillable="true"
+							minOccurs="0"/>
+					<xs:element name="Type"
+							type="xs:string"
+							nillable="true"
+							minOccurs="0"/>
+					<xs:element name="PhysicalLegal"
+							type="xs:string"
+							nillable="true"
+							minOccurs="0"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="Document">
+				<xs:sequence>
+					<xs:element name="Type"
+							type="xs:string"
+							nillable="true"
+							minOccurs="0"/>
+					<xs:element name="Series"
+							type="xs:string"
+							nillable="true"
+							minOccurs="0"/>
+					<xs:element name="Number"
+							type="xs:string"
+							nillable="true"
+							minOccurs="0"/>
+					<xs:element name="DateIssue"
+							type="xs:date"
+							nillable="true"
+							minOccurs="0"/>
+					<xs:element name="Department"
+							type="xs:string"
+							nillable="true"
+							minOccurs="0"/>
+					<xs:element name="DepartmentCode"
+							type="xs:string"
+							nillable="true"
+							minOccurs="0"/>
+					<xs:element name="DateRegistration"
+							type="xs:date"
+							nillable="true"
+							minOccurs="0"/>
+					<xs:element name="Date"
+							type="xs:date"
+							nillable="true"
+							minOccurs="0"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="PersonDataIndividual">
+				<xs:sequence>
+					<xs:element name="IDContractor"
+							type="xs:string"
+							nillable="true"
+							minOccurs="0"/>
+					<xs:element name="IDPerson"
+							type="xs:string"
+							nillable="true"
+							minOccurs="0"/>
+					<xs:element name="ParentID"
+							type="xs:string"
+							nillable="true"
+							minOccurs="0"/>
+					<xs:element name="Name"
+							type="xs:string"
+							nillable="true"
+							minOccurs="0"/>
+					<xs:element name="FullName"
+							type="xs:string"
+							nillable="true"
+							minOccurs="0"/>
+					<xs:element name="FirstName"
+							type="xs:string"
+							nillable="true"
+							minOccurs="0"/>
+					<xs:element name="LastName"
+							type="xs:string"
+							nillable="true"
+							minOccurs="0"/>
+					<xs:element name="MiddleName"
+							type="xs:string"
+							nillable="true"
+							minOccurs="0"/>
+					<xs:element name="INN"
+							type="xs:string"
+							nillable="true"
+							minOccurs="0"/>
+					<xs:element name="KPP"
+							type="xs:string"
+							nillable="true"
+							minOccurs="0"/>
+					<xs:element name="OKPO"
+							type="xs:string"
+							nillable="true"
+							minOccurs="0"/>
+					<xs:element name="OKATO"
+							type="xs:string"
+							nillable="true"
+							minOccurs="0"/>
+					<xs:element name="ContractorType"
+							type="xsd1:ContractorType"
+							nillable="true"
+							minOccurs="0"/>
+					<xs:element name="BirthDay"
+							type="xs:date"
+							nillable="true"
+							minOccurs="0"/>
+					<xs:element name="BirthPlace"
+							type="xs:string"
+							nillable="true"
+							minOccurs="0"/>
+					<xs:element name="PFR"
+							type="xs:string"
+							nillable="true"
+							minOccurs="0"/>
+					<xs:element name="Gender"
+							type="xs:string"
+							nillable="true"
+							minOccurs="0"/>
+					<xs:element name="Document"
+							type="xsd1:Document"
+							nillable="true"
+							minOccurs="0"/>
+					<xs:element name="NonResident"
+							type="xs:boolean"
+							nillable="true"
+							minOccurs="0"/>
+					<xs:element name="Supplier"
+							type="xs:boolean"
+							nillable="true"
+							minOccurs="0"/>
+					<xs:element name="Buyer"
+							type="xs:boolean"
+							nillable="true"
+							minOccurs="0"/>
+					<xs:element name="StatusName"
+							type="xs:string"
+							nillable="true"
+							minOccurs="0"/>
+					<xs:element name="Statuses"
+							type="xsd1:Status"
+							nillable="true"
+							minOccurs="0"
+							maxOccurs="unbounded"/>
+					<xs:element name="Contacts"
+							type="xsd1:Contact"
+							nillable="true"
+							minOccurs="0"
+							maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="Status">
+				<xs:sequence>
+					<xs:element name="Data"
+							type="xs:dateTime"
+							nillable="true"
+							minOccurs="0"/>
+					<xs:element name="StatusName"
+							type="xs:string"
+							nillable="true"
+							minOccurs="0"/>
+					<xs:element name="User"
+							type="xs:string"
+							nillable="true"
+							minOccurs="0"/>
+					<xs:element name="Phone"
+							type="xs:string"
+							nillable="true"
+							minOccurs="0"/>
+					<xs:element name="Komment"
+							type="xs:string"
+							nillable="true"
+							minOccurs="0"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:element name="CreateUpdateContractors">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="Data"
+								type="xsd1:PersonDataIndividual"/>
+						<xs:element name="CreatePerson"
+								type="xs:boolean"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="CreateUpdateContractorsResponse">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="return"
+								type="xsd1:Answer"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="GetContractorsData">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ID"
+								type="xs:string"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="GetContractorsDataResponse">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="return"
+								type="xsd1:Answer"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:schema>
+	</types>
+	<message name="CreateUpdateContractorsRequestMessage">
+		<part name="parameters"
+				element="tns:CreateUpdateContractors"/>
+	</message>
+	<message name="CreateUpdateContractorsResponseMessage">
+		<part name="parameters"
+				element="tns:CreateUpdateContractorsResponse"/>
+	</message>
+	<message name="GetContractorsDataRequestMessage">
+		<part name="parameters"
+				element="tns:GetContractorsData"/>
+	</message>
+	<message name="GetContractorsDataResponseMessage">
+		<part name="parameters"
+				element="tns:GetContractorsDataResponse"/>
+	</message>
+	<portType name="abs_ContractorsPortType">
+		<operation name="CreateUpdateContractors">
+			<input name="CreateUpdateContractorsRequest"
+					message="tns:CreateUpdateContractorsRequestMessage"/>
+			<output name="CreateUpdateContractorsResponse"
+					message="tns:CreateUpdateContractorsResponseMessage"/>
+		</operation>
+		<operation name="GetContractorsData">
+			<input name="GetContractorsDataRequest"
+					message="tns:GetContractorsDataRequestMessage"/>
+			<output name="GetContractorsDataResponse"
+					message="tns:GetContractorsDataResponseMessage"/>
+		</operation>
+	</portType>
+	<binding name="abs_ContractorsSoapBinding"
+			type="tns:abs_ContractorsPortType">
+		<soapbind:binding style="document"
+				transport="http://schemas.xmlsoap.org/soap/http"/>
+		<operation name="CreateUpdateContractors">
+			<soapbind:operation style="document"
+					soapAction="http://www.abs-soft_Contractors.ru#abs_Contractors:CreateUpdateContractors"/>
+			<input>
+				<soapbind:body use="literal"/>
+			</input>
+			<output>
+				<soapbind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="GetContractorsData">
+			<soapbind:operation style="document"
+					soapAction="http://www.abs-soft_Contractors.ru#abs_Contractors:GetContractorsData"/>
+			<input>
+				<soapbind:body use="literal"/>
+			</input>
+			<output>
+				<soapbind:body use="literal"/>
+			</output>
+		</operation>
+	</binding>
+	<binding name="abs_ContractorsSoap12Binding"
+			type="tns:abs_ContractorsPortType">
+		<soap12bind:binding style="document"
+				transport="http://schemas.xmlsoap.org/soap/http"/>
+		<operation name="CreateUpdateContractors">
+			<soap12bind:operation style="document"
+					soapAction="http://www.abs-soft_Contractors.ru#abs_Contractors:CreateUpdateContractors"/>
+			<input>
+				<soap12bind:body use="literal"/>
+			</input>
+			<output>
+				<soap12bind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="GetContractorsData">
+			<soap12bind:operation style="document"
+					soapAction="http://www.abs-soft_Contractors.ru#abs_Contractors:GetContractorsData"/>
+			<input>
+				<soap12bind:body use="literal"/>
+			</input>
+			<output>
+				<soap12bind:body use="literal"/>
+			</output>
+		</operation>
+	</binding>
+	<service name="abs_Contractors">
+		<port name="abs_ContractorsSoap"
+				binding="tns:abs_ContractorsSoapBinding">
+			<documentation> 
+				<wsi:Claim xmlns:wsi="http://ws-i.org/schemas/conformanceClaim/"
+						conformsTo="http://ws-i.org/profiles/basic/1.1"/>
+			</documentation>
+			<soapbind:address location="https://isup-ttk.transtk.ru/ISUZK_Contractors/ws/Contractors.1cws"/>
+		</port>
+		<port name="abs_ContractorsSoap12"
+				binding="tns:abs_ContractorsSoap12Binding">
+			<soap12bind:address location="https://isup-ttk.transtk.ru/ISUZK_Contractors/ws/Contractors.1cws"/>
+		</port>
+	</service>
+</definitions>

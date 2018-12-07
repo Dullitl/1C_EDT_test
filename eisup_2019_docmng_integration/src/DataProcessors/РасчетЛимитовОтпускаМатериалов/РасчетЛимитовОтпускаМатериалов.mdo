@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:DataProcessor xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="ae411d2e-facb-478c-85db-4b50c053fd2d">
+  <producedTypes>
+    <objectType typeId="67b0aec8-8791-4384-aa5c-d215e2b7f77b" valueTypeId="f1f5ebc6-d5cb-4b8d-a077-bbe01cd371ef"/>
+    <managerType typeId="e0762e1d-6ed8-426e-ba8a-b828bd1b08cb" valueTypeId="eadb9ebb-a7b4-45fe-b5ff-f5c8929a5339"/>
+  </producedTypes>
+  <name>РасчетЛимитовОтпускаМатериалов</name>
+  <synonym>
+    <key>ru</key>
+    <value>Расчет лимитов отпуска материалов</value>
+  </synonym>
+  <comment></comment>
+  <defaultForm>DataProcessor.РасчетЛимитовОтпускаМатериалов.Form.ФормаОсновная</defaultForm>
+  <help>
+    <pages>
+      <lang>ru</lang>
+    </pages>
+  </help>
+  <attributes uuid="d99a9811-4189-45de-bdb5-ac450c032b17">
+    <name>ПостроительОтчета</name>
+    <synonym>
+      <key>ru</key>
+      <value>Построитель отчета</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>ReportBuilder</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="a69fa828-c4e5-420d-a8a2-6d02e3c300f9">
+    <name>СохраненныеНастройки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сохраненные настройки</value>
+    </synonym>
+    <comment></comment>
+    <type/>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="521691bb-c6bd-4d14-a04c-9cb61a9aab34">
+    <name>ИспользоватьСвойстваИКатегории</name>
+    <synonym>
+      <key>ru</key>
+      <value>Использовать свойства и категории</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="f7929a36-d490-4fa7-ab42-50e411c393ca">
+    <name>Подразделение</name>
+    <synonym>
+      <key>ru</key>
+      <value>Подразделение</value>
+    </synonym>
+    <comment>(Упр)</comment>
+    <type>
+      <types>CatalogRef.Подразделения</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="6248bc09-5c93-4e0c-a8bd-a9465296dd9a">
+    <name>Склад</name>
+    <synonym>
+      <key>ru</key>
+      <value>Склад</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.Склады</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="187a21b0-8a13-4ecf-97b6-1e0993cfa2c1">
+    <name>ДокументОбъект</name>
+    <synonym>
+      <key>ru</key>
+      <value>Документ объект</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>DocumentObject.ИзменениеЛимитовОтпускаМатериалов</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <tabularSections uuid="c0d9d31e-c157-45ab-83b1-3692c710b5b0">
+    <producedTypes>
+      <objectType typeId="cd87c5b9-a99d-410d-8c21-161befcae3b3" valueTypeId="b2fd12f6-9bb3-477f-bed8-159c50737f5f"/>
+      <rowType typeId="caff5763-24e7-4e87-af97-a43c97848ca1" valueTypeId="bca96198-e922-4276-9aeb-8466356a1bfe"/>
+    </producedTypes>
+    <name>Лимиты</name>
+    <synonym>
+      <key>ru</key>
+      <value>Лимиты</value>
+    </synonym>
+    <comment></comment>
+    <attributes uuid="2aa7bc0e-03fd-4d29-9e0a-2286fbb1c41b">
+      <name>Номенклатура</name>
+      <synonym>
+        <key>ru</key>
+        <value>Номенклатура</value>
+      </synonym>
+      <comment>(Общ)</comment>
+      <type>
+        <types>CatalogRef.Номенклатура</types>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="c244b2f1-5a52-490f-b339-72d4ed49fcdb">
+      <name>ХарактеристикаНоменклатуры</name>
+      <synonym>
+        <key>ru</key>
+        <value>Характеристика номенклатуры</value>
+      </synonym>
+      <comment>(Общ)</comment>
+      <type>
+        <types>CatalogRef.ХарактеристикиНоменклатуры</types>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="4f46dc16-6df0-4d85-bd07-7ab8d2dd7275">
+      <name>Периодичность</name>
+      <synonym>
+        <key>ru</key>
+        <value>Периодичность</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>EnumRef.Периодичность</types>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="7337ad86-d2ea-48c2-9e56-42080fffaea5">
+      <name>ЛимитОтпуска</name>
+      <synonym>
+        <key>ru</key>
+        <value>Лимит отпуска</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>15</precision>
+          <scale>3</scale>
+        </numberQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="3e9c6b81-0334-4a5a-a1e1-0346606b7ea0">
+      <name>ЕдиницаИзмерения</name>
+      <synonym>
+        <key>ru</key>
+        <value>Единица измерения</value>
+      </synonym>
+      <comment>(Общ)</comment>
+      <type>
+        <types>CatalogRef.ЕдиницыИзмерения</types>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="b8a14bc5-3fd1-4076-9348-341a3b8d5b16">
+      <name>Коэффициент</name>
+      <synonym>
+        <key>ru</key>
+        <value>Коэффициент</value>
+      </synonym>
+      <comment>(Общ)</comment>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>10</precision>
+          <scale>3</scale>
+          <nonNegative>true</nonNegative>
+        </numberQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="d9ef84df-223c-490f-aa2f-a031e889eeaa">
+      <name>КонтролироватьЛимит</name>
+      <synonym>
+        <key>ru</key>
+        <value>Контролировать лимит</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Boolean</types>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+  </tabularSections>
+  <forms uuid="4c19d3d2-022b-4bac-b4d8-a3eb782d2563">
+    <name>ФормаОсновная</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма основная</value>
+    </synonym>
+    <comment></comment>
+    <formType>Ordinary</formType>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="2bebc9a8-e0e2-46c6-b892-6b51e29f0e2a">
+    <name>ФормаОбработкаРезультата</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма обработка результата</value>
+    </synonym>
+    <comment></comment>
+    <formType>Ordinary</formType>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <templates uuid="78fc9049-102b-4cea-9cc5-3b23957272df">
+    <name>РасчетПлановойСебестоимости</name>
+    <synonym>
+      <key>ru</key>
+      <value>Расчет плановой себестоимости</value>
+    </synonym>
+    <comment></comment>
+  </templates>
+</mdclass:DataProcessor>

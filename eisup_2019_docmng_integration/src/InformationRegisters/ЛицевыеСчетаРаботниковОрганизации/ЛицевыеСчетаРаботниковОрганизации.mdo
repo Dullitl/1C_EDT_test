@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="5875d215-c49d-431b-8a23-f56f4611b3a1">
+  <producedTypes>
+    <selectionType typeId="6e9566be-8132-44ad-b698-2ae2fe00a17d" valueTypeId="e511c0bd-f198-457e-80db-8575f9b6ba1f"/>
+    <listType typeId="82f5f9f4-596c-40f5-ad47-3000510524c4" valueTypeId="6e4d8d36-a077-4864-b1f7-9846c187681e"/>
+    <managerType typeId="e8b5eb4b-40f5-4506-8ba9-1419ff0531c5" valueTypeId="bf9b5ccc-9075-4439-8f85-fd4c03063b4b"/>
+    <recordSetType typeId="09503884-af59-4d13-8864-6ee708057ab9" valueTypeId="3aec4555-4a46-4469-afa9-8ca88d4c4de0"/>
+    <recordKeyType typeId="5eb0a881-6c13-4c07-9b98-7b4c32dbb1d5" valueTypeId="e456c17e-2692-4b6a-8f21-d90f59443068"/>
+    <recordType typeId="cb7a3031-b7aa-4d0e-b1fb-c60da0954435" valueTypeId="aab84f7c-67a2-4499-963c-9e094873930c"/>
+    <recordManagerType typeId="5758464e-27b3-4f46-9b96-1048dafc2ec9" valueTypeId="6e700849-bcd7-4702-b512-dfb202225fa5"/>
+  </producedTypes>
+  <name>ЛицевыеСчетаРаботниковОрганизации</name>
+  <synonym>
+    <key>ru</key>
+    <value>Лицевые счета сотрудников организации</value>
+  </synonym>
+  <comment></comment>
+  <defaultListForm>InformationRegister.ЛицевыеСчетаРаботниковОрганизации.Form.ФормаСписка</defaultListForm>
+  <help>
+    <pages>
+      <lang>ru</lang>
+    </pages>
+  </help>
+  <resources uuid="b1094a2e-848b-4172-bf25-2475bccedfaa">
+    <name>НомерЛицевогоСчета</name>
+    <synonym>
+      <key>ru</key>
+      <value>Номер лицевого счета</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>23</length>
+      </stringQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <attributes uuid="315fa218-f954-4046-a6c3-097160bc21f8">
+    <name>Документ</name>
+    <synonym>
+      <key>ru</key>
+      <value>Документ</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>DocumentRef.ЗаявкаНаОткрытиеСчетов</types>
+      <types>DocumentRef.ПереносДанных</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <dimensions uuid="2b527585-f336-4f03-8ae7-6dc2a4b6ddcc">
+    <name>Организация</name>
+    <synonym>
+      <key>ru</key>
+      <value>Организация</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.Организации</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="d1ac1f0c-a4a8-4aa7-b728-72653b159b12">
+    <name>Банк</name>
+    <synonym>
+      <key>ru</key>
+      <value>Банк</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.Контрагенты</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="d1554b82-6cee-4833-9c87-514942d5961a">
+    <name>ФизЛицо</name>
+    <synonym>
+      <key>ru</key>
+      <value>Физическое лицо</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.ФизическиеЛица</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <forms uuid="58f88a77-e05c-46bc-92a1-16b0b08a30e4">
+    <name>ФормаСписка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма списка</value>
+    </synonym>
+    <comment></comment>
+    <formType>Ordinary</formType>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+</mdclass:InformationRegister>

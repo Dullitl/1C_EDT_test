@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:EventSubscription xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="2a96f994-2a8c-48f9-89b7-b8ace81356f7">
+  <name>абс_ПередЗаписьюКонтрольФлагаНУ</name>
+  <synonym>
+    <key>ru</key>
+    <value>Абс перед записью контроль флага НУ</value>
+  </synonym>
+  <comment></comment>
+  <source>
+    <types>DocumentObject.ПолучениеУслугПоПереработке</types>
+    <types>DocumentObject.ПередачаТоваров</types>
+    <types>DocumentObject.ОприходованиеТоваров</types>
+    <types>DocumentObject.СписаниеТоваров</types>
+    <types>DocumentObject.ПеремещениеТоваров</types>
+  </source>
+  <event>BeforeWrite</event>
+  <handler>CommonModule.абс_СлужебныеФункции.абс_ПередЗаписьюКонтрольФлагаНУПередЗаписью</handler>
+</mdclass:EventSubscription>

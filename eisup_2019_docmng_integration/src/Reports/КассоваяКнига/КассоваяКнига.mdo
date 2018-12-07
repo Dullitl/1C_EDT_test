@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Report xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="db808070-af35-4275-864a-18526447b8c3">
+  <producedTypes>
+    <objectType typeId="760e2e6f-dddc-4b26-85ec-5e9d55d02105" valueTypeId="bcd4e3ab-7669-4332-9777-59b009f9cd10"/>
+    <managerType typeId="6207a0fb-decb-44bf-b777-4def78f0365d" valueTypeId="f4b2ab2a-7157-46a4-88f8-8903af388da2"/>
+  </producedTypes>
+  <name>КассоваяКнига</name>
+  <synonym>
+    <key>ru</key>
+    <value>Кассовая книга</value>
+  </synonym>
+  <comment></comment>
+  <defaultForm>Report.КассоваяКнига.Form.Форма</defaultForm>
+  <includeHelpInContents>true</includeHelpInContents>
+  <help>
+    <pages>
+      <lang>ru</lang>
+    </pages>
+  </help>
+  <attributes uuid="b5a5134f-bf9e-4023-bb91-45bb548d2d9f">
+    <name>Организация</name>
+    <synonym>
+      <key>ru</key>
+      <value>Организация</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.Организации</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="c2c70fd0-3174-41ae-a217-706c6c9f46d4">
+    <name>Ответственный</name>
+    <synonym>
+      <key>ru</key>
+      <value>Ответственный</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.Пользователи</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="c6fe93b1-e448-48c2-817c-a904b7d1a7e2">
+    <name>ДатаНач</name>
+    <synonym>
+      <key>ru</key>
+      <value>Дата нач</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Date</types>
+      <dateQualifiers/>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="ed174ef5-b566-4b1f-b6ae-a2874267b9e3">
+    <name>ДатаКон</name>
+    <synonym>
+      <key>ru</key>
+      <value>Дата кон</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Date</types>
+      <dateQualifiers/>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="42492721-57e1-4d95-a083-e4692ae44edb">
+    <name>ПересчитатьНомера</name>
+    <synonym>
+      <key>ru</key>
+      <value>Пересчитать номера</value>
+    </synonym>
+    <comment>Пересчитать номера листов с начала года</comment>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="7857fcd0-1782-4b7d-85ea-aa2ae2c89fbb">
+    <name>ВыводитьОснования</name>
+    <synonym>
+      <key>ru</key>
+      <value>Выводить основания</value>
+    </synonym>
+    <comment>При установке этого флажка в графе кассовой книги¶&quot;От кого получено или кому выдано&quot; будет ¶выводиться содержание полей &quot;Принято от&quot; и¶&quot;Основание&quot; приходного кассового ордера или¶&quot;Выдано&quot; и &quot;Основание&quot; расходного кассового ордера</comment>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="b3a7a214-5c0f-45d6-ba77-fe46400b9c65">
+    <name>ПоследнийЛист</name>
+    <synonym>
+      <key>ru</key>
+      <value>Последний лист</value>
+    </synonym>
+    <comment>Внешний вид последнего листа</comment>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>1</precision>
+      </numberQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="db5b3aaa-f818-41aa-b35f-60ad395f5b14">
+    <name>ВсегдаВыводитьЛистыНаНачалоИКонецПериода</name>
+    <synonym>
+      <key>ru</key>
+      <value>Всегда выводить листы на начало и конец периода</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <forms uuid="cdb33a42-be85-4769-9b02-ccd5088b17cc">
+    <name>Форма</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма</value>
+    </synonym>
+    <comment></comment>
+    <formType>Ordinary</formType>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <templates uuid="5398d752-4a83-49b6-a4fb-dfa32dc3e8ae">
+    <name>КассоваяКнига</name>
+    <synonym>
+      <key>ru</key>
+      <value>КассоваяКнига</value>
+    </synonym>
+    <comment></comment>
+  </templates>
+  <templates uuid="80716b50-7167-492f-b8a1-ede2e6e9f206">
+    <name>Обложка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Обложка</value>
+    </synonym>
+    <comment></comment>
+  </templates>
+</mdclass:Report>

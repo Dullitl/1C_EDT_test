@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ConditionalAppearance xmlns="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:chm="http://v8.1c.ru/8.2/data/chart">
+	<item>
+		<selection>
+			<item>
+				<field>СессииИндекс</field>
+			</item>
+			<item>
+				<field>СессииАктуальность</field>
+			</item>
+			<item>
+				<field>СессииТекущийДокумент</field>
+			</item>
+			<item>
+				<field>СессииДокумент</field>
+			</item>
+			<item>
+				<field>СессииSESSIONDATE</field>
+			</item>
+			<item>
+				<field>СессииSESSIONID</field>
+			</item>
+			<item>
+				<field>СессииJOURNALID</field>
+			</item>
+			<item>
+				<field>СессииSTROK</field>
+			</item>
+			<item>
+				<field>СессииNETNDS</field>
+			</item>
+			<item>
+				<field>СессииNDS</field>
+			</item>
+			<item>
+				<field>СессииSNDS</field>
+			</item>
+			<item>
+				<field>СессииQTY</field>
+			</item>
+		</selection>
+		<filter>
+			<item xsi:type="FilterItemComparison">
+				<left xsi:type="dcscor:Field">Сессии.Актуальность</left>
+				<comparisonType>Equal</comparisonType>
+				<right xsi:type="xs:boolean">false</right>
+			</item>
+			<item xsi:type="FilterItemComparison">
+				<left xsi:type="dcscor:Field">Сессии.ТекущийДокумент</left>
+				<comparisonType>Equal</comparisonType>
+				<right xsi:type="xs:boolean">false</right>
+			</item>
+		</filter>
+		<appearance>
+			<dcscor:item xsi:type="SettingsParameterValue">
+				<dcscor:parameter>ЦветФона</dcscor:parameter>
+				<dcscor:value xsi:type="v8ui:Color">#C8C8C8</dcscor:value>
+			</dcscor:item>
+		</appearance>
+	</item>
+</ConditionalAppearance>

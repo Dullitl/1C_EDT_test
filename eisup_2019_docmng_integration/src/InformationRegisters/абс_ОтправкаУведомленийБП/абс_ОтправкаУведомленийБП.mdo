@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="5d0983ac-7804-46e9-ac69-295d7f2b6d89">
+  <producedTypes>
+    <selectionType typeId="62aab7b9-c3a4-46c7-9b95-2de817390776" valueTypeId="1fbdbbc9-e981-4e5e-a0d9-95936ecc3c4d"/>
+    <listType typeId="880d9568-ad21-44b5-9640-087f67dfbcc6" valueTypeId="565c52f5-8535-4308-85ce-8dff9de011d4"/>
+    <managerType typeId="c3b5b83c-2e03-4a9d-b9a1-544396d99c91" valueTypeId="1a0776ee-0c0d-4acf-b60a-9bbdd1099621"/>
+    <recordSetType typeId="ebcbf974-ef11-44ae-91ae-8b281e9eacc0" valueTypeId="2f00b315-1dd7-4c47-aa56-174969a7a5f4"/>
+    <recordKeyType typeId="c02e19ef-0869-482e-8ea4-5e3b2815d38f" valueTypeId="c18b6c7f-962e-41bf-adbd-52b688df8f1b"/>
+    <recordType typeId="c9083827-c60e-4d9c-8577-9cd51efe26f6" valueTypeId="f53dce86-3d6c-41fa-ad7c-bd752c492cfe"/>
+    <recordManagerType typeId="6b98eaa6-5412-482b-9278-2084ab35955f" valueTypeId="aca4c44b-32a4-406c-9ac2-1e6042f060f8"/>
+  </producedTypes>
+  <name>абс_ОтправкаУведомленийБП</name>
+  <synonym>
+    <key>ru</key>
+    <value>Отправка уведомлений БП</value>
+  </synonym>
+  <comment></comment>
+  <editType>InDialog</editType>
+  <informationRegisterPeriodicity>Second</informationRegisterPeriodicity>
+  <mainFilterOnPeriod>true</mainFilterOnPeriod>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <resources uuid="39ec5dc2-b6b5-41c5-8121-b49c14931df7">
+    <name>УведомлениеОтправлено</name>
+    <synonym>
+      <key>ru</key>
+      <value>Уведомление отправлено</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="d84ee17b-b0a7-4187-ace2-870dbe527b58">
+    <name>ПериодРегистрацииУведомления</name>
+    <synonym>
+      <key>ru</key>
+      <value>Период регистрации уведомления</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Date</types>
+      <dateQualifiers/>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="525ee44a-376b-4fd1-bce4-fb6b68ea04a4">
+    <name>ПричинаИзмененияСтатуса</name>
+    <synonym>
+      <key>ru</key>
+      <value>Причина изменения статуса</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>255</length>
+      </stringQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:StringValue">
+      <value></value>
+    </fillValue>
+  </resources>
+  <attributes uuid="e2861c35-e46e-44b2-89aa-b8c840192558">
+    <name>Ответственный</name>
+    <synonym>
+      <key>ru</key>
+      <value>Ответственный</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.Пользователи</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="6904012e-cd33-4692-89cc-454e0600e001">
+    <name>ОтправкаОтветственным</name>
+    <synonym>
+      <key>ru</key>
+      <value>Отправка ответственным</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="fad71c8c-4028-4373-ac3f-cdc2b34d5ccb">
+    <name>ОтправкаИнициатору</name>
+    <synonym>
+      <key>ru</key>
+      <value>Отправка инициатору</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <dimensions uuid="fd895374-f9c9-4b5b-89ef-8d1a7db06314">
+    <name>БП</name>
+    <synonym>
+      <key>ru</key>
+      <value>БП</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>BusinessProcessRef.абсЗавершениеОтношенийСКонтрагентами</types>
+      <types>BusinessProcessRef.абсСогласованиеНоменклатуры</types>
+      <types>BusinessProcessRef.абсСогласованиеПрочихДоходовИРасходов</types>
+      <types>BusinessProcessRef.абсСогласованиеНоменклатурныхГрупп</types>
+      <types>BusinessProcessRef.абсСогласованиеДоговоровПодряда</types>
+      <types>BusinessProcessRef.абсУточнениеСчетаНаОплату</types>
+      <types>BusinessProcessRef.абсСогласованиеСтатейЗатрат</types>
+      <types>BusinessProcessRef.абсЗакрытиеДоговоров</types>
+      <types>BusinessProcessRef.абсСогласованиеСчетаНаОплату</types>
+      <types>BusinessProcessRef.абсСогласованиеКонтрагентов</types>
+      <types>BusinessProcessRef.абсСогласованиеДоговоров</types>
+      <types>BusinessProcessRef.абсИзменениеРеквизитовКонтрагентов</types>
+      <types>BusinessProcessRef.абсСогласованиеАктовПриёмки</types>
+      <types>BusinessProcessRef.абсЗаявкаВПоддержку</types>
+      <types>BusinessProcessRef.абсСогласованиеПервичныхДокументов</types>
+      <types>BusinessProcessRef.абсСогласованиеБюджета</types>
+      <types>BusinessProcessRef.абсРекласификацияБюджета</types>
+      <types>BusinessProcessRef.абсСогласованиеЗакупочногоЗаказа</types>
+      <types>BusinessProcessRef.абсПереутверждениеКонтрагентов</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="8030e333-cefe-41ef-94c8-275abb6451cb">
+    <name>ТочкаМаршрута</name>
+    <synonym>
+      <key>ru</key>
+      <value>Точка маршрута</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>BusinessProcessRoutePointRef.абсУточнениеСчетаНаОплату</types>
+      <types>BusinessProcessRoutePointRef.абсСогласованиеСчетаНаОплату</types>
+      <types>BusinessProcessRoutePointRef.абсСогласованиеКонтрагентов</types>
+      <types>BusinessProcessRoutePointRef.абсСогласованиеНоменклатуры</types>
+      <types>BusinessProcessRoutePointRef.абсСогласованиеСтатейЗатрат</types>
+      <types>BusinessProcessRoutePointRef.абсСогласованиеАктовПриёмки</types>
+      <types>BusinessProcessRoutePointRef.абсИзменениеРеквизитовКонтрагентов</types>
+      <types>BusinessProcessRoutePointRef.абсСогласованиеЗакупочногоЗаказа</types>
+      <types>BusinessProcessRoutePointRef.абсСогласованиеДоговоров</types>
+      <types>BusinessProcessRoutePointRef.абсСогласованиеДоговоровПодряда</types>
+      <types>BusinessProcessRoutePointRef.абсСогласованиеБюджета</types>
+      <types>BusinessProcessRoutePointRef.абсЗакрытиеДоговоров</types>
+      <types>BusinessProcessRoutePointRef.абсСогласованиеНоменклатурныхГрупп</types>
+      <types>BusinessProcessRoutePointRef.абсЗавершениеОтношенийСКонтрагентами</types>
+      <types>BusinessProcessRoutePointRef.абсРекласификацияБюджета</types>
+      <types>BusinessProcessRoutePointRef.абсЗаявкаВПоддержку</types>
+      <types>BusinessProcessRoutePointRef.абсПереутверждениеКонтрагентов</types>
+      <types>BusinessProcessRoutePointRef.абсСогласованиеПервичныхДокументов</types>
+      <types>BusinessProcessRoutePointRef.абсСогласованиеПрочихДоходовИРасходов</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="2f1435ce-0e55-47f1-aae5-11c0e64fc58b">
+    <name>ДокументСсылка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Документ ссылка</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>DocumentRef.АктОбОказанииПроизводственныхУслуг</types>
+      <types>DocumentRef.ТребованиеНакладная</types>
+      <types>DocumentRef.ДоговорНаВыполнениеРаботСФизЛицом</types>
+      <types>DocumentRef.ПередачаТоваров</types>
+      <types>DocumentRef.РеализацияТоваровУслуг</types>
+      <types>DocumentRef.ВозвратПереданныхТоваров</types>
+      <types>DocumentRef.ПоступлениеТоваровУслуг</types>
+      <types>DocumentRef.КорректировкаПоступления</types>
+      <types>DocumentRef.ПеремещениеТоваров</types>
+      <types>DocumentRef.ОтчетКомиссионераОПродажах</types>
+      <types>DocumentRef.КорректировкаРеализации</types>
+      <types>DocumentRef.абс_АВИЗО</types>
+      <types>DocumentRef.Абс_АктПриёмкиВыполненныхРабот</types>
+      <types>DocumentRef.КомплектацияНоменклатуры</types>
+      <types>DocumentRef.АвансовыйОтчет</types>
+      <types>DocumentRef.СписаниеТоваров</types>
+      <types>DocumentRef.ПолучениеУслугПоПереработке</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="dcf90035-8229-448d-8344-2fc8fbe633a2">
+    <name>ВидБП</name>
+    <synonym>
+      <key>ru</key>
+      <value>Вид БП</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>EnumRef.абсВидыБизнесПроцессовТТК</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="2523bf67-98a8-42dd-b7b5-d3f9c7a49e16">
+    <name>Статус</name>
+    <synonym>
+      <key>ru</key>
+      <value>Статус</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>EnumRef.абсСтатусыДоговоров</types>
+      <types>EnumRef.абс_СтатусыПервичныхДокументов</types>
+      <types>EnumRef.абсСтатусыСчетов</types>
+      <types>EnumRef.абсСтатусыДоговоровПодряда</types>
+      <types>EnumRef.абс_СтатусыЗаявокВПоддержку</types>
+      <types>EnumRef.абс_СтатусыНоменклатуры</types>
+      <types>EnumRef.абсСтатусЗакупочногоЗаказа</types>
+      <types>EnumRef.абс_СтатусыЗаявокНаИзменениеРеквизитовКонтрагентов</types>
+      <types>EnumRef.абсСтатусыАктовПриёмки</types>
+      <types>EnumRef.абсСтатусыКонтрагентов</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="cbfb4a83-f5ef-4cbe-8d33-c5d31d5a44f2">
+    <name>СтатусНовый</name>
+    <synonym>
+      <key>ru</key>
+      <value>Статус новый</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>EnumRef.абсСтатусыДоговоров</types>
+      <types>EnumRef.абс_СтатусыПервичныхДокументов</types>
+      <types>EnumRef.абсСтатусыСчетов</types>
+      <types>EnumRef.абсСтатусыДоговоровПодряда</types>
+      <types>EnumRef.абс_СтатусыЗаявокВПоддержку</types>
+      <types>EnumRef.абс_СтатусыНоменклатуры</types>
+      <types>EnumRef.абсСтатусЗакупочногоЗаказа</types>
+      <types>EnumRef.абс_СтатусыЗаявокНаИзменениеРеквизитовКонтрагентов</types>
+      <types>EnumRef.абсСтатусыАктовПриёмки</types>
+      <types>EnumRef.абсСтатусыКонтрагентов</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+</mdclass:InformationRegister>

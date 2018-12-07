@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="ba3b9cef-8ce7-4fc2-9cf6-7a504e99d05b">
+  <producedTypes>
+    <selectionType typeId="8085e68b-6c06-4392-81b4-708ab35f8df1" valueTypeId="67989e3f-5543-4861-8f86-bb3af0f1f1c5"/>
+    <listType typeId="9b4bb283-709c-440d-8239-bcd75d5b195e" valueTypeId="0cf2298a-8b8a-4465-af6e-3cfc6bee8e7d"/>
+    <managerType typeId="40c4ebcf-6651-4ba0-a907-eb92f6164a5d" valueTypeId="0567ec9f-680e-47bf-b881-1804ebd28e5d"/>
+    <recordSetType typeId="5507cbb0-e7f4-4ac8-ae08-ed3b9bd3fcfb" valueTypeId="a017cf46-69a4-4654-be4c-e55d1061f97e"/>
+    <recordKeyType typeId="5ad83ef2-f86e-46f4-886b-25f9d599d1ff" valueTypeId="2f1cfb18-64a8-4568-9575-cf265b1d2219"/>
+    <recordType typeId="5d54490a-b858-495c-88be-0618d6e755b4" valueTypeId="5e31b5de-0e66-4b92-a271-a91f8f736044"/>
+    <recordManagerType typeId="56f0eb59-207f-4879-9999-04540f7cdf06" valueTypeId="2b7dde84-361e-49b8-81b7-9a82b18a5449"/>
+  </producedTypes>
+  <name>ttk_РасшифровкаАгрегированнойВыручкиПоДокументамНачислений</name>
+  <synonym>
+    <key>ru</key>
+    <value>Ttk расшифровка агрегированной выручки по документам начислений</value>
+  </synonym>
+  <comment></comment>
+  <editType>InDialog</editType>
+  <writeMode>RecorderSubordinate</writeMode>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <attributes uuid="e1c3ad8a-28e5-43d1-bf0c-a759959b0b24">
+    <name>НаименованиеПокупателя</name>
+    <synonym>
+      <key>ru</key>
+      <value>Наименование покупателя</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>100</length>
+      </stringQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:StringValue">
+      <value></value>
+    </fillValue>
+  </attributes>
+  <attributes uuid="8fa0591a-735d-4ae1-a34f-18e4a0135601">
+    <name>ИННПокупателя</name>
+    <synonym>
+      <key>ru</key>
+      <value>ИННПокупателя</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>12</length>
+      </stringQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:StringValue">
+      <value></value>
+    </fillValue>
+  </attributes>
+  <attributes uuid="fc4022e6-a17f-4ccb-a20f-07664c7ea5f5">
+    <name>КПППокупателя</name>
+    <synonym>
+      <key>ru</key>
+      <value>КПППокупателя</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>9</length>
+      </stringQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:StringValue">
+      <value></value>
+    </fillValue>
+  </attributes>
+  <attributes uuid="607432ea-abfb-49c5-80d8-d9fa24dd5b9e">
+    <name>ДокументАгрегации</name>
+    <synonym>
+      <key>ru</key>
+      <value>Документ агрегации</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>DocumentRef.РеализацияТоваровУслуг</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <dimensions uuid="f76baf35-3f3e-4f54-a843-c23e490cbd94">
+    <name>Организация</name>
+    <synonym>
+      <key>ru</key>
+      <value>Организация</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.Организации</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="7c7411a9-c740-4531-977c-be8cb06f9880">
+    <name>НомерДокумента</name>
+    <synonym>
+      <key>ru</key>
+      <value>Номер документа</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>30</length>
+      </stringQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:StringValue">
+      <value></value>
+    </fillValue>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="e756197b-aac4-40ec-9be6-1d6298577d24">
+    <name>ДатаДокумента</name>
+    <synonym>
+      <key>ru</key>
+      <value>Дата документа</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Date</types>
+      <dateQualifiers>
+        <dateFractions>Date</dateFractions>
+      </dateQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+</mdclass:InformationRegister>

@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="edc6dfde-2286-4f71-8b91-1bdf1e9ac32d">
+  <producedTypes>
+    <selectionType typeId="d28966e8-97c6-49a3-b57d-fcd9784aa347" valueTypeId="b1d6b988-274f-4062-ac0e-c2e00679cb8d"/>
+    <listType typeId="cdfdc708-6aed-4c46-b30d-a1c7fd6f8f80" valueTypeId="95ff646d-ca03-4653-b596-7b2db0a63636"/>
+    <managerType typeId="6d662fbc-57e7-44ae-b75e-19bbf52d0b1d" valueTypeId="9b2b725c-7ea2-437b-8cc6-af136bc0d3d3"/>
+    <recordSetType typeId="d9e977ba-06fb-47fe-ba28-4ef7b1de72b9" valueTypeId="02bf8af3-9dee-4bfc-9fda-3e0b040caf91"/>
+    <recordKeyType typeId="51fe096c-f1b2-4763-bf68-e1b353b2f1e4" valueTypeId="e59076e5-65f4-414e-8f3b-05bcfc9c14f7"/>
+    <recordType typeId="3a127d49-dd95-4ee6-b197-2ff713916984" valueTypeId="0afeb89d-b770-477c-9320-d39c9f5f23e4"/>
+    <recordManagerType typeId="efe2b065-1bb5-4b9a-90be-eede819a6e7d" valueTypeId="20ede7d8-8135-43ee-a901-b316675e4c34"/>
+  </producedTypes>
+  <name>абс_ГраницаЗапретаППД</name>
+  <synonym>
+    <key>ru</key>
+    <value>Граница запрета ППД</value>
+  </synonym>
+  <comment></comment>
+  <defaultListForm>InformationRegister.абс_ГраницаЗапретаППД.Form.ФормаСписка</defaultListForm>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <resources uuid="8ed3ec0d-c959-4115-8686-c90d8e91112a">
+    <name>ДатаИнициатора</name>
+    <synonym>
+      <key>ru</key>
+      <value>Дата инициатора</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Date</types>
+      <dateQualifiers>
+        <dateFractions>Date</dateFractions>
+      </dateQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="7fe9a4c5-7f38-40f1-998e-f120a5d3214e">
+    <name>ДатаБухалтерии</name>
+    <synonym>
+      <key>ru</key>
+      <value>Дата бухалтерии</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Date</types>
+      <dateQualifiers>
+        <dateFractions>Date</dateFractions>
+      </dateQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <dimensions uuid="fbcc3052-7dc9-405b-ab29-fba599b128f4">
+    <name>Организация</name>
+    <synonym>
+      <key>ru</key>
+      <value>Организация</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.Организации</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="ee03fa49-37b7-44ee-b989-e26150ed49a6">
+    <name>ТипДокумента</name>
+    <synonym>
+      <key>ru</key>
+      <value>Тип документа</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>50</length>
+      </stringQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:StringValue">
+      <value></value>
+    </fillValue>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="c425cf4b-a08d-4b25-a260-dee5d1d29ef4">
+    <name>Статус</name>
+    <synonym>
+      <key>ru</key>
+      <value>Статус</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>EnumRef.абс_СтатусыПервичныхДокументов</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="34cf07da-d603-469a-a0b0-2bff55f8fba2">
+    <name>СтатусНовый</name>
+    <synonym>
+      <key>ru</key>
+      <value>Статус новый</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>EnumRef.абс_СтатусыПервичныхДокументов</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <forms uuid="1a5b8e1a-438b-4fe9-b05c-9c186ab6234f">
+    <name>ФормаСписка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма списка</value>
+    </synonym>
+    <comment></comment>
+    <formType>Ordinary</formType>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+</mdclass:InformationRegister>

@@ -1,0 +1,20 @@
+﻿<package xmlns="http://v8.1c.ru/8.1/xdto" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" targetNamespace="Reflection">
+	<objectType name="Statuses">
+		<property name="Status" type="xs:string"/>
+		<property name="User" type="xs:string"/>
+		<property name="Comment" type="xs:string"/>
+		<property name="Period" type="xs:dateTime"/>
+	</objectType>
+	<objectType name="Reflection">
+		<property name="XML" type="xs:base64Binary" nillable="true"/>
+		<property name="Status" type="xs:string" nillable="true"/>
+		<property name="Number" type="xs:string"/>
+		<property name="Date" type="xs:dateTime"/>
+		<property xmlns:d3p1="Reflection" name="StatusHistory" type="d3p1:Statuses" lowerBound="0" upperBound="-1" nillable="true"/>
+		<property name="User" type="xs:string" nillable="true"/>
+	</objectType>
+	<objectType name="Answer">
+		<property name="Result" type="xs:boolean"/>
+		<property name="Error" type="xs:string"/>
+	</objectType>
+</package>

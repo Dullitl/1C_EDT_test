@@ -1,0 +1,43 @@
+﻿<package xmlns="http://v8.1c.ru/8.1/xdto" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" targetNamespace="http://www.abs-soft.ru/">
+	<objectType name="CountragentsAdd">
+		<property name="ID" type="xs:string" nillable="true"/>
+		<property name="Name" type="xs:string" nillable="false"/>
+		<property name="Full_Name" type="xs:string" nillable="false"/>
+		<property name="OKPO" type="xs:string" nillable="false"/>
+		<property name="INN" type="xs:string" nillable="false"/>
+		<property name="KPP" type="xs:string" nillable="false"/>
+		<property name="Customer" type="xs:boolean" nillable="false"/>
+		<property name="Supplier" type="xs:boolean" nillable="false"/>
+		<property name="IE" type="xs:boolean" nillable="false"/>
+		<property name="No_Resident" type="xs:boolean" nillable="false"/>
+		<property name="OKOPF" type="xs:string" nillable="false"/>
+		<property name="Type_ID" type="xs:string" nillable="false"/>
+		<property name="OKONH" type="xs:string" nillable="false"/>
+		<property name="Curator_Name" type="xs:string" nillable="false"/>
+		<property name="Curator_ID" type="xs:string" nillable="false"/>
+		<property name="Status_Change_Cause" type="xs:string" nillable="false"/>
+		<property name="Initiator" type="xs:string" nillable="false"/>
+	</objectType>
+	<objectType name="Answer">
+		<property name="ID" type="xs:string" nillable="true"/>
+		<property name="Error" type="xs:string" lowerBound="0" nillable="true" default=""/>
+	</objectType>
+	<objectType name="File">
+		<property xmlns:d3p1="http://www.abs-soft.ru/" name="FileDescription" type="d3p1:FileDescription" lowerBound="0" nillable="true"/>
+		<property name="base64Binary" type="xs:base64Binary" lowerBound="0" nillable="true"/>
+		<property name="Error" type="xs:string" lowerBound="0" nillable="true" default=""/>
+	</objectType>
+	<objectType name="FileList">
+		<property xmlns:d3p1="http://www.abs-soft.ru/" name="FileDescriptionList" type="d3p1:FileDescription" lowerBound="0" upperBound="-1" nillable="true"/>
+		<property name="Error" type="xs:string" lowerBound="0" nillable="true" default=""/>
+	</objectType>
+	<objectType name="FileDescription">
+		<property name="Name" type="xs:string"/>
+		<property name="DataTime" type="xs:dateTime"/>
+		<property name="Size" type="xs:decimal"/>
+	</objectType>
+	<objectType name="AnswerBalance">
+		<property name="Sum" type="xs:float" nillable="true"/>
+		<property name="Error" type="xs:string" nillable="true"/>
+	</objectType>
+</package>

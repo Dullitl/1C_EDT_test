@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="f4580bce-5a84-40c6-b73f-8c0ec31096c0">
+  <producedTypes>
+    <selectionType typeId="65d12798-da66-417c-8df5-4b3238120c98" valueTypeId="4a3c3173-61d2-4703-9e2d-a9e78e403c06"/>
+    <listType typeId="817aeab4-8932-4938-89b6-f4d478cc3a48" valueTypeId="16009257-8919-4153-90fa-08e212353aa2"/>
+    <managerType typeId="9daae598-06bf-4a01-99ed-edd7adf1df0d" valueTypeId="02d61abd-fca3-47b3-ad99-39ae16e1bf76"/>
+    <recordSetType typeId="caed8c99-cc13-42de-8cb3-4d3da0d2c6c0" valueTypeId="8cd7d4fd-8ec7-4cf8-b430-f693bfbfc6a8"/>
+    <recordKeyType typeId="6892f74e-116d-4787-ace8-ba21d1e10d43" valueTypeId="cc2eafd4-721a-4ef3-b7df-78afc1845493"/>
+    <recordType typeId="81586b5e-2ad9-4fdb-b83a-86730e230e19" valueTypeId="bdb7fc65-e6e9-47f6-a8e0-354f5c5e8804"/>
+    <recordManagerType typeId="b32b1dd0-1164-4297-9eb1-af9ca32000ca" valueTypeId="3748c739-e190-4b5a-839d-4dbf3516cde0"/>
+  </producedTypes>
+  <name>абс_ИзменениеСтатусовЗакупочногоЗаказа</name>
+  <synonym>
+    <key>ru</key>
+    <value>Изменение статусов закупочного заказа</value>
+  </synonym>
+  <comment></comment>
+  <editType>InDialog</editType>
+  <defaultListForm>InformationRegister.абс_ИзменениеСтатусовЗакупочногоЗаказа.Form.ФормаСписка</defaultListForm>
+  <informationRegisterPeriodicity>Second</informationRegisterPeriodicity>
+  <mainFilterOnPeriod>true</mainFilterOnPeriod>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <attributes uuid="e59e756f-9cde-47e3-8ac3-0af811b5c35d">
+    <name>Комментарий</name>
+    <synonym>
+      <key>ru</key>
+      <value>Комментарий</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>200</length>
+      </stringQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:StringValue">
+      <value></value>
+    </fillValue>
+  </attributes>
+  <attributes uuid="fb75c706-e089-43fe-8327-a7340beafca3">
+    <name>ДолжностьОтветственного</name>
+    <synonym>
+      <key>ru</key>
+      <value>Должность ответственного</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.ДолжностиОрганизаций</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="a972d647-f66e-45a8-a73a-da6f7a1d02f8">
+    <name>ВнутреннийНомер</name>
+    <synonym>
+      <key>ru</key>
+      <value>Внутренний номер</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>7</precision>
+      </numberQualifiers>
+    </type>
+    <format>
+      <key>ru</key>
+      <value>ЧЦ=7; ЧГ=</value>
+    </format>
+    <editFormat>
+      <key>ru</key>
+      <value>ЧЦ=7; ЧГ=</value>
+    </editFormat>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <dimensions uuid="d6165e05-4f35-444f-b54d-52dc4cd3dafd">
+    <name>ЗакупочныйЗаказ</name>
+    <synonym>
+      <key>ru</key>
+      <value>Закупочный заказ</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>DocumentRef.абс_ЗакупочныйЗаказ</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="a3255c32-8681-494b-b21a-bac15b380316">
+    <name>СтатусЗакупочногоЗаказа</name>
+    <synonym>
+      <key>ru</key>
+      <value>Статус закупочного заказа</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>EnumRef.абсСтатусЗакупочногоЗаказа</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="6f673e34-6c28-4df6-8db2-22f9645a9871">
+    <name>Пользователь</name>
+    <synonym>
+      <key>ru</key>
+      <value>Пользователь</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.Пользователи</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <forms uuid="56ab511e-03a2-41cc-be2d-50e1a0cf9219">
+    <name>ФормаСписка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма списка</value>
+    </synonym>
+    <comment></comment>
+    <formType>Ordinary</formType>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+</mdclass:InformationRegister>

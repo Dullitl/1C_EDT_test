@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:EventSubscription xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="63e526be-0559-47b8-b610-42ec2a02c5a9">
+  <name>ttk_ЗапретСозданияРедактированияОбъекта</name>
+  <synonym>
+    <key>ru</key>
+    <value>Ttk запрет создания редактирования объекта</value>
+  </synonym>
+  <comment></comment>
+  <source>
+    <types>CatalogObject.НаправленияИспользованияПрибыли</types>
+    <types>CatalogObject.СтатьиДвиженияДенежныхСредств</types>
+    <types>CatalogObject.ПрочиеДоходыИРасходы</types>
+    <types>CatalogObject.НоменклатурныеГруппы</types>
+    <types>CatalogObject.СтатьиЗатрат</types>
+    <types>CatalogObject.ЦенныеБумаги</types>
+    <types>CatalogObject.ас_ПериодыОтражения</types>
+  </source>
+  <event>BeforeWrite</event>
+  <handler>CommonModule.ttk_ИнтеграцияБП30Сервер.ttk_ЗапретСозданияРедактированияОбъектаПередЗаписью</handler>
+</mdclass:EventSubscription>

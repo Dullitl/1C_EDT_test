@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="7cc0db85-7e87-4e69-a9c8-a837c25c1384">
+  <producedTypes>
+    <selectionType typeId="6ed26b97-11a5-434f-972a-253ae924c39a" valueTypeId="a18685c0-38d9-40b0-8bf9-7d801d30b5ca"/>
+    <listType typeId="43648649-bab8-48ed-9edc-5b93226bf715" valueTypeId="603a35a7-abb1-43fc-ae36-31a8d0d60ada"/>
+    <managerType typeId="34333a9e-4fd1-476c-8dc5-41d0598f095d" valueTypeId="de015253-275b-4ce6-b317-4507fb0bab73"/>
+    <recordSetType typeId="007ce9ea-aff3-4b4f-ad9f-a03c20c263da" valueTypeId="1def49ea-7aae-4d50-b49f-23b8da2a79f5"/>
+    <recordKeyType typeId="80b67f62-ada3-4a18-b676-73bf37131498" valueTypeId="313e0782-0a55-4fea-9a91-e57c6bc2d688"/>
+    <recordType typeId="f92e895a-ee2f-4a46-9361-237e4b5bd413" valueTypeId="7b0b7baf-c33f-411a-a96a-35a924d275ed"/>
+    <recordManagerType typeId="37dbf5c3-c80f-44b3-8244-9aca95f04f0f" valueTypeId="1736faf0-7ce5-42b3-ac0b-20ee9a8eedc4"/>
+  </producedTypes>
+  <name>УчетОсновногоЗаработкаРаботниковОрганизацииВРегламентированномУчете</name>
+  <synonym>
+    <key>ru</key>
+    <value>Учет основного заработка сотрудников организации в регламентированном учете</value>
+  </synonym>
+  <comment>(Регл)</comment>
+  <defaultListForm>InformationRegister.УчетОсновногоЗаработкаРаботниковОрганизацииВРегламентированномУчете.Form.ФормаСписка</defaultListForm>
+  <informationRegisterPeriodicity>Day</informationRegisterPeriodicity>
+  <writeMode>RecorderSubordinate</writeMode>
+  <resources uuid="82c4b483-a2ee-4cb7-becf-28ff3eddc405">
+    <name>СпособОтраженияВБухучете</name>
+    <synonym>
+      <key>ru</key>
+      <value>Способ отражения в бухучете</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.СпособыОтраженияЗарплатыВРеглУчете</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="a2c4f9a1-4069-45c2-86ed-527b4c92ae37">
+    <name>ПодпадаетПодЕНВД</name>
+    <synonym>
+      <key>ru</key>
+      <value>Подпадает под ЕНВД</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="71157f3c-a420-4f39-96e1-0c899dec41f4">
+    <name>СпособОтраженияВБухучетеБольничногоЗаСчетРаботодателя</name>
+    <synonym>
+      <key>ru</key>
+      <value>Способ отражения в бухучете больничного за счет работодателя</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.СпособыОтраженияЗарплатыВРеглУчете</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <dimensions uuid="f93850ee-37a3-429b-b04c-32c2ceb04dbd">
+    <name>Сотрудник</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сотрудник</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.СотрудникиОрганизаций</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="1d7b155a-e269-4f99-a5c1-e62eaef4c654">
+    <name>Организация</name>
+    <synonym>
+      <key>ru</key>
+      <value>Организация</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.Организации</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="f2ab7fc5-7087-4b0b-b36a-cd074ed3b8ca">
+    <name>УдалитьФизлицо</name>
+    <synonym>
+      <key>ru</key>
+      <value>Удалить физлицо</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.ФизическиеЛица</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="f3e9c8c9-9876-4c7f-b156-29337d2ae44a">
+    <name>УдалитьПриказ</name>
+    <synonym>
+      <key>ru</key>
+      <value>Удалить приказ</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>DocumentRef.ПриемНаРаботуВОрганизацию</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <forms uuid="6d096fa5-86b8-49c8-86dd-49bbb392ea45">
+    <name>ФормаСписка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма списка</value>
+    </synonym>
+    <comment></comment>
+    <formType>Ordinary</formType>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+</mdclass:InformationRegister>

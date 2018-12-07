@@ -1,0 +1,110 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/"
+		xmlns:soap12bind="http://schemas.xmlsoap.org/wsdl/soap12/"
+		xmlns:soapbind="http://schemas.xmlsoap.org/wsdl/soap/"
+		xmlns:tns="Viplata_NDFL_Arenda"
+		xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"
+		xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"
+		xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+		xmlns:xsd1="Viplata_NDFL_Arenda"
+		name="ttk_Viplata_NDFL_Arenda"
+		targetNamespace="Viplata_NDFL_Arenda">
+	<types>
+		<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+				xmlns:xs1="Viplata_NDFL_Arenda"
+				targetNamespace="Viplata_NDFL_Arenda"
+				attributeFormDefault="unqualified"
+				elementFormDefault="qualified">
+			<xs:complexType name="Rezult">
+				<xs:sequence>
+					<xs:element name="Rez"
+							type="xs:boolean"
+							nillable="true"/>
+					<xs:element name="Error"
+							type="xs:string"
+							nillable="true"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:element name="CreateNDFL">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="Number"
+								type="xs:string"/>
+						<xs:element name="Date"
+								type="xs:date"/>
+						<xs:element name="Data"
+								type="xs:string"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="CreateNDFLResponse">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="return"
+								type="xsd1:Rezult"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:schema>
+	</types>
+	<message name="CreateNDFLRequestMessage">
+		<part name="parameters"
+				element="tns:CreateNDFL"/>
+	</message>
+	<message name="CreateNDFLResponseMessage">
+		<part name="parameters"
+				element="tns:CreateNDFLResponse"/>
+	</message>
+	<portType name="ttk_Viplata_NDFL_ArendaPortType">
+		<operation name="CreateNDFL">
+			<input name="CreateNDFLRequest"
+					message="tns:CreateNDFLRequestMessage"/>
+			<output name="CreateNDFLResponse"
+					message="tns:CreateNDFLResponseMessage"/>
+		</operation>
+	</portType>
+	<binding name="ttk_Viplata_NDFL_ArendaSoapBinding"
+			type="tns:ttk_Viplata_NDFL_ArendaPortType">
+		<soapbind:binding style="document"
+				transport="http://schemas.xmlsoap.org/soap/http"/>
+		<operation name="CreateNDFL">
+			<soapbind:operation style="document"
+					soapAction="Viplata_NDFL_Arenda#ttk_Viplata_NDFL_Arenda:CreateNDFL"/>
+			<input>
+				<soapbind:body use="literal"/>
+			</input>
+			<output>
+				<soapbind:body use="literal"/>
+			</output>
+		</operation>
+	</binding>
+	<binding name="ttk_Viplata_NDFL_ArendaSoap12Binding"
+			type="tns:ttk_Viplata_NDFL_ArendaPortType">
+		<soap12bind:binding style="document"
+				transport="http://schemas.xmlsoap.org/soap/http"/>
+		<operation name="CreateNDFL">
+			<soap12bind:operation style="document"
+					soapAction="Viplata_NDFL_Arenda#ttk_Viplata_NDFL_Arenda:CreateNDFL"/>
+			<input>
+				<soap12bind:body use="literal"/>
+			</input>
+			<output>
+				<soap12bind:body use="literal"/>
+			</output>
+		</operation>
+	</binding>
+	<service name="ttk_Viplata_NDFL_Arenda">
+		<port name="ttk_Viplata_NDFL_ArendaSoap"
+				binding="tns:ttk_Viplata_NDFL_ArendaSoapBinding">
+			<documentation> 
+				<wsi:Claim xmlns:wsi="http://ws-i.org/schemas/conformanceClaim/"
+						conformsTo="http://ws-i.org/profiles/basic/1.1"/>
+			</documentation>
+			<soapbind:address location="https://isup-ttk.transtk.ru/ISUZK_Viplata_NDFL_Arenda/ws/Viplata_NDFL_Arenda.1cws"/>
+		</port>
+		<port name="ttk_Viplata_NDFL_ArendaSoap12"
+				binding="tns:ttk_Viplata_NDFL_ArendaSoap12Binding">
+			<soap12bind:address location="https://isup-ttk.transtk.ru/ISUZK_Viplata_NDFL_Arenda/ws/Viplata_NDFL_Arenda.1cws"/>
+		</port>
+	</service>
+</definitions>

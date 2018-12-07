@@ -1,0 +1,23 @@
+﻿IF  NOT EXISTS(select * from information_schema.tables where TABLE_NAME = 'Projects')
+	Create table Projects
+	(
+		project_id		nchar(40) not null,
+		name			nvarchar(255) not null,
+		potfolio		nchar(40),
+		case_flg		bit not null,
+		start_date		datetime,
+		end_date		datetime,
+		profitable		bit,
+		status			nvarchar(255),
+		senior			nvarchar(255),
+		organization	nchar(40),
+		project_manager	nvarchar(255),
+		type_project	nchar(40),
+		code_project	nchar(40),
+		basis_project	nvarchar(255),
+		TEO				nvarchar(255),
+		description     ntext,
+		close_flg		bit
+	)
+ELSE
+	print('Таблица Projects уже существует')

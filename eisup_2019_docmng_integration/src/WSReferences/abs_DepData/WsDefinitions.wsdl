@@ -1,0 +1,154 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/"
+		xmlns:soap12bind="http://schemas.xmlsoap.org/wsdl/soap12/"
+		xmlns:soapbind="http://schemas.xmlsoap.org/wsdl/soap/"
+		xmlns:tns="http://www.abs-soft_Dep.ru"
+		xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"
+		xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"
+		xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+		xmlns:xsd1="http://www.abs-soft_Dep.ru"
+		name="abs_DepData"
+		targetNamespace="http://www.abs-soft_Dep.ru">
+	<types>
+		<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+				xmlns:xs1="http://www.abs-soft_Dep.ru"
+				targetNamespace="http://www.abs-soft_Dep.ru"
+				attributeFormDefault="unqualified"
+				elementFormDefault="qualified">
+			<xs:complexType name="DepData">
+				<xs:sequence>
+					<xs:element name="Code"
+							type="xs:string"
+							nillable="true"
+							minOccurs="0"/>
+					<xs:element name="Name"
+							type="xs:string"
+							nillable="true"
+							minOccurs="0"/>
+					<xs:element name="FullName"
+							type="xs:string"
+							nillable="true"
+							minOccurs="0"/>
+					<xs:element name="DateBegin"
+							type="xs:date"
+							nillable="true"
+							minOccurs="0"/>
+					<xs:element name="Category"
+							type="xs:string"
+							nillable="true"
+							minOccurs="0"/>
+					<xs:element name="DateEnd"
+							type="xs:date"
+							nillable="true"
+							minOccurs="0"/>
+					<xs:element name="Status"
+							type="xs:string"
+							nillable="true"
+							minOccurs="0"/>
+					<xs:element name="Actual"
+							type="xs:boolean"
+							nillable="true"
+							minOccurs="0"/>
+					<xs:element name="Level"
+							type="xs:int"
+							nillable="true"
+							minOccurs="0"/>
+					<xs:element name="ParentCode"
+							type="xs:string"
+							nillable="true"
+							minOccurs="0"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="Dep_List">
+				<xs:sequence>
+					<xs:element name="Dep_DataElements"
+							type="xsd1:DepData"
+							nillable="true"
+							minOccurs="0"
+							maxOccurs="unbounded"/>
+					<xs:element name="Error"
+							type="xs:string"
+							nillable="true"
+							minOccurs="0"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:element name="GetDepData">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="OrgCode"
+								type="xs:string"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="GetDepDataResponse">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="return"
+								type="xsd1:Dep_List"
+								nillable="true"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:schema>
+	</types>
+	<message name="GetDepDataRequestMessage">
+		<part name="parameters"
+				element="tns:GetDepData"/>
+	</message>
+	<message name="GetDepDataResponseMessage">
+		<part name="parameters"
+				element="tns:GetDepDataResponse"/>
+	</message>
+	<portType name="abs_DepDataPortType">
+		<operation name="GetDepData">
+			<input name="GetDepDataRequest"
+					message="tns:GetDepDataRequestMessage"/>
+			<output name="GetDepDataResponse"
+					message="tns:GetDepDataResponseMessage"/>
+		</operation>
+	</portType>
+	<binding name="abs_DepDataSoapBinding"
+			type="tns:abs_DepDataPortType">
+		<soapbind:binding style="document"
+				transport="http://schemas.xmlsoap.org/soap/http"/>
+		<operation name="GetDepData">
+			<soapbind:operation style="document"
+					soapAction="http://www.abs-soft_Dep.ru#abs_DepData:GetDepData"/>
+			<input>
+				<soapbind:body use="literal"/>
+			</input>
+			<output>
+				<soapbind:body use="literal"/>
+			</output>
+		</operation>
+	</binding>
+	<binding name="abs_DepDataSoap12Binding"
+			type="tns:abs_DepDataPortType">
+		<soap12bind:binding style="document"
+				transport="http://schemas.xmlsoap.org/soap/http"/>
+		<operation name="GetDepData">
+			<soap12bind:operation style="document"
+					soapAction="http://www.abs-soft_Dep.ru#abs_DepData:GetDepData"/>
+			<input>
+				<soap12bind:body use="literal"/>
+			</input>
+			<output>
+				<soap12bind:body use="literal"/>
+			</output>
+		</operation>
+	</binding>
+	<service name="abs_DepData">
+		<port name="abs_DepDataSoap"
+				binding="tns:abs_DepDataSoapBinding">
+			<documentation> 
+				<wsi:Claim xmlns:wsi="http://ws-i.org/schemas/conformanceClaim/"
+						conformsTo="http://ws-i.org/profiles/basic/1.1"/>
+			</documentation>
+			<soapbind:address location="https://isup-ttk.transtk.ru/persondata/ws/DepData.1cws"/>
+		</port>
+		<port name="abs_DepDataSoap12"
+				binding="tns:abs_DepDataSoap12Binding">
+			<soap12bind:address location="https://isup-ttk.transtk.ru/persondata/ws/DepData.1cws"/>
+		</port>
+	</service>
+</definitions>

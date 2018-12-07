@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:EventSubscription xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="caaef9d4-071a-4732-a945-6b831014daba">
+  <name>ttk_ПроверкаЗаполненияАналитик</name>
+  <synonym>
+    <key>ru</key>
+    <value>Ttk проверка заполнения аналитик</value>
+  </synonym>
+  <comment>28.12.2016 7764135</comment>
+  <source>
+    <types>DocumentObject.абс_ВводБюджета</types>
+    <types>DocumentObject.абс_ЗакупочныйЗаказ</types>
+    <types>DocumentObject.ПоступлениеТоваровУслуг</types>
+    <types>DocumentObject.абс_СчетНаОплату</types>
+  </source>
+  <event>BeforeWrite</event>
+  <handler>CommonModule.ОбщегоНазначенияКлиентСервер.ttk_ПроверкаЗаполненияАналитикВдокументахПередЗаписью</handler>
+</mdclass:EventSubscription>

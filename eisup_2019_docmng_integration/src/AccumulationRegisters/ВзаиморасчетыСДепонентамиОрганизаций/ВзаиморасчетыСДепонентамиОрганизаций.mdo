@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:AccumulationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="4a2db5c0-1c3b-453e-b506-7b92bde392ae">
+  <producedTypes>
+    <selectionType typeId="ae545ddd-ef28-4ecd-8d4f-daf299409e09" valueTypeId="04964adc-22b5-4f26-9642-08aa095421e4"/>
+    <listType typeId="b86de097-0317-48d6-8eab-baa351136d75" valueTypeId="3dcc0515-25bc-4551-85bc-376781814921"/>
+    <managerType typeId="58b372d3-3f26-4e11-994a-acd724c76d77" valueTypeId="3933044f-489e-4201-ae91-f247a0640191"/>
+    <recordSetType typeId="74f7db7b-d2d6-48c2-b829-04dd57b1d12f" valueTypeId="16f14ef6-e732-4a03-a591-b47dcc7f50cf"/>
+    <recordKeyType typeId="6f98fc92-5717-4e03-8089-f5e2f161c707" valueTypeId="dba52649-dbdb-46d5-93ce-eb93dd1308c8"/>
+    <recordType typeId="7f481e81-b5c9-4554-b536-056978d27fea" valueTypeId="b852a91c-0ecc-4cbe-aacd-039c5dbcf8c0"/>
+  </producedTypes>
+  <name>ВзаиморасчетыСДепонентамиОрганизаций</name>
+  <synonym>
+    <key>ru</key>
+    <value>Взаиморасчеты с депонентами организаций</value>
+  </synonym>
+  <comment></comment>
+  <defaultListForm>AccumulationRegister.ВзаиморасчетыСДепонентамиОрганизаций.Form.ФормаСписка</defaultListForm>
+  <enableTotalsSplitting>true</enableTotalsSplitting>
+  <resources uuid="20249b2e-8f3f-47ec-be59-c7e057400547">
+    <name>Сумма</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сумма</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>2</scale>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </resources>
+  <dimensions uuid="c50f35e9-a0ac-4a66-8424-a7702fac2814">
+    <name>Физлицо</name>
+    <synonym>
+      <key>ru</key>
+      <value>Физлицо</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.ФизическиеЛица</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="bf9616bb-344c-4c5a-9b00-fab13d845cbe">
+    <name>Организация</name>
+    <synonym>
+      <key>ru</key>
+      <value>Организация</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.Организации</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="34704b9a-2236-45a8-a589-ee61e6bdc4b2">
+    <name>Ведомость</name>
+    <synonym>
+      <key>ru</key>
+      <value>Ведомость</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>DocumentRef.ЗарплатаКВыплатеОрганизаций</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <forms uuid="97a72579-6a1d-47e0-b87c-4851de2ab98c">
+    <name>ФормаСписка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма списка</value>
+    </synonym>
+    <comment></comment>
+    <formType>Ordinary</formType>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+</mdclass:AccumulationRegister>

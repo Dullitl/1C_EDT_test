@@ -1,0 +1,31 @@
+﻿<package xmlns="http://v8.1c.ru/8.1/xdto" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" targetNamespace="http://transtk.ru">
+	<objectType name="Response">
+		<property name="RC" type="xs:int"/>
+		<property name="Msg" type="xs:string"/>
+	</objectType>
+	<objectType name="Address">
+		<property name="PostCode" type="xs:string"/>
+		<property name="Country" type="xs:string"/>
+		<property name="Region" type="xs:string"/>
+		<property name="City" type="xs:string"/>
+		<property name="Street" type="xs:string"/>
+		<property name="House" type="xs:string"/>
+		<property name="Building" type="xs:string"/>
+		<property name="Room" type="xs:string"/>
+	</objectType>
+	<objectType name="Phone">
+		<property name="CountryCode" type="xs:string"/>
+		<property name="AreaCode" type="xs:string"/>
+		<property name="Number" type="xs:string"/>
+	</objectType>
+	<objectType name="Email">
+		<property name="Email" type="xs:string"/>
+	</objectType>
+	<objectType name="ContactInfo">
+		<property xmlns:d3p1="http://transtk.ru" name="LegalAddress" type="d3p1:Address" nillable="true"/>
+		<property xmlns:d3p1="http://transtk.ru" name="ActualAddress" type="d3p1:Address" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://transtk.ru" name="PostalAddress" type="d3p1:Address" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://transtk.ru" name="Phone" type="d3p1:Phone" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://transtk.ru" name="Email" type="d3p1:Email" lowerBound="0" nillable="true"/>
+	</objectType>
+</package>

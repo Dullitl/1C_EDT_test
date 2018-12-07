@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Document xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="1e035217-ce14-4e61-bc55-91150c30aa3d">
+  <producedTypes>
+    <objectType typeId="1e71bc76-0673-4f27-bcf0-8d5a243545e9" valueTypeId="992514ca-03cb-41d5-979c-28658fe8653c"/>
+    <refType typeId="8d08dc92-1793-4e9f-9969-a0dba864b2ed" valueTypeId="198cb24d-fc70-4b46-bc26-cdc702f968ff"/>
+    <selectionType typeId="ae31b101-826a-47b9-bc2b-2c4f99799dfb" valueTypeId="5c8f5c58-21b7-4483-bc64-3c8970315332"/>
+    <listType typeId="e7d11201-1743-4ee9-9dd1-b9452721e65e" valueTypeId="e9cebf7d-1e3c-4e02-9b41-1aeca69704cb"/>
+    <managerType typeId="4bf89301-8a96-453c-9c21-5b4ac0924d44" valueTypeId="d9a9ae38-7ce1-4ff4-9ede-605ab941823a"/>
+  </producedTypes>
+  <name>ttk_НазначениеОтвественныхЗаЗагрузкуБиллинга</name>
+  <synonym>
+    <key>ru</key>
+    <value>ttk_ Назначение отвественных за загрузку биллинга</value>
+  </synonym>
+  <comment></comment>
+  <useStandardCommands>true</useStandardCommands>
+  <inputByString>Document.ttk_НазначениеОтвественныхЗаЗагрузкуБиллинга.StandardAttribute.Number</inputByString>
+  <fullTextSearchOnInputByString>DontUse</fullTextSearchOnInputByString>
+  <createOnInput>Use</createOnInput>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <fullTextSearch>Use</fullTextSearch>
+  <numberType>String</numberType>
+  <numberLength>9</numberLength>
+  <numberAllowedLength>Variable</numberAllowedLength>
+  <checkUnique>true</checkUnique>
+  <autonumbering>true</autonumbering>
+  <defaultObjectForm>Document.ttk_НазначениеОтвественныхЗаЗагрузкуБиллинга.Form.ФормаДокумента</defaultObjectForm>
+  <registerRecords>InformationRegister.ttk_ОтветственныеЗаЗагрузкуПроверкуБиллинга</registerRecords>
+  <attributes uuid="fc74740d-d0fd-45d2-be20-6ea2152ad3fe">
+    <name>Изменил</name>
+    <synonym>
+      <key>ru</key>
+      <value>Изменил</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.Пользователи</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <forms uuid="ffd884ce-6ac0-475e-b60e-8e1f3e8bba20">
+    <name>ФормаДокумента</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма документа</value>
+    </synonym>
+    <comment></comment>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <tabularSections uuid="4ce159da-a8c9-46c8-8741-d26179ce8506">
+    <producedTypes>
+      <objectType typeId="d9a9d076-0a00-4bf2-b929-bbb21ef85d17" valueTypeId="2b7a9986-019e-4e74-83ac-9942811f6cff"/>
+      <rowType typeId="48e81131-15be-4ee0-b649-217d14a9e735" valueTypeId="687c187d-b1ac-4cfd-b100-bdd1154d4d5d"/>
+    </producedTypes>
+    <name>Ответственные</name>
+    <synonym>
+      <key>ru</key>
+      <value>Ответственные</value>
+    </synonym>
+    <comment></comment>
+    <fillChecking>ShowError</fillChecking>
+    <attributes uuid="f4566670-051d-45a2-9105-f2769597f75f">
+      <name>Организация</name>
+      <synonym>
+        <key>ru</key>
+        <value>Организация</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>CatalogRef.Организации</types>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillChecking>ShowError</fillChecking>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="c17ab078-ea0a-4781-9574-7c106ed41ece">
+      <name>ТипБиллинга</name>
+      <synonym>
+        <key>ru</key>
+        <value>Тип биллинга</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>CatalogRef.абс_ТипыБиллинга</types>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillChecking>ShowError</fillChecking>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="3153168a-d8a1-4fde-84c3-305b06f3f76d">
+      <name>ТипОтветственного</name>
+      <synonym>
+        <key>ru</key>
+        <value>Тип ответственного</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>EnumRef.ttk_ТипыОтветственныхПриЗагрузкеБиллинга</types>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillChecking>ShowError</fillChecking>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="888bd3ee-cb7a-4f72-bad4-1d8c2e377b64">
+      <name>Ответственный</name>
+      <synonym>
+        <key>ru</key>
+        <value>Ответственный</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>CatalogRef.Пользователи</types>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillChecking>ShowError</fillChecking>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+  </tabularSections>
+</mdclass:Document>

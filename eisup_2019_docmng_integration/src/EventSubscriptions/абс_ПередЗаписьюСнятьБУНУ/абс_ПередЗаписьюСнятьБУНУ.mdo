@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:EventSubscription xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="aad8ddb0-4694-455f-8126-5c46f97d218a">
+  <name>абс_ПередЗаписьюСнятьБУНУ</name>
+  <synonym>
+    <key>ru</key>
+    <value>Перед записью снять БУ, НУ</value>
+  </synonym>
+  <comment>При переводе в статус Подготовка</comment>
+  <source>
+    <types>DocumentObject.ПолучениеУслугПоПереработке</types>
+    <types>DocumentObject.ТребованиеНакладная</types>
+    <types>DocumentObject.ПередачаТоваров</types>
+    <types>DocumentObject.АвансовыйОтчет</types>
+    <types>DocumentObject.КомплектацияНоменклатуры</types>
+    <types>DocumentObject.АктОбОказанииПроизводственныхУслуг</types>
+    <types>DocumentObject.ВозвратПереданныхТоваров</types>
+    <types>DocumentObject.СписаниеТоваров</types>
+    <types>DocumentObject.РеализацияТоваровУслуг</types>
+    <types>DocumentObject.ПоступлениеТоваровУслуг</types>
+    <types>DocumentObject.КорректировкаПоступления</types>
+    <types>DocumentObject.ПеремещениеТоваров</types>
+    <types>DocumentObject.КорректировкаРеализации</types>
+  </source>
+  <event>BeforeWrite</event>
+  <handler>CommonModule.абс_БизнесПроцессы.абс_ПередЗаписьюСнятьБУНУПередЗаписью</handler>
+</mdclass:EventSubscription>

@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:BusinessProcess xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="9205ba06-56d3-43d2-95a2-9b3fc83ebe73">
+  <producedTypes>
+    <objectType typeId="b8a4e78b-c490-42f1-9556-673e6aaa82b9" valueTypeId="c2006db2-2e76-496b-986c-7ed4d2645884"/>
+    <refType typeId="bd2d470a-4b38-47af-ad85-13a268604174" valueTypeId="3bfd869f-4c98-4e75-97bf-679e3adf1ad2"/>
+    <selectionType typeId="2aafb80c-7588-410c-9c99-41b1b7aaea86" valueTypeId="9af3e178-1363-4e88-acd5-7da5970b17b6"/>
+    <listType typeId="cefce83f-9f10-4afc-b306-5238ec6af1bc" valueTypeId="c7fcf94f-4248-4fa8-9db7-323b3f5a6c77"/>
+    <managerType typeId="c037aaf0-cd91-4829-8989-00a8f873e5d3" valueTypeId="5d7a81d7-6d5d-41f9-9f98-a1d6c6b08a3b"/>
+    <routePointRef typeId="07f3a4cc-a850-4b75-9b69-bcc3c3ddd854" valueTypeId="7b6552d2-9a1b-4e2a-bb07-0aabe6c9a895"/>
+  </producedTypes>
+  <name>абсСогласованиеСчетаНаОплату</name>
+  <synonym>
+    <key>ru</key>
+    <value>Согласование счета на оплату</value>
+  </synonym>
+  <comment></comment>
+  <useStandardCommands>true</useStandardCommands>
+  <inputByString>BusinessProcess.абсСогласованиеСчетаНаОплату.StandardAttribute.Number</inputByString>
+  <fullTextSearchOnInputByString>DontUse</fullTextSearchOnInputByString>
+  <createOnInput>DontUse</createOnInput>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <fullTextSearch>Use</fullTextSearch>
+  <editType>InDialog</editType>
+  <defaultObjectForm>BusinessProcess.абсСогласованиеСчетаНаОплату.Form.ФормаБизнесПроцесса</defaultObjectForm>
+  <defaultListForm>BusinessProcess.абсСогласованиеСчетаНаОплату.Form.ФормаСписка</defaultListForm>
+  <auxiliaryObjectForm>BusinessProcess.абсСогласованиеСчетаНаОплату.Form.ФормаБизнесПроцессаУправляемая</auxiliaryObjectForm>
+  <auxiliaryListForm>BusinessProcess.абсСогласованиеСчетаНаОплату.Form.ФормаСпискаУправляемая</auxiliaryListForm>
+  <numberType>String</numberType>
+  <numberLength>9</numberLength>
+  <numberAllowedLength>Variable</numberAllowedLength>
+  <checkUnique>true</checkUnique>
+  <autonumbering>true</autonumbering>
+  <task>Task.абсЗадачаДоговора</task>
+  <attributes uuid="c8e1a144-c031-4a1e-87dc-428fcb9412d6">
+    <name>ПользовательИнициаторБП</name>
+    <synonym>
+      <key>ru</key>
+      <value>Инициатор</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.Пользователи</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="211a931f-cdc5-4ed7-be7b-6b9aa4d5da98">
+    <name>СчетНаОплату</name>
+    <synonym>
+      <key>ru</key>
+      <value>Счет на оплату</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>DocumentRef.абс_СчетНаОплату</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="46553c07-50fa-4400-af69-5a84aaf82478">
+    <name>СогласованиеДРУ</name>
+    <synonym>
+      <key>ru</key>
+      <value>Согласован ДРУ</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="eb49972d-1d7e-4ac0-8e7c-3940776ce51c">
+    <name>СтатусОжиданияЗЗ</name>
+    <synonym>
+      <key>ru</key>
+      <value>Статус ожидания ЗЗ</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>EnumRef.абсСтатусыСчетов</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="d554ac86-8b2a-49a8-99cc-8b434c16d2fa">
+    <name>Организация</name>
+    <synonym>
+      <key>ru</key>
+      <value>Организация</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.Организации</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <forms uuid="3ca2e629-9c6f-420a-9504-5f053ced38cc">
+    <name>ФормаБизнесПроцесса</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма бизнес процесса</value>
+    </synonym>
+    <comment></comment>
+    <formType>Ordinary</formType>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="b66d6de2-391e-4e1f-a38d-83d92b2b40c3">
+    <name>ФормаСписка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма списка</value>
+    </synonym>
+    <comment></comment>
+    <formType>Ordinary</formType>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="211284d8-6a1d-4a1d-9bfe-3fefd82258de">
+    <name>ФормаСпискаУправляемая</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма списка управляемая</value>
+    </synonym>
+    <comment></comment>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="7656e10f-301f-4120-823b-8fd3275cc662">
+    <name>ФормаБизнесПроцессаУправляемая</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма бизнес процесса управляемая</value>
+    </synonym>
+    <comment></comment>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+</mdclass:BusinessProcess>

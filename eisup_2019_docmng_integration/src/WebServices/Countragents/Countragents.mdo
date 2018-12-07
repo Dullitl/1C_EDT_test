@@ -1,0 +1,398 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:WebService xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="75388c8a-7e2c-4564-8ee5-fe87dfec39f2">
+  <name>Countragents</name>
+  <synonym>
+    <key>ru</key>
+    <value>Countragents</value>
+  </synonym>
+  <comment>Работа с контрагентами посредством вебсервисов</comment>
+  <namespace>http://www.abs-soft.ru/</namespace>
+  <xdtoPackages xsi:type="core:ReferenceValue">
+    <value>XDTOPackage.Countragents</value>
+  </xdtoPackages>
+  <descriptorFileName>Countragents.1cws</descriptorFileName>
+  <sessionMaxAge>20</sessionMaxAge>
+  <operations uuid="3408a53a-fe28-4dde-ba78-89deb117eea8">
+    <name>CountragentsAdd</name>
+    <synonym>
+      <key>ru</key>
+      <value>Countragents add</value>
+    </synonym>
+    <comment>Регистрация контрагента со статусом подготовка</comment>
+    <xdtoReturningValueType>
+      <name>Answer</name>
+      <nsUri>http://www.abs-soft.ru/</nsUri>
+    </xdtoReturningValueType>
+    <transactioned>true</transactioned>
+    <procedureName>Добавить</procedureName>
+    <parameters uuid="4312d2f9-6370-4f01-99e9-ba577450df93">
+      <name>PackXDTO</name>
+      <synonym>
+        <key>ru</key>
+        <value>Pack XDTO</value>
+      </synonym>
+      <comment></comment>
+      <xdtoValueType>
+        <name>CountragentsAdd</name>
+        <nsUri>http://www.abs-soft.ru/</nsUri>
+      </xdtoValueType>
+    </parameters>
+  </operations>
+  <operations uuid="8256aad2-ff49-4fbe-984b-d5816435bfd4">
+    <name>GetCountragentsFileList</name>
+    <synonym>
+      <key>ru</key>
+      <value>Get countragents file list</value>
+    </synonym>
+    <comment>Запросить список файлов контрагента</comment>
+    <xdtoReturningValueType>
+      <name>FileList</name>
+      <nsUri>http://www.abs-soft.ru/</nsUri>
+    </xdtoReturningValueType>
+    <procedureName>GetCountragentsFileList</procedureName>
+    <dataLockControlMode>Managed</dataLockControlMode>
+    <parameters uuid="0c8d324f-4693-4196-a8bd-df8954015cd6">
+      <name>ID</name>
+      <synonym>
+        <key>ru</key>
+        <value>ID</value>
+      </synonym>
+      <comment></comment>
+      <xdtoValueType>
+        <name>string</name>
+        <nsUri>http://www.w3.org/2001/XMLSchema</nsUri>
+      </xdtoValueType>
+    </parameters>
+  </operations>
+  <operations uuid="25f7a20d-bd27-48f1-8f76-8aec1e02b62e">
+    <name>GetCountragentsFile</name>
+    <synonym>
+      <key>ru</key>
+      <value>Get countragents file</value>
+    </synonym>
+    <comment>Запросить файл контрагента</comment>
+    <xdtoReturningValueType>
+      <name>File</name>
+      <nsUri>http://www.abs-soft.ru/</nsUri>
+    </xdtoReturningValueType>
+    <procedureName>GetCountragentsFile</procedureName>
+    <dataLockControlMode>Managed</dataLockControlMode>
+    <parameters uuid="c68dd428-826f-4f9d-91f1-a4882d8dbb53">
+      <name>ID</name>
+      <synonym>
+        <key>ru</key>
+        <value>ID</value>
+      </synonym>
+      <comment></comment>
+      <xdtoValueType>
+        <name>string</name>
+        <nsUri>http://www.w3.org/2001/XMLSchema</nsUri>
+      </xdtoValueType>
+    </parameters>
+    <parameters uuid="4d286bec-1426-45b9-a7c6-6e936537b45b">
+      <name>Name</name>
+      <synonym>
+        <key>ru</key>
+        <value>Name</value>
+      </synonym>
+      <comment></comment>
+      <xdtoValueType>
+        <name>string</name>
+        <nsUri>http://www.w3.org/2001/XMLSchema</nsUri>
+      </xdtoValueType>
+    </parameters>
+  </operations>
+  <operations uuid="1c0db9d1-721f-4625-99ef-2a1ecdd4ae99">
+    <name>PutCountragentsFile</name>
+    <synonym>
+      <key>ru</key>
+      <value>Put countragents file</value>
+    </synonym>
+    <comment>Поместить файл контрагента</comment>
+    <xdtoReturningValueType>
+      <name>Answer</name>
+      <nsUri>http://www.abs-soft.ru/</nsUri>
+    </xdtoReturningValueType>
+    <procedureName>PutCountragentsFile</procedureName>
+    <dataLockControlMode>Managed</dataLockControlMode>
+    <parameters uuid="30adcd9a-6d0c-4d9e-9241-0bf5cce7958a">
+      <name>ID</name>
+      <synonym>
+        <key>ru</key>
+        <value>ID</value>
+      </synonym>
+      <comment></comment>
+      <xdtoValueType>
+        <name>string</name>
+        <nsUri>http://www.w3.org/2001/XMLSchema</nsUri>
+      </xdtoValueType>
+    </parameters>
+    <parameters uuid="700b9c64-d423-4c40-8f49-bd20c60b3e6f">
+      <name>File</name>
+      <synonym>
+        <key>ru</key>
+        <value>File</value>
+      </synonym>
+      <comment></comment>
+      <xdtoValueType>
+        <name>File</name>
+        <nsUri>http://www.abs-soft.ru/</nsUri>
+      </xdtoValueType>
+    </parameters>
+  </operations>
+  <operations uuid="833c8354-06d8-4bc0-b17d-38ca5ef8bc38">
+    <name>CountragentsDEB_Check</name>
+    <synonym>
+      <key>ru</key>
+      <value>Countragents DEB Check</value>
+    </synonym>
+    <comment>Перевод контрагента в статус &quot;Согласование ДЭБ&quot;</comment>
+    <xdtoReturningValueType>
+      <name>Answer</name>
+      <nsUri>http://www.abs-soft.ru/</nsUri>
+    </xdtoReturningValueType>
+    <transactioned>true</transactioned>
+    <procedureName>CountragentsDEB_Check</procedureName>
+    <dataLockControlMode>Managed</dataLockControlMode>
+    <parameters uuid="b6012823-00a8-4bd2-9b06-6930f3c27993">
+      <name>PackXDTO</name>
+      <synonym>
+        <key>ru</key>
+        <value>Pack XDTO</value>
+      </synonym>
+      <comment></comment>
+      <xdtoValueType>
+        <name>CountragentsAdd</name>
+        <nsUri>http://www.abs-soft.ru/</nsUri>
+      </xdtoValueType>
+      <transferDirection>InOut</transferDirection>
+    </parameters>
+  </operations>
+  <operations uuid="43563b0d-54de-40b8-926b-9a468271df85">
+    <name>CountragentsChangeRequest</name>
+    <synonym>
+      <key>ru</key>
+      <value>Countragents DEB Check</value>
+    </synonym>
+    <comment>Заявка на изменение контрагента</comment>
+    <xdtoReturningValueType>
+      <name>Answer</name>
+      <nsUri>http://www.abs-soft.ru/</nsUri>
+    </xdtoReturningValueType>
+    <transactioned>true</transactioned>
+    <procedureName>CountragentsChangeRequest</procedureName>
+    <dataLockControlMode>Managed</dataLockControlMode>
+    <parameters uuid="cbfab180-903e-4ed8-bb97-389ab07b576c">
+      <name>PackXDTO</name>
+      <synonym>
+        <key>ru</key>
+        <value>Pack XDTO</value>
+      </synonym>
+      <comment></comment>
+      <xdtoValueType>
+        <name>CountragentsAdd</name>
+        <nsUri>http://www.abs-soft.ru/</nsUri>
+      </xdtoValueType>
+      <transferDirection>InOut</transferDirection>
+    </parameters>
+    <parameters uuid="fc034e15-bea1-4c5d-8863-eda8f2f5fac8">
+      <name>NumberDoc</name>
+      <synonym>
+        <key>ru</key>
+        <value>Number doc</value>
+      </synonym>
+      <comment></comment>
+      <xdtoValueType>
+        <name>string</name>
+        <nsUri>http://www.w3.org/2001/XMLSchema</nsUri>
+      </xdtoValueType>
+      <nillable>true</nillable>
+    </parameters>
+  </operations>
+  <operations uuid="bd1e3ea4-9c53-48fc-b033-4f09fddd3457">
+    <name>ConnectionTest</name>
+    <synonym>
+      <key>ru</key>
+      <value>Connection test</value>
+    </synonym>
+    <comment>Тест подключения</comment>
+    <xdtoReturningValueType>
+      <name>Answer</name>
+      <nsUri>http://www.abs-soft.ru/</nsUri>
+    </xdtoReturningValueType>
+    <procedureName>ТестСоединения</procedureName>
+    <dataLockControlMode>Managed</dataLockControlMode>
+  </operations>
+  <operations uuid="8b9c2b90-3215-42b6-9646-254853540b21">
+    <name>SpeedTest</name>
+    <synonym>
+      <key>ru</key>
+      <value>SpeedTest</value>
+    </synonym>
+    <comment>Тестирование скорости передачи бинарных данных</comment>
+    <xdtoReturningValueType>
+      <name>long</name>
+      <nsUri>http://www.w3.org/2001/XMLSchema</nsUri>
+    </xdtoReturningValueType>
+    <procedureName>SpeedTest</procedureName>
+    <dataLockControlMode>Managed</dataLockControlMode>
+    <parameters uuid="308e3a00-b630-443b-ae30-9047eafab657">
+      <name>PackBinary</name>
+      <synonym>
+        <key>ru</key>
+        <value>Pack binary</value>
+      </synonym>
+      <comment></comment>
+      <xdtoValueType>
+        <name>base64Binary</name>
+        <nsUri>http://www.w3.org/2001/XMLSchema</nsUri>
+      </xdtoValueType>
+    </parameters>
+  </operations>
+  <operations uuid="16873d53-1bf0-4cf2-b768-b924afa8c6cf">
+    <name>Function</name>
+    <synonym>
+      <key>ru</key>
+      <value>Вызов произвольной функции</value>
+    </synonym>
+    <comment>Заготовок произвольной функции</comment>
+    <xdtoReturningValueType>
+      <name>Answer</name>
+      <nsUri>http://www.abs-soft.ru/</nsUri>
+    </xdtoReturningValueType>
+    <procedureName>ВыполнитьFunction</procedureName>
+    <dataLockControlMode>Managed</dataLockControlMode>
+    <parameters uuid="36bb6468-77e0-4534-8d44-d4cf682d708e">
+      <name>Name</name>
+      <synonym>
+        <key>ru</key>
+        <value>Name</value>
+      </synonym>
+      <comment>Наименование функции</comment>
+      <xdtoValueType>
+        <name>string</name>
+        <nsUri>http://www.w3.org/2001/XMLSchema</nsUri>
+      </xdtoValueType>
+    </parameters>
+    <parameters uuid="3a971d30-583c-4d26-92d1-fb1d08bca7e4">
+      <name>ID</name>
+      <synonym>
+        <key>ru</key>
+        <value>ID</value>
+      </synonym>
+      <comment>Код контрагента</comment>
+      <xdtoValueType>
+        <name>string</name>
+        <nsUri>http://www.w3.org/2001/XMLSchema</nsUri>
+      </xdtoValueType>
+    </parameters>
+    <parameters uuid="ee3d533a-7708-4dec-99a9-5eb63ea6e945">
+      <name>XML</name>
+      <synonym>
+        <key>ru</key>
+        <value>XML</value>
+      </synonym>
+      <comment>Произвольная структура</comment>
+      <xdtoValueType>
+        <name>string</name>
+        <nsUri>http://www.w3.org/2001/XMLSchema</nsUri>
+      </xdtoValueType>
+      <nillable>true</nillable>
+      <transferDirection>InOut</transferDirection>
+    </parameters>
+  </operations>
+  <operations uuid="65f86789-3e57-4dd4-b913-17a5f9bd43f3">
+    <name>GetBalance</name>
+    <synonym>
+      <key>ru</key>
+      <value>Get balance</value>
+    </synonym>
+    <comment></comment>
+    <xdtoReturningValueType>
+      <name>AnswerBalance</name>
+      <nsUri>http://www.abs-soft.ru/</nsUri>
+    </xdtoReturningValueType>
+    <nillable>true</nillable>
+    <procedureName>GetBalance</procedureName>
+    <dataLockControlMode>Managed</dataLockControlMode>
+    <parameters uuid="5fdb28e7-40d3-432e-bafe-e2149adbd02e">
+      <name>OrderNumber</name>
+      <synonym>
+        <key>ru</key>
+        <value>Order number</value>
+      </synonym>
+      <comment></comment>
+      <xdtoValueType>
+        <name>string</name>
+        <nsUri>http://www.w3.org/2001/XMLSchema</nsUri>
+      </xdtoValueType>
+    </parameters>
+  </operations>
+  <operations uuid="2e1794e4-f946-4299-83a2-0acdbadee368">
+    <name>GetBalanceByDogID</name>
+    <comment></comment>
+    <xdtoReturningValueType>
+      <name>AnswerBalance</name>
+      <nsUri>http://www.abs-soft.ru/</nsUri>
+    </xdtoReturningValueType>
+    <nillable>true</nillable>
+    <procedureName>GetBalanceByDogID</procedureName>
+    <dataLockControlMode>Managed</dataLockControlMode>
+    <parameters uuid="a96e9608-b4db-4fff-9ab2-34cabec480fa">
+      <name>DogID</name>
+      <comment></comment>
+      <xdtoValueType>
+        <name>string</name>
+        <nsUri>http://www.w3.org/2001/XMLSchema</nsUri>
+      </xdtoValueType>
+    </parameters>
+    <parameters uuid="6e31288b-3867-485c-b8f6-4c875ed385c8">
+      <name>Dt</name>
+      <comment></comment>
+      <xdtoValueType>
+        <name>dateTime</name>
+        <nsUri>http://www.w3.org/2001/XMLSchema</nsUri>
+      </xdtoValueType>
+      <nillable>true</nillable>
+    </parameters>
+  </operations>
+  <operations uuid="c48f7d4b-98a3-4017-85e8-3b633e478aaa">
+    <name>SetContactInfo</name>
+    <synonym>
+      <key>ru</key>
+      <value>SetContactInfo</value>
+    </synonym>
+    <comment></comment>
+    <xdtoReturningValueType>
+      <name>Response</name>
+      <nsUri>http://transtk.ru</nsUri>
+    </xdtoReturningValueType>
+    <transactioned>true</transactioned>
+    <procedureName>SetContactInfo</procedureName>
+    <parameters uuid="176e5994-ff43-4063-87c4-4b768a5c8d2d">
+      <name>ID</name>
+      <synonym>
+        <key>ru</key>
+        <value>ID</value>
+      </synonym>
+      <comment></comment>
+      <xdtoValueType>
+        <name>string</name>
+        <nsUri>http://www.w3.org/2001/XMLSchema</nsUri>
+      </xdtoValueType>
+    </parameters>
+    <parameters uuid="fa2652bf-576e-4233-ba0d-6ba2edb64dc8">
+      <name>ContactInfo</name>
+      <synonym>
+        <key>ru</key>
+        <value>Contact info</value>
+      </synonym>
+      <comment></comment>
+      <xdtoValueType>
+        <name>ContactInfo</name>
+        <nsUri>http://transtk.ru</nsUri>
+      </xdtoValueType>
+      <nillable>true</nillable>
+    </parameters>
+  </operations>
+</mdclass:WebService>

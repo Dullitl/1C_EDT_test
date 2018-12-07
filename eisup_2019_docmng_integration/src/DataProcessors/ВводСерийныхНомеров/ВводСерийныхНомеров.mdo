@@ -1,0 +1,420 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:DataProcessor xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="d5d6b158-cbe4-4e25-958b-2f180c1feccf">
+  <producedTypes>
+    <objectType typeId="65e8a27a-d642-4f0a-83bc-0ac74d9493a2" valueTypeId="00196688-77c5-4f30-a7be-72e0aaf3d152"/>
+    <managerType typeId="304ffec1-8671-4c52-98da-2766a450a472" valueTypeId="f63a8748-b083-4010-bf8f-cf9b8c2245d0"/>
+  </producedTypes>
+  <name>ВводСерийныхНомеров</name>
+  <synonym>
+    <key>ru</key>
+    <value>Ввод серийных номеров</value>
+  </synonym>
+  <comment></comment>
+  <defaultForm>DataProcessor.ВводСерийныхНомеров.Form.ОсновнаяФорма</defaultForm>
+  <attributes uuid="d8964668-3eff-46a2-a12c-b48daa79d193">
+    <name>Номенклатура</name>
+    <synonym>
+      <key>ru</key>
+      <value>Номенклатура</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.Номенклатура</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="89487a58-be86-45ae-8429-8e58f032fa32">
+    <name>ХарактеристикаНоменклатуры</name>
+    <synonym>
+      <key>ru</key>
+      <value>Характеристика номенклатуры</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.ХарактеристикиНоменклатуры</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="f3ad6851-7e84-48a6-8122-6190cf43bb0f">
+    <name>СерияНоменклатуры</name>
+    <synonym>
+      <key>ru</key>
+      <value>Серия номенклатуры</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.СерииНоменклатуры</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="d7e10e69-2986-403f-974b-ce7e91ac556b">
+    <name>Количество</name>
+    <synonym>
+      <key>ru</key>
+      <value>Количество</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>3</scale>
+      </numberQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="f97c29c1-7f64-42a0-a711-c4a76a9a830e">
+    <name>ЕдиницаИзмерения</name>
+    <synonym>
+      <key>ru</key>
+      <value>Единица измерения</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.ЕдиницыИзмерения</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="5672c2d3-e640-417c-a899-998cdb79a1c0">
+    <name>ПорядокПрисвоенияСерийногоНомера</name>
+    <synonym>
+      <key>ru</key>
+      <value>Порядок присвоения серийного номера</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.ПорядокПрисвоенияСерийныхНомеров</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="1f99e53b-b709-4ec1-8edf-58a9428ccfbf">
+    <name>КлючСвязи</name>
+    <synonym>
+      <key>ru</key>
+      <value>Ключ связи</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>5</precision>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="e69d0016-cb1c-419a-9f84-3cedcc2e0022">
+    <name>Документ</name>
+    <synonym>
+      <key>ru</key>
+      <value>Документ</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>DocumentObject.ОтчетПроизводстваЗаСмену</types>
+      <types>DocumentObject.ОтчетОРозничныхПродажах</types>
+      <types>DocumentObject.ВозвратТоваровОтПокупателя</types>
+      <types>DocumentObject.АвансовыйОтчет</types>
+      <types>DocumentObject.ПоступлениеТоваровУслугВНТТ</types>
+      <types>DocumentObject.ОприходованиеТоваров</types>
+      <types>DocumentObject.ВозвратТоваровПоставщику</types>
+      <types>DocumentObject.РеализацияТоваровУслуг</types>
+      <types>DocumentObject.ОтчетКомиссионераОПродажах</types>
+      <types>DocumentObject.ПоступлениеТоваровУслуг</types>
+      <types>DocumentObject.ПоступлениеТоваровИзПереработки</types>
+      <types>DocumentObject.ВозвратТоваровПоставщикуИзНТТ</types>
+      <types>DocumentObject.ЧекККМ</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="ee6511a9-eb65-4275-9b2a-a1ce1518be65">
+    <name>СозданиеНовыхСерийныхНомеров</name>
+    <synonym>
+      <key>ru</key>
+      <value>Создание новых серийных номеров</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="9708ce82-7cda-419b-9f1a-f3bbf04d2fb9">
+    <name>ИмяТабличнойЧасти</name>
+    <synonym>
+      <key>ru</key>
+      <value>Имя табличной части</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>50</length>
+      </stringQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="2c3754ec-3219-488b-ab78-69bfb913c917">
+    <name>НомерСтрокиТабличнойЧасти</name>
+    <synonym>
+      <key>ru</key>
+      <value>Номер строки табличной части</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>20</precision>
+      </numberQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="b413d013-9ccb-45a4-9f1a-ee9be55e6746">
+    <name>ОбработкаСоставНабора</name>
+    <synonym>
+      <key>ru</key>
+      <value>Обработка состав набора</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>DataProcessorObject.СоставНабора</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="7ae96470-cd99-4d50-8b01-d810ba586171">
+    <name>Организация</name>
+    <synonym>
+      <key>ru</key>
+      <value>Организация</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.Организации</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="d0337598-7fcc-4996-97fe-e71dc6b9a75d">
+    <name>Подразделение</name>
+    <synonym>
+      <key>ru</key>
+      <value>Подразделение</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.Подразделения</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="bc703d77-dc23-4141-90fb-d77da205f7af">
+    <name>НоменклатурнаяГруппа</name>
+    <synonym>
+      <key>ru</key>
+      <value>Номенклатурная группа</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.НоменклатурныеГруппы</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <tabularSections uuid="b675fd55-9da4-455a-ae04-3da9a6d789d6">
+    <producedTypes>
+      <objectType typeId="bb1e26cb-934e-4452-b561-eed5bccf864e" valueTypeId="9b4dabef-b33a-4f14-bd4a-14839903c957"/>
+      <rowType typeId="5c78c7c8-2024-4a2c-b1d4-e93fab56514a" valueTypeId="75657225-c880-4913-b5a2-9bc4bcbe592c"/>
+    </producedTypes>
+    <name>СерийныеНомера</name>
+    <synonym>
+      <key>ru</key>
+      <value>Серийные номера</value>
+    </synonym>
+    <comment></comment>
+    <attributes uuid="e94f5192-cae8-42fe-8305-b3d1af4eca16">
+      <name>КлючСвязи</name>
+      <synonym>
+        <key>ru</key>
+        <value>Ключ связи</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>5</precision>
+          <nonNegative>true</nonNegative>
+        </numberQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="bc8b51a4-6954-4881-95c2-40e876c7affc">
+      <name>СерийныйНомер</name>
+      <synonym>
+        <key>ru</key>
+        <value>Серийный номер</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>CatalogRef.СерийныеНомера</types>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+  </tabularSections>
+  <tabularSections uuid="1285edab-65d8-4ad6-b866-d4f5286e1375">
+    <producedTypes>
+      <objectType typeId="77035dfe-1c4d-401d-be5d-d110fc45e94c" valueTypeId="d0f4538f-edb4-4552-9e4a-49056f7e8ec3"/>
+      <rowType typeId="25b51583-9df9-45f5-ab5e-124469aba671" valueTypeId="21015a81-9250-411c-99b7-3baad478d51f"/>
+    </producedTypes>
+    <name>НачальныеЗначенияПорядкаПрисвоения</name>
+    <synonym>
+      <key>ru</key>
+      <value>Начальные значения порядка присвоения</value>
+    </synonym>
+    <comment></comment>
+    <attributes uuid="df2e7eb9-067f-4182-9f19-0651f2f2c7f0">
+      <name>РазмерРазряда</name>
+      <synonym>
+        <key>ru</key>
+        <value>Размер разряда</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>2</precision>
+          <nonNegative>true</nonNegative>
+        </numberQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="fa8a2504-c729-40f7-83b9-04416f249404">
+      <name>ТипРазряда</name>
+      <synonym>
+        <key>ru</key>
+        <value>Тип разряда</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>EnumRef.ТипыЗначенийРазрядов</types>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="d6433ce8-786e-44ec-a91b-5d1d0c14b73a">
+      <name>Источник</name>
+      <synonym>
+        <key>ru</key>
+        <value>Источник</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>EnumRef.ИсточникиЗначенийРазрядов</types>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="4d4c3401-90d0-497a-8a3e-aef0a36558c9">
+      <name>Значение</name>
+      <synonym>
+        <key>ru</key>
+        <value>Значение / свойство</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>CatalogRef.ВидыСчетчиковДляЗначенийРазрядов</types>
+        <types>EnumRef.ФорматыДатаВремениЗначенияРазряда</types>
+        <types>EnumRef.РазделителиРазрядовСерийногоНомера</types>
+        <types>String</types>
+        <types>Number</types>
+        <types>ChartOfCharacteristicTypesRef.СвойстваОбъектов</types>
+        <numberQualifiers>
+          <precision>20</precision>
+        </numberQualifiers>
+        <stringQualifiers>
+          <length>20</length>
+        </stringQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:StringValue">
+        <value></value>
+      </fillValue>
+    </attributes>
+    <attributes uuid="11f630ac-b4d5-4948-9dbf-a38cb020acf4">
+      <name>НачальноеЗначениеРазряда</name>
+      <synonym>
+        <key>ru</key>
+        <value>Начальное значение разряда</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>String</types>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>20</precision>
+        </numberQualifiers>
+        <stringQualifiers>
+          <length>20</length>
+        </stringQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:StringValue">
+        <value></value>
+      </fillValue>
+    </attributes>
+  </tabularSections>
+  <forms uuid="2c1c2c3f-4b6e-4451-8940-ae0c2aa2315b">
+    <name>ОсновнаяФорма</name>
+    <synonym>
+      <key>ru</key>
+      <value>Основная форма</value>
+    </synonym>
+    <comment></comment>
+    <formType>Ordinary</formType>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+</mdclass:DataProcessor>
